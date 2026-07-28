@@ -3,9 +3,11 @@
 # Nova Final Stable Version — December 2025
 # ============================================================
 
-from fastapi import FastAPI, HTTPException
+from contextlib import asynccontextmanager
+
+from fastapi import FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict, Field
 import torch
 import pickle
 import os
@@ -51,6 +53,7 @@ if client.api_key is None:
 # ---------------- Internal Modules ----------------
 from hybrid_recommender import HybridRecommender
 from summary_encoder import SummaryEncoder
+from tears_inference_adapter import TEARSInferenceAdapter
 
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 
@@ -67,7 +70,16 @@ SUMMARY_JSON_PATH = (
 # ============================================================
 # FastAPI + CORS
 # ============================================================
-app = FastAPI()
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    app.state.tears_adapter = TEARSInferenceAdapter()
+    try:
+        yield
+    finally:
+        app.state.tears_adapter = None
+
+
+app = FastAPI(lifespan=lifespan)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -123,13 +135,26 @@ class ML1MSummaryRequest(BaseModel):
     movie_ids: list[int]
 
 
-class TEARSRequest(BaseModel):
-    summary: str
-    context: str | None = ""
-    liked: list[str] = []
-    disliked: list[str] = []
-    top_k: int = 12
-    alpha: float = 1.0
+class TEARSRecommendationRequest(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    summary: str = Field(min_length=1, max_length=4000)
+    liked_movie_ids: list[int] = Field(default_factory=list, max_length=500)
+    alpha: float = Field(default=0.5, ge=0.0, le=1.0)
+    top_k: int = Field(default=12, ge=1, le=100)
+
+
+class TEARSRecommendationItem(BaseModel):
+    movie_id: int
+    title: str
+    genres: list[str]
+    score: float
+    rank: int
+    rank_label: str
+
+
+class TEARSRecommendationResponse(BaseModel):
+    items: list[TEARSRecommendationItem]
 
 
 class GERSRequest(BaseModel):
@@ -196,33 +221,28 @@ Additional context:
 # ============================================================
 # 3) TEARS — Summary-Based Recommender
 # ============================================================
-@app.post("/recommend")
-def tears(req: TEARSRequest):
+@app.post("/recommend", response_model=TEARSRecommendationResponse)
+async def tears(
+    req: TEARSRecommendationRequest,
+    request: Request,
+) -> TEARSRecommendationResponse:
+    adapter: TEARSInferenceAdapter = request.app.state.tears_adapter
     try:
-        items = recommender.recommend(
-            summary_text=req.summary,
-            context_text=req.context,
-            liked_titles=req.liked,
-            disliked_genres=req.disliked,
-            top_k=req.top_k,
+        items = adapter.recommend(
+            summary=req.summary,
+            liked_movie_ids=req.liked_movie_ids,
             alpha=req.alpha,
+            top_k=req.top_k,
         )
-
-        return {
-            "items": [
-                {
-                    "title": it["title"],
-                    "score": float(it["score"]),
-                    "rank": int(it["rank"]),
-                    "rank_label": it["rank_label"],
-                }
-                for it in items
-            ]
-        }
-
-    except Exception as e:
-        print("🔥 TEARS ERROR:", e)
-        raise HTTPException(status_code=500, detail=str(e))
+        return TEARSRecommendationResponse(items=items)
+    except ValueError as error:
+        raise HTTPException(status_code=422, detail=str(error)) from error
+    except Exception as error:
+        print("🔥 TEARS INFERENCE ERROR:", repr(error))
+        raise HTTPException(
+            status_code=500,
+            detail="TEARS recommendation inference failed",
+        ) from error
 
 
 # ============================================================
