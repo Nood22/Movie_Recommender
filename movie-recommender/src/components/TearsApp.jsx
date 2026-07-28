@@ -4,6 +4,7 @@ import axios from "axios";
 import { motion } from "framer-motion";
 const QUALITY_API_URL =
   process.env.REACT_APP_QUALITY_API_URL || "http://127.0.0.1:8001";
+const TEARS_ALPHA = 0.5;
 const TMDB_KEY = "fc4a0ec3fa9d745f0b94e417da01cd26";
 /* ---------------------------------------------------------
     TMDB SEARCH + POSTER
@@ -185,22 +186,6 @@ const toggleSelect = async (movie) => {
   };
 
   /* ---------------------------------------------------------
-      EXTRACT DISLIKES FROM SUMMARY (NLP)
-  ----------------------------------------------------------*/
-  function extractDislikes(summaryText) {
-    const t = summaryText.toLowerCase();
-    const disliked = [];
-
-    if (/dislike.*horror|no horror|hate horror/.test(t)) disliked.push("Horror");
-    if (/dislike.*comedy|no comedy|hate comedy/.test(t)) disliked.push("Comedy");
-    if (/dislike.*drama|no drama/.test(t)) disliked.push("Drama");
-    if (/dislike.*thriller/.test(t)) disliked.push("Thriller");
-    if (/dislike.*action/.test(t)) disliked.push("Action");
-
-    return disliked;
-  }
-
-  /* ---------------------------------------------------------
       REQUEST TEARS RECOMMENDATIONS
   ----------------------------------------------------------*/
   const handleRecommend = async () => {
@@ -211,16 +196,10 @@ const toggleSelect = async (movie) => {
     try {
       setPrevious(recommendations);
 
-      const disliked = [
-        ...extractDislikes(summary),
-        ...dislikedGenres.split(",").map((genre) => genre.trim()).filter(Boolean),
-      ];
-
       const payload = {
-        description: [summary.trim(), context.trim()].filter(Boolean).join("\nContext: "),
-        liked: selected.map((m) => m.title),
-        disliked_genres: [...new Set(disliked)],
-        exclude_titles: recommendations.map((movie) => movie.title),
+        summary: [summary.trim(), context.trim()].filter(Boolean).join("\nContext: "),
+        liked_movie_ids: selected.map((movie) => movie.movieId),
+        alpha: TEARS_ALPHA,
         top_k: topK,
       };
 
@@ -232,14 +211,17 @@ const toggleSelect = async (movie) => {
         const poster = await fetchPoster(it.title);
 
         enriched.push({
-          ...it,
+          movie_id: it.movie_id,
+          title: it.title,
+          genres: it.genres || [],
+          score: it.score,
+          rank: it.rank,
+          rank_label: it.rank_label,
           poster_path: poster?.poster_path || null,
           overview: poster?.overview || "",
           year: poster?.release_date ? poster.release_date.split("-")[0] : "",
           rating: poster?.vote_average || "N/A",
-          genres: it.genres || [],
           score_fmt: it.score.toFixed(2),
-          rank_label: `#${it.rank}`,
         });
       }
 
@@ -256,11 +238,15 @@ const toggleSelect = async (movie) => {
   /* ---------------------------------------------------------
       RANK CHANGE
   ----------------------------------------------------------*/
-  function getRankChange(title) {
+  function getRankChange(movie) {
     if (!previousRecommendations.length) return null;
 
-    const prev = previousRecommendations.find((m) => m.title === title);
-    const now = recommendations.find((m) => m.title === title);
+    const matchesMovie = (candidate) =>
+      movie.movie_id != null && candidate.movie_id != null
+        ? candidate.movie_id === movie.movie_id
+        : candidate.title === movie.title;
+    const prev = previousRecommendations.find(matchesMovie);
+    const now = recommendations.find(matchesMovie);
 
     if (!prev || !now) return null;
 
@@ -459,7 +445,7 @@ const toggleSelect = async (movie) => {
               <div className="grid grid-cols-3 gap-4">
                 {recommendations.map((m) => (
                   <motion.div
-                    key={m.title}
+                    key={m.movie_id ?? m.title}
                     whileHover={{ scale: 1.07 }}
                     className="relative bg-white/10 backdrop-blur-lg rounded-xl p-2
                       hover:shadow-[0_0_20px_#00C8FF55] transition-all"
@@ -491,9 +477,9 @@ const toggleSelect = async (movie) => {
 
                         <p className="text-[12px] text-green-300 font-bold">
                           {m.rank_label}{" "}
-                          {getRankChange(m.title) && (
+                          {getRankChange(m) && (
                             <span className="ml-1 text-purple-300">
-                              ({getRankChange(m.title)})
+                              ({getRankChange(m)})
                             </span>
                           )}
                         </p>
