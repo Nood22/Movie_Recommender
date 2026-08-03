@@ -1,12 +1,21 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { motion } from "framer-motion";
-import { FIXED_MOVIES } from "../utils/fixedMovies";
+import fixedMovies from "../data/fixed_50_movies_ml1m.json";
+import {
+  resolveMovieLensRecommendation,
+  resolveVerifiedTMDBMetadata,
+} from "../utils/tmdbMetadata.mjs";
+import { deduplicateSelectableCatalog } from "../utils/selectableCatalog.mjs";
 
 
 const TMDB_KEY = "fc4a0ec3fa9d745f0b94e417da01cd26";
 const QUALITY_API_URL =
   process.env.REACT_APP_QUALITY_API_URL || "http://127.0.0.1:8001";
+const FIXED_MOVIELENS_CATALOG = deduplicateSelectableCatalog(fixedMovies);
+const FIXED_MOVIELENS_CATALOG_IDS = FIXED_MOVIELENS_CATALOG.map((movie) =>
+  Number(movie.movieId)
+);
 
 function normalizeGenre(g) {
   return g
@@ -48,39 +57,12 @@ const GENRE_MAP = {
 /* -----------------------------------------------
    TMDB POSTER FETCHER
 ------------------------------------------------ */
-async function fetchPoster(title) {
-  try {
-    const cleaned = title
-      .replace(/\(.*?\)/g, "")
-      .replace(/[:,]/g, "")
-      .replace(/\./g, "")
-      .replace(/\s+-\s+.*/g, "")
-      .replace(/  +/g, " ")
-      .trim();
-
-    const search = async (q) =>
-      axios.get(
-        `https://api.themoviedb.org/3/search/movie?api_key=${TMDB_KEY}&query=${encodeURIComponent(
-          q
-        )}&include_adult=false`
-      );
-
-    let q1 = await search(cleaned);
-    if (q1.data.results.length > 0) return q1.data.results[0];
-
-    let q2 = await search(title);
-    if (q2.data.results.length > 0) return q2.data.results[0];
-
-    if (title.includes("-")) {
-      let short = title.split("-")[0].trim();
-      let q3 = await search(short);
-      if (q3.data.results.length > 0) return q3.data.results[0];
-    }
-
-    return null;
-  } catch {
-    return null;
-  }
+async function fetchPoster(movieId, title) {
+  return resolveVerifiedTMDBMetadata({
+    movieId,
+    canonicalTitle: title,
+    apiKey: TMDB_KEY,
+  });
 }
 
 /* -----------------------------------------------
@@ -100,11 +82,11 @@ export default function GersApp({ goBack }) {
 
   const [selected, setSelected] = useState([]);
   const [chosenGenres, setChosenGenres] = useState([]);
+  const [removedMovieGenres, setRemovedMovieGenres] = useState([]);
 
   const [context, setContext] = useState("");
-  const [summary, setSummary] = useState("");
-
   const [recommendations, setRecommendations] = useState([]);
+  const [topK, setTopK] = useState(12);
   const [loading, setLoading] = useState(false);
 
   /* FIXED GENRE SET */
@@ -148,46 +130,42 @@ export default function GersApp({ goBack }) {
    LOAD MOVIES — FIXED LIST WITH GENRE IDS
 ------------------------------------------------ */
 useEffect(() => {
-  setLoadingMovies(true);
+  let cancelled = false;
 
-  const mapped = FIXED_MOVIES.map((m) => ({
-    id: m.tmdb_id,
-    title: m.title,
-    poster: m.poster,
-    overview: m.overview,
-    rating: m.rating,
-    year: m.year,
+  async function loadFixedMovieLensCatalog() {
+    setLoadingMovies(true);
+    const mapped = await Promise.all(
+      FIXED_MOVIELENS_CATALOG.map(async (movie) => {
+        const metadata = await fetchPoster(movie.movieId, movie.title);
+        return {
+          id: movie.movieId,
+          movieId: movie.movieId,
+          title: movie.title,
+          poster: metadata?.poster_url || "/placeholder_poster.png",
+          overview: metadata?.overview || "No summary available.",
+          rating: metadata?.rating ?? null,
+          year:
+            metadata?.release_year ||
+            movie.title.match(/\((\d{4})\)\s*$/)?.[1] ||
+            "",
+          genre_ids: movie.genres
+            .map((genre) => GENRE_MAP[normalizeGenre(genre)] || null)
+            .filter(Boolean),
+        };
+      })
+    );
 
-    // 🔥 Convert string genres → TMDB IDs
-    genre_ids: m.genres
-      .map((g) => GENRE_MAP[normalizeGenre(g)] || null)
-      .filter(Boolean),
-  }));
+    if (!cancelled) {
+      setMovies(mapped);
+      setLoadingMovies(false);
+    }
+  }
 
-  setMovies(mapped);
-  setLoadingMovies(false);
+  loadFixedMovieLensCatalog();
+  return () => {
+    cancelled = true;
+  };
 }, []);
-
-
-  /* -----------------------------------------------
-     GPT GENRE SUMMARY (FAST-DEBOUNCED)
-  ------------------------------------------------ */
- const generateSummary = (moviesArr, manualGenreIds) => {
-  // 1) extract genre IDs
-  const movieGenreIds = [];
-  moviesArr.forEach((m) =>
-    m.genre_ids?.forEach((g) => movieGenreIds.push(g))
-  );
-
-  const combined = [...new Set([...movieGenreIds, ...manualGenreIds])];
-
-  // ⭐⭐ نمایش فوری و بدون تأخیر ⭐⭐
-  const instantNames = combined
-    .map((id) => genreList.find((g) => g.id === id)?.name)
-    .filter(Boolean);
-
-  setSummary("You seem to enjoy: " + instantNames.join(", "));
-};
 
 
   /* -----------------------------------------------
@@ -198,9 +176,19 @@ useEffect(() => {
       ? selected.filter((s) => s.id !== movie.id)
       : [...selected, movie];
 
+    const remainingGenreIds = new Set(
+      updated.flatMap((selectedMovie) => selectedMovie.genre_ids || [])
+    );
     setSelected(updated);
+    setRemovedMovieGenres((removed) =>
+      removed.filter((genreId) => remainingGenreIds.has(genreId))
+    );
+  };
 
-    generateSummary(updated, chosenGenres);
+  const removeMovieGenre = (genreId) => {
+    setRemovedMovieGenres((removed) =>
+      removed.includes(genreId) ? removed : [...removed, genreId]
+    );
   };
 
   /* -----------------------------------------------
@@ -212,7 +200,6 @@ useEffect(() => {
       : [...chosenGenres, id];
 
     setChosenGenres(updated);
-    generateSummary(selected, updated);
   };
 
   /* -----------------------------------------------
@@ -229,7 +216,9 @@ useEffect(() => {
     const movieGenreIds = [];
     selected.forEach((m) => {
       if (Array.isArray(m.genre_ids)) {
-        m.genre_ids.forEach((id) => movieGenreIds.push(id));
+        m.genre_ids.forEach((id) => {
+          if (!removedMovieGenres.includes(id)) movieGenreIds.push(id);
+        });
       }
     });
 
@@ -245,31 +234,24 @@ useEffect(() => {
     setLoading(true);
 
     try {
-      const description = [
-        summary || `Preferred genres: ${combinedGenreNames.join(", ")}`,
+      const res = await axios.post(`${QUALITY_API_URL}/gers`, {
+        genres: combinedGenreNames,
+        // The onboarding catalog is for preference elicitation only. Neither
+        // selected nor unselected catalog titles may reappear as results.
+        excluded_movie_ids: FIXED_MOVIELENS_CATALOG_IDS,
         context,
-      ].filter(Boolean).join("\nContext: ");
-
-      const res = await axios.post(`${QUALITY_API_URL}/recommend`, {
-        description,
-        liked: selected.map((movie) => movie.title),
-        disliked_genres: [],
-        top_k: 9,
+        top_k: topK,
       });
 
       const items = res.data.items || [];
 
       const posters = await Promise.all(
         items.map(async (it) => {
-          const result = await fetchPoster(it.title);
-
+          const metadata = await fetchPoster(it.movie_id, it.title);
+          const movie = resolveMovieLensRecommendation(it, metadata);
           return {
-            ...it,
-            poster_path: result?.poster_path || null,
-            overview: result?.overview || "No overview",
-            rating: result?.vote_average || null,
-            year: result?.release_date?.split("-")[0] || "",
-            genres: it.genres || [],
+            ...movie,
+            rating: metadata?.rating ?? null,
           };
         })
       );
@@ -282,6 +264,27 @@ useEffect(() => {
 
     setLoading(false);
   };
+
+  const selectedMovieGenreCounts = selected.reduce((counts, movie) => {
+    movie.genre_ids?.forEach((genreId) => {
+      counts.set(genreId, (counts.get(genreId) || 0) + 1);
+    });
+    return counts;
+  }, new Map());
+  const selectedMovieGenres = genreList
+    .map((genre, originalIndex) => ({
+      ...genre,
+      count: selectedMovieGenreCounts.get(genre.id) || 0,
+      originalIndex,
+    }))
+    .filter(
+      (genre) =>
+        genre.count > 0 && !removedMovieGenres.includes(genre.id)
+    )
+    .sort(
+      (first, second) =>
+        second.count - first.count || first.originalIndex - second.originalIndex
+    );
 
   /* -----------------------------------------------
      UI
@@ -345,6 +348,10 @@ useEffect(() => {
                   <img
                     src={m.poster}
                     alt={m.title}
+                    onError={(event) => {
+                      event.currentTarget.onerror = null;
+                      event.currentTarget.src = "/placeholder_poster.png";
+                    }}
                     className="w-full h-48 object-cover rounded-lg"
                   />
 
@@ -396,14 +403,51 @@ useEffect(() => {
         {/* RIGHT SIDE */}
         <div className="w-2/5 bg-white/5 border border-green-400 rounded-3xl p-5 backdrop-blur-xl">
 
-          {/* SUMMARY */}
-          <h2 className="text-lg font-semibold mb-2">Your Preference Genres!</h2>
+          <div className="mb-5 rounded-2xl border border-green-400/50 bg-black/25 p-4">
+            <h2 className="text-sm font-semibold text-green-300 mb-2">
+              Genres from selected movies
+            </h2>
 
-          <textarea
-            className="w-full h-32 bg-white/5 border border-white/10 p-3 rounded-lg text-sm mb-4"
-            value={summary}
-            onChange={(e) => setSummary(e.target.value)}
-          />
+            {selectedMovieGenres.length > 0 ? (
+              <div className="flex flex-wrap gap-2">
+                {selectedMovieGenres.map((genre) => (
+                  <span
+                    key={genre.id}
+                    className={`inline-flex items-center gap-1 rounded-full border pl-3 pr-1 py-1 text-xs ${
+                      genre.count > 1
+                        ? "order-first border-green-300 bg-green-700/60 text-white shadow-[0_0_12px_#00ff9966]"
+                        : "border-white/20 bg-white/10 text-gray-200"
+                    }`}
+                  >
+                    {genre.name}
+                    {genre.count > 1 && (
+                      <span className="ml-1 font-bold text-green-200">
+                        ×{genre.count}
+                      </span>
+                    )}
+                    <button
+                      type="button"
+                      onClick={() => removeMovieGenre(genre.id)}
+                      aria-label={`Remove ${genre.name} from selected movie genres`}
+                      title={`Remove ${genre.name}`}
+                      className="ml-1 flex h-5 w-5 items-center justify-center rounded-full
+                        text-sm leading-none text-gray-300 transition-colors
+                        hover:bg-red-500/30 hover:text-white focus:outline-none
+                        focus:ring-1 focus:ring-red-300"
+                    >
+                      ×
+                    </button>
+                  </span>
+                ))}
+              </div>
+            ) : (
+              <p className="text-xs text-gray-400">
+                {selected.length > 0
+                  ? "No movie-derived genres are active."
+                  : "Select movies to see their genres here."}
+              </p>
+            )}
+          </div>
 
           {/* GENRE BUTTONS */}
           <h2 className="text-lg font-semibold mb-3">Select genres:</h2>
@@ -443,6 +487,21 @@ useEffect(() => {
             ))}
           </select>
 
+          <div className="mb-6">
+            <label htmlFor="gers-top-k" className="text-sm font-semibold">
+              Number of recommendations: {topK}
+            </label>
+            <input
+              id="gers-top-k"
+              type="range"
+              min="1"
+              max="25"
+              value={topK}
+              onChange={(event) => setTopK(Number(event.target.value))}
+              className="w-full mt-2 accent-green-400"
+            />
+          </div>
+
           {/* BUTTON */}
           <button
             onClick={handleRecommend}
@@ -465,26 +524,13 @@ useEffect(() => {
                 {recommendations.map((m) => (
                   <motion.div
                     key={`${m.movie_id}-${m.rank}`}
-                    whileHover={{ scale: 1.3 }}
-                    style={{ zIndex: 999 }}
-                    onHoverStart={(event) => {
-                      if (event?.currentTarget) {
-                        event.currentTarget.style.zIndex = "9999";
-                      }
-                    }}
-                    onHoverEnd={(event) => {
-                      if (event?.currentTarget) {
-                        event.currentTarget.style.zIndex = "1";
-                      }
-                    }}
+                    whileHover={{ scale: 1.08 }}
                     className="relative cursor-pointer rounded-xl p-[3px]
-                      transition-all duration-300 ring-1 ring-white/10
-                      hover:ring-green-300 hover:shadow-[0_0_30px_#00ff99aa]"
+                      transition-all ring-1 ring-white/10 hover:ring-green-400
+                      hover:shadow-[0_0_20px_#00ff9955] z-10 hover:z-20"
                   >
                     <img
-                      src={m.poster_path
-                        ? `https://image.tmdb.org/t/p/w500${m.poster_path}`
-                        : "/placeholder_poster.png"}
+                      src={m.poster_url || "/placeholder_poster.png"}
                       alt={m.title}
                       onError={(event) => {
                         event.currentTarget.onerror = null;
@@ -494,8 +540,51 @@ useEffect(() => {
                     />
 
                     <p className="text-sm mt-1 text-center">
-                      #{m.rank} {m.title}
+                      {m.rank_label || `#${m.rank}`} {m.title}
                     </p>
+
+                    <div
+                      className="absolute inset-0 opacity-0 hover:opacity-100
+                        bg-black/80 backdrop-blur-md text-white p-3 flex flex-col
+                        justify-between rounded-xl transition-all duration-300
+                        hover:-translate-y-1 z-20"
+                    >
+                      <div>
+                        <h3 className="font-bold text-sm mb-1">{m.title}</h3>
+
+                        <p className="text-[12px] text-green-300 font-bold">
+                          {m.rank_label || `#${m.rank}`}
+                        </p>
+
+                        <p className="text-[11px] text-yellow-300 mt-1">
+                          Score: {m.score_fmt}
+                        </p>
+
+                        <p className="text-[11px] text-green-300 mt-1">
+                          ⭐ {m.rating ?? "N/A"}
+                        </p>
+
+                        <p className="text-[10px] text-gray-300 mt-1">
+                          {m.year}
+                        </p>
+
+                        <div className="flex flex-wrap gap-1 mt-2">
+                          {m.genres?.slice(0, 3).map((genre) => (
+                            <span
+                              key={genre}
+                              className="text-[9px] px-2 py-[2px] bg-white/10
+                                rounded-full border border-white/10"
+                            >
+                              {genre}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+
+                      <p className="text-[10px] text-gray-200 line-clamp-4 mt-2">
+                        {m.overview || "No summary available."}
+                      </p>
+                    </div>
                   </motion.div>
 
                 ))}

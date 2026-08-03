@@ -150,6 +150,7 @@ class TEARSRecommendationResponse(BaseModel):
 
 class GERSRequest(BaseModel):
     genres: list[str]
+    excluded_movie_ids: list[int] = Field(default_factory=list, max_length=500)
     context: str | None = ""
     top_k: int = 12
 
@@ -336,54 +337,29 @@ async def tears(
 # 4) GERS — Genre-Based Recommender
 # ============================================================
 @app.post("/gers")
-def gers(req: GERSRequest):
+def gers(req: GERSRequest, request: Request):
+    adapter: TEARSInferenceAdapter = request.app.state.tears_adapter
     try:
-        user_input = f"""
-Selected genres:
-{", ".join(req.genres)}
-
-Additional context:
-{req.context}
-"""
-
-        prompt = TASTE_SUMMARY_PROMPT.format(
-            USER_INPUT=user_input
-        )
-
-        response = client.chat.completions.create(
-            model="gpt-4o-mini",
-            messages=[{"role": "user", "content": prompt}],
-            max_tokens=180,
-            temperature=0.4,
-        )
-
-        genre_summary = response.choices[0].message.content.strip()
-
-        items = recommender.recommend(
-            summary_text=genre_summary,
-            context_text="",
-            liked_titles=[],
-            disliked_genres=[],
+        items = adapter.recommend_genres(
+            req.genres,
+            excluded_movie_ids=req.excluded_movie_ids,
             top_k=req.top_k,
-            alpha=1.0,
         )
-
-        return {
-            "summary": genre_summary,
-            "items": [
-                {
-                    "title": it["title"],
-                    "score": float(it["score"]),
-                    "rank": int(it["rank"]),
-                    "rank_label": it["rank_label"],
-                }
-                for it in items
-            ],
-        }
-
-    except Exception as e:
-        print("🔥 GERS ERROR:", e)
-        raise HTTPException(status_code=500, detail=str(e))
+        print(
+            "GERS /gers: "
+            f"genres={json.dumps(req.genres, separators=(',', ':'))} "
+            f"returned={json.dumps([item['movie_id'] for item in items], separators=(',', ':'))}",
+            flush=True,
+        )
+        return {"items": items}
+    except ValueError as error:
+        raise HTTPException(status_code=422, detail=str(error)) from error
+    except Exception as error:
+        print("🔥 GERS INFERENCE ERROR:", repr(error))
+        raise HTTPException(
+            status_code=500,
+            detail="GERS genre inference failed",
+        ) from error
 # ============================================================
 # Root
 # ============================================================

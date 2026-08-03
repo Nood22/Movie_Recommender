@@ -472,3 +472,56 @@ class TEARSInferenceAdapter:
                 }
             )
         return items
+
+    def recommend_genres(
+        self,
+        genres: Iterable[str],
+        excluded_movie_ids: Iterable[int] = (),
+        top_k: int = 12,
+    ) -> list[dict[str, Any]]:
+        """Run the local OTRecVAE checkpoint from explicit genres only."""
+        if isinstance(genres, (str, bytes)) or not isinstance(genres, Iterable):
+            raise ValueError("genres must be an iterable of genre names")
+
+        aliases = {
+            "science fiction": "Sci-Fi",
+            "sci fi": "Sci-Fi",
+            "scifi": "Sci-Fi",
+            "children": "Children's",
+        }
+        available = {
+            genre.lower(): genre
+            for metadata in self.movie_metadata.values()
+            for genre in metadata["genres"]
+        }
+        normalized: list[str] = []
+        seen: set[str] = set()
+        for raw_genre in genres:
+            if not isinstance(raw_genre, str):
+                raise ValueError("genres must contain only strings")
+            value = raw_genre.strip()
+            if not value:
+                continue
+            canonical = aliases.get(value.lower(), available.get(value.lower()))
+            if canonical is None:
+                raise ValueError(f"Unknown MovieLens genre: {value}")
+            if canonical.lower() not in seen:
+                seen.add(canonical.lower())
+                normalized.append(canonical)
+
+        if not normalized:
+            raise ValueError("Select at least one genre")
+
+        genre_evidence = (
+            "The user prefers movies in these genres: "
+            + ", ".join(normalized)
+            + "."
+        )
+        return self.recommend(
+            summary=genre_evidence,
+            # At alpha=0 these IDs provide no preference signal; the shared
+            # recommender uses them only to mask selected catalog movies.
+            liked_movie_ids=list(excluded_movie_ids),
+            alpha=0.0,
+            top_k=top_k,
+        )
