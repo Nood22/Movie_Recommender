@@ -87,9 +87,10 @@ sbatch --partition=long --time=7-00:00:00 --gres=gpu:1 \
 The allocation is kept alive by tmux session `tears_public`. Its windows are:
 
 - `backend`: Conda environment `tears_env`, Uvicorn on `0.0.0.0:8001`
-- `api_tunnel`: reverse HTTPS tunnel for the API
 - `frontend`: React dev server on `0.0.0.0:3000`
-- `web_tunnel`: reverse HTTPS tunnel for the website
+- `tailscaled`: userspace Tailscale daemon providing the stable public tunnels
+- `api_tunnel`: legacy anonymous localhost.run API tunnel
+- `web_tunnel`: legacy anonymous localhost.run website tunnel
 
 Inspect the deployment with:
 
@@ -100,9 +101,99 @@ tmux attach -t tears_public
 ```
 
 At validation time, the API returned `{"status":"running","device":"cuda"}`
-and both public HTTPS endpoints returned HTTP 200.
+and both stable public HTTPS endpoints returned HTTP 200.
 
-The public website URL created for this run was:
+## Stable free public URL with Tailscale Funnel
+
+The anonymous localhost.run tunnels rotated their hostnames whenever their SSH
+connections recovered. On 2026-08-02 they were replaced as the primary public
+route by Tailscale Funnel. The free Tailscale Personal plan supplies a stable
+HTTPS name without requiring a purchased domain.
+
+The public endpoints are:
+
+```text
+Website: https://tearsgersab.tail9d6ed0.ts.net/
+API:     https://tearsgersab.tail9d6ed0.ts.net:8443/
+```
+
+The website proxies to React on `127.0.0.1:3000`. The API endpoint proxies to
+Uvicorn on `127.0.0.1:8001`. React must be started with the stable API base URL:
+
+```bash
+REACT_APP_QUALITY_API_URL=https://tearsgersab.tail9d6ed0.ts.net:8443 npm start
+```
+
+Tailscale `1.98.10` was installed locally rather than system-wide:
+
+```text
+.tools/tailscale
+.tools/tailscaled
+```
+
+Both `.tools/` and `.tailscale/` are ignored by Git. In particular,
+`.tailscale/state` is authentication material and must never be committed or
+shared. The one-time Tailscale auth key is also a secret: enter it at runtime,
+never place it in a command file, log, environment file, or documentation, and
+revoke it after the node has enrolled.
+
+The userspace daemon is run inside the allocation because system-wide/root
+installation is not required. Both `--state` and `--statedir` are required;
+`--statedir` gives Funnel a persistent location for its TLS certificates.
+
+```bash
+ROOT=/home/mila/a/adls/tears_project_final
+
+"$ROOT/.tools/tailscaled" \
+  --tun=userspace-networking \
+  --state="$ROOT/.tailscale/state" \
+  --statedir="$ROOT/.tailscale" \
+  --socket="$ROOT/.tailscale/tailscaled.sock"
+```
+
+For first-time enrollment, generate a reusable or one-time auth key in the
+Tailscale admin console and supply it interactively. Do not substitute the key
+directly into shell history:
+
+```bash
+read -rs TEARS_TS_AUTH
+"$ROOT/.tools/tailscale" --socket="$ROOT/.tailscale/tailscaled.sock" up \
+  --auth-key="$TEARS_TS_AUTH" \
+  --hostname=tearsgersab \
+  --accept-dns=false
+unset TEARS_TS_AUTH
+```
+
+Funnel must be enabled once in the Tailscale admin console. Configure the two
+routes after the daemon is running:
+
+```bash
+TS="$ROOT/.tools/tailscale --socket=$ROOT/.tailscale/tailscaled.sock"
+$TS funnel --bg --yes 3000
+$TS funnel --bg --yes --https=8443 8001
+$TS funnel status
+```
+
+Check the deployment from outside Mila:
+
+```bash
+curl -fsS https://tearsgersab.tail9d6ed0.ts.net:8443/
+curl -fsSI https://tearsgersab.tail9d6ed0.ts.net/
+```
+
+Expected results are the CUDA status JSON from the API and HTTP 200 from the
+website. Tailscale automatically reconnects transient network failures without
+changing the hostname. The hostname and node identity persist because the state
+directory is on shared storage.
+
+The Funnel address is stable, but it cannot keep the application alive after
+Slurm terminates the allocation. The `long` partition still has a seven-day
+limit. A replacement job must start the backend, frontend, and `tailscaled`
+again using the shared state directory. The public hostname remains unchanged.
+
+## Legacy anonymous localhost.run tunnels
+
+The original public website URL created for this run was:
 
 ```text
 https://57ff507aec7f63.lhr.life

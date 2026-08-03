@@ -41,6 +41,7 @@ __pycache__/
 
 # Tool/runtime binaries
 /.tools/
+/.tailscale/
 
 # Secrets — never commit
 /TEARS_Project/Token-Gradio.txt
