@@ -48,7 +48,7 @@ export default function TearsApp({ goBack }) {
   const [summary, setSummary] = useState("");
   const [summaryError, setSummaryError] = useState("");
   const [context, setContext] = useState("");
-  const [dislikedGenres, setDislikedGenres] = useState("");
+  const [dislikedGenres] = useState("");
   const [topK, setTopK] = useState(12);
 
   const [recommendations, setRecommendations] = useState([]);
@@ -80,8 +80,9 @@ export default function TearsApp({ goBack }) {
 
         return {
           ...m,
-          poster: poster?.poster_url || "/placeholder.jpg",
+          poster: poster?.poster_url || "/placeholder_poster.png",
           overview: poster?.overview || "",
+          rating: poster?.rating ?? null,
           year: poster?.release_year || m.title.match(/\((\d{4})\)\s*$/)?.[1] || "",
         };
       })
@@ -416,6 +417,10 @@ const handleRatingChange = async (movieId, value) => {
                   <img
                     src={m.poster}
                     alt={m.title}
+                    onError={(event) => {
+                      event.currentTarget.onerror = null;
+                      event.currentTarget.src = "/placeholder_poster.png";
+                    }}
                     className="w-full h-48 object-cover rounded-lg"
                   />
 
@@ -507,20 +512,14 @@ const handleRatingChange = async (movieId, value) => {
             </p>
           )}
           <textarea
-            className="w-full h-32 bg-white/5 border border-white/10 p-3 
+            className="w-full h-64 bg-white/5 border border-white/10 p-3
               rounded-lg text-sm mb-4"
             value={summary}
             onChange={(e) => setSummary(e.target.value)}
           />
 
-          <h2 className="text-lg font-semibold mb-2">Genres to exclude:</h2>
-          <input
-            type="text"
-            className="w-full bg-white/5 border border-white/10 p-3 rounded-lg text-sm mb-4"
-            value={dislikedGenres}
-            onChange={(e) => setDislikedGenres(e.target.value)}
-            placeholder="Romance, Horror"
-          />
+          {/* Genre exclusion UI is intentionally deferred. Keep the state and
+              request field in place so the feature can be restored later. */}
 
           {/* CONTEXT */}
           <h2 className="text-lg font-semibold mb-2">Choose a context:</h2>
@@ -588,6 +587,10 @@ const handleRatingChange = async (movieId, value) => {
                       <img
                         src={m.poster_url}
                         alt={m.title}
+                        onError={(event) => {
+                          event.currentTarget.onerror = null;
+                          event.currentTarget.src = "/placeholder_poster.png";
+                        }}
                         className="w-full h-44 object-cover rounded-lg"
                       />
                     ) : (

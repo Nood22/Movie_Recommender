@@ -4,7 +4,7 @@ const TMDB_API_BASE = "https://api.themoviedb.org/3";
 const TMDB_IMAGE_BASE = "https://image.tmdb.org/t/p/w500";
 // Bump whenever matching semantics change so hot-reloaded, pre-fix entries cannot
 // be reused. Including the canonical title/year also prevents ID-only poisoning.
-const METADATA_CACHE_VERSION = "verified-title-year-v2";
+const METADATA_CACHE_VERSION = "verified-title-year-v3";
 const metadataCache = new Map();
 
 export function splitMovieTitleYear(title) {
@@ -102,6 +102,10 @@ export function tmdbSearchVariants(title) {
     .replace(/\s+/g, " ")
     .trim();
   const variants = [fullTitle];
+  const withoutAliases = fullTitle.replace(/\s*\([^)]*\)\s*/g, " ").trim();
+  if (withoutAliases && withoutAliases !== fullTitle) {
+    variants.push(withoutAliases);
+  }
   const episodeMatch = fullTitle.match(
     /^(.*?):\s*Episode\s+[IVXLCDM]+\s*-\s*(.+)$/i
   );
@@ -224,6 +228,7 @@ export async function resolveVerifiedTMDBMetadata({
                 result.original_title = details.original_title;
                 result.poster_path = details.poster_path;
                 result.overview = details.overview;
+                result.vote_average = details.vote_average;
                 result.release_date = `${year}-01-01`;
               }
             } catch (error) {
@@ -251,6 +256,9 @@ export async function resolveVerifiedTMDBMetadata({
             ? `${TMDB_IMAGE_BASE}${result.poster_path}`
             : null,
           overview: result.overview || "",
+          rating: Number.isFinite(Number(result.vote_average))
+            ? Number(result.vote_average)
+            : null,
         };
         return metadata;
       }

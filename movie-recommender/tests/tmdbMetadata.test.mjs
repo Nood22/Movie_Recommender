@@ -139,6 +139,13 @@ test("adds conservative Star Wars episode variants", () => {
   );
 });
 
+test("adds a search variant without MovieLens parenthetical aliases", () => {
+  assert.deepEqual(tmdbSearchVariants("Independence Day (ID4) (1996)"), [
+    "Independence Day (ID4)",
+    "Independence Day",
+  ]);
+});
+
 test("requires exact accepted title and exact release year", async () => {
   clearTMDBMetadataCache();
   const calls = [];
@@ -170,6 +177,7 @@ test("requires exact accepted title and exact release year", async () => {
               title: "The Empire Strikes Back",
               release_date: "1980-05-17",
               poster_path: "/verified.jpg",
+              vote_average: 8.4,
             },
           ],
         },
@@ -184,6 +192,7 @@ test("requires exact accepted title and exact release year", async () => {
   });
   assert.equal(result.tmdb_id, 1891);
   assert.equal(result.poster_path, "/verified.jpg");
+  assert.equal(result.rating, 8.4);
   assert.deepEqual(calls, ["Star Wars: Episode V - The Empire Strikes Back"]);
 });
 

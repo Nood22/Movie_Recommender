@@ -35,6 +35,31 @@ ssh -L 8001:127.0.0.1:8001 your-mila-host
 Create React App reads environment variables when it starts, so restart
 `npm start` after changing `.env`.
 
+## Deferred genre exclusion UI
+
+The "Genres to exclude" input is intentionally hidden from the TEARS interface.
+Its state and API request field remain in the code so we can complete and restore
+the feature later without changing the current recommendation flow.
+
+## Catalog and recommendation display behavior
+
+- The summary textarea uses `h-64`, twice its previous default height.
+- Verified TMDB metadata carries `vote_average` into onboarding catalog cards,
+  preventing known movies such as *The Godfather (1972)* from displaying an
+  unavailable rating.
+- TMDB lookup adds a conservative variant with MovieLens parenthetical aliases
+  removed. For example, *Independence Day (ID4) (1996)* is searched as both
+  `Independence Day (ID4)` and `Independence Day`, while release-year verification
+  remains mandatory.
+- Catalog and recommendation poster images fall back to
+  `/placeholder_poster.png` when metadata has no poster or the image request
+  fails. This behavior is applied to both TEARS and GERS recommendation cards.
+
+The live React process runs behind the stable Tailscale Funnel documented in
+`../docs/TEARS_CATALOG_EXCLUSION_AND_PUBLIC_DEPLOYMENT.md`. Changes on shared
+storage may not trigger the development server's file watcher across Slurm
+nodes, so restart the `frontend` tmux pane after deploying UI changes.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

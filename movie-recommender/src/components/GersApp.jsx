@@ -486,6 +486,10 @@ useEffect(() => {
                         ? `https://image.tmdb.org/t/p/w500${m.poster_path}`
                         : "/placeholder_poster.png"}
                       alt={m.title}
+                      onError={(event) => {
+                        event.currentTarget.onerror = null;
+                        event.currentTarget.src = "/placeholder_poster.png";
+                      }}
                       className="w-full h-48 object-cover rounded-lg"
                     />
 
