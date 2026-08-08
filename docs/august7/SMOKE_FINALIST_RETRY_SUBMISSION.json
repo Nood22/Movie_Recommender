@@ -1,0 +1,61 @@
+{
+  "created_at": "2026-08-07T11:36:30-04:00",
+  "reason": "The original fixed-200 and early-stopped-300 RecVAE jobs shared a schedule-agnostic checkpoint directory. Concurrent atomic checkpoint writes caused job 10308827 to fail and contaminated job 10308826's manifest. Training now isolates run directories by schedule and retry attempt and uses unique atomic temporary files.",
+  "original_jobs": [
+    {
+      "job_id": "10308826",
+      "schedule": "fixed-200",
+      "final_state": "CANCELLED",
+      "replacement_job_id": "10308905"
+    },
+    {
+      "job_id": "10308827",
+      "schedule": "early-stopped-300",
+      "final_state": "FAILED",
+      "exit_code": "1:0",
+      "replacement_job_id": "10308893"
+    }
+  ],
+  "replacement_jobs": [
+    {
+      "job_id": "10308893",
+      "name": "tears-smoke-recvae-2024-69c3b4deb263-e300-r1",
+      "tracking_attempt": 1,
+      "wandb_run_id": "31bdb107de03a4e8",
+      "execution_fingerprint": "31bdb107de03a4e81c1b61b173fb15fe5174aa98ecf0e5bd390c13b60126414a",
+      "final_state": "COMPLETED",
+      "exit_code": "0:0",
+      "epochs_completed": 54,
+      "best_validation_selection_ndcg@50": 0.22306776258773459
+    },
+    {
+      "job_id": "10308905",
+      "name": "tears-smoke-recvae-2024-69c3b4deb263-e200-r1",
+      "tracking_attempt": 1,
+      "wandb_run_id": "bcb9a0c5afb73868",
+      "execution_fingerprint": "bcb9a0c5afb73868e7118a9433d0a20b7085d54d4bacbc9e72ad1db13df0e9d3",
+      "final_state": "COMPLETED",
+      "exit_code": "0:0",
+      "epochs_completed": 200,
+      "best_validation_selection_ndcg@50": 0.22601932472360875
+    }
+  ],
+  "unaffected_jobs": [
+    {
+      "job_id": "10308828",
+      "schedule": "gers-fixed-200",
+      "final_state": "COMPLETED",
+      "exit_code": "0:0",
+      "epochs_completed": 200,
+      "best_validation_selection_ndcg@50": 0.18638736529197386
+    },
+    {
+      "job_id": "10308829",
+      "schedule": "gers-early-stopped-300",
+      "final_state": "COMPLETED",
+      "epochs_completed": 92,
+      "best_validation_selection_ndcg@50": 0.18483414466610412
+    }
+  ],
+  "log_root": "/network/scratch/a/adls/FullTrainingTEARS/logs"
+}

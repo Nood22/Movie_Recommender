@@ -1,0 +1,50 @@
+{
+  "decision": "Proceed without additional recipe exploration; use recorded August smoke winners where available and original-paper defaults for unrun TEARS/GERS hybrid lanes.",
+  "test_metrics_used": false,
+  "schedule": {
+    "epochs": 200,
+    "fixed_epochs": true,
+    "minimum_epochs": 200,
+    "patience": 201
+  },
+  "recvae": {
+    "dropout": 0.4,
+    "learning_rate": 0.001,
+    "gamma": 0.0035,
+    "weight_decay": 0.00001,
+    "ot_weight": 0.1,
+    "source": "August fixed-200 RecVAE smoke finalist"
+  },
+  "gers_base": {
+    "dropout": 0.1,
+    "learning_rate": 0.001,
+    "gamma": 0.0035,
+    "weight_decay": 0.0,
+    "ot_weight": 0.1,
+    "source": "August fixed-200 GERS Base smoke finalist"
+  },
+  "tears_base": {
+    "dropout": 0.1,
+    "learning_rate": 0.0001,
+    "gamma": 0.0035,
+    "weight_decay": 0.0,
+    "ot_weight": 0.1,
+    "source": "original TEARS implementation defaults; no completed August TEARS smoke lane"
+  },
+  "tears_recvae": {
+    "dropout": 0.1,
+    "learning_rate": 0.0001,
+    "gamma": 0.0035,
+    "weight_decay": 0.0,
+    "ot_weight": 1.0,
+    "source": "original TEARS learning-rate/dropout/epsilon defaults; August paper-alpha and hybrid objective"
+  },
+  "gers_recvae": {
+    "dropout": 0.1,
+    "learning_rate": 0.0001,
+    "gamma": 0.0035,
+    "weight_decay": 0.0,
+    "ot_weight": 1.0,
+    "source": "original TEARS learning-rate/dropout/epsilon defaults; August GERS hybrid definition"
+  }
+}

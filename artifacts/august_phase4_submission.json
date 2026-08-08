@@ -1,0 +1,29 @@
+{
+  "phase": "August plan Phase 4 - full-catalog selection",
+  "submitted_on": "2026-08-07",
+  "selection_metric": "validation NDCG@20",
+  "memory_gate": "peak GPU memory below 72 GiB/GPU",
+  "selection_rule": "largest catalog within 5% relative of the best validation NDCG@20",
+  "recipe": {
+    "source": "selected August smoke RecVAE recipe",
+    "dropout": 0.4,
+    "learning_rate": 0.001,
+    "gamma": 0.0035,
+    "weight_decay": 0.00001,
+    "epochs": 60,
+    "fixed_epochs": true,
+    "seed": 2024
+  },
+  "jobs": {
+    "prepare": "10312906",
+    "support_20": "10312931",
+    "support_50": "10312932",
+    "support_200": "10312933"
+  },
+  "dependencies": {
+    "10312931": "afterok:10312906",
+    "10312932": "afterok:10312906",
+    "10312933": "afterok:10312906"
+  },
+  "test_metrics_used": false
+}

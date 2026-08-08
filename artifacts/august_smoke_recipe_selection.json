@@ -1,0 +1,35 @@
+{
+  "selection_basis": "August validation-only smoke results and the documented relative-score/GPU-hour rule",
+  "test_metrics_used": false,
+  "recvae": {
+    "dropout": 0.4,
+    "learning_rate": 0.001,
+    "gamma": 0.0035,
+    "weight_decay": 0.00001,
+    "ot_weight": 0.1,
+    "schedule": "fixed_200",
+    "validation_ndcg_at_50": 0.22601932472360875,
+    "checkpoint": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/smoke/recvae/seed-2024/bcb9a0c5afb7/best.pt"
+  },
+  "gers_base": {
+    "dropout": 0.1,
+    "learning_rate": 0.001,
+    "gamma": 0.0035,
+    "weight_decay": 0.0,
+    "ot_weight": 0.1,
+    "schedule": "early_stopped_300",
+    "epochs_completed": 92,
+    "validation_ndcg_at_50": 0.18483414466610412,
+    "checkpoint": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/smoke/gers_base/seed-2024/44e1af636117/best.pt",
+    "selection_note": "The fixed-200 score is 0.8333% higher, below the 1% threshold; this run used approximately half the GPU-hours and therefore wins under the August rule."
+  },
+  "tears_base": {
+    "status": "not_run_in_august_smoke"
+  },
+  "tears_recvae": {
+    "status": "not_run_in_august_smoke"
+  },
+  "gers_recvae": {
+    "status": "not_run_in_august_smoke"
+  }
+}

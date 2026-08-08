@@ -5,6 +5,12 @@ models, and a reproducible quality-improvement pipeline for MovieLens 1M.
 
 Start here:
 
+- [`docs/auguest6/ML32M_TEARS_GERS_SCALING_PLAN.md`](docs/auguest6/ML32M_TEARS_GERS_SCALING_PLAN.md)
+  defines the approved MovieLens 32M research scaling plan; the adjacent
+  [`ML32M_TRAINING_RUNBOOK.md`](docs/auguest6/ML32M_TRAINING_RUNBOOK.md) documents
+  the fingerprinted implementation and its paid/GPU promotion gates.
+- [`docs/august7/AUGUST_7_TRAINING_STATUS.md`](docs/august7/AUGUST_7_TRAINING_STATUS.md)
+  records the completed smoke rung-1 audit and the rung-20 promotion.
 - [`docs/CURRENT_RECOMMENDATION_PIPELINE.md`](docs/CURRENT_RECOMMENDATION_PIPELINE.md)
   explains the original request and ranking flow.
 - [`docs/BASELINE_RUNBOOK.md`](docs/BASELINE_RUNBOOK.md) contains end-to-end

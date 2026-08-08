@@ -1,0 +1,22 @@
+{
+  "phase": "August plan Phase 5 - amended 9,763-user scientific pilot",
+  "submitted_on": "2026-08-07",
+  "catalog_selection_fingerprint": "d44de97e227b027d9371026a8e4c86cd9e6ca1a4dc2817f769d1e4a76a016fd2",
+  "selected_support": 20,
+  "cohort_fingerprint": "24794a7a6f5a437d51c4d471da6834e6e484ea647fd22212868ff6e47bdccbe7",
+  "cohort_split_counts": {
+    "train": 8787,
+    "validation": 491,
+    "test": 485
+  },
+  "jobs": {
+    "prepare_matched_cohort": "10313166",
+    "full_recvae_seed_2024": "10313168",
+    "full_gers_ceiling_seed_2024": "10313178",
+    "matched_tears_base_seed_2024": "10313183",
+    "matched_gers_base_seed_2024": "10313187",
+    "matched_tears_recvae_seed_2024": "10313189",
+    "matched_gers_recvae_seed_2024": "10313190"
+  },
+  "test_metrics_used_for_submission": false
+}
