@@ -1,0 +1,119 @@
+{
+  "audited_at": "2026-08-08T08:37:57-04:00",
+  "phase": "August plan Phase 5 - amended 9,763-user scientific pilot",
+  "scheduler": {
+    "live_state_available": false,
+    "squeue_error": "Unable to contact slurm controller (connect failure)",
+    "sacct_error": "Unable to connect to slurmctl02:6819",
+    "status_basis": "terminal application artifacts"
+  },
+  "artifact_audit": {
+    "jobs_with_logs": 7,
+    "training_jobs_with_result": 6,
+    "training_jobs_with_200_metric_rows": 6,
+    "training_jobs_with_best_final_resume_checkpoints": 6,
+    "log_error_markers_found": 0,
+    "test_metrics_used": false
+  },
+  "pilot_cohort": {
+    "train": 8787,
+    "validation": 491,
+    "test": 485,
+    "total": 9763,
+    "items": 22343,
+    "ratings": 1531476,
+    "fingerprint": "24794a7a6f5a437d51c4d471da6834e6e484ea647fd22212868ff6e47bdccbe7"
+  },
+  "jobs": [
+    {
+      "job_id": "10313166",
+      "role": "prepare_matched_cohort",
+      "artifact_status": "complete",
+      "log": "/network/scratch/a/adls/FullTrainingTEARS/logs/tears-pilot-9763-prepare-10313166.out"
+    },
+    {
+      "job_id": "10313168",
+      "role": "full_recvae_seed_2024",
+      "artifact_status": "complete",
+      "epochs_completed": 200,
+      "best_validation_selection_ndcg_at_50": 0.234049105812465,
+      "run_dir": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/pilot/recvae/seed-2024/6749417de707"
+    },
+    {
+      "job_id": "10313178",
+      "role": "full_gers_ceiling_seed_2024",
+      "artifact_status": "complete",
+      "epochs_completed": 200,
+      "best_validation_selection_ndcg_at_50": 0.177498034839969,
+      "run_dir": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/pilot/gers_base/seed-2024/2738e1dfe3f6"
+    },
+    {
+      "job_id": "10313183",
+      "role": "matched_tears_base_seed_2024",
+      "artifact_status": "complete",
+      "epochs_completed": 200,
+      "best_validation_selection_ndcg_at_50": 0.1761030198359976,
+      "run_dir": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/pilot/tears_base/seed-2024/369b442de204"
+    },
+    {
+      "job_id": "10313187",
+      "role": "matched_gers_base_seed_2024",
+      "artifact_status": "complete",
+      "epochs_completed": 200,
+      "best_validation_selection_ndcg_at_50": 0.17572202816301463,
+      "run_dir": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/pilot/gers_base/seed-2024/2bc2340e07ec"
+    },
+    {
+      "job_id": "10313189",
+      "role": "matched_tears_recvae_seed_2024",
+      "artifact_status": "complete",
+      "epochs_completed": 200,
+      "best_validation_selection_ndcg_at_50": 0.2050045012211313,
+      "run_dir": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/pilot/tears_recvae/seed-2024/cd5a3c17c0e6"
+    },
+    {
+      "job_id": "10313190",
+      "role": "matched_gers_recvae_seed_2024",
+      "artifact_status": "complete",
+      "epochs_completed": 200,
+      "best_validation_selection_ndcg_at_50": 0.19971354780148487,
+      "run_dir": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/pilot/gers_recvae/seed-2024/ccd035235026"
+    }
+  ],
+  "phase6": {
+    "cohort": {
+      "train": 180948,
+      "validation": 10000,
+      "test": 10000,
+      "total": 200948
+    },
+    "full_matrix": {
+      "items": 22343,
+      "ratings": 31704735,
+      "fingerprint": "27596ef71a4ac0f46e81ca97a40c4a9475bb1c2cc62c9db13819fe3cbeb714ce"
+    },
+    "valid_summaries_available": 9763,
+    "missing_summaries": 191185,
+    "pilot_failures_to_regenerate": 237,
+    "models": [
+      "recvae",
+      "tears_base",
+      "gers_base",
+      "tears_recvae",
+      "gers_recvae"
+    ],
+    "seeds": [2020, 2021, 2022, 2023, 2024],
+    "training_jobs": 25,
+    "expected_completion_from_audit_days": {
+      "minimum": 9,
+      "maximum": 13
+    },
+    "expected_completion_dates": {
+      "earliest": "2026-08-17",
+      "latest": "2026-08-21",
+      "safer_commitment_latest": "2026-08-23",
+      "delay_contingency_latest": "2026-08-26"
+    },
+    "excludes_phase7_evaluation": true
+  }
+}
