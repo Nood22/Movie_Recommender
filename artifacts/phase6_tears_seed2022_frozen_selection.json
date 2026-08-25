@@ -1,0 +1,34 @@
+{
+  "created_at": "2026-08-23",
+  "decision": "single-model operational deployment promotion",
+  "model": "tears_base",
+  "seed": 2022,
+  "selection_split": "validation",
+  "selection_metric": "ndcg@50",
+  "selection_value": 0.18560436276358463,
+  "best_epoch": 118,
+  "epochs_completed": 200,
+  "run_manifest": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/full/tears_base/seed-2022/10d017146b22/manifest.json",
+  "checkpoint": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/full/tears_base/seed-2022/10d017146b22/best.pt",
+  "checkpoint_sha256": "08f2609c6dae073a1d6c2a8ba14a3121c5ff4ec807201c7f97c7d4aa3c598e2b",
+  "run_fingerprint": "969f4b6ddb710f372739a6203724716e3f2a5e77ec9c3cd62b9e5058158ac3bc",
+  "matrix_fingerprint": "27596ef71a4ac0f46e81ca97a40c4a9475bb1c2cc62c9db13819fe3cbeb714ce",
+  "dataset_users": 200948,
+  "train_users": 180948,
+  "validation_users": 10000,
+  "test_users": 10000,
+  "selection_candidates": [
+    {
+      "seed": 2022,
+      "validation_ndcg@50": 0.18560436276358463,
+      "epochs_completed": 200
+    },
+    {
+      "seed": 2023,
+      "validation_ndcg@50": 0.18433693216122207,
+      "epochs_completed": 200
+    }
+  ],
+  "test_metrics_used_for_selection": false,
+  "scope_note": "This freezes the first full-corpus website deployment. The canonical five-seed Phase 7 paper evaluation remains pending."
+}

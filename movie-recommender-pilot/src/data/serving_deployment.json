@@ -1,0 +1,10 @@
+{
+  "deployment": "full-tears-200948-with-pilot-gers-9763",
+  "matrix_fingerprint": "27596ef71a4ac0f46e81ca97a40c4a9475bb1c2cc62c9db13819fe3cbeb714ce",
+  "tears_model": "tears_base",
+  "tears_seed": 2022,
+  "dataset_users": 200948,
+  "train_users": 180948,
+  "validation_users": 10000,
+  "test_users": 10000
+}

@@ -1,0 +1,88 @@
+{
+  "catalog_support": 20,
+  "dataset": "MovieLens 32M",
+  "fingerprint": "f32bd7f526f999e73ef869e7a58744538ce11708b7379c5247130ec4129ca735",
+  "links_sha256": "ef17da7710be76f7d510d5768d1b61826e3af4bf57812b9ca377e4c912123b22",
+  "matrix_fingerprint": "a2cd89f043c8729ac84ebefbd4d38b8f98655d2bc77c598a19c7f51eeb8fd3b4",
+  "metadata_source": "MovieLens 32M links.csv",
+  "model_items": 22343,
+  "movie_ids": [
+    4993,
+    7153,
+    5952,
+    4226,
+    3578,
+    4306,
+    4973,
+    7361,
+    6539,
+    6377,
+    58559,
+    33794,
+    60069,
+    48516,
+    68954,
+    48780,
+    68157,
+    44191,
+    59315,
+    55820,
+    79132,
+    109487,
+    99114,
+    91529,
+    74458,
+    106782,
+    112852,
+    116797,
+    109374,
+    112552,
+    134130,
+    122904,
+    122882,
+    164179,
+    134853,
+    115713,
+    148626,
+    202439,
+    122912,
+    119145,
+    254726,
+    225173,
+    270698,
+    263007,
+    210861,
+    217465,
+    274053,
+    218537,
+    217655,
+    268642
+  ],
+  "pilot_users": 9763,
+  "positive_rating_threshold": 4.0,
+  "release_bands": [
+    [
+      2000,
+      2004
+    ],
+    [
+      2005,
+      2009
+    ],
+    [
+      2010,
+      2014
+    ],
+    [
+      2015,
+      2019
+    ],
+    [
+      2020,
+      2023
+    ]
+  ],
+  "selection_data": "train_observed only",
+  "selection_rule": "Within each release band, rank by pilot training-user positive count, then rating count, then MovieLens ID",
+  "titles_per_band": 10
+}

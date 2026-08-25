@@ -1,0 +1,758 @@
+[
+  {
+    "genres": [
+      "Adventure",
+      "Fantasy"
+    ],
+    "imdbId": "0120737",
+    "modelItemId": 4733,
+    "movieId": 4993,
+    "pilotTrainPositiveCount": 2443,
+    "pilotTrainRatingCount": 3232,
+    "releaseBand": "2000-2004",
+    "title": "Lord of the Rings: The Fellowship of the Ring, The (2001)",
+    "tmdbId": 120
+  },
+  {
+    "genres": [
+      "Action",
+      "Adventure",
+      "Drama",
+      "Fantasy"
+    ],
+    "imdbId": "0167260",
+    "modelItemId": 6740,
+    "movieId": 7153,
+    "pilotTrainPositiveCount": 2245,
+    "pilotTrainRatingCount": 2945,
+    "releaseBand": "2000-2004",
+    "title": "Lord of the Rings: The Return of the King, The (2003)",
+    "tmdbId": 122
+  },
+  {
+    "genres": [
+      "Adventure",
+      "Fantasy"
+    ],
+    "imdbId": "0167261",
+    "modelItemId": 5640,
+    "movieId": 5952,
+    "pilotTrainPositiveCount": 2226,
+    "pilotTrainRatingCount": 2954,
+    "releaseBand": "2000-2004",
+    "title": "Lord of the Rings: The Two Towers, The (2002)",
+    "tmdbId": 121
+  },
+  {
+    "genres": [
+      "Mystery",
+      "Thriller"
+    ],
+    "imdbId": "0209144",
+    "modelItemId": 3994,
+    "movieId": 4226,
+    "pilotTrainPositiveCount": 1801,
+    "pilotTrainRatingCount": 2338,
+    "releaseBand": "2000-2004",
+    "title": "Memento (2000)",
+    "tmdbId": 77
+  },
+  {
+    "genres": [
+      "Action",
+      "Adventure",
+      "Drama"
+    ],
+    "imdbId": "0172495",
+    "modelItemId": 3369,
+    "movieId": 3578,
+    "pilotTrainPositiveCount": 1726,
+    "pilotTrainRatingCount": 2542,
+    "releaseBand": "2000-2004",
+    "title": "Gladiator (2000)",
+    "tmdbId": 98
+  },
+  {
+    "genres": [
+      "Adventure",
+      "Animation",
+      "Children",
+      "Comedy",
+      "Fantasy",
+      "Romance"
+    ],
+    "imdbId": "0126029",
+    "modelItemId": 4069,
+    "movieId": 4306,
+    "pilotTrainPositiveCount": 1432,
+    "pilotTrainRatingCount": 2426,
+    "releaseBand": "2000-2004",
+    "title": "Shrek (2001)",
+    "tmdbId": 808
+  },
+  {
+    "genres": [
+      "Comedy",
+      "Romance"
+    ],
+    "imdbId": "0211915",
+    "modelItemId": 4713,
+    "movieId": 4973,
+    "pilotTrainPositiveCount": 1383,
+    "pilotTrainRatingCount": 1890,
+    "releaseBand": "2000-2004",
+    "title": "Amelie (Fabuleux destin d'Am\u00e9lie Poulain, Le) (2001)",
+    "tmdbId": 194
+  },
+  {
+    "genres": [
+      "Drama",
+      "Romance",
+      "Sci-Fi"
+    ],
+    "imdbId": "0338013",
+    "modelItemId": 6935,
+    "movieId": 7361,
+    "pilotTrainPositiveCount": 1377,
+    "pilotTrainRatingCount": 1905,
+    "releaseBand": "2000-2004",
+    "title": "Eternal Sunshine of the Spotless Mind (2004)",
+    "tmdbId": 38
+  },
+  {
+    "genres": [
+      "Action",
+      "Adventure",
+      "Comedy",
+      "Fantasy"
+    ],
+    "imdbId": "0325980",
+    "modelItemId": 6181,
+    "movieId": 6539,
+    "pilotTrainPositiveCount": 1273,
+    "pilotTrainRatingCount": 2125,
+    "releaseBand": "2000-2004",
+    "title": "Pirates of the Caribbean: The Curse of the Black Pearl (2003)",
+    "tmdbId": 22
+  },
+  {
+    "genres": [
+      "Adventure",
+      "Animation",
+      "Children",
+      "Comedy"
+    ],
+    "imdbId": "0266543",
+    "modelItemId": 6034,
+    "movieId": 6377,
+    "pilotTrainPositiveCount": 1270,
+    "pilotTrainRatingCount": 2025,
+    "releaseBand": "2000-2004",
+    "title": "Finding Nemo (2003)",
+    "tmdbId": 12
+  },
+  {
+    "genres": [
+      "Action",
+      "Crime",
+      "Drama",
+      "IMAX"
+    ],
+    "imdbId": "0468569",
+    "modelItemId": 10938,
+    "movieId": 58559,
+    "pilotTrainPositiveCount": 2037,
+    "pilotTrainRatingCount": 2622,
+    "releaseBand": "2005-2009",
+    "title": "Dark Knight, The (2008)",
+    "tmdbId": 155
+  },
+  {
+    "genres": [
+      "Action",
+      "Crime",
+      "IMAX"
+    ],
+    "imdbId": "0372784",
+    "modelItemId": 9217,
+    "movieId": 33794,
+    "pilotTrainPositiveCount": 1256,
+    "pilotTrainRatingCount": 1839,
+    "releaseBand": "2005-2009",
+    "title": "Batman Begins (2005)",
+    "tmdbId": 272
+  },
+  {
+    "genres": [
+      "Adventure",
+      "Animation",
+      "Children",
+      "Romance",
+      "Sci-Fi"
+    ],
+    "imdbId": "0910970",
+    "modelItemId": 11090,
+    "movieId": 60069,
+    "pilotTrainPositiveCount": 1234,
+    "pilotTrainRatingCount": 1725,
+    "releaseBand": "2005-2009",
+    "title": "WALL\u00b7E (2008)",
+    "tmdbId": 10681
+  },
+  {
+    "genres": [
+      "Crime",
+      "Drama",
+      "Thriller"
+    ],
+    "imdbId": "0407887",
+    "modelItemId": 10079,
+    "movieId": 48516,
+    "pilotTrainPositiveCount": 1144,
+    "pilotTrainRatingCount": 1517,
+    "releaseBand": "2005-2009",
+    "title": "Departed, The (2006)",
+    "tmdbId": 1422
+  },
+  {
+    "genres": [
+      "Adventure",
+      "Animation",
+      "Children",
+      "Drama"
+    ],
+    "imdbId": "1049413",
+    "modelItemId": 11694,
+    "movieId": 68954,
+    "pilotTrainPositiveCount": 1090,
+    "pilotTrainRatingCount": 1596,
+    "releaseBand": "2005-2009",
+    "title": "Up (2009)",
+    "tmdbId": 14160
+  },
+  {
+    "genres": [
+      "Drama",
+      "Mystery",
+      "Sci-Fi",
+      "Thriller"
+    ],
+    "imdbId": "0482571",
+    "modelItemId": 10108,
+    "movieId": 48780,
+    "pilotTrainPositiveCount": 1084,
+    "pilotTrainRatingCount": 1458,
+    "releaseBand": "2005-2009",
+    "title": "Prestige, The (2006)",
+    "tmdbId": 1124
+  },
+  {
+    "genres": [
+      "Action",
+      "Drama",
+      "War"
+    ],
+    "imdbId": "0361748",
+    "modelItemId": 11636,
+    "movieId": 68157,
+    "pilotTrainPositiveCount": 1035,
+    "pilotTrainRatingCount": 1483,
+    "releaseBand": "2005-2009",
+    "title": "Inglourious Basterds (2009)",
+    "tmdbId": 16869
+  },
+  {
+    "genres": [
+      "Action",
+      "Sci-Fi",
+      "Thriller",
+      "IMAX"
+    ],
+    "imdbId": "0434409",
+    "modelItemId": 9737,
+    "movieId": 44191,
+    "pilotTrainPositiveCount": 993,
+    "pilotTrainRatingCount": 1529,
+    "releaseBand": "2005-2009",
+    "title": "V for Vendetta (2006)",
+    "tmdbId": 752
+  },
+  {
+    "genres": [
+      "Action",
+      "Adventure",
+      "Sci-Fi"
+    ],
+    "imdbId": "0371746",
+    "modelItemId": 11016,
+    "movieId": 59315,
+    "pilotTrainPositiveCount": 964,
+    "pilotTrainRatingCount": 1592,
+    "releaseBand": "2005-2009",
+    "title": "Iron Man (2008)",
+    "tmdbId": 1726
+  },
+  {
+    "genres": [
+      "Crime",
+      "Drama"
+    ],
+    "imdbId": "0477348",
+    "modelItemId": 10723,
+    "movieId": 55820,
+    "pilotTrainPositiveCount": 858,
+    "pilotTrainRatingCount": 1197,
+    "releaseBand": "2005-2009",
+    "title": "No Country for Old Men (2007)",
+    "tmdbId": 6977
+  },
+  {
+    "genres": [
+      "Action",
+      "Crime",
+      "Drama",
+      "Mystery",
+      "Sci-Fi",
+      "Thriller",
+      "IMAX"
+    ],
+    "imdbId": "1375666",
+    "modelItemId": 12600,
+    "movieId": 79132,
+    "pilotTrainPositiveCount": 1976,
+    "pilotTrainRatingCount": 2545,
+    "releaseBand": "2010-2014",
+    "title": "Inception (2010)",
+    "tmdbId": 27205
+  },
+  {
+    "genres": [
+      "Sci-Fi",
+      "IMAX"
+    ],
+    "imdbId": "0816692",
+    "modelItemId": 15054,
+    "movieId": 109487,
+    "pilotTrainPositiveCount": 1233,
+    "pilotTrainRatingCount": 1637,
+    "releaseBand": "2010-2014",
+    "title": "Interstellar (2014)",
+    "tmdbId": 157336
+  },
+  {
+    "genres": [
+      "Action",
+      "Drama",
+      "Western"
+    ],
+    "imdbId": "1853728",
+    "modelItemId": 14276,
+    "movieId": 99114,
+    "pilotTrainPositiveCount": 972,
+    "pilotTrainRatingCount": 1372,
+    "releaseBand": "2010-2014",
+    "title": "Django Unchained (2012)",
+    "tmdbId": 68718
+  },
+  {
+    "genres": [
+      "Action",
+      "Adventure",
+      "Crime",
+      "IMAX"
+    ],
+    "imdbId": "1345836",
+    "modelItemId": 13623,
+    "movieId": 91529,
+    "pilotTrainPositiveCount": 945,
+    "pilotTrainRatingCount": 1355,
+    "releaseBand": "2010-2014",
+    "title": "Dark Knight Rises, The (2012)",
+    "tmdbId": 49026
+  },
+  {
+    "genres": [
+      "Drama",
+      "Mystery",
+      "Thriller"
+    ],
+    "imdbId": "1130884",
+    "modelItemId": 12260,
+    "movieId": 74458,
+    "pilotTrainPositiveCount": 884,
+    "pilotTrainRatingCount": 1256,
+    "releaseBand": "2010-2014",
+    "title": "Shutter Island (2010)",
+    "tmdbId": 11324
+  },
+  {
+    "genres": [
+      "Comedy",
+      "Crime",
+      "Drama"
+    ],
+    "imdbId": "0993846",
+    "modelItemId": 14862,
+    "movieId": 106782,
+    "pilotTrainPositiveCount": 804,
+    "pilotTrainRatingCount": 1167,
+    "releaseBand": "2010-2014",
+    "title": "Wolf of Wall Street, The (2013)",
+    "tmdbId": 106646
+  },
+  {
+    "genres": [
+      "Action",
+      "Adventure",
+      "Sci-Fi"
+    ],
+    "imdbId": "2015381",
+    "modelItemId": 15279,
+    "movieId": 112852,
+    "pilotTrainPositiveCount": 772,
+    "pilotTrainRatingCount": 1143,
+    "releaseBand": "2010-2014",
+    "title": "Guardians of the Galaxy (2014)",
+    "tmdbId": 118340
+  },
+  {
+    "genres": [
+      "Drama",
+      "Thriller",
+      "War"
+    ],
+    "imdbId": "2084970",
+    "modelItemId": 15575,
+    "movieId": 116797,
+    "pilotTrainPositiveCount": 728,
+    "pilotTrainRatingCount": 1060,
+    "releaseBand": "2010-2014",
+    "title": "The Imitation Game (2014)",
+    "tmdbId": 205596
+  },
+  {
+    "genres": [
+      "Comedy",
+      "Drama"
+    ],
+    "imdbId": "2278388",
+    "modelItemId": 15035,
+    "movieId": 109374,
+    "pilotTrainPositiveCount": 703,
+    "pilotTrainRatingCount": 952,
+    "releaseBand": "2010-2014",
+    "title": "Grand Budapest Hotel, The (2014)",
+    "tmdbId": 120467
+  },
+  {
+    "genres": [
+      "Drama"
+    ],
+    "imdbId": "2582802",
+    "modelItemId": 15258,
+    "movieId": 112552,
+    "pilotTrainPositiveCount": 675,
+    "pilotTrainRatingCount": 858,
+    "releaseBand": "2010-2014",
+    "title": "Whiplash (2014)",
+    "tmdbId": 244786
+  },
+  {
+    "genres": [
+      "Adventure",
+      "Drama",
+      "Sci-Fi"
+    ],
+    "imdbId": "3659388",
+    "modelItemId": 16565,
+    "movieId": 134130,
+    "pilotTrainPositiveCount": 895,
+    "pilotTrainRatingCount": 1250,
+    "releaseBand": "2015-2019",
+    "title": "The Martian (2015)",
+    "tmdbId": 286217
+  },
+  {
+    "genres": [
+      "Action",
+      "Adventure",
+      "Comedy",
+      "Sci-Fi"
+    ],
+    "imdbId": "1431045",
+    "modelItemId": 15932,
+    "movieId": 122904,
+    "pilotTrainPositiveCount": 633,
+    "pilotTrainRatingCount": 1008,
+    "releaseBand": "2015-2019",
+    "title": "Deadpool (2016)",
+    "tmdbId": 293660
+  },
+  {
+    "genres": [
+      "Action",
+      "Adventure",
+      "Sci-Fi",
+      "Thriller"
+    ],
+    "imdbId": "1392190",
+    "modelItemId": 15922,
+    "movieId": 122882,
+    "pilotTrainPositiveCount": 615,
+    "pilotTrainRatingCount": 928,
+    "releaseBand": "2015-2019",
+    "title": "Mad Max: Fury Road (2015)",
+    "tmdbId": 76341
+  },
+  {
+    "genres": [
+      "Sci-Fi"
+    ],
+    "imdbId": "2543164",
+    "modelItemId": 18328,
+    "movieId": 164179,
+    "pilotTrainPositiveCount": 614,
+    "pilotTrainRatingCount": 871,
+    "releaseBand": "2015-2019",
+    "title": "Arrival (2016)",
+    "tmdbId": 329865
+  },
+  {
+    "genres": [
+      "Adventure",
+      "Animation",
+      "Children",
+      "Comedy",
+      "Drama",
+      "Fantasy"
+    ],
+    "imdbId": "2096673",
+    "modelItemId": 16629,
+    "movieId": 134853,
+    "pilotTrainPositiveCount": 595,
+    "pilotTrainRatingCount": 926,
+    "releaseBand": "2015-2019",
+    "title": "Inside Out (2015)",
+    "tmdbId": 150540
+  },
+  {
+    "genres": [
+      "Drama",
+      "Sci-Fi",
+      "Thriller"
+    ],
+    "imdbId": "0470752",
+    "modelItemId": 15484,
+    "movieId": 115713,
+    "pilotTrainPositiveCount": 558,
+    "pilotTrainRatingCount": 821,
+    "releaseBand": "2015-2019",
+    "title": "Ex Machina (2015)",
+    "tmdbId": 264660
+  },
+  {
+    "genres": [
+      "Drama"
+    ],
+    "imdbId": "1596363",
+    "modelItemId": 17549,
+    "movieId": 148626,
+    "pilotTrainPositiveCount": 446,
+    "pilotTrainRatingCount": 609,
+    "releaseBand": "2015-2019",
+    "title": "Big Short, The (2015)",
+    "tmdbId": 318846
+  },
+  {
+    "genres": [
+      "Comedy",
+      "Drama"
+    ],
+    "imdbId": "6751668",
+    "modelItemId": 20689,
+    "movieId": 202439,
+    "pilotTrainPositiveCount": 420,
+    "pilotTrainRatingCount": 500,
+    "releaseBand": "2015-2019",
+    "title": "Parasite (2019)",
+    "tmdbId": 496243
+  },
+  {
+    "genres": [
+      "Action",
+      "Adventure",
+      "Sci-Fi"
+    ],
+    "imdbId": "4154756",
+    "modelItemId": 15936,
+    "movieId": 122912,
+    "pilotTrainPositiveCount": 412,
+    "pilotTrainRatingCount": 614,
+    "releaseBand": "2015-2019",
+    "title": "Avengers: Infinity War - Part I (2018)",
+    "tmdbId": 299536
+  },
+  {
+    "genres": [
+      "Action",
+      "Adventure",
+      "Comedy",
+      "Crime"
+    ],
+    "imdbId": "2802144",
+    "modelItemId": 15752,
+    "movieId": 119145,
+    "pilotTrainPositiveCount": 408,
+    "pilotTrainRatingCount": 669,
+    "releaseBand": "2015-2019",
+    "title": "Kingsman: The Secret Service (2015)",
+    "tmdbId": 207703
+  },
+  {
+    "genres": [
+      "Action",
+      "Adventure",
+      "Drama",
+      "Sci-Fi"
+    ],
+    "imdbId": "1160419",
+    "modelItemId": 21752,
+    "movieId": 254726,
+    "pilotTrainPositiveCount": 144,
+    "pilotTrainRatingCount": 223,
+    "releaseBand": "2020-2023",
+    "title": "Dune (2021)",
+    "tmdbId": 438631
+  },
+  {
+    "genres": [
+      "Adventure",
+      "Animation",
+      "Children",
+      "Comedy",
+      "Fantasy"
+    ],
+    "imdbId": "2948372",
+    "modelItemId": 21378,
+    "movieId": 225173,
+    "pilotTrainPositiveCount": 135,
+    "pilotTrainRatingCount": 195,
+    "releaseBand": "2020-2023",
+    "title": "Soul (2020)",
+    "tmdbId": 508442
+  },
+  {
+    "genres": [
+      "Action",
+      "Comedy",
+      "Sci-Fi"
+    ],
+    "imdbId": "6710474",
+    "modelItemId": 21963,
+    "movieId": 270698,
+    "pilotTrainPositiveCount": 125,
+    "pilotTrainRatingCount": 164,
+    "releaseBand": "2020-2023",
+    "title": "Everything Everywhere All at Once (2022)",
+    "tmdbId": 545611
+  },
+  {
+    "genres": [
+      "Action",
+      "Adventure",
+      "Fantasy",
+      "Sci-Fi"
+    ],
+    "imdbId": "10872600",
+    "modelItemId": 21866,
+    "movieId": 263007,
+    "pilotTrainPositiveCount": 101,
+    "pilotTrainRatingCount": 173,
+    "releaseBand": "2020-2023",
+    "title": "Spider-Man: No Way Home (2021)",
+    "tmdbId": 634649
+  },
+  {
+    "genres": [
+      "Action",
+      "Crime"
+    ],
+    "imdbId": "8367814",
+    "modelItemId": 21027,
+    "movieId": 210861,
+    "pilotTrainPositiveCount": 95,
+    "pilotTrainRatingCount": 155,
+    "releaseBand": "2020-2023",
+    "title": "The Gentlemen (2020)",
+    "tmdbId": 522627
+  },
+  {
+    "genres": [
+      "Action",
+      "Thriller"
+    ],
+    "imdbId": "6723592",
+    "modelItemId": 21205,
+    "movieId": 217465,
+    "pilotTrainPositiveCount": 84,
+    "pilotTrainRatingCount": 184,
+    "releaseBand": "2020-2023",
+    "title": "Tenet (2020)",
+    "tmdbId": 577922
+  },
+  {
+    "genres": [
+      "Action",
+      "Drama"
+    ],
+    "imdbId": "1745960",
+    "modelItemId": 22014,
+    "movieId": 274053,
+    "pilotTrainPositiveCount": 75,
+    "pilotTrainRatingCount": 137,
+    "releaseBand": "2020-2023",
+    "title": "Top Gun: Maverick (2022)",
+    "tmdbId": 361743
+  },
+  {
+    "genres": [
+      "Comedy"
+    ],
+    "imdbId": "9484998",
+    "modelItemId": 21225,
+    "movieId": 218537,
+    "pilotTrainPositiveCount": 66,
+    "pilotTrainRatingCount": 118,
+    "releaseBand": "2020-2023",
+    "title": "Palm Springs (2020)",
+    "tmdbId": 587792
+  },
+  {
+    "genres": [
+      "Drama"
+    ],
+    "imdbId": "8503618",
+    "modelItemId": 21209,
+    "movieId": 217655,
+    "pilotTrainPositiveCount": 63,
+    "pilotTrainRatingCount": 94,
+    "releaseBand": "2020-2023",
+    "title": "Hamilton (2020)",
+    "tmdbId": 556574
+  },
+  {
+    "genres": [
+      "Action",
+      "Crime",
+      "Drama"
+    ],
+    "imdbId": "1877830",
+    "modelItemId": 21927,
+    "movieId": 268642,
+    "pilotTrainPositiveCount": 59,
+    "pilotTrainRatingCount": 127,
+    "releaseBand": "2020-2023",
+    "title": "The Batman (2022)",
+    "tmdbId": 414906
+  }
+]

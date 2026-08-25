@@ -1,0 +1,56 @@
+{
+  "schedule": {
+    "epochs": 200,
+    "fixed_epochs": true,
+    "minimum_epochs": 200,
+    "patience": 201
+  },
+  "recvae": {
+    "dropout": 0.4,
+    "learning_rate": 0.001,
+    "gamma": 0.0035,
+    "weight_decay": 0.00001,
+    "ot_weight": 0.1
+  },
+  "gers_base": {
+    "dropout": 0.1,
+    "learning_rate": 0.001,
+    "gamma": 0.0035,
+    "weight_decay": 0.0,
+    "ot_weight": 0.1
+  },
+  "tears_base": {
+    "dropout": 0.1,
+    "learning_rate": 0.0001,
+    "gamma": 0.0035,
+    "weight_decay": 0.0,
+    "ot_weight": 0.1
+  },
+  "tears_recvae": {
+    "dropout": 0.1,
+    "learning_rate": 0.0001,
+    "gamma": 0.0035,
+    "weight_decay": 0.0,
+    "ot_weight": 1.0
+  },
+  "gers_recvae": {
+    "dropout": 0.1,
+    "learning_rate": 0.0001,
+    "gamma": 0.0035,
+    "weight_decay": 0.0,
+    "ot_weight": 1.0
+  },
+  "catalog": {
+    "support": 20,
+    "matrix_dir": "/network/scratch/a/adls/FullTrainingTEARS/datasets/catalog_selection/support_20/matrix",
+    "matrix_fingerprint": "27596ef71a4ac0f46e81ca97a40c4a9475bb1c2cc62c9db13819fe3cbeb714ce"
+  },
+  "summaries": {
+    "protocol": "frozen_v10_evidence_gated_emiliano",
+    "path": "/network/scratch/a/adls/FullTrainingTEARS/summaries/validated/v010_frozen/final_summaries.jsonl",
+    "users": 200948,
+    "source_path": "/network/scratch/a/adls/FullTrainingTEARS/full_ml32m_emiliano_prompt/full_cohort/v010_20260816_evidence_gated_emiliano_frozen/validated/final_summaries.jsonl"
+  },
+  "test_metrics_used": false,
+  "source": "artifacts/august_pilot_recipe_selection.json"
+}
