@@ -17,6 +17,12 @@ import {
 import { publicAsset } from "../utils/publicAsset.mjs";
 import { apiErrorMessage } from "../utils/apiError.mjs";
 import { PILOT_API_URL } from "../utils/apiConfig";
+import { useStudySession } from "../study/useStudySession";
+import {
+  recommendationInputSnapshot,
+  responseMatchesCurrent,
+  summaryInputSnapshot,
+} from "../study/studyProtocol.mjs";
 const TEARS_ALPHA = 0.5;
 const MIN_RECOMMENDATION_YEAR = 2020;
 const TMDB_KEY = process.env.REACT_APP_TMDB_API_KEY || "";
@@ -45,6 +51,7 @@ async function fetchPoster(movieId, title, tmdbId = null) {
     MAIN TEARS COMPONENT
 ----------------------------------------------------------*/
 export default function TearsApp({ goBack }) {
+  const study = useStudySession("TEARS");
   const [movies, setMovies] = useState([]);
   const [loadingMovies, setLoadingMovies] = useState(true);
 
@@ -53,8 +60,8 @@ export default function TearsApp({ goBack }) {
   const [summary, setSummary] = useState("");
   const [summaryError, setSummaryError] = useState("");
   const [recommendationError, setRecommendationError] = useState("");
-  const [context, setContext] = useState("");
-  const [dislikedGenres] = useState("");
+  const context = "";
+  const dislikedGenres = "";
   const [topK, setTopK] = useState(12);
 
   const [recommendations, setRecommendations] = useState([]);
@@ -64,17 +71,27 @@ export default function TearsApp({ goBack }) {
   const [summaryLoading, setSummaryLoading] = useState(false);
   const summaryRequestId = useRef(0);
   const recommendationRequestId = useRef(0);
-  const lastRenderDiagnostic = useRef("");
-  const completedRecommendationResponse = useRef(null);
+  const representationRevisionRef = useRef(0);
+  const activeSummaryRequest = useRef(null);
+  const activeRecommendationRequest = useRef(null);
+  const currentRecommendationSignature = useRef("dirty-initial");
 
-  const contextList = [
-    "I want a cozy movie for tonight",
-    "I want something romantic",
-    "I want something thrilling",
-    "I want a family-friendly movie",
-    "I want something emotional",
-    "I want something fun and light",
-  ];
+  const bumpRepresentationRevision = () => {
+    representationRevisionRef.current += 1;
+    return representationRevisionRef.current;
+  };
+
+  const invalidateRecommendations = (clearVisible = true) => {
+    recommendationRequestId.current += 1;
+    activeRecommendationRequest.current = null;
+    currentRecommendationSignature.current = `dirty-${recommendationRequestId.current}`;
+    if (clearVisible) {
+      setRecommendations([]);
+      setPrevious([]);
+    }
+    setLoading(false);
+  };
+
   /* ---------------------------------------------------------
       LOAD MOVIES
   ----------------------------------------------------------*/
@@ -106,8 +123,8 @@ export default function TearsApp({ goBack }) {
   ----------------------------------------------------------*/
 const requestSummary = async (
   likedMovies,
-  nextContext = context,
-  nextRatings = movieRatings
+  nextRatings = movieRatings,
+  revision = representationRevisionRef.current
 ) => {
   const requestId = ++summaryRequestId.current;
   if (likedMovies.length === 0) {
@@ -135,17 +152,30 @@ const requestSummary = async (
   setSummaryError("");
   setSummaryLoading(true);
   try {
-    const res = await axios.post(`${PILOT_API_URL}/summarize`, {
+    const payload = {
       movies: likedMovies.map((movie) => ({
         title: movie.title,
         rating: nextRatings[movie.movieId],
         genres: movie.genres || [],
       })),
       disliked: dislikedGenres.split(",").map((g) => g.trim()).filter(Boolean),
-      context: nextContext,
+      context,
+    };
+    const input = summaryInputSnapshot(payload);
+    const meta = await study.metadata({
+      taskId: "1a",
+      input,
+      representationRevision: revision,
     });
-    if (requestId === summaryRequestId.current) {
+    payload.study = meta;
+    activeSummaryRequest.current = meta;
+    const res = await axios.post(`${PILOT_API_URL}/summarize`, payload);
+    if (
+      requestId === summaryRequestId.current &&
+      responseMatchesCurrent(meta, res.data.study, meta.input_signature)
+    ) {
       setSummary(res.data.summary || "");
+      invalidateRecommendations();
     }
   } catch (err) {
     console.error("TEARS summarizer error", err);
@@ -183,12 +213,9 @@ const toggleSelect = async (movie) => {
 
   setSelected(updated);
   // A selection change makes both visible results and in-flight responses stale.
-  recommendationRequestId.current += 1;
-  completedRecommendationResponse.current = null;
-  setRecommendations([]);
-  setPrevious([]);
-  setLoading(false);
-  await requestSummary(updated, context, nextRatings);
+  invalidateRecommendations();
+  const revision = bumpRepresentationRevision();
+  await requestSummary(updated, nextRatings, revision);
 };
 
 const handleRatingChange = async (movieId, value) => {
@@ -197,16 +224,10 @@ const handleRatingChange = async (movieId, value) => {
     [movieId]: Number(value),
   };
   setMovieRatings(nextRatings);
-  await requestSummary(selected, context, nextRatings);
+  invalidateRecommendations();
+  const revision = bumpRepresentationRevision();
+  await requestSummary(selected, nextRatings, revision);
 };
-
-  /* ---------------------------------------------------------
-      CONTEXT CHANGE → GPT SUMMARIZER (PATCHED)
-  ----------------------------------------------------------*/
-  const handleContextChange = async (value) => {
-    setContext(value);
-    await requestSummary(selected, value, movieRatings);
-  };
 
   /* ---------------------------------------------------------
       REQUEST TEARS RECOMMENDATIONS
@@ -225,23 +246,46 @@ const handleRatingChange = async (movieId, value) => {
     setLoading(true);
     setRecommendationError("");
     setRecommendations([]);
-    completedRecommendationResponse.current = null;
 
     try {
       setPrevious(recommendations);
 
       const payload = {
-        summary: summary.trim(),
+        // Participant edits are signed and submitted verbatim.
+        summary,
         liked_movie_ids: selected.map((movie) => Number(movie.movieId)),
+        preference_evidence: selected.map((movie) => ({
+          movie_id: Number(movie.movieId),
+          rating: movieRatings[movie.movieId],
+        })),
         excluded_movie_ids: ONBOARDING_CATALOG_MOVIE_IDS,
         catalog_fingerprint: servingDeployment.matrix_fingerprint,
         onboarding_fingerprint: pilotManifest.fingerprint,
+        context,
         alpha: TEARS_ALPHA,
         top_k: topK,
         min_release_year: MIN_RECOMMENDATION_YEAR,
       };
-
+      const input = recommendationInputSnapshot("TEARS", payload);
+      const meta = await study.metadata({
+        taskId: "1b",
+        input,
+        representationRevision: representationRevisionRef.current,
+      });
+      payload.study = meta;
+      activeRecommendationRequest.current = meta;
+      currentRecommendationSignature.current = meta.input_signature;
       const res = await axios.post(`${PILOT_API_URL}/recommend`, payload);
+      if (
+        requestId !== recommendationRequestId.current ||
+        !responseMatchesCurrent(
+          activeRecommendationRequest.current,
+          res.data.study,
+          currentRecommendationSignature.current
+        )
+      ) {
+        return;
+      }
       const rawItems = res.data.items || [];
       const selectedMovieIds = new Set(
         selected.map((movie) => normalizeMovieId(movie.movieId))
@@ -273,15 +317,26 @@ const handleRatingChange = async (movieId, value) => {
         enriched.push(resolveMovieLensRecommendation(item, metadata));
       }
 
-      if (requestId === recommendationRequestId.current) {
+      if (
+        requestId === recommendationRequestId.current &&
+        responseMatchesCurrent(
+          activeRecommendationRequest.current,
+          res.data.study,
+          currentRecommendationSignature.current
+        )
+      ) {
+        await study.persistRender(meta, enriched);
+      }
+
+      if (
+        requestId === recommendationRequestId.current &&
+        responseMatchesCurrent(
+          activeRecommendationRequest.current,
+          res.data.study,
+          currentRecommendationSignature.current
+        )
+      ) {
         // Replace the previous result set; recommendations are never appended.
-        completedRecommendationResponse.current = {
-          requestId,
-          backendReturned: rawItems.map((movie) => ({
-            movie_id: Number(movie.movie_id),
-            title: movie.title,
-          })),
-        };
         setRecommendations(enriched);
       }
 
@@ -329,37 +384,6 @@ const handleRatingChange = async (movieId, value) => {
     SELECTABLE_MOVIES
   );
 
-  if (process.env.NODE_ENV === "development") {
-    const completedResponse = completedRecommendationResponse.current;
-    const rendered = renderedRecommendations.map((movie) => ({
-      movie_id: movie.movie_id,
-      title: movie.title,
-    }));
-    const onboardingIdsForDiagnostic = new Set(
-      ONBOARDING_CATALOG_MOVIE_IDS.map(normalizeMovieId)
-    );
-    const diagnostic = completedResponse && {
-      selectedIds: selected.map((movie) => Number(movie.movieId)),
-      excludedOnboardingCatalogCount: ONBOARDING_CATALOG_MOVIE_IDS.length,
-      backendReturnedIds: completedResponse.backendReturned.map(
-        (movie) => movie.movie_id
-      ),
-      renderedIds: rendered.map((movie) => movie.movie_id),
-      selectableCatalogOverlap: rendered
-        .filter((movie) =>
-          onboardingIdsForDiagnostic.has(normalizeMovieId(movie.movie_id))
-        )
-        .map((movie) => movie.movie_id),
-    };
-    const diagnosticSignature = diagnostic
-      ? `${completedResponse.requestId}:${JSON.stringify(diagnostic)}`
-      : "";
-    if (diagnostic && diagnosticSignature !== lastRenderDiagnostic.current) {
-      lastRenderDiagnostic.current = diagnosticSignature;
-      console.log("TEARS render", diagnostic);
-    }
-  }
-
   /* ---------------------------------------------------------
       UI RENDER
   ----------------------------------------------------------*/
@@ -393,7 +417,7 @@ const handleRatingChange = async (movieId, value) => {
       {/* TITLE */}
       <div className="max-w-[1600px] mx-auto mt-28 sm:mt-32 mb-8 sm:mb-10">
         <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#80E7FF]/80 mb-3">
-          Full 200,948-profile dataset · 180,948 training users
+          Describe and refine your movie taste
         </p>
         <h1 className="text-3xl sm:text-4xl font-bold text-[#A7E8FF] drop-shadow-[0_0_20px_#00C8FF55]">
           TEARS – Summary-Based Recommender
@@ -531,33 +555,21 @@ const handleRatingChange = async (movieId, value) => {
             </p>
           )}
           <textarea
-            className="w-full h-64 bg-white/5 border border-white/10 p-3
+            className="w-full h-40 resize-none overflow-y-auto bg-white/5 border border-white/10 p-3
               rounded-lg text-sm mb-4"
             value={summary}
-            onChange={(e) => setSummary(e.target.value)}
+            onChange={(e) => {
+              summaryRequestId.current += 1;
+              activeSummaryRequest.current = null;
+              setSummaryLoading(false);
+              setSummary(e.target.value);
+              bumpRepresentationRevision();
+              invalidateRecommendations();
+            }}
           />
 
           {/* Genre exclusion UI is intentionally deferred. Keep the state and
               request field in place so the feature can be restored later. */}
-
-          {/* CONTEXT */}
-          <h2 className="text-lg font-semibold mb-2">Choose a context:</h2>
-          <select
-            value={context}
-            onChange={(e) => handleContextChange(e.target.value)}
-            className="w-full py-3 px-3 rounded-lg mb-6 bg-white/10
-              border border-[#00C8FF55] text-white transition-all
-              focus:border-[#00C8FF] focus:shadow-[0_0_25px_#00C8FF88]"
-          >
-            <option value="" className="text-black">
-              Select a context…
-            </option>
-            {contextList.map((c) => (
-              <option key={c} value={c} className="text-black">
-                {c}
-              </option>
-            ))}
-          </select>
 
           <div className="mb-6">
             <label htmlFor="tears-top-k" className="text-sm font-semibold">
@@ -569,7 +581,10 @@ const handleRatingChange = async (movieId, value) => {
               min="1"
               max="25"
               value={topK}
-              onChange={(e) => setTopK(Number(e.target.value))}
+              onChange={(e) => {
+                setTopK(Number(e.target.value));
+                invalidateRecommendations();
+              }}
               className="w-full mt-2"
             />
           </div>
@@ -577,7 +592,11 @@ const handleRatingChange = async (movieId, value) => {
           {/* BUTTON */}
           <button
             onClick={handleRecommend}
-            disabled={loading || summaryLoading || !summary.trim()}
+            disabled={
+              loading ||
+              summaryLoading ||
+              !summary.trim()
+            }
             className="w-full py-3 rounded-xl font-semibold text-lg bg-[#0A0A0A]
               border border-[#00C8FF] shadow-[0_0_25px_#00C8FF55]
               hover:shadow-[0_0_40px_#00C8FFAA] transition-all
@@ -649,10 +668,6 @@ const handleRatingChange = async (movieId, value) => {
                               ({getRankChange(m)})
                             </span>
                           )}
-                        </p>
-
-                        <p className="text-[11px] text-yellow-300 mt-1">
-                          Score: {m.score_fmt}
                         </p>
 
                         <p className="text-[10px] text-gray-300 mt-1">

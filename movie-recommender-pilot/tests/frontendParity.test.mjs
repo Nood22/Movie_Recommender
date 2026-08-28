@@ -40,7 +40,7 @@ test("pilot keeps the original routes and shared Studio Auréa support code", as
   assert.equal(pilotApp, await source(originalRoot, "App.js"));
 });
 
-test("pilot preserves the original screen identity while identifying the new model", async () => {
+test("pilot preserves the original screen identity without exposing provenance", async () => {
   const screenContracts = [
     ["components/LandingPage.jsx", ["AI Movie Recommender", "TEARS", "GERS", "#0d0714"]],
     ["components/TearsApp.jsx", ["TEARS – Summary-Based Recommender", "#00C8FF", "Your Summary"]],
@@ -57,17 +57,16 @@ test("pilot preserves the original screen identity while identifying the new mod
     assert.match(pilot, /publicAsset\("logo\.png"\)/);
   }
 
-  assert.match(
-    await source(pilotRoot, "components/LandingPage.jsx"),
-    /Full TEARS · 200,948 profiles · GERS scientific pilot/
+  const participantScreens = await Promise.all(
+    ["components/LandingPage.jsx", "components/TearsApp.jsx", "components/GersApp.jsx"]
+      .map((relativePath) => source(pilotRoot, relativePath))
   );
-  assert.match(
-    await source(pilotRoot, "components/TearsApp.jsx"),
-    /Full 200,948-profile dataset · 180,948 training users/
-  );
-  assert.match(
-    await source(pilotRoot, "components/GersApp.jsx"),
-    /Scientific pilot · trained on 9,763 user profiles/
+  assert.match(participantScreens[0], /Your movies, your taste profile/);
+  assert.match(participantScreens[1], /Describe and refine your movie taste/);
+  assert.match(participantScreens[2], /Build your taste from movies and genres/);
+  assert.doesNotMatch(
+    participantScreens.join("\n"),
+    /200,948|180,948|9,763|trained on|training users|checkpoint|seed|epochs?|Score:/i
   );
 });
 
@@ -86,6 +85,13 @@ test("pilot screens include responsive layouts and accessible error feedback", a
   }
   assert.match(styles, /prefers-reduced-motion: reduce/);
   assert.match(styles, /focus-visible:ring-2/);
+});
+
+test("TEARS keeps participant edits in a compact fixed-height scrolling textarea", async () => {
+  const tears = await source(pilotRoot, "components/TearsApp.jsx");
+  assert.match(tears, /h-40 resize-none overflow-y-auto/);
+  assert.match(tears, /Participant edits are signed and submitted verbatim\.\n\s*summary,/);
+  assert.doesNotMatch(tears, /summary: summary\.trim\(\)/);
 });
 
 test("pilot frontend derives the API prefix from its deployment base", async () => {
@@ -109,29 +115,35 @@ test("pilot frontend derives the API prefix from its deployment base", async () 
   assert.doesNotMatch(`${tears}\n${gers}`, /127\.0\.0\.1:8001/);
 });
 
-test("participant selection behavior remains aligned with the original", async () => {
-  const originalTears = await source(originalRoot, "components/TearsApp.jsx");
+test("participant selection keeps catalog semantics and invisible request provenance", async () => {
   const pilotTears = await source(pilotRoot, "components/TearsApp.jsx");
-  const normalizedPilotTears = section(
-    pilotTears,
-    "const requestSummary",
-    "      REQUEST TEARS RECOMMENDATIONS"
-  ).replaceAll("PILOT_API_URL", "QUALITY_API_URL");
-  assert.equal(
-    normalizedPilotTears,
-    section(
-      originalTears,
-      "const requestSummary",
-      "      REQUEST TEARS RECOMMENDATIONS"
-    )
-  );
-
-  const originalGers = await source(originalRoot, "components/GersApp.jsx");
   const pilotGers = await source(pilotRoot, "components/GersApp.jsx");
-  assert.equal(
-    section(pilotGers, "  const toggleSelect", "     GET RECOMMENDATIONS"),
-    section(originalGers, "  const toggleSelect", "     GET RECOMMENDATIONS")
+  const sessionLogging = await source(pilotRoot, "study/useStudySession.js");
+  assert.match(pilotTears, /canonicalMovieLensId\(movie\.movieId\)/);
+  assert.match(pilotTears, /selected\.map\(\(movie\) => Number\(movie\.movieId\)\)/);
+  assert.match(pilotTears, /responseMatchesCurrent/);
+  assert.match(pilotGers, /FIXED_MOVIELENS_CATALOG_IDS/);
+  assert.match(pilotGers, /genreNamesWithFrequencies/);
+  assert.doesNotMatch(pilotGers, /new Set\(\[\.\.\.movieGenreIds/);
+  assert.match(sessionLogging, /participant_id: participantId/);
+  assert.match(sessionLogging, /session_id: sessionId/);
+  assert.match(sessionLogging, /input_signature: await inputSignature\(input\)/);
+  assert.match(sessionLogging, /\/study\/render/);
+});
+
+test("participant screens omit study activities, questionnaires, trials, and context work", async () => {
+  const participantScreens = await Promise.all(
+    ["components/LandingPage.jsx", "components/TearsApp.jsx", "components/GersApp.jsx"]
+      .map((relativePath) => source(pilotRoot, relativePath))
   );
+  const renderedSource = participantScreens.join("\n");
+
+  assert.doesNotMatch(renderedSource, /StudyWorkspace|Study Activities/i);
+  assert.doesNotMatch(
+    renderedSource,
+    /questionnaire|instrument|trial|attempt|researcher|debug|Task 4/i
+  );
+  assert.doesNotMatch(renderedSource, /Choose a context|Select a context|CANONICAL_CONTEXT/);
 });
 
 test("pilot Tailwind classes do not contain the known separator typos", async () => {

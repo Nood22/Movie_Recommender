@@ -1,8 +1,27 @@
 {
-  "deployment": "full-tears-200948-with-pilot-gers-9763",
+  "deployment": "full-tears-and-gers-200948",
   "matrix_fingerprint": "27596ef71a4ac0f46e81ca97a40c4a9475bb1c2cc62c9db13819fe3cbeb714ce",
   "tears_model": "tears_base",
   "tears_seed": 2022,
+  "gers_model": "gers_recvae",
+  "gers_seed": 2022,
+  "gers_best_epoch": 22,
+  "gers_checkpoint_sha256": "f4755f87b133b95ee6e9919c498011efd2096ee24da3e13895f48e3d30669dea",
+  "gers_validation_status": "passed_and_selected",
+  "protocol_id": "tears-gers-human-study-tasks",
+  "protocol_version": "1.0.0",
+  "tears_alpha": {
+    "status": "not_applicable",
+    "request_compatibility_value": 0.5
+  },
+  "candidate_filter": {
+    "enabled": true,
+    "field": "release_year",
+    "operator": ">=",
+    "value": 2020,
+    "scope": "candidate_ranking"
+  },
+  "top_k_semantics": "model_returned_observable_ranking_depth",
   "dataset_users": 200948,
   "train_users": 180948,
   "validation_users": 10000,

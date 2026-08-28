@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import { motion } from "framer-motion";
 import pilotMovies from "../data/pilot_support20_onboarding.json";
@@ -12,10 +12,17 @@ import { deduplicateSelectableCatalog } from "../utils/selectableCatalog.mjs";
 import { publicAsset } from "../utils/publicAsset.mjs";
 import { apiErrorMessage } from "../utils/apiError.mjs";
 import { PILOT_API_URL } from "../utils/apiConfig";
+import { useStudySession } from "../study/useStudySession";
+import {
+  genreNamesWithFrequencies,
+  recommendationInputSnapshot,
+  responseMatchesCurrent,
+} from "../study/studyProtocol.mjs";
 
 
 const TMDB_KEY = process.env.REACT_APP_TMDB_API_KEY || "";
 const MIN_RECOMMENDATION_YEAR = 2020;
+const GERS_ALPHA = 0.5;
 const FIXED_MOVIELENS_CATALOG = deduplicateSelectableCatalog(pilotMovies);
 const FIXED_MOVIELENS_CATALOG_IDS = FIXED_MOVIELENS_CATALOG.map((movie) =>
   Number(movie.movieId)
@@ -82,6 +89,7 @@ function safeGenreName(gid, genreList) {
    MAIN GERS APP
 ------------------------------------------------ */
 export default function GersApp({ goBack }) {
+  const study = useStudySession("GERS");
   const [movies, setMovies] = useState([]);
   const [loadingMovies, setLoadingMovies] = useState(true);
 
@@ -89,11 +97,27 @@ export default function GersApp({ goBack }) {
   const [chosenGenres, setChosenGenres] = useState([]);
   const [removedMovieGenres, setRemovedMovieGenres] = useState([]);
 
-  const [context, setContext] = useState("");
+  const context = "";
   const [recommendations, setRecommendations] = useState([]);
   const [topK, setTopK] = useState(12);
   const [loading, setLoading] = useState(false);
   const [recommendationError, setRecommendationError] = useState("");
+  const representationRevisionRef = useRef(0);
+  const recommendationRequestId = useRef(0);
+  const activeRecommendationRequest = useRef(null);
+  const currentRecommendationSignature = useRef("dirty-initial");
+
+  const bumpRepresentationRevision = () => {
+    representationRevisionRef.current += 1;
+  };
+
+  const invalidateRecommendations = () => {
+    recommendationRequestId.current += 1;
+    activeRecommendationRequest.current = null;
+    currentRecommendationSignature.current = `dirty-${recommendationRequestId.current}`;
+    setRecommendations([]);
+    setLoading(false);
+  };
 
   /* FIXED GENRE SET */
   const genreList = [
@@ -118,15 +142,6 @@ export default function GersApp({ goBack }) {
   { id: 10770, name: "TV Movie" }
 ];
 
-
-  const contextList = [
-    "I want a cozy movie for tonight",
-    "I want something romantic",
-    "I want something thrilling",
-    "I want a family-friendly movie",
-    "I want something emotional",
-    "I want something fun and light",
-  ];
 
   /* -----------------------------------------------
      LOAD MOVIES
@@ -193,12 +208,16 @@ useEffect(() => {
     setRemovedMovieGenres((removed) =>
       removed.filter((genreId) => remainingGenreIds.has(genreId))
     );
+    invalidateRecommendations();
+    bumpRepresentationRevision();
   };
 
   const removeMovieGenre = (genreId) => {
     setRemovedMovieGenres((removed) =>
       removed.includes(genreId) ? removed : [...removed, genreId]
     );
+    invalidateRecommendations();
+    bumpRepresentationRevision();
   };
 
   /* -----------------------------------------------
@@ -210,54 +229,72 @@ useEffect(() => {
       : [...chosenGenres, id];
 
     setChosenGenres(updated);
-  };
-
-  /* -----------------------------------------------
-     CONTEXT
-  ------------------------------------------------ */
-  const handleContextChange = (value) => {
-    setContext(value);
+    invalidateRecommendations();
+    bumpRepresentationRevision();
   };
 
   /* -----------------------------------------------
      GET RECOMMENDATIONS
   ------------------------------------------------ */
   const handleRecommend = async () => {
-    const movieGenreIds = [];
-    selected.forEach((m) => {
-      if (Array.isArray(m.genre_ids)) {
-        m.genre_ids.forEach((id) => {
-          if (!removedMovieGenres.includes(id)) movieGenreIds.push(id);
-        });
-      }
+    const combinedGenreNames = genreNamesWithFrequencies({
+      selectedMovies: selected,
+      removedMovieGenres,
+      chosenGenres,
+      genreList,
     });
-
-    const combinedGenreNames = [...new Set([...movieGenreIds, ...chosenGenres])]
-      .map((id) => genreList.find((g) => g.id === id)?.name)
-      .filter(Boolean);
 
     if (combinedGenreNames.length === 0) {
       setRecommendationError("Select at least one movie or genre first.");
       return;
     }
 
+    const requestId = ++recommendationRequestId.current;
     setLoading(true);
     setRecommendationError("");
 
     try {
-      const res = await axios.post(`${PILOT_API_URL}/gers`, {
+      const payload = {
         genres: combinedGenreNames,
-        // The scientific-pilot hybrid also needs the RecVAE interaction side.
+        // The frozen hybrid also needs the RecVAE interaction side.
         liked_movie_ids: selected.map((movie) => Number(movie.movieId)),
+        // Participant rating semantics are intentionally unresolved for GERS;
+        // null is logged and the frozen serving model keeps its fixed 5.0 input.
+        preference_evidence: selected.map((movie) => ({
+          movie_id: Number(movie.movieId),
+          rating: null,
+        })),
         // The onboarding catalog is for preference elicitation only. Neither
         // selected nor unselected catalog titles may reappear as results.
         excluded_movie_ids: FIXED_MOVIELENS_CATALOG_IDS,
         catalog_fingerprint: servingDeployment.matrix_fingerprint,
         onboarding_fingerprint: pilotManifest.fingerprint,
         context,
+        alpha: GERS_ALPHA,
         top_k: topK,
         min_release_year: MIN_RECOMMENDATION_YEAR,
+      };
+      const input = recommendationInputSnapshot("GERS", payload);
+      const meta = await study.metadata({
+        taskId: "1b",
+        input,
+        representationRevision: representationRevisionRef.current,
       });
+      payload.study = meta;
+      activeRecommendationRequest.current = meta;
+      currentRecommendationSignature.current = meta.input_signature;
+      const res = await axios.post(`${PILOT_API_URL}/gers`, payload);
+
+      if (
+        requestId !== recommendationRequestId.current ||
+        !responseMatchesCurrent(
+          activeRecommendationRequest.current,
+          res.data.study,
+          currentRecommendationSignature.current
+        )
+      ) {
+        return;
+      }
 
       const items = res.data.items || [];
 
@@ -276,18 +313,39 @@ useEffect(() => {
         })
       );
 
-      setRecommendations(posters);
-    } catch (err) {
-      console.error("GERS ERROR:", err);
-      setRecommendationError(
-        apiErrorMessage(
-          err,
-          "Recommendations are temporarily unavailable. Please try again."
+      if (
+        requestId === recommendationRequestId.current &&
+        responseMatchesCurrent(
+          activeRecommendationRequest.current,
+          res.data.study,
+          currentRecommendationSignature.current
         )
-      );
+      ) {
+        await study.persistRender(meta, posters);
+      }
+      if (
+        requestId === recommendationRequestId.current &&
+        responseMatchesCurrent(
+          activeRecommendationRequest.current,
+          res.data.study,
+          currentRecommendationSignature.current
+        )
+      ) {
+        setRecommendations(posters);
+      }
+    } catch (err) {
+      if (requestId === recommendationRequestId.current) {
+        console.error("GERS ERROR:", err);
+        setRecommendationError(
+          apiErrorMessage(
+            err,
+            "Recommendations are temporarily unavailable. Please try again."
+          )
+        );
+      }
     }
 
-    setLoading(false);
+    if (requestId === recommendationRequestId.current) setLoading(false);
   };
 
   const selectedMovieGenreCounts = selected.reduce((counts, movie) => {
@@ -310,7 +368,6 @@ useEffect(() => {
       (first, second) =>
         second.count - first.count || first.originalIndex - second.originalIndex
     );
-
   /* -----------------------------------------------
      UI
   ------------------------------------------------ */
@@ -342,7 +399,7 @@ useEffect(() => {
       {/* TITLE */}
       <div className="max-w-[1600px] mx-auto mt-24 sm:mt-28 mb-8 sm:mb-10">
         <p className="text-xs font-semibold uppercase tracking-[0.22em] text-green-300/80 mb-3">
-          Scientific pilot · trained on 9,763 user profiles
+          Build your taste from movies and genres
         </p>
         <h1 className="text-3xl sm:text-4xl font-bold text-green-300 drop-shadow-[0_0_25px_#00ff99aa]">
           GERS – Genre-Based Recommender
@@ -502,25 +559,6 @@ useEffect(() => {
             ))}
           </div>
 
-          {/* CONTEXT */}
-          <h2 className="text-lg font-semibold mb-2">Choose a context:</h2>
-
-          <select
-            className="w-full py-3 px-3 rounded-lg mb-6 bg-white/10 border border-white/20
-              focus:border-green-400 focus:shadow-[0_0_20px_#00ff99aa]"
-            value={context}
-            onChange={(e) => handleContextChange(e.target.value)}
-          >
-            <option value="" className="text-black">
-              Select a context…
-            </option>
-            {contextList.map((c) => (
-              <option key={c} value={c} className="text-black">
-                {c}
-              </option>
-            ))}
-          </select>
-
           <div className="mb-6">
             <label htmlFor="gers-top-k" className="text-sm font-semibold">
               Number of recommendations: {topK}
@@ -531,7 +569,10 @@ useEffect(() => {
               min="1"
               max="25"
               value={topK}
-              onChange={(event) => setTopK(Number(event.target.value))}
+              onChange={(event) => {
+                setTopK(Number(event.target.value));
+                invalidateRecommendations();
+              }}
               className="w-full mt-2 accent-green-400"
             />
           </div>
@@ -595,10 +636,6 @@ useEffect(() => {
 
                         <p className="text-[12px] text-green-300 font-bold">
                           {m.rank_label || `#${m.rank}`}
-                        </p>
-
-                        <p className="text-[11px] text-yellow-300 mt-1">
-                          Score: {m.score_fmt}
                         </p>
 
                         <p className="text-[11px] text-green-300 mt-1">

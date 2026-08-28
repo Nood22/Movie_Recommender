@@ -51,4 +51,11 @@ def filter_tears_items(
         filtered_items.append(item)
         if len(filtered_items) == top_k:
             break
+
+    # Candidate ranks describe the pre-filter model output. Once ineligible
+    # movies have been removed, expose ranks for the actual returned list so
+    # clients always receive a contiguous #1..#N ordering.
+    for rank, item in enumerate(filtered_items, start=1):
+        item["rank"] = rank
+        item["rank_label"] = f"#{rank}"
     return filtered_items, removed_items

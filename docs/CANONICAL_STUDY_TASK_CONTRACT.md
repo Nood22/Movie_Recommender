@@ -53,6 +53,10 @@ scoring, prompts, candidate filtering, ranking, context handling, UI, or logging
 - Task identity is not inferred from route or screen. Every study event must carry
   the protocol ID/version, system (`TEARS` or `GERS`), canonical task ID, session,
   participant, trial, and—where applicable—edit-attempt number and target ID.
+- **TEARS alpha is non-applicable.** The retained `0.5` request field is a
+  compatibility value only and does not participate in TEARS scoring. It must be
+  held fixed and logged, but must not be presented or analyzed as a TEARS blend
+  manipulation. GERS alpha remains the frozen hybrid model's blend input.
 
 ## Canonical tasks
 
@@ -131,6 +135,21 @@ profile-edit attempt in Task 2 or Task 3.
 | Task 2/3 profile edit | Submitted text-summary edit | Submitted genre-profile add/remove edit |
 | Recommendation input | Tokenized textual summary; selected IDs also participate in serving exclusions | RecVAE interaction vector from selected movie IDs plus normalized genre vector |
 | Task 4 context requirement | Exact context must survive into the effective text/model input | Exact context must reach an effective GERS input; accepting and discarding it is non-conforming |
+
+## Deployment constraints for version 1.0.0
+
+- Serving retains the existing release-year candidate filter
+  `release_year >= 2020`. It is part of every trial's immutable settings and is
+  recorded in both the deployment manifest and study log. This contract does
+  not authorize removing or changing it.
+- Candidate catalog, onboarding exclusions, observable top-K semantics, model
+  checkpoints, scoring, and latent representations remain frozen.
+- The current GERS selected-movie interaction vector uses a fixed value of 5.0
+  per selected movie. This is an unresolved protocol/model-interface issue and
+  is not changed by the study-readiness hardening pass.
+- GERS Task 4 is non-conforming while its accepted context is absent from the
+  effective model input. No genre mapping, heuristic, penalty, or substitute
+  input is authorized as a repair.
 
 ## Minimum auditable event sequence
 

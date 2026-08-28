@@ -1,0 +1,20 @@
+{
+  "protocol_id": "tears-gers-human-study-tasks",
+  "protocol_version": "1.0.0",
+  "instrument_id": null,
+  "instrument_version": null,
+  "status": "missing",
+  "configured": false,
+  "blocker": "Approved questionnaire wording, response scales, and item identifiers for Tasks 1a, 1b, and 4 have not been supplied.",
+  "tasks": {
+    "1a": {
+      "items": []
+    },
+    "1b": {
+      "items": []
+    },
+    "4": {
+      "items": []
+    }
+  }
+}

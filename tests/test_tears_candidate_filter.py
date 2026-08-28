@@ -7,12 +7,12 @@ from tears_candidate_filter import filter_tears_items
 class TEARSCandidateFilterTests(unittest.TestCase):
     def test_excludes_selected_catalog_duplicates_and_collection(self):
         items = [
-            {"movie_id": 356, "title": "Forrest Gump (1994)"},
-            {"movie_id": 2028, "title": "Saving Private Ryan (1998)"},
-            {"movie_id": 4000, "title": "Outside Movie (2001)"},
-            {"movie_id": 4000, "title": "Outside Movie (2001)"},
-            {"movie_id": 4001, "title": "Same Collection (2002)"},
-            {"movie_id": 4002, "title": "Another Outside Movie (2003)"},
+            {"movie_id": 356, "title": "Forrest Gump (1994)", "rank": 1},
+            {"movie_id": 2028, "title": "Saving Private Ryan (1998)", "rank": 2},
+            {"movie_id": 4000, "title": "Outside Movie (2001)", "rank": 3},
+            {"movie_id": 4000, "title": "Outside Movie (2001)", "rank": 4},
+            {"movie_id": 4001, "title": "Same Collection (2002)", "rank": 5},
+            {"movie_id": 4002, "title": "Another Outside Movie (2003)", "rank": 6},
         ]
         retained, removed = filter_tears_items(
             items,
@@ -26,6 +26,8 @@ class TEARSCandidateFilterTests(unittest.TestCase):
         )
 
         self.assertEqual([item["movie_id"] for item in retained], [4000, 4002])
+        self.assertEqual([item["rank"] for item in retained], [1, 2])
+        self.assertEqual([item["rank_label"] for item in retained], ["#1", "#2"])
         self.assertEqual(
             [item["reason"] for item in removed],
             ["selected", "catalog", "duplicate", "selected_collection"],

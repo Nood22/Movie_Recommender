@@ -79,6 +79,20 @@ export default function LandingPage() {
         </div>
       </div>
 
+      <div className="absolute inset-x-0 bottom-0 grid grid-cols-3 gap-3 px-4 opacity-35 md:hidden z-[15]">
+        {posters.slice(0, 3).map((poster, index) => (
+          <motion.img
+            key={LANDING_MOVIES[index].movieId}
+            src={poster}
+            alt={LANDING_MOVIES[index].title}
+            className="w-full aspect-[2/3] object-cover rounded-t-xl shadow-2xl"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.15 * index }}
+          />
+        ))}
+      </div>
+
       {/* MAIN CONTENT (higher) */}
       <main className="relative z-[30] flex min-h-screen max-w-2xl flex-col items-start justify-center px-6 pb-12 pt-32 text-left sm:px-12">
 
@@ -88,7 +102,7 @@ export default function LandingPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
         >
-          Full TEARS · 200,948 profiles · GERS scientific pilot
+          Your movies, your taste profile
         </motion.p>
 
         <motion.h1
@@ -113,7 +127,7 @@ export default function LandingPage() {
 
         <p className="mb-8 sm:mb-10 max-w-lg text-sm leading-relaxed text-gray-400">
           Pick a few movies, shape your taste profile, and explore recommendations
-          from the full-corpus TEARS model or the support-20 GERS pilot.
+          in two different ways.
         </p>
 
         {/* BUTTONS */}

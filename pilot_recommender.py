@@ -1,4 +1,4 @@
-"""Inference for the promoted full-corpus TEARS and pilot GERS models."""
+"""Inference for the promoted full-corpus TEARS and GERS models."""
 
 from __future__ import annotations
 
@@ -29,16 +29,16 @@ PILOT_MATRIX_DIR = Path(
     "datasets/pilot/support_20/matrix"
 )
 RECVAE_CHECKPOINT = Path(
-    "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/pilot/"
-    "recvae/seed-2024/6749417de707/best.pt"
+    "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/full/"
+    "recvae/seed-2022/e7a7e560dc42/best.pt"
 )
 TEARS_RUN_DIR = Path(
     "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/full/"
     "tears_base/seed-2022/10d017146b22"
 )
 GERS_RUN_DIR = Path(
-    "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/pilot/"
-    "gers_recvae/seed-2024/ccd035235026"
+    "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/full/"
+    "gers_recvae/seed-2022/d6335f29527f"
 )
 
 EXPECTED_MATRIX_FINGERPRINT = (
@@ -54,13 +54,13 @@ EXPECTED_LINKS_SHA256 = (
     "ef17da7710be76f7d510d5768d1b61826e3af4bf57812b9ca377e4c912123b22"
 )
 EXPECTED_CHECKPOINT_SHA256 = {
-    "recvae": "0fe50f12011d058cf211cb3098c62f9411a17e4d0457a9fa90cf06f3b6da848f",
+    "recvae": "dcddf9fb6198841b0e30668007f2505a526265f669448a244acb16ac0f1fdc8a",
     "tears_base": "08f2609c6dae073a1d6c2a8ba14a3121c5ff4ec807201c7f97c7d4aa3c598e2b",
-    "gers_recvae": "0065587925f80edc50d41e8c32c2b92d34261515c8a392a5bea0455baf18ec46",
+    "gers_recvae": "f4755f87b133b95ee6e9919c498011efd2096ee24da3e13895f48e3d30669dea",
 }
 EXPECTED_RUN_FINGERPRINTS = {
     "tears_base": "969f4b6ddb710f372739a6203724716e3f2a5e77ec9c3cd62b9e5058158ac3bc",
-    "gers_recvae": "a3f6afa78e0e86a09e3cf7eb43cec206bf192aa6d0f1719512d98bc76bf2b685",
+    "gers_recvae": "d2c828c1be5af3cf37716e4efb9bf4c4eeaab7d1f91bf2ac34e0c6aa52b8171f",
 }
 
 GENRE_ALIASES = {
@@ -82,7 +82,7 @@ def _checkpoint_payload(path: Path) -> dict[str, Any]:
 
 
 class PilotHybridRecommender:
-    """Load the full 200,948-profile TEARS run and retained pilot GERS run."""
+    """Load the promoted full 200,948-profile TEARS and GERS runs."""
 
     def __init__(
         self,
@@ -203,7 +203,7 @@ class PilotHybridRecommender:
 
         for name, run_dir, matrix_dir, recvae_checkpoint in (
             ("tears_base", TEARS_RUN_DIR, MATRIX_DIR, None),
-            ("gers_recvae", GERS_RUN_DIR, PILOT_MATRIX_DIR, RECVAE_CHECKPOINT),
+            ("gers_recvae", GERS_RUN_DIR, MATRIX_DIR, RECVAE_CHECKPOINT),
         ):
             run_manifest = json.loads(
                 (run_dir / "manifest.json").read_text(encoding="utf-8")
@@ -443,7 +443,7 @@ class PilotHybridRecommender:
     def status(self) -> dict[str, Any]:
         return {
             "status": "running",
-            "deployment": "full-tears-200948-with-pilot-gers-9763",
+            "deployment": "full-tears-and-gers-200948",
             "device": str(self.device),
             "users": 200_948,
             "splits": {"train": 180_948, "validation": 10_000, "test": 10_000},
@@ -471,7 +471,10 @@ class PilotHybridRecommender:
                 },
                 "gers": {
                     "model": "gers_recvae",
-                    "scope": "scientific-pilot-9763",
+                    "scope": "full-cohort-180948-train",
+                    "seed": 2022,
+                    "epochs": 200,
+                    "best_epoch": 22,
                     "path": str(GERS_RUN_DIR / "best.pt"),
                     "sha256": EXPECTED_CHECKPOINT_SHA256["gers_recvae"],
                     "run_fingerprint": EXPECTED_RUN_FINGERPRINTS["gers_recvae"],
