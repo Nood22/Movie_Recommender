@@ -1,0 +1,194 @@
+{
+  "model": "gpt-5-mini-2025-08-07",
+  "prompt_sha256": "4d5bf36f2b8e812a7ec4f3253abc965c1ea3b0007d812a6edb0a3d9f013e5c4d",
+  "api_source_sha256": "448662c187c8eb745d3aa4477af370ab966d773363cc25936bcf299dc8a1b268",
+  "summary_policy": "shared-editable-profile-v2",
+  "records": [
+    {
+      "id": "animation-0",
+      "evidence": [
+        {
+          "title": "Up (2009)",
+          "rating": 5.0,
+          "genres": [
+            "Adventure",
+            "Animation",
+            "Children",
+            "Drama"
+          ]
+        }
+      ],
+      "selected_ids": [
+        68954
+      ],
+      "disliked": [],
+      "context": "",
+      "summary": "Summary: The viewer may enjoy animated, family-friendly films with elements of adventure, drama. Their interest could vary from one film to another.",
+      "valid": true,
+      "word_count": 22,
+      "missing_probe_genres": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "kind": "initial",
+          "word_count": 53,
+          "validator_errors": [
+            "grounding_missing_positive:Drama"
+          ],
+          "generation_errors": [],
+          "retry_errors": [
+            "grounding_missing_positive:Drama"
+          ]
+        },
+        {
+          "attempt": 2,
+          "kind": "validator_repair",
+          "word_count": 35,
+          "validator_errors": [
+            "grounding_positive_on_unsupported:Drama"
+          ],
+          "generation_errors": [],
+          "retry_errors": [
+            "grounding_positive_on_unsupported:Drama"
+          ]
+        },
+        {
+          "attempt": 3,
+          "kind": "validator_repair",
+          "word_count": 42,
+          "validator_errors": [
+            "grounding_missing_positive:Drama"
+          ],
+          "generation_errors": [],
+          "retry_errors": [
+            "grounding_missing_positive:Drama"
+          ]
+        },
+        {
+          "attempt": 4,
+          "kind": "validated_sparse_fallback",
+          "word_count": 22,
+          "validator_errors": [],
+          "generation_errors": [],
+          "retry_errors": []
+        }
+      ]
+    },
+    {
+      "id": "animation-1",
+      "evidence": [
+        {
+          "title": "Up (2009)",
+          "rating": 5.0,
+          "genres": [
+            "Adventure",
+            "Animation",
+            "Children",
+            "Drama"
+          ]
+        }
+      ],
+      "selected_ids": [
+        68954
+      ],
+      "disliked": [],
+      "context": "",
+      "summary": "Summary: The viewer may respond to animated, family-oriented adventure stories that blend whimsical, imaginative journeys with sincere emotional drama. They may particularly appreciate narratives that combine playful visual invention and heartfelt themes\u2014such as enduring relationships, poignant character growth, and moments of bittersweet uplift\u2014presented for a broad (including younger) audience.",
+      "valid": true,
+      "word_count": 49,
+      "missing_probe_genres": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "kind": "initial",
+          "word_count": 49,
+          "validator_errors": [],
+          "generation_errors": [],
+          "retry_errors": []
+        }
+      ]
+    },
+    {
+      "id": "soul-0",
+      "evidence": [
+        {
+          "title": "Soul (2020)",
+          "rating": 5.0,
+          "genres": [
+            "Adventure",
+            "Animation",
+            "Children",
+            "Comedy",
+            "Fantasy"
+          ]
+        }
+      ],
+      "selected_ids": [
+        225173
+      ],
+      "disliked": [],
+      "context": "",
+      "summary": "Summary: The viewer may enjoy animated, family-friendly films that combine playful adventure with light comedy and imaginative fantasy elements. They seem receptive to warm, character-focused stories told through animation that balance whimsy and accessible themes suitable for children and family audiences.",
+      "valid": true,
+      "word_count": 41,
+      "missing_probe_genres": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "kind": "initial",
+          "word_count": 41,
+          "validator_errors": [],
+          "generation_errors": [],
+          "retry_errors": []
+        }
+      ]
+    },
+    {
+      "id": "soul-1",
+      "evidence": [
+        {
+          "title": "Soul (2020)",
+          "rating": 5.0,
+          "genres": [
+            "Adventure",
+            "Animation",
+            "Children",
+            "Comedy",
+            "Fantasy"
+          ]
+        }
+      ],
+      "selected_ids": [
+        225173
+      ],
+      "disliked": [],
+      "context": "",
+      "summary": "Summary: The viewer seems to respond to animated stories that combine Adventure and Fantasy elements with a warm, family-oriented (Children) tone, often delivered through playful Comedy. They may prefer films that foreground inventive Animation, gentle humor, uplifting emotional themes, and a sense of wonder that balances adventurous stakes with accessible, child-friendly reflection.",
+      "valid": true,
+      "word_count": 52,
+      "missing_probe_genres": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "kind": "initial",
+          "word_count": 45,
+          "validator_errors": [
+            "grounding_missing_positive:Adventure"
+          ],
+          "generation_errors": [],
+          "retry_errors": [
+            "grounding_missing_positive:Adventure"
+          ]
+        },
+        {
+          "attempt": 2,
+          "kind": "validator_repair",
+          "word_count": 52,
+          "validator_errors": [],
+          "generation_errors": [],
+          "retry_errors": []
+        }
+      ]
+    }
+  ]
+}

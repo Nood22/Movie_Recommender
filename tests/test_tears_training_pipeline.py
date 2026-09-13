@@ -28,7 +28,12 @@ from tears_training.summaries import (
     write_jsonl,
 )
 from tears_training.summary_wandb import poll_metrics, quality_metrics
-from tears_training.train import wandb_tracking_identity
+from tears_training.train import (
+    _restore_rng_state,
+    _rng_state,
+    resolve_resume_path,
+    wandb_tracking_identity,
+)
 from tears_training.wandb_replay import latest_schedule_metrics
 
 
@@ -39,6 +44,34 @@ def make_config(tmp_path: Path) -> ExperimentConfig:
         output_root=tmp_path / "output",
         paid_backup_root=tmp_path / "paid",
     )
+
+
+def test_resolve_resume_path_uses_same_run_checkpoint_automatically(tmp_path):
+    run_dir = tmp_path / "run"
+    run_dir.mkdir()
+    automatic = run_dir / "resume.pt"
+    automatic.write_bytes(b"checkpoint")
+
+    assert resolve_resume_path(None, run_dir) == automatic
+
+
+def test_resolve_resume_path_prefers_explicit_and_allows_clean_start(tmp_path):
+    run_dir = tmp_path / "run"
+    run_dir.mkdir()
+    explicit = tmp_path / "explicit.pt"
+
+    assert resolve_resume_path(explicit, run_dir) == explicit
+    assert resolve_resume_path(None, run_dir) is None
+
+
+def test_restore_rng_state_normalizes_serialized_byte_state_to_cpu():
+    state = _rng_state()
+    state["torch"] = state["torch"].numpy().astype(np.int64)
+
+    _restore_rng_state(state)
+
+    assert torch.get_rng_state().device.type == "cpu"
+    assert torch.get_rng_state().dtype == torch.uint8
 
 
 def strict_summary_text(*, leaked: str = "") -> str:

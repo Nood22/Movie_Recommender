@@ -1,0 +1,79 @@
+{
+  "architecture": {
+    "consistency": "remove genuine broad positive claims colliding with supported negative genres",
+    "llm_role": "positive preference prose only",
+    "manual_labels_at_inference": false,
+    "negative_role": "one deterministic evidence-derived genre sentence or abstention",
+    "prefix": "deterministic code-rendered Summary:",
+    "privacy": "generic history-title/year/numeric-rating sanitization",
+    "tmdb_semantic_metadata": false,
+    "user_specific_exceptions": false
+  },
+  "code": {
+    "module_path": "/home/mila/a/adls/tears_project_final/tears_training/final_production_summary_protocol.py",
+    "module_sha256": "3af359fc91063a79da17a80cbed07f2ef0e8c286c2ee731b04e84c88bb11a716",
+    "tests_path": "/home/mila/a/adls/tears_project_final/tests/test_final_production_summary_protocol.py",
+    "tests_sha256": "06745f6a9aeb87d1a3cdbec544d28971cecefa3e58d8bb139ddbfe97e6249f39"
+  },
+  "evidence_rules": {
+    "abstention": "emit no supported negative genre when no genre satisfies negative_support; the verbalizer must explicitly report no supported strong negative preference",
+    "conflict": "at least 3 positive and at least 3 negative occurrences for the same genre; the genre is excluded from both supported preference lists",
+    "genre_occurrence": "Each MovieLens pipe-delimited genre on a rated item contributes one occurrence to that genre. '(no genres listed)' is ignored.",
+    "negative_support": "not conflicting; repeated negative; negative occurrences are at least half of all occurrences; negative occurrences are at least twice positive occurrences",
+    "positive_support": "not conflicting; repeated positive; positive occurrences are at least half of all occurrences; positive occurrences are at least twice negative occurrences",
+    "rating_bands": {
+      "negative": "rating <= 2.5",
+      "positive": "rating >= 4.0",
+      "very_negative": "rating <= 1.5"
+    },
+    "repeated_negative": "at least 3 negative occurrences for the genre, or at least 2 very-negative occurrences",
+    "repeated_positive": "at least 3 positive occurrences for the genre",
+    "themes_plots_styles": "unavailable: the frozen request histories provide only titles, numeric ratings, and MovieLens genres; titles are not mined for latent attributes",
+    "weak_or_ambiguous_negative": "a genre has at least one negative occurrence but fails negative_support because evidence is isolated, insufficiently concentrated, contradicted, or conflicting"
+  },
+  "fingerprint": "0306cdf3d4228063b83ba115d20950c325221341b824d68f23c7cd55a6b8b2c4",
+  "generation_settings": {
+    "history_construction": {
+      "maximum_items": 50,
+      "order": "timestamp_descending_movieId_descending_tiebreak",
+      "template": "\\n{title}\\nRating: {rating}\\n\\\\Genres: {genres}\\n",
+      "validation_test_scope": "frozen_observed_70_percent_only"
+    },
+    "max_output_tokens": 450,
+    "reasoning_effort": "minimal",
+    "store": false,
+    "text_verbosity": "low"
+  },
+  "model": "gpt-5-mini-2025-08-07",
+  "offline_calibration": {
+    "gates": {
+      "duplicates_clean": false,
+      "formatting_failures_zero": true,
+      "inappropriate_abstentions_zero": true,
+      "missing_or_invalid_zero": true,
+      "privacy_leakage_zero": true,
+      "semantic_completeness_100_percent": true,
+      "substantive_positive_negative_contradictions_zero": true,
+      "unsupported_or_overstated_negative_claims_zero": true
+    },
+    "source_evidence_artifact": "/network/scratch/a/adls/FullTrainingTEARS/full_ml32m_emiliano_prompt/production_calibration_1000/v002_20260816_v2_generic_repair",
+    "source_raw_artifact": "/network/scratch/a/adls/FullTrainingTEARS/full_ml32m_emiliano_prompt/production_calibration_1000/v008_20260816_v2_generic_repair_final",
+    "users": 1000
+  },
+  "positive_prompt": "Task: You will now help me generate a highly detailed positive-preference summary based on the broad common elements of movies.\nDo not comment on the year of production. Do not mention any specific movie titles or actors.\nDo not quote or mention numeric ratings; use qualitative preference language.\nUse the supplied history only as private evidence. Never copy a title from it into the output.\nDescribe only positive preferences: specific genres the user enjoys and specific plot or narrative elements the user seems to enjoy.\nDo not generate negative preferences, dislikes, abstentions, negative plots, negative themes, negative styles, negative tones, or content about what other users may enjoy.\nKeep the positive prose concise and natural. Do not add a Summary: prefix; it is rendered deterministically after validation.",
+  "positive_prompt_sha256": "8676c06c74d6ad541856ef7f60bc4cb79ba7d3c50898750dba3ba15a7fec1e39",
+  "protocol_version": "tears-final-positive-llm-deterministic-negative-20260816",
+  "status": "gate_failed",
+  "structured_output": {
+    "additionalProperties": false,
+    "properties": {
+      "summary": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "summary"
+    ],
+    "type": "object"
+  }
+}

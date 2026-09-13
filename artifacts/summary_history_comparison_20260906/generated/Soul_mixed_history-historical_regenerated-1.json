@@ -1,0 +1,12 @@
+{
+  "case": "Soul_mixed_history",
+  "version": "historical_regenerated",
+  "repeat": 1,
+  "outputs": [
+    {
+      "version": "historical_regenerated",
+      "summary": "Summary: The viewer strongly favors high-energy speculative and adventure genres, often enjoying visually ambitious action and science fiction alongside adventurous and imaginative family friendly animation. They prefer films that blend emotional depth with existential or fantastical themes, showing an affinity for character journeys that explore meaning, identity, and personal transformation within inventive or surreal settings. They have no strong preference supported for pure romance or horror and no strong preference supported for understated domestic drama. They tend to dislike straightforward procedural stories or conventional genre-only fare, and may not appreciate films that prioritize plot mechanics over emotional resonance while other viewers who favor tightly plotted, genre-pure narratives might enjoy those more."
+    }
+  ],
+  "raw_response": "{\"summary\":\"Summary: The viewer strongly favors high-energy speculative and adventure genres, often enjoying visually ambitious action and science fiction alongside adventurous and imaginative family friendly animation. They prefer films that blend emotional depth with existential or fantastical themes, showing an affinity for character journeys that explore meaning, identity, and personal transformation within inventive or surreal settings. They have no strong preference supported for pure romance or horror and no strong preference supported for understated domestic drama. They tend to dislike straightforward procedural stories or conventional genre-only fare, and may not appreciate films that prioritize plot mechanics over emotional resonance while other viewers who favor tightly plotted, genre-pure narratives might enjoy those more.\"}"
+}

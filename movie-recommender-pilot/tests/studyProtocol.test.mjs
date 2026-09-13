@@ -39,7 +39,7 @@ test("recommendation signatures cover representation and immutable settings", as
     context: "",
     alpha: 0.5,
     top_k: 12,
-    min_release_year: 2020,
+    min_release_year: 2015,
   };
   const first = await inputSignature(recommendationInputSnapshot("TEARS", payload));
   const second = await inputSignature(

@@ -1,0 +1,42 @@
+{
+  "previous": {
+    "ndcg@12": 0.13293164243771655,
+    "recall@12": 0.09305899313253621,
+    "ndcg@50": 0.16503796763349723,
+    "recall@50": 0.22024327758593948
+  },
+  "coverage_tiers": {
+    "ndcg@12": 0.02556614768884448,
+    "recall@12": 0.016527129922596022,
+    "ndcg@50": 0.03417943781268042,
+    "recall@50": 0.043724755421067456
+  },
+  "majority_tiers": {
+    "ndcg@12": 0.04689570440674218,
+    "recall@12": 0.02416080239838825,
+    "ndcg@50": 0.062236713542344245,
+    "recall@50": 0.07663601514810013
+  },
+  "bounded_within_tiers": {
+    "ndcg@12": 0.12997460864919425,
+    "recall@12": 0.08135919427302105,
+    "ndcg@50": 0.16349289811748616,
+    "recall@50": 0.2184507461899929
+  },
+  "compound": {
+    "ndcg@12": 0.13406730261346536,
+    "recall@12": 0.09393882235327884,
+    "ndcg@50": 0.16535428419688605,
+    "recall@50": 0.220334002313276
+  }
+}
+{"id": "request-0dfcbc16-7e48-457c-8e3f-236afb0c8f1a", "policy": "previous", "preferences": {"preferred_genres": ["Adventure", "Animation", "Children", "Comedy", "Fantasy"], "avoided_genres": [], "conflicting_genres": [], "preferred_genre_combinations": [["Animation", "Children"]]}, "top12": ["Monsters, Inc. (2001)", "Shrek (2001)", "Finding Nemo (2003)", "Incredibles, The (2004)", "Toy Story (1995)", "Pirates of the Caribbean: The Curse of the Black Pearl (2003)", "Ice Age (2002)", "Up (2009)", "Ratatouille (2007)", "WALL\u00b7E (2008)", "Lord of the Rings: The Fellowship of the Ring, The (2001)", "Lord of the Rings: The Return of the King, The (2003)"], "animation_family_count": 9, "outside_onboarding_count": 2}
+{"id": "request-0dfcbc16-7e48-457c-8e3f-236afb0c8f1a", "policy": "coverage_tiers", "preferences": {"preferred_genres": ["Adventure", "Animation", "Children", "Comedy", "Fantasy"], "avoided_genres": [], "conflicting_genres": [], "preferred_genre_combinations": [["Animation", "Children"]]}, "top12": ["Monsters, Inc. (2001)", "Shrek (2001)", "Toy Story (1995)", "Toy Story 2 (1999)", "Toy Story 3 (2010)", "Emperor's New Groove, The (2000)", "Inside Out (2015)", "Robots (2005)", "Shrek the Third (2007)", "Who Framed Roger Rabbit? (1988)", "Antz (1998)", "The Lego Movie (2014)"], "animation_family_count": 12, "outside_onboarding_count": 8}
+{"id": "request-0dfcbc16-7e48-457c-8e3f-236afb0c8f1a", "policy": "majority_tiers", "preferences": {"preferred_genres": ["Adventure", "Animation", "Children", "Comedy", "Fantasy"], "avoided_genres": [], "conflicting_genres": [], "preferred_genre_combinations": [["Animation", "Children"]]}, "top12": ["Monsters, Inc. (2001)", "Shrek (2001)", "Finding Nemo (2003)", "Incredibles, The (2004)", "Toy Story (1995)", "Pirates of the Caribbean: The Curse of the Black Pearl (2003)", "Ice Age (2002)", "Up (2009)", "WALL\u00b7E (2008)", "Shrek 2 (2004)", "Toy Story 2 (1999)", "How to Train Your Dragon (2010)"], "animation_family_count": 11, "outside_onboarding_count": 4}
+{"id": "request-0dfcbc16-7e48-457c-8e3f-236afb0c8f1a", "policy": "bounded_within_tiers", "preferences": {"preferred_genres": ["Adventure", "Animation", "Children", "Comedy", "Fantasy"], "avoided_genres": [], "conflicting_genres": [], "preferred_genre_combinations": [["Animation", "Children"]]}, "top12": ["Monsters, Inc. (2001)", "Shrek (2001)", "Toy Story (1995)", "Finding Nemo (2003)", "Incredibles, The (2004)", "Toy Story 2 (1999)", "Ice Age (2002)", "Shrek 2 (2004)", "Toy Story 3 (2010)", "How to Train Your Dragon (2010)", "Pirates of the Caribbean: The Curse of the Black Pearl (2003)", "Up (2009)"], "animation_family_count": 11, "outside_onboarding_count": 4}
+{"id": "request-0dfcbc16-7e48-457c-8e3f-236afb0c8f1a", "policy": "compound", "preferences": {"preferred_genres": ["Adventure", "Animation", "Children", "Comedy", "Fantasy"], "avoided_genres": [], "conflicting_genres": [], "preferred_genre_combinations": [["Animation", "Children"]]}, "top12": ["Monsters, Inc. (2001)", "Shrek (2001)", "Finding Nemo (2003)", "Incredibles, The (2004)", "Toy Story (1995)", "Ice Age (2002)", "Up (2009)", "Ratatouille (2007)", "WALL\u00b7E (2008)", "Shrek 2 (2004)", "Toy Story 2 (1999)", "How to Train Your Dragon (2010)"], "animation_family_count": 12, "outside_onboarding_count": 4}
+{"id": "request-22a77bba-5da4-4378-b62a-f2d4590e4836", "policy": "previous", "preferences": {"preferred_genres": ["Adventure", "Animation", "Children", "Comedy", "Fantasy"], "avoided_genres": [], "conflicting_genres": [], "preferred_genre_combinations": [["Animation", "Children"]]}, "top12": ["Toy Story (1995)", "Star Wars: Episode IV - A New Hope (1977)", "Star Wars: Episode VI - Return of the Jedi (1983)", "Forrest Gump (1994)", "Raiders of the Lost Ark (Indiana Jones and the Raiders of the Lost Ark) (1981)", "Star Wars: Episode V - The Empire Strikes Back (1980)", "Pulp Fiction (1994)", "Willy Wonka & the Chocolate Factory (1971)", "Lord of the Rings: The Fellowship of the Ring, The (2001)", "Lion King, The (1994)", "Jurassic Park (1993)", "Lord of the Rings: The Return of the King, The (2003)"], "animation_family_count": 2, "outside_onboarding_count": 10}
+{"id": "request-22a77bba-5da4-4378-b62a-f2d4590e4836", "policy": "coverage_tiers", "preferences": {"preferred_genres": ["Adventure", "Animation", "Children", "Comedy", "Fantasy"], "avoided_genres": [], "conflicting_genres": [], "preferred_genre_combinations": [["Animation", "Children"]]}, "top12": ["Toy Story (1995)", "Monsters, Inc. (2001)", "Shrek (2001)", "Toy Story 2 (1999)", "Toy Story 3 (2010)", "Space Jam (1996)", "Inside Out (2015)", "Who Framed Roger Rabbit? (1988)", "Antz (1998)", "Emperor's New Groove, The (2000)", "The Lego Movie (2014)", "Moana (2016)"], "animation_family_count": 12, "outside_onboarding_count": 8}
+{"id": "request-22a77bba-5da4-4378-b62a-f2d4590e4836", "policy": "majority_tiers", "preferences": {"preferred_genres": ["Adventure", "Animation", "Children", "Comedy", "Fantasy"], "avoided_genres": [], "conflicting_genres": [], "preferred_genre_combinations": [["Animation", "Children"]]}, "top12": ["Toy Story (1995)", "Willy Wonka & the Chocolate Factory (1971)", "Lion King, The (1994)", "Monsters, Inc. (2001)", "Shrek (2001)", "Aladdin (1992)", "Spirited Away (Sen to Chihiro no kamikakushi) (2001)", "Finding Nemo (2003)", "Princess Bride, The (1987)", "Incredibles, The (2004)", "WALL\u00b7E (2008)", "Up (2009)"], "animation_family_count": 9, "outside_onboarding_count": 5}
+{"id": "request-22a77bba-5da4-4378-b62a-f2d4590e4836", "policy": "bounded_within_tiers", "preferences": {"preferred_genres": ["Adventure", "Animation", "Children", "Comedy", "Fantasy"], "avoided_genres": [], "conflicting_genres": [], "preferred_genre_combinations": [["Animation", "Children"]]}, "top12": ["Toy Story (1995)", "Monsters, Inc. (2001)", "Shrek (2001)", "Toy Story 2 (1999)", "Aladdin (1992)", "Finding Nemo (2003)", "Incredibles, The (2004)", "Star Wars: Episode IV - A New Hope (1977)", "Willy Wonka & the Chocolate Factory (1971)", "Lion King, The (1994)", "Spirited Away (Sen to Chihiro no kamikakushi) (2001)", "Princess Bride, The (1987)"], "animation_family_count": 8, "outside_onboarding_count": 7}
+{"id": "request-22a77bba-5da4-4378-b62a-f2d4590e4836", "policy": "compound", "preferences": {"preferred_genres": ["Adventure", "Animation", "Children", "Comedy", "Fantasy"], "avoided_genres": [], "conflicting_genres": [], "preferred_genre_combinations": [["Animation", "Children"]]}, "top12": ["Toy Story (1995)", "Lion King, The (1994)", "Monsters, Inc. (2001)", "Shrek (2001)", "Aladdin (1992)", "Finding Nemo (2003)", "Incredibles, The (2004)", "WALL\u00b7E (2008)", "Up (2009)", "Beauty and the Beast (1991)", "Nightmare Before Christmas, The (1993)", "Toy Story 2 (1999)"], "animation_family_count": 12, "outside_onboarding_count": 6}

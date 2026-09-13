@@ -1,0 +1,49 @@
+{
+  "case": "Soul_mixed_history",
+  "version": "current",
+  "repeat": 2,
+  "outputs": [
+    {
+      "version": "current_backend",
+      "summary": "Summary: The viewer's history shows positive responses to films that blend speculative science fiction imagery, kinetic action and adventurous scope with elements of comedy and animation, indicating an appetite for varied formats that mix spectacle with accessible, broadly appealing storytelling across different tones. Their selection history also suggests a preference for concept driven works that pair imaginative worldbuilding with intimate character focus and emotional exploration, favoring creative formal approaches that interweave humor, existential questions, and family oriented elements rather than rigidly conventional realism. No strong preference is supported for disliked genres or styles, leaving this aspect of the viewer's taste unspecified without implying that they welcome every genre or share the same response to all approaches to storytelling. No strong preference is supported for disliked plot points or content, leaving the viewer's individual boundaries unspecified without identifying unwanted story elements or assuming that content enjoyed by other viewers would suit their own personal tastes."
+    },
+    {
+      "version": "current_display",
+      "summary": "Summary: The viewer seems to respond to adventurous, high-concept stories that blend kinetic spectacle with emotional depth and inventive premises. They may enjoy films that combine science-fiction or fantastical worldbuilding with heartfelt character arcs and moments of playful or surreal humor, especially when action and comedic energy are woven into emotionally resonant storytelling."
+    }
+  ],
+  "backend_attempts": [
+    {
+      "word_count": 165,
+      "errors": [
+        "grounding_positive_on_unsupported:Action|Adventure|Fantasy|Sci-Fi"
+      ]
+    },
+    {
+      "word_count": 154,
+      "errors": []
+    }
+  ],
+  "display_attempts": [
+    {
+      "attempt": 1,
+      "kind": "initial",
+      "word_count": 63,
+      "validator_errors": [
+        "audit_process_language"
+      ],
+      "generation_errors": [],
+      "retry_errors": [
+        "audit_process_language"
+      ]
+    },
+    {
+      "attempt": 2,
+      "kind": "validator_repair",
+      "word_count": 53,
+      "validator_errors": [],
+      "generation_errors": [],
+      "retry_errors": []
+    }
+  ]
+}

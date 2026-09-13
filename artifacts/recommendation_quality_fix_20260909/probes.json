@@ -1,0 +1,145 @@
+[
+  {
+    "id": "lotr_backend",
+    "summary": "Summary: The viewer prefers works labeled Adventure and Fantasy, suggesting an interest in expansive worldbuilding and journey driven plots, while acknowledging that this conclusion rests on a single positive example and so remains tentative rather than broadly confirmed. No strong preference is supported for particular plot points or themes based on the available history, because the single positive example does not substantiate reliable conclusions about preferences for specific narrative devices, motifs, pacing, or character arcs beyond the tentative genre indication noted above. No strong preference is supported for disliked genres or styles, leaving this aspect of the viewer's taste unspecified without implying that they welcome every genre or share the same response to all approaches to storytelling. No strong preference is supported for disliked plot points or content, leaving the viewer's individual boundaries unspecified without identifying unwanted story elements or assuming that content enjoyed by other viewers would suit their own personal tastes.",
+    "selected_ids": [
+      4993
+    ],
+    "expected_positive": [
+      "Adventure",
+      "Fantasy"
+    ]
+  },
+  {
+    "id": "lotr_display",
+    "summary": "Summary: The viewer seems to respond positively to expansive, high-fantasy adventure that emphasizes epic journeys, richly imagined worlds, and ensemble casts undertaking a perilous quest. They may enjoy narratives that combine sweeping action and stakes with mythic or fantastical elements presented on a grand scale.",
+    "selected_ids": [
+      4993
+    ],
+    "expected_positive": [
+      "Adventure",
+      "Fantasy"
+    ]
+  },
+  {
+    "id": "fantasy",
+    "summary": "Summary: The viewer may enjoy high fantasy and adventure, especially epic quests, magical worlds and friendships tested through long journeys.",
+    "expected_positive": [
+      "Fantasy",
+      "Adventure"
+    ],
+    "expected_negative": []
+  },
+  {
+    "id": "comedy",
+    "summary": "Summary: The viewer enjoys comedy, especially witty satire, playful humor and colorful, lighthearted storytelling.",
+    "expected_positive": [
+      "Comedy"
+    ],
+    "expected_negative": []
+  },
+  {
+    "id": "comedy_no_action",
+    "summary": "Summary: The viewer enjoys comedy, especially witty satire, playful humor and colorful, lighthearted storytelling. They dislike action and horror.",
+    "expected_positive": [
+      "Comedy"
+    ],
+    "expected_negative": [
+      "Action",
+      "Horror"
+    ],
+    "edit_of": "comedy"
+  },
+  {
+    "id": "horror",
+    "summary": "Summary: The viewer enjoys horror, especially supernatural dread, haunted houses and frightening psychological stories. They dislike comedy.",
+    "expected_positive": [
+      "Horror"
+    ],
+    "expected_negative": [
+      "Comedy"
+    ]
+  },
+  {
+    "id": "romance",
+    "summary": "Summary: The viewer enjoys romance and comedy, especially warm love stories, witty dialogue and heartfelt relationships. They dislike action and horror.",
+    "expected_positive": [
+      "Romance",
+      "Comedy"
+    ],
+    "expected_negative": [
+      "Action",
+      "Horror"
+    ]
+  },
+  {
+    "id": "scifi",
+    "summary": "Summary: The viewer enjoys science fiction and action, especially space exploration, alien encounters and futuristic adventures.",
+    "expected_positive": [
+      "Sci-Fi",
+      "Action"
+    ],
+    "expected_negative": []
+  },
+  {
+    "id": "animation",
+    "summary": "Summary: The viewer enjoys animation and fantasy, especially imaginative worlds, expressive characters and whimsical magic.",
+    "expected_positive": [
+      "Animation",
+      "Fantasy"
+    ],
+    "expected_negative": []
+  },
+  {
+    "id": "crime",
+    "summary": "Summary: The viewer enjoys crime and mystery, especially intricate investigations, moral ambiguity and cleverly plotted detective stories.",
+    "expected_positive": [
+      "Crime",
+      "Mystery"
+    ],
+    "expected_negative": []
+  },
+  {
+    "id": "drama",
+    "summary": "Summary: The viewer enjoys drama, especially intimate relationships, complex characters and quiet emotional storytelling. They dislike action and horror.",
+    "expected_positive": [
+      "Drama"
+    ],
+    "expected_negative": [
+      "Action",
+      "Horror"
+    ]
+  },
+  {
+    "id": "documentary",
+    "summary": "Summary: The viewer enjoys documentary films, especially thoughtful investigations and detailed accounts of real people and events.",
+    "expected_positive": [
+      "Documentary"
+    ],
+    "expected_negative": []
+  },
+  {
+    "id": "neutral",
+    "summary": "Summary: The viewer is still exploring their movie preferences.",
+    "expected_positive": [],
+    "expected_negative": []
+  },
+  {
+    "id": "withdrawn_comedy",
+    "summary": "Summary: The viewer enjoys stories about close friendships and self discovery.",
+    "expected_positive": [],
+    "expected_negative": [],
+    "edit_of": "comedy"
+  },
+  {
+    "id": "reversed_comedy",
+    "summary": "Summary: The viewer dislikes comedy. They enjoy horror, especially supernatural dread and frightening psychological stories.",
+    "expected_positive": [
+      "Horror"
+    ],
+    "expected_negative": [
+      "Comedy"
+    ],
+    "edit_of": "comedy"
+  }
+]

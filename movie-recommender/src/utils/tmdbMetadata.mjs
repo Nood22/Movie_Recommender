@@ -52,18 +52,24 @@ export function filterRecommendationRecords(
   );
   const seenIds = new Set();
 
-  return recommendations.filter((recommendation) => {
-    const movieId = String(Number(recommendation.movie_id));
-    if (
-      excludedIds.has(movieId) ||
-      excludedTitleYears.has(canonicalMovieTitleYearKey(recommendation.title)) ||
-      seenIds.has(movieId)
-    ) {
-      return false;
-    }
-    seenIds.add(movieId);
-    return true;
-  });
+  return recommendations
+    .filter((recommendation) => {
+      const movieId = String(Number(recommendation.movie_id));
+      if (
+        excludedIds.has(movieId) ||
+        excludedTitleYears.has(canonicalMovieTitleYearKey(recommendation.title)) ||
+        seenIds.has(movieId)
+      ) {
+        return false;
+      }
+      seenIds.add(movieId);
+      return true;
+    })
+    .map((recommendation, index) => ({
+      ...recommendation,
+      rank: index + 1,
+      rank_label: `#${index + 1}`,
+    }));
 }
 
 export function resolveMovieLensRecommendation(item, verifiedTMDBMetadata) {

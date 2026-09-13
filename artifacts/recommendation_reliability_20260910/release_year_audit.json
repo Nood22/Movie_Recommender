@@ -1,0 +1,115 @@
+{
+  "training_interactions": 28528213,
+  "catalog_titles": 22343,
+  "source_titles": 87585,
+  "maximum_catalog_release_year": 2023,
+  "bands": [
+    {
+      "years": "1-1999",
+      "candidate_titles": 9416,
+      "raw_titles": 35521,
+      "candidate_share": 0.42142953050172316,
+      "training_interaction_share": 0.5701674689543296,
+      "training_rating_mass_share": 0.5740394117886136,
+      "median_training_ratings_per_title": 160.0
+    },
+    {
+      "years": "2000-2009",
+      "candidate_titles": 5231,
+      "raw_titles": 15489,
+      "candidate_share": 0.23412254397350402,
+      "training_interaction_share": 0.2804893527680826,
+      "training_rating_mass_share": 0.27648448690774524,
+      "median_training_ratings_per_title": 156.0
+    },
+    {
+      "years": "2010-2014",
+      "candidate_titles": 3042,
+      "raw_titles": 12192,
+      "candidate_share": 0.1361500246162109,
+      "training_interaction_share": 0.08759044949643359,
+      "training_rating_mass_share": 0.0878061107935526,
+      "median_training_ratings_per_title": 83.0
+    },
+    {
+      "years": "2015-2019",
+      "candidate_titles": 3373,
+      "raw_titles": 15780,
+      "candidate_share": 0.15096450789956586,
+      "training_interaction_share": 0.0528230071753881,
+      "training_rating_mass_share": 0.05306594018869312,
+      "median_training_ratings_per_title": 63.0
+    },
+    {
+      "years": "2020-2023",
+      "candidate_titles": 1211,
+      "raw_titles": 7986,
+      "candidate_share": 0.05420042071342255,
+      "training_interaction_share": 0.007870279151379023,
+      "training_rating_mass_share": 0.007527716658325628,
+      "median_training_ratings_per_title": 56.0
+    },
+    {
+      "years": "2024-2026",
+      "candidate_titles": 0,
+      "raw_titles": 0,
+      "candidate_share": 0.0,
+      "training_interaction_share": 0.0,
+      "training_rating_mass_share": 0.0,
+      "median_training_ratings_per_title": null
+    }
+  ],
+  "pre2015": {
+    "candidate_share": 0.7917020990914381,
+    "training_interaction_share": 0.9382472712188457,
+    "training_rating_mass_share": 0.9383300094899115
+  },
+  "examples": [
+    {
+      "movieId": 1,
+      "title": "Toy Story (1995)",
+      "training_ratings": 62077,
+      "positive_ratings": 40925
+    },
+    {
+      "movieId": 6377,
+      "title": "Finding Nemo (2003)",
+      "training_ratings": 41553,
+      "positive_ratings": 25353
+    },
+    {
+      "movieId": 68954,
+      "title": "Up (2009)",
+      "training_ratings": 32727,
+      "positive_ratings": 22105
+    },
+    {
+      "movieId": 134853,
+      "title": "Inside Out (2015)",
+      "training_ratings": 19433,
+      "positive_ratings": 12718
+    },
+    {
+      "movieId": 225173,
+      "title": "Soul (2020)",
+      "training_ratings": 4040,
+      "positive_ratings": 2633
+    }
+  ],
+  "reported_rankings": [
+    {
+      "request_id": "request-0dfcbc16-7e48-457c-8e3f-236afb0c8f1a",
+      "median_release_year": 2003.5,
+      "minimum_release_year": 1995,
+      "maximum_release_year": 2010,
+      "count_before2015": 12
+    },
+    {
+      "request_id": "request-22a77bba-5da4-4378-b62a-f2d4590e4836",
+      "median_release_year": 2000.0,
+      "minimum_release_year": 1991,
+      "maximum_release_year": 2009,
+      "count_before2015": 12
+    }
+  ]
+}

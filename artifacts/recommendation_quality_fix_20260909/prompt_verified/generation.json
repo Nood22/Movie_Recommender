@@ -1,0 +1,774 @@
+{
+  "model": "gpt-5-mini-2025-08-07",
+  "prompt_sha256": "4d5bf36f2b8e812a7ec4f3253abc965c1ea3b0007d812a6edb0a3d9f013e5c4d",
+  "api_source_sha256": "061666b002c782616c4eac6340adb5b65cc677a3dc9900b1f5257d871c49413f",
+  "summary_policy": "shared-editable-profile-v2",
+  "records": [
+    {
+      "id": "lotr-0",
+      "evidence": [
+        {
+          "title": "Lord of the Rings: The Fellowship of the Ring, The (2001)",
+          "rating": 5.0,
+          "genres": [
+            "Adventure",
+            "Fantasy"
+          ]
+        }
+      ],
+      "selected_ids": [
+        4993
+      ],
+      "disliked": [],
+      "context": "",
+      "summary": "Summary: The viewer may be drawn to large-scale, epic fantasy adventures that follow a multi-character quest, emphasizing mythic worldbuilding, clear heroic stakes, and strong ensemble camaraderie. They may also appreciate sweeping landscapes and a sense of journey and discovery that combines perilous action with moments of fellowship and moral purpose.",
+      "valid": true,
+      "word_count": 50,
+      "missing_probe_genres": [
+        "Adventure"
+      ],
+      "attempts": [
+        {
+          "attempt": 1,
+          "kind": "initial",
+          "word_count": 50,
+          "validator_errors": [],
+          "generation_errors": [],
+          "retry_errors": []
+        }
+      ]
+    },
+    {
+      "id": "lotr-1",
+      "evidence": [
+        {
+          "title": "Lord of the Rings: The Fellowship of the Ring, The (2001)",
+          "rating": 5.0,
+          "genres": [
+            "Adventure",
+            "Fantasy"
+          ]
+        }
+      ],
+      "selected_ids": [
+        4993
+      ],
+      "disliked": [],
+      "context": "",
+      "summary": "Summary: The user may prefer sweeping adventure-fantasy experiences that emphasize an epic, quest-driven narrative and a large ensemble of characters working toward a common goal. They might also appreciate expansive worldbuilding, mythic stakes, and cinematic, landscape-rich storytelling that foregrounds journey and discovery.",
+      "valid": true,
+      "word_count": 42,
+      "missing_probe_genres": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "kind": "initial",
+          "word_count": 42,
+          "validator_errors": [],
+          "generation_errors": [],
+          "retry_errors": []
+        }
+      ]
+    },
+    {
+      "id": "barbie-0",
+      "evidence": [
+        {
+          "title": "Barbie (2023)",
+          "rating": 5.0,
+          "genres": [
+            "Comedy"
+          ]
+        }
+      ],
+      "selected_ids": [
+        288513
+      ],
+      "disliked": [],
+      "context": "",
+      "summary": "Summary: The viewer may enjoy films with a broadly comic tone\u2014lighthearted, humor-driven stories that lean on playful setups, witty moments, and an upbeat atmosphere. They might respond well to movies that prioritize entertainment and levity over heavy seriousness.",
+      "valid": true,
+      "word_count": 38,
+      "missing_probe_genres": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "kind": "initial",
+          "word_count": 36,
+          "validator_errors": [
+            "audit_process_language"
+          ],
+          "generation_errors": [],
+          "retry_errors": [
+            "audit_process_language"
+          ]
+        },
+        {
+          "attempt": 2,
+          "kind": "validator_repair",
+          "word_count": 38,
+          "validator_errors": [],
+          "generation_errors": [],
+          "retry_errors": []
+        }
+      ]
+    },
+    {
+      "id": "barbie-1",
+      "evidence": [
+        {
+          "title": "Barbie (2023)",
+          "rating": 5.0,
+          "genres": [
+            "Comedy"
+          ]
+        }
+      ],
+      "selected_ids": [
+        288513
+      ],
+      "disliked": [],
+      "context": "",
+      "summary": "Summary: The viewer may favor contemporary comedies that prioritize playful, upbeat humor and a lighthearted storytelling tone. They seem open to films driven by broad comedic situations and charm rather than heavy drama, suggesting a narrow preference for entertaining, comedy-focused experiences.",
+      "valid": true,
+      "word_count": 41,
+      "missing_probe_genres": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "kind": "initial",
+          "word_count": 41,
+          "validator_errors": [],
+          "generation_errors": [],
+          "retry_errors": []
+        }
+      ]
+    },
+    {
+      "id": "horror-0",
+      "evidence": [
+        {
+          "title": "Get Out (2017)",
+          "rating": 5.0,
+          "genres": [
+            "Horror"
+          ]
+        }
+      ],
+      "selected_ids": [
+        168250
+      ],
+      "disliked": [],
+      "context": "",
+      "summary": "Summary: The viewer may enjoy films in the horror vein.",
+      "valid": true,
+      "word_count": 10,
+      "missing_probe_genres": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "kind": "initial",
+          "word_count": 48,
+          "validator_errors": [
+            "audit_process_language"
+          ],
+          "generation_errors": [],
+          "retry_errors": [
+            "audit_process_language"
+          ]
+        },
+        {
+          "attempt": 2,
+          "kind": "validator_repair",
+          "word_count": 10,
+          "validator_errors": [],
+          "generation_errors": [],
+          "retry_errors": []
+        }
+      ]
+    },
+    {
+      "id": "horror-1",
+      "evidence": [
+        {
+          "title": "Get Out (2017)",
+          "rating": 5.0,
+          "genres": [
+            "Horror"
+          ]
+        }
+      ],
+      "selected_ids": [
+        168250
+      ],
+      "disliked": [],
+      "context": "",
+      "summary": "Summary: The viewer may enjoy horror films. They seem to favor horror that leans on psychological suspense and escalating tension and may appreciate when the genre weaves in sharp social commentary or satirical elements alongside its scares.",
+      "valid": true,
+      "word_count": 37,
+      "missing_probe_genres": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "kind": "initial",
+          "word_count": 61,
+          "validator_errors": [
+            "grounding_missing_positive:Horror"
+          ],
+          "generation_errors": [],
+          "retry_errors": [
+            "grounding_missing_positive:Horror"
+          ]
+        },
+        {
+          "attempt": 2,
+          "kind": "validator_repair",
+          "word_count": 37,
+          "validator_errors": [],
+          "generation_errors": [],
+          "retry_errors": []
+        }
+      ]
+    },
+    {
+      "id": "romance-0",
+      "evidence": [
+        {
+          "title": "Call Me by Your Name (2017)",
+          "rating": 5.0,
+          "genres": [
+            "Drama",
+            "Romance"
+          ]
+        }
+      ],
+      "selected_ids": [
+        168492
+      ],
+      "disliked": [],
+      "context": "",
+      "summary": "Summary: The viewer may enjoy intimate, character-driven stories that trace a young person\u2019s emotional and sexual awakening, emphasizing slow-burning romance, vivid sensory atmosphere, and quiet, reflective scenes of interpersonal discovery. They might prefer films that favor lyrical dialogue, nuanced performances, and bittersweet emotional resonance over plot-heavy pacing.",
+      "valid": true,
+      "word_count": 47,
+      "missing_probe_genres": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "kind": "initial",
+          "word_count": 46,
+          "validator_errors": [
+            "audit_process_language"
+          ],
+          "generation_errors": [],
+          "retry_errors": [
+            "audit_process_language"
+          ]
+        },
+        {
+          "attempt": 2,
+          "kind": "validator_repair",
+          "word_count": 47,
+          "validator_errors": [],
+          "generation_errors": [],
+          "retry_errors": []
+        }
+      ]
+    },
+    {
+      "id": "romance-1",
+      "evidence": [
+        {
+          "title": "Call Me by Your Name (2017)",
+          "rating": 5.0,
+          "genres": [
+            "Drama",
+            "Romance"
+          ]
+        }
+      ],
+      "selected_ids": [
+        168492
+      ],
+      "disliked": [],
+      "context": "",
+      "summary": "Summary: The viewer may prefer intimate, character-driven romantic dramas that unfold slowly and emphasize emotional nuance, longing, and quiet sensuality. They may also be drawn to coming-of-age stories told with lyrical pacing and evocative, atmosphere-rich settings where interpersonal feeling and subtle shifts in relationship dynamics are central.",
+      "valid": true,
+      "word_count": 47,
+      "missing_probe_genres": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "kind": "initial",
+          "word_count": 47,
+          "validator_errors": [],
+          "generation_errors": [],
+          "retry_errors": []
+        }
+      ]
+    },
+    {
+      "id": "animation-0",
+      "evidence": [
+        {
+          "title": "Up (2009)",
+          "rating": 5.0,
+          "genres": [
+            "Adventure",
+            "Animation",
+            "Children",
+            "Drama"
+          ]
+        }
+      ],
+      "selected_ids": [
+        68954
+      ],
+      "disliked": [],
+      "context": "",
+      "summary": "Summary: The viewer may be drawn to family-oriented animated adventures that blend warm humor with genuine dramatic moments. They seem to appreciate character-driven journeys featuring imaginative visuals, emotional relationships, and a bittersweet but ultimately uplifting tone.",
+      "valid": true,
+      "word_count": 36,
+      "missing_probe_genres": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "kind": "initial",
+          "word_count": 36,
+          "validator_errors": [],
+          "generation_errors": [],
+          "retry_errors": []
+        }
+      ]
+    },
+    {
+      "id": "animation-1",
+      "evidence": [
+        {
+          "title": "Up (2009)",
+          "rating": 5.0,
+          "genres": [
+            "Adventure",
+            "Animation",
+            "Children",
+            "Drama"
+          ]
+        }
+      ],
+      "selected_ids": [
+        68954
+      ],
+      "disliked": [],
+      "context": "",
+      "summary": "Summary: The viewer may be drawn to animated, family-oriented adventure dramas that blend heartfelt emotional arcs with lighthearted, imaginative visuals. They might enjoy character-driven journeys that balance warm humor and uplifting moments with sincere, bittersweet emotional stakes.",
+      "valid": true,
+      "word_count": 37,
+      "missing_probe_genres": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "kind": "initial",
+          "word_count": 37,
+          "validator_errors": [],
+          "generation_errors": [],
+          "retry_errors": []
+        }
+      ]
+    },
+    {
+      "id": "explicit_dislike-0",
+      "evidence": [
+        {
+          "title": "Lord of the Rings: The Fellowship of the Ring, The (2001)",
+          "rating": 5.0,
+          "genres": [
+            "Adventure",
+            "Fantasy"
+          ]
+        }
+      ],
+      "selected_ids": [
+        4993
+      ],
+      "disliked": [
+        "Horror"
+      ],
+      "context": "",
+      "summary": "Summary: The viewer may prefer films that present sweeping, mythic quests and richly imagined fantasy worlds, with an adventurous, journey-driven narrative focus and ensemble characters cooperating toward a clear heroic purpose. They dislike horror.",
+      "valid": true,
+      "word_count": 34,
+      "missing_probe_genres": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "kind": "initial",
+          "word_count": 34,
+          "validator_errors": [],
+          "generation_errors": [],
+          "retry_errors": []
+        }
+      ]
+    },
+    {
+      "id": "explicit_dislike-1",
+      "evidence": [
+        {
+          "title": "Lord of the Rings: The Fellowship of the Ring, The (2001)",
+          "rating": 5.0,
+          "genres": [
+            "Adventure",
+            "Fantasy"
+          ]
+        }
+      ],
+      "selected_ids": [
+        4993
+      ],
+      "disliked": [
+        "Horror"
+      ],
+      "context": "",
+      "summary": "Summary: The viewer may enjoy sweeping, quest-driven stories that emphasize expansive worldbuilding, high-stakes adventure, and a large ensemble of characters collaborating toward a common goal. They dislike horror.",
+      "valid": true,
+      "word_count": 28,
+      "missing_probe_genres": [
+        "Fantasy"
+      ],
+      "attempts": [
+        {
+          "attempt": 1,
+          "kind": "initial",
+          "word_count": 32,
+          "validator_errors": [
+            "format_prefix",
+            "audit_process_language"
+          ],
+          "generation_errors": [],
+          "retry_errors": [
+            "format_prefix",
+            "audit_process_language"
+          ]
+        },
+        {
+          "attempt": 2,
+          "kind": "validator_repair",
+          "word_count": 28,
+          "validator_errors": [],
+          "generation_errors": [],
+          "retry_errors": []
+        }
+      ]
+    },
+    {
+      "id": "unwind-0",
+      "evidence": [
+        {
+          "title": "Lord of the Rings: The Fellowship of the Ring, The (2001)",
+          "rating": 5.0,
+          "genres": [
+            "Adventure",
+            "Fantasy"
+          ]
+        }
+      ],
+      "selected_ids": [
+        4993
+      ],
+      "disliked": [],
+      "context": "I want to unwind",
+      "summary": "Summary: When unwinding, the viewer may prefer adventure\u2013fantasy films that immerse them in expansive, escapist journeys and richly imagined settings. They seem open to stories built around epic quests and a strong sense of wonder, enjoying cinematic scope and momentum without committing this as a firm, general taste.",
+      "valid": true,
+      "word_count": 48,
+      "missing_probe_genres": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "kind": "initial",
+          "word_count": 48,
+          "validator_errors": [],
+          "generation_errors": [],
+          "retry_errors": []
+        }
+      ]
+    },
+    {
+      "id": "unwind-1",
+      "evidence": [
+        {
+          "title": "Lord of the Rings: The Fellowship of the Ring, The (2001)",
+          "rating": 5.0,
+          "genres": [
+            "Adventure",
+            "Fantasy"
+          ]
+        }
+      ],
+      "selected_ids": [
+        4993
+      ],
+      "disliked": [],
+      "context": "I want to unwind",
+      "summary": "Summary: The viewer may enjoy immersive, large-scale fantasy adventures that emphasize an epic quest, richly detailed worldbuilding, and a sense of mythic stakes. When unwinding, they might prefer films that combine sweeping landscapes and adventurous momentum with a strong sense of fellowship or ensemble camaraderie.",
+      "valid": true,
+      "word_count": 45,
+      "missing_probe_genres": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "kind": "initial",
+          "word_count": 45,
+          "validator_errors": [],
+          "generation_errors": [],
+          "retry_errors": []
+        }
+      ]
+    },
+    {
+      "id": "neutral-0",
+      "evidence": [
+        {
+          "title": "Lord of the Rings: The Fellowship of the Ring, The (2001)",
+          "rating": 3.0,
+          "genres": [
+            "Adventure",
+            "Fantasy"
+          ]
+        }
+      ],
+      "selected_ids": [
+        4993
+      ],
+      "disliked": [],
+      "context": "",
+      "summary": "Summary: The viewer is still exploring their movie preferences.",
+      "valid": true,
+      "word_count": 9,
+      "missing_probe_genres": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "kind": "validated_neutral_profile",
+          "word_count": 9,
+          "validator_errors": [],
+          "generation_errors": [],
+          "retry_errors": []
+        }
+      ]
+    },
+    {
+      "id": "neutral-1",
+      "evidence": [
+        {
+          "title": "Lord of the Rings: The Fellowship of the Ring, The (2001)",
+          "rating": 3.0,
+          "genres": [
+            "Adventure",
+            "Fantasy"
+          ]
+        }
+      ],
+      "selected_ids": [
+        4993
+      ],
+      "disliked": [],
+      "context": "",
+      "summary": "Summary: The viewer is still exploring their movie preferences.",
+      "valid": true,
+      "word_count": 9,
+      "missing_probe_genres": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "kind": "validated_neutral_profile",
+          "word_count": 9,
+          "validator_errors": [],
+          "generation_errors": [],
+          "retry_errors": []
+        }
+      ]
+    },
+    {
+      "id": "weak_negative-0",
+      "evidence": [
+        {
+          "title": "Lord of the Rings: The Fellowship of the Ring, The (2001)",
+          "rating": 5.0,
+          "genres": [
+            "Adventure",
+            "Fantasy"
+          ]
+        },
+        {
+          "title": "Get Out (2017)",
+          "rating": 1.0,
+          "genres": [
+            "Horror"
+          ]
+        }
+      ],
+      "selected_ids": [
+        4993,
+        168250
+      ],
+      "disliked": [],
+      "context": "",
+      "summary": "Summary: The viewer may prefer expansive, high-fantasy adventure stories \u2014 the kind of large-scale quest narratives with richly imagined worlds and ensemble casts that emphasize journey and discovery. They may be less interested in horror films, particularly those built around sustained fear or jump scares.",
+      "valid": true,
+      "word_count": 45,
+      "missing_probe_genres": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "kind": "initial",
+          "word_count": 45,
+          "validator_errors": [],
+          "generation_errors": [],
+          "retry_errors": []
+        }
+      ]
+    },
+    {
+      "id": "weak_negative-1",
+      "evidence": [
+        {
+          "title": "Lord of the Rings: The Fellowship of the Ring, The (2001)",
+          "rating": 5.0,
+          "genres": [
+            "Adventure",
+            "Fantasy"
+          ]
+        },
+        {
+          "title": "Get Out (2017)",
+          "rating": 1.0,
+          "genres": [
+            "Horror"
+          ]
+        }
+      ],
+      "selected_ids": [
+        4993,
+        168250
+      ],
+      "disliked": [],
+      "context": "",
+      "summary": "Summary: The viewer may be drawn to films that emphasize adventurous, high-fantasy settings \u2014 stories with sweeping worldbuilding, quest-driven plots, and an epic tone that foregrounds exploration and mythic stakes. They may be less interested in horror films, particularly those built around sustained dread or jump-focused scares, so selections heavy on conventional horror elements might appeal to them only rarely.",
+      "valid": true,
+      "word_count": 60,
+      "missing_probe_genres": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "kind": "initial",
+          "word_count": 60,
+          "validator_errors": [],
+          "generation_errors": [],
+          "retry_errors": []
+        }
+      ]
+    },
+    {
+      "id": "rich_fantasy-0",
+      "evidence": [
+        {
+          "title": "Lord of the Rings: The Fellowship of the Ring, The (2001)",
+          "rating": 5.0,
+          "genres": [
+            "Adventure",
+            "Fantasy"
+          ]
+        },
+        {
+          "title": "Lord of the Rings: The Two Towers, The (2002)",
+          "rating": 5.0,
+          "genres": [
+            "Adventure",
+            "Fantasy"
+          ]
+        },
+        {
+          "title": "Lord of the Rings: The Return of the King, The (2003)",
+          "rating": 4.0,
+          "genres": [
+            "Action",
+            "Adventure",
+            "Drama",
+            "Fantasy"
+          ]
+        }
+      ],
+      "selected_ids": [
+        4993,
+        5952,
+        7153
+      ],
+      "disliked": [],
+      "context": "",
+      "summary": "Summary: The viewer favors sweeping adventure-fantasy stories that emphasize long, quest-driven journeys and immersive worldbuilding. They respond to epic scale and ensemble heroism\u2014multi-character casts undertaking high-stakes quests across vividly realized, mythic settings, with a strong sense of destiny and grand, cinematic scope.",
+      "valid": true,
+      "word_count": 42,
+      "missing_probe_genres": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "kind": "initial",
+          "word_count": 42,
+          "validator_errors": [],
+          "generation_errors": [],
+          "retry_errors": []
+        }
+      ]
+    },
+    {
+      "id": "rich_fantasy-1",
+      "evidence": [
+        {
+          "title": "Lord of the Rings: The Fellowship of the Ring, The (2001)",
+          "rating": 5.0,
+          "genres": [
+            "Adventure",
+            "Fantasy"
+          ]
+        },
+        {
+          "title": "Lord of the Rings: The Two Towers, The (2002)",
+          "rating": 5.0,
+          "genres": [
+            "Adventure",
+            "Fantasy"
+          ]
+        },
+        {
+          "title": "Lord of the Rings: The Return of the King, The (2003)",
+          "rating": 4.0,
+          "genres": [
+            "Action",
+            "Adventure",
+            "Drama",
+            "Fantasy"
+          ]
+        }
+      ],
+      "selected_ids": [
+        4993,
+        5952,
+        7153
+      ],
+      "disliked": [],
+      "context": "",
+      "summary": "Summary: The viewer prefers sweeping adventure and fantasy experiences, particularly immersive, quest-driven stories set in richly built worlds. They may favor large-scale narratives that combine high-stakes journeys, ensemble casts, and expansive mythic or legendary scope.",
+      "valid": true,
+      "word_count": 35,
+      "missing_probe_genres": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "kind": "initial",
+          "word_count": 35,
+          "validator_errors": [],
+          "generation_errors": [],
+          "retry_errors": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "recorded_at_edt": "2026-08-20T13:23:43-04:00",
+  "phase": "full",
+  "protocol": "frozen_v10_evidence_gated_emiliano",
+  "test_metrics_used": false,
+  "source_precedence": [
+    "Slurm accounting and live queue for execution state",
+    "local result.json and checkpoint files for completed-run results",
+    "local metrics.jsonl and checkpoint modification times for resumed-run progress",
+    "W&B for remote tracking state and final-epoch dashboard metrics"
+  ],
+  "summaries": {
+    "accepted_users": 200948,
+    "expected_users": 200948,
+    "train_users": 180948,
+    "validation_users": 10000,
+    "reserved_test_users": 10000,
+    "sha256": "763605a2a22dfa77e32c0226fb1f2318b8889b89fa9517e341fb2ac008e90b07",
+    "path": "/network/scratch/a/adls/FullTrainingTEARS/summaries/validated/v010_frozen/final_summaries.jsonl",
+    "every_user_accounted_for_exactly_once": true
+  },
+  "slurm_counts": {
+    "submitted": 25,
+    "completed": 12,
+    "failed": 3,
+    "running": 3,
+    "pending": 7
+  },
+  "wandb_counts": {
+    "records": 15,
+    "finished": 12,
+    "running": 1,
+    "crashed_but_slurm_running": 2,
+    "absent_failed_before_python": 3,
+    "absent_pending": 7
+  },
+  "model_counts": {
+    "recvae": {"submitted": 5, "completed": 5, "failed": 0, "running": 0, "pending": 0},
+    "gers_base": {"submitted": 5, "completed": 2, "failed": 3, "running": 0, "pending": 0},
+    "tears_base": {"submitted": 5, "completed": 0, "failed": 0, "running": 2, "pending": 3},
+    "tears_recvae": {"submitted": 5, "completed": 0, "failed": 0, "running": 1, "pending": 4},
+    "gers_recvae": {"submitted": 5, "completed": 5, "failed": 0, "running": 0, "pending": 0}
+  },
+  "comparisons": {
+    "best_checkpoint_selection_ndcg_at_50": {
+      "recvae": {"n": 5, "mean": 0.23461664941852853, "sample_std": 0.0004699408579204626},
+      "gers_recvae": {"n": 5, "mean": 0.21663330882236922, "sample_std": 0.0003819848167185402},
+      "gers_base_partial": {"n": 2, "mean": 0.17701984591812137, "sample_std": 0.0006762612586535262},
+      "paired_gers_recvae_minus_recvae": -0.01798334059615931,
+      "paired_relative_percent": -7.664989096353151,
+      "hybrid_selection_definition": "mean NDCG@50 across alpha 0, 0.5, and 1"
+    },
+    "wandb_final_epoch_ndcg_at_50": {
+      "recvae": {"n": 5, "mean": 0.23247288888079987, "sample_std": 0.0011829093963646549},
+      "gers_recvae_alpha_0_5": {"n": 5, "mean": 0.23764406834698973, "sample_std": 0.0007751340192928785},
+      "gers_recvae_alpha_0": {"n": 5, "mean": 0.2204067875679222, "sample_std": 0.0009209247896385049},
+      "gers_recvae_alpha_1": {"n": 5, "mean": 0.17529080871612795, "sample_std": 0.00028022993546684396},
+      "paired_alpha_0_5_minus_recvae": 0.005171179466189874,
+      "paired_alpha_0_5_relative_percent": 2.2244225944305223
+    }
+  },
+  "jobs": [
+    {"job_id":"10416410","model":"recvae","seed":2020,"slurm_state":"COMPLETED","exit_code":"0:0","elapsed":"01:29:18","node_or_reason":"cn-g016","wandb":{"id":"62eb61407aed1ead","state":"finished","url":"https://wandb.ai/niita-mila/tears-ml32m/runs/62eb61407aed1ead","final_ndcg_at_50":0.23361517313357083},"result":{"epochs":200,"best_selection_ndcg_at_50":0.23459687677001761,"best_pt_sha256":"2174aff6f451676b169198fcc1e1f107a9b88d08010e527dba3e4e8391975800"}},
+    {"job_id":"10416411","model":"recvae","seed":2021,"slurm_state":"COMPLETED","exit_code":"0:0","elapsed":"01:32:41","node_or_reason":"cn-g010","wandb":{"id":"31fed35925901603","state":"finished","url":"https://wandb.ai/niita-mila/tears-ml32m/runs/31fed35925901603","final_ndcg_at_50":0.23319186853965929},"result":{"epochs":200,"best_selection_ndcg_at_50":0.23508681038454657,"best_pt_sha256":"1f7b4d0a794da424bec0eeb1661740ff10a8d7dad683d83fc29c6d6245f85bdb"}},
+    {"job_id":"10416412","model":"recvae","seed":2022,"slurm_state":"COMPLETED","exit_code":"0:0","elapsed":"01:27:43","node_or_reason":"cn-g019","wandb":{"id":"e7a7e560dc42d738","state":"finished","url":"https://wandb.ai/niita-mila/tears-ml32m/runs/e7a7e560dc42d738","final_ndcg_at_50":0.2316202909580522},"result":{"epochs":200,"best_selection_ndcg_at_50":0.2350832509117261,"best_pt_sha256":"dcddf9fb6198841b0e30668007f2505a526265f669448a244acb16ac0f1fdc8a"}},
+    {"job_id":"10416413","model":"recvae","seed":2023,"slurm_state":"COMPLETED","exit_code":"0:0","elapsed":"01:31:25","node_or_reason":"cn-g029","wandb":{"id":"864c04c2241cf39b","state":"finished","url":"https://wandb.ai/niita-mila/tears-ml32m/runs/864c04c2241cf39b","final_ndcg_at_50":0.23309543803184024},"result":{"epochs":200,"best_selection_ndcg_at_50":0.23426720321388736,"best_pt_sha256":"adadc0a415403b6c6a8a3e1dded421295f28226ea8fca45a9dcf5648f33131d7"}},
+    {"job_id":"10416414","model":"recvae","seed":2024,"slurm_state":"COMPLETED","exit_code":"0:0","elapsed":"01:21:58","node_or_reason":"cn-g003","wandb":{"id":"561c3325321eb76e","state":"finished","url":"https://wandb.ai/niita-mila/tears-ml32m/runs/561c3325321eb76e","final_ndcg_at_50":0.23084167374087677},"result":{"epochs":200,"best_selection_ndcg_at_50":0.234049105812465,"best_pt_sha256":"5336720c631e721e3afb4a6cca04830daf6b1c362fc21c7ebb42c3d0b0aa8c52"}},
+    {"job_id":"10416415","model":"gers_base","seed":2020,"slurm_state":"COMPLETED","exit_code":"0:0","elapsed":"00:37:56","node_or_reason":"cn-i001","wandb":{"id":"5245703b1e9bdba8","state":"finished","url":"https://wandb.ai/niita-mila/tears-ml32m/runs/5245703b1e9bdba8","final_ndcg_at_50":0.17511315057955443},"result":{"epochs":200,"best_selection_ndcg_at_50":0.1765416569962737,"best_pt_sha256":"269f0369bf4c47e181d043556b3ba17943a80a5954c8cd15ca8cdb0fce4bf2d5"}},
+    {"job_id":"10416416","model":"gers_base","seed":2021,"slurm_state":"FAILED","exit_code":"127:0","elapsed":"00:00:02","node_or_reason":"cn-g002","wandb":null,"result":null,"failure":".venv/bin/torchrun cannot execute: required file not found"},
+    {"job_id":"10416417","model":"gers_base","seed":2022,"slurm_state":"FAILED","exit_code":"127:0","elapsed":"00:00:02","node_or_reason":"cn-g002","wandb":null,"result":null,"failure":".venv/bin/torchrun cannot execute: required file not found"},
+    {"job_id":"10416418","model":"gers_base","seed":2023,"slurm_state":"FAILED","exit_code":"127:0","elapsed":"00:00:02","node_or_reason":"cn-g002","wandb":null,"result":null,"failure":".venv/bin/torchrun cannot execute: required file not found"},
+    {"job_id":"10416419","model":"gers_base","seed":2024,"slurm_state":"COMPLETED","exit_code":"0:0","elapsed":"00:38:24","node_or_reason":"cn-g004","wandb":{"id":"1f22a69bfbe593b4","state":"finished","url":"https://wandb.ai/niita-mila/tears-ml32m/runs/1f22a69bfbe593b4","final_ndcg_at_50":0.17502140246421818},"result":{"epochs":200,"best_selection_ndcg_at_50":0.177498034839969,"best_pt_sha256":"d13d2f82a6e6ef5d68668f9782b4d56134bfbaf40293239277108e18f66b2461"}},
+    {"job_id":"10416420","model":"tears_base","seed":2020,"slurm_state":"RUNNING","exit_code":"0:0","elapsed_at_snapshot":"13:50:08","node_or_reason":"cn-g014","preemptions":3,"wandb":{"id":"5d0c999e296b2efd","state":"running","url":"https://wandb.ai/niita-mila/tears-ml32m/runs/5d0c999e296b2efd"},"local_progress":{"latest_epoch":42,"latest_selection_ndcg_at_50":0.18028160981052826,"best_epoch":40,"best_selection_ndcg_at_50":0.18283922947312314,"checkpoint_updated_at_edt":"2026-08-20T13:08:31-04:00"}},
+    {"job_id":"10416421","model":"tears_base","seed":2021,"slurm_state":"RUNNING","exit_code":"0:0","elapsed_at_snapshot":"03:03:53","node_or_reason":"cn-g003","preemptions":5,"wandb":{"id":"0c03ec9782d1d6da","state":"crashed","url":"https://wandb.ai/niita-mila/tears-ml32m/runs/0c03ec9782d1d6da","state_note":"stale after preemption; Slurm and local checkpoint show active progress"},"local_progress":{"latest_epoch_after_resume":8,"latest_selection_ndcg_at_50":0.17132158708428183,"best_epoch":30,"best_selection_ndcg_at_50":0.1804811520411843,"checkpoint_updated_at_edt":"2026-08-20T13:10:31-04:00"}},
+    {"job_id":"10416422","model":"tears_base","seed":2022,"slurm_state":"PENDING","exit_code":"0:0","elapsed":"00:00:00","node_or_reason":"Dependency","wandb":null,"result":null},
+    {"job_id":"10416423","model":"tears_base","seed":2023,"slurm_state":"PENDING","exit_code":"0:0","elapsed":"00:00:00","node_or_reason":"Dependency","wandb":null,"result":null},
+    {"job_id":"10416424","model":"tears_base","seed":2024,"slurm_state":"PENDING","exit_code":"0:0","elapsed":"00:00:00","node_or_reason":"Dependency","wandb":null,"result":null},
+    {"job_id":"10416425","model":"tears_recvae","seed":2020,"slurm_state":"RUNNING","exit_code":"0:0","elapsed_at_snapshot":"09:31:45","node_or_reason":"cn-g008","preemptions":2,"wandb":{"id":"4aa46d0e8e9e3ef6","state":"crashed","url":"https://wandb.ai/niita-mila/tears-ml32m/runs/4aa46d0e8e9e3ef6","state_note":"stale after preemption; Slurm and local checkpoint show active progress"},"local_progress":{"latest_epoch":25,"latest_selection_ndcg_at_50":0.21464394818220325,"latest_alpha_0_5_ndcg_at_50":0.23873539404162475,"best_epoch":19,"best_selection_ndcg_at_50":0.2153228254878633,"best_alpha_0_5_ndcg_at_50":0.24015494841751792,"checkpoint_updated_at_edt":"2026-08-20T13:10:50-04:00"}},
+    {"job_id":"10416426","model":"gers_recvae","seed":2020,"slurm_state":"COMPLETED","exit_code":"0:0","elapsed":"01:12:08","node_or_reason":"cn-g001","wandb":{"id":"daef7a64343076e6","state":"finished","url":"https://wandb.ai/niita-mila/tears-ml32m/runs/daef7a64343076e6","final_selection_ndcg_at_50":0.21080567230650735,"final_alpha_0_5_ndcg_at_50":0.2372523993028388},"result":{"epochs":200,"best_selection_ndcg_at_50":0.2166116132180617,"best_pt_sha256":"5e32944c93d99a099dfabf27d09d3de283783b3d7aee22b614c885d12355a858"}},
+    {"job_id":"10416427","model":"tears_recvae","seed":2021,"slurm_state":"PENDING","exit_code":"0:0","elapsed":"00:00:00","node_or_reason":"Dependency","wandb":null,"result":null},
+    {"job_id":"10416428","model":"gers_recvae","seed":2021,"slurm_state":"COMPLETED","exit_code":"0:0","elapsed":"01:12:57","node_or_reason":"cn-g022","wandb":{"id":"ffd6d9f397fb1c10","state":"finished","url":"https://wandb.ai/niita-mila/tears-ml32m/runs/ffd6d9f397fb1c10","final_selection_ndcg_at_50":0.2111445204855534,"final_alpha_0_5_ndcg_at_50":0.23727089447540145},"result":{"epochs":200,"best_selection_ndcg_at_50":0.2165921116092553,"best_pt_sha256":"dc8d6b4fefb193585a4cf2cfa0f49346222a73aca4bda5cbc17d5cf3c574e85e"}},
+    {"job_id":"10416429","model":"tears_recvae","seed":2022,"slurm_state":"PENDING","exit_code":"0:0","elapsed":"00:00:00","node_or_reason":"Dependency","wandb":null,"result":null},
+    {"job_id":"10416430","model":"gers_recvae","seed":2022,"slurm_state":"COMPLETED","exit_code":"0:0","elapsed":"01:23:33","node_or_reason":"cn-g016","wandb":{"id":"d6335f29527f030b","state":"finished","url":"https://wandb.ai/niita-mila/tears-ml32m/runs/d6335f29527f030b","final_selection_ndcg_at_50":0.21153086475347,"final_alpha_0_5_ndcg_at_50":0.23861379872466768},"result":{"epochs":200,"best_selection_ndcg_at_50":0.21714801360222116,"best_pt_sha256":"f4755f87b133b95ee6e9919c498011efd2096ee24da3e13895f48e3d30669dea"}},
+    {"job_id":"10416431","model":"tears_recvae","seed":2023,"slurm_state":"PENDING","exit_code":"0:0","elapsed":"00:00:00","node_or_reason":"Dependency","wandb":null,"result":null},
+    {"job_id":"10416432","model":"gers_recvae","seed":2023,"slurm_state":"COMPLETED","exit_code":"0:0","elapsed":"01:22:38","node_or_reason":"cn-g014","wandb":{"id":"06bae270c7bf1e87","state":"finished","url":"https://wandb.ai/niita-mila/tears-ml32m/runs/06bae270c7bf1e87","final_selection_ndcg_at_50":0.21168822831854783,"final_alpha_0_5_ndcg_at_50":0.2382996817284654},"result":{"epochs":200,"best_selection_ndcg_at_50":0.21673488845618102,"best_pt_sha256":"e0ad17e3d464463f53bf0c1797db2e781198e1fde274520dd7f0df648fe48088"}},
+    {"job_id":"10416433","model":"tears_recvae","seed":2024,"slurm_state":"PENDING","exit_code":"0:0","elapsed":"00:00:00","node_or_reason":"Dependency","wandb":null,"result":null},
+    {"job_id":"10416434","model":"gers_recvae","seed":2024,"slurm_state":"COMPLETED","exit_code":"0:0","elapsed":"01:20:22","node_or_reason":"cn-g014","wandb":{"id":"4d7e72d9dd04b98d","state":"finished","url":"https://wandb.ai/niita-mila/tears-ml32m/runs/4d7e72d9dd04b98d","final_selection_ndcg_at_50":0.21040015518765456,"final_alpha_0_5_ndcg_at_50":0.23678356750357535},"result":{"epochs":200,"best_selection_ndcg_at_50":0.21607991722612693,"best_pt_sha256":"6e451f5d5920631ec1019cf311444c7262e6a47937a4e917d91b97859c205d0e"}}
+  ],
+  "finalization": {
+    "recvae_five_seed_complete": true,
+    "gers_recvae_five_seed_complete": true,
+    "gers_base_five_seed_complete": false,
+    "tears_base_five_seed_complete": false,
+    "tears_recvae_five_seed_complete": false,
+    "phase6_complete": false,
+    "phase7_ready": false
+  }
+}

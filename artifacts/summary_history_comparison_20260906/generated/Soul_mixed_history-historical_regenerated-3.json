@@ -1,0 +1,12 @@
+{
+  "case": "Soul_mixed_history",
+  "version": "historical_regenerated",
+  "repeat": 3,
+  "outputs": [
+    {
+      "version": "historical_regenerated",
+      "summary": "Summary: The viewer strongly favors films that blend speculative and adventurous genres, especially those combining science fiction, action, and broad imaginative adventure elements. They enjoy narratives that explore existential themes, creative worldbuilding, and emotional depth alongside energetic pacing and inventive visual storytelling. They have no strong supported dislike of an entire genre or style based on the provided history. They have no strong supported dislike of specific plot points or content preferences, and other viewers who prefer more conventional realist drama or restrained low energy pacing may differ."
+    }
+  ],
+  "raw_response": "{\"summary\":\"Summary: The viewer strongly favors films that blend speculative and adventurous genres, especially those combining science fiction, action, and broad imaginative adventure elements. They enjoy narratives that explore existential themes, creative worldbuilding, and emotional depth alongside energetic pacing and inventive visual storytelling. They have no strong supported dislike of an entire genre or style based on the provided history. They have no strong supported dislike of specific plot points or content preferences, and other viewers who prefer more conventional realist drama or restrained low energy pacing may differ.\"}"
+}

@@ -1,0 +1,242 @@
+{
+  "hybrid_plan_fingerprint": "f043ddf4b6537e041dfa766e31ee980734f3bfd9ebda84bdfd1dbd1ae054ee50",
+  "matrix_dir": "/network/scratch/a/adls/FullTrainingTEARS/datasets/catalog_selection/support_20/matrix",
+  "phase": "full",
+  "protocol": "frozen_v10_evidence_gated_emiliano",
+  "recvae_checkpoints": {
+    "2020": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/full/recvae/seed-2020/62eb61407aed/best.pt",
+    "2021": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/full/recvae/seed-2021/31fed3592590/best.pt",
+    "2022": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/full/recvae/seed-2022/e7a7e560dc42/best.pt",
+    "2023": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/full/recvae/seed-2023/864c04c2241c/best.pt",
+    "2024": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/full/recvae/seed-2024/561c3325321e/best.pt"
+  },
+  "slurm_profile": "pilot",
+  "submitted": {
+    "gers_base": [
+      {
+        "job_id": "10416415",
+        "name": "tears-full-gers_base-2020-6bdbc48868f8-e200",
+        "seed": "2020"
+      },
+      {
+        "job_id": "10416416",
+        "name": "tears-full-gers_base-2021-6bdbc48868f8-e200",
+        "seed": "2021"
+      },
+      {
+        "job_id": "10416417",
+        "name": "tears-full-gers_base-2022-6bdbc48868f8-e200",
+        "seed": "2022"
+      },
+      {
+        "job_id": "10416418",
+        "name": "tears-full-gers_base-2023-6bdbc48868f8-e200",
+        "seed": "2023"
+      },
+      {
+        "job_id": "10416419",
+        "name": "tears-full-gers_base-2024-6bdbc48868f8-e200",
+        "seed": "2024"
+      }
+    ],
+    "hybrids": [
+      {
+        "job_id": "10416425",
+        "name": "tears-full-tears_recvae-2020-bea32b378ae9-e200",
+        "seed": "2020"
+      },
+      {
+        "job_id": "10416426",
+        "name": "tears-full-gers_recvae-2020-4f59f4a6fd9d-e200",
+        "seed": "2020"
+      },
+      {
+        "job_id": "10416427",
+        "name": "tears-full-tears_recvae-2021-bea32b378ae9-e200",
+        "seed": "2021"
+      },
+      {
+        "job_id": "10416428",
+        "name": "tears-full-gers_recvae-2021-4f59f4a6fd9d-e200",
+        "seed": "2021"
+      },
+      {
+        "job_id": "10416429",
+        "name": "tears-full-tears_recvae-2022-bea32b378ae9-e200",
+        "seed": "2022"
+      },
+      {
+        "job_id": "10416430",
+        "name": "tears-full-gers_recvae-2022-4f59f4a6fd9d-e200",
+        "seed": "2022"
+      },
+      {
+        "job_id": "10416431",
+        "name": "tears-full-tears_recvae-2023-bea32b378ae9-e200",
+        "seed": "2023"
+      },
+      {
+        "job_id": "10416432",
+        "name": "tears-full-gers_recvae-2023-4f59f4a6fd9d-e200",
+        "seed": "2023"
+      },
+      {
+        "job_id": "10416433",
+        "name": "tears-full-tears_recvae-2024-bea32b378ae9-e200",
+        "seed": "2024"
+      },
+      {
+        "job_id": "10416434",
+        "name": "tears-full-gers_recvae-2024-4f59f4a6fd9d-e200",
+        "seed": "2024"
+      }
+    ],
+    "recvae": [
+      {
+        "job_id": "10416410",
+        "name": "tears-full-recvae-2020-69c3b4deb263-e200",
+        "seed": "2020"
+      },
+      {
+        "job_id": "10416411",
+        "name": "tears-full-recvae-2021-69c3b4deb263-e200",
+        "seed": "2021"
+      },
+      {
+        "job_id": "10416412",
+        "name": "tears-full-recvae-2022-69c3b4deb263-e200",
+        "seed": "2022"
+      },
+      {
+        "job_id": "10416413",
+        "name": "tears-full-recvae-2023-69c3b4deb263-e200",
+        "seed": "2023"
+      },
+      {
+        "job_id": "10416414",
+        "name": "tears-full-recvae-2024-69c3b4deb263-e200",
+        "seed": "2024"
+      }
+    ],
+    "tears_base": [
+      {
+        "job_id": "10416420",
+        "name": "tears-full-tears_base-2020-e6fc97476561-e200",
+        "seed": "2020"
+      },
+      {
+        "job_id": "10416421",
+        "name": "tears-full-tears_base-2021-e6fc97476561-e200",
+        "seed": "2021"
+      },
+      {
+        "job_id": "10416422",
+        "name": "tears-full-tears_base-2022-e6fc97476561-e200",
+        "seed": "2022"
+      },
+      {
+        "job_id": "10416423",
+        "name": "tears-full-tears_base-2023-e6fc97476561-e200",
+        "seed": "2023"
+      },
+      {
+        "job_id": "10416424",
+        "name": "tears-full-tears_base-2024-e6fc97476561-e200",
+        "seed": "2024"
+      }
+    ]
+  },
+  "summaries": "/network/scratch/a/adls/FullTrainingTEARS/summaries/validated/v010_frozen/final_summaries.jsonl",
+  "test_metrics_used": false,
+  "resubmissions": {
+    "recorded_at_edt": "2026-08-20T13:38:48-04:00",
+    "reason": "Original GERS Base seeds 2021-2023 failed before Python startup on cn-g002 because the virtual-environment torchrun launcher could not execute.",
+    "node_exclusion_added": "cn-g002",
+    "replaces": {
+      "10416416": "10426276",
+      "10416417": "10426278",
+      "10416418": "10426292"
+    },
+    "gers_base": [
+      {
+        "job_id": "10426276",
+        "name": "tears-full-gers_base-2021-6bdbc48868f8-e200-r1",
+        "seed": "2021"
+      },
+      {
+        "job_id": "10426278",
+        "name": "tears-full-gers_base-2022-6bdbc48868f8-e200-r1",
+        "seed": "2022"
+      },
+      {
+        "job_id": "10426292",
+        "name": "tears-full-gers_base-2023-6bdbc48868f8-e200-r1",
+        "seed": "2023",
+        "dependency": "afterany:10426276"
+      }
+    ],
+    "dependency_rebalance": {
+      "recorded_at_edt": "2026-08-20T13:41:02-04:00",
+      "reason": "The completed GERS-RecVAE lane left only one TEARS-RecVAE job active. Pending TEARS-RecVAE jobs were rebalanced into two lanes without exceeding the original two-job hybrid concurrency cap.",
+      "tears_recvae_lanes": [
+        ["10416425", "10416429", "10416433"],
+        ["10416427", "10416431"]
+      ],
+      "released_job": "10416427",
+      "cn_g002_exclusion_applied_to_pending_jobs": [
+        "10416422",
+        "10416423",
+        "10416424",
+        "10416427",
+        "10416429",
+        "10416431",
+        "10416433"
+      ]
+    },
+    "finalization_job": {
+      "job_id": "10426384",
+      "name": "phase6-finalize-v10",
+      "dependency": "afterany:10416423:10416424:10416431:10416433:10426278:10426292",
+      "test_metrics_used": false,
+      "output_json": "artifacts/phase6_finalization.json",
+      "output_markdown": "docs/august20/PHASE6_FINALIZATION_REPORT.md",
+      "gates": [
+        "25 matching 200-epoch full runs",
+        "best/final/resume checkpoint hashes verified",
+        "frozen V10 summary SHA-256 verified",
+        "all 25 W&B training runs finished"
+      ]
+    },
+    "resume_repair": {
+      "recorded_at_edt": "2026-08-20T14:04:09-04:00",
+      "issue": "Requeued training processes restarted at epoch 0 unless --resume was supplied manually.",
+      "resolution": "Training now automatically loads the same execution run's resume.pt when present; explicit --resume remains authoritative.",
+      "test_split_read": false,
+      "verification": "21 focused training/finalization tests passed"
+    },
+    "resume_failure_recovery": {
+      "recorded_at_edt": "2026-08-20T16:41:10-04:00",
+      "issue": "The first automatic resume attempt loaded the checkpoint with map_location set to the CUDA device, which moved the CPU RNG tensor to CUDA. torch.set_rng_state requires a CPU ByteTensor, so three resumed jobs exited with status 1 before another epoch ran.",
+      "resolution": "Resume checkpoints now load on CPU and RNG tensors are normalized to CPU uint8 tensors before Python, NumPy, torch, and CUDA RNG state restoration.",
+      "failed_attempts": [
+        {"job_id": "10416420", "model": "tears_base", "seed": 2020, "latest_completed_epoch": 49},
+        {"job_id": "10416421", "model": "tears_base", "seed": 2021, "latest_completed_epoch": 15},
+        {"job_id": "10416425", "model": "tears_recvae", "seed": 2020, "latest_completed_epoch": 28}
+      ],
+      "replacement_jobs": [
+        {"job_id": "10429224", "model": "tears_base", "seed": 2020, "dependency": "afterany:10416422"},
+        {"job_id": "10429231", "model": "tears_base", "seed": 2021, "dependency": "afterany:10416423"},
+        {"job_id": "10429232", "model": "tears_recvae", "seed": 2020, "dependency": "afterany:10416427"}
+      ],
+      "dependency_rewire": {
+        "10416424": "afterany:10429224",
+        "10416431": "afterany:10429232",
+        "10426384": "afterany:10416424:10429231:10416431:10416433"
+      },
+      "concurrency_caps_preserved": true,
+      "test_split_read": false,
+      "verification": "22 focused training/finalization tests passed; a real affected resume checkpoint restored successfully"
+    }
+  },
+  "wave1_plan_fingerprint": "a315f39a43ac2480697e4fe2d5f3fc4ac1e4219f84366c7f325dcd7f369d8201"
+}

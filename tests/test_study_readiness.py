@@ -243,7 +243,7 @@ def recommendation_payload(system: str, representation, **overrides) -> tuple[di
         "context": "",
         "alpha": 0.5,
         "top_k": 3,
-        "min_release_year": 2020,
+        "min_release_year": YEAR_FILTER_POLICY["value"],
     }
     payload["summary" if system == "TEARS" else "genres"] = representation
     payload.update(overrides)
@@ -261,6 +261,36 @@ def recommendation_payload(system: str, representation, **overrides) -> tuple[di
         "representation": representation,
     }
     return payload, snapshot
+
+
+def test_dual_summary_recommendations_use_saved_backend_and_cache_edits(study_client, monkeypatch):
+    client, recommender, store = study_client
+    source_meta = meta("TEARS", "1a", {})
+    source_id = source_meta["request_id"]
+    store.log_event("summary_result", source_meta, "completed", {
+        "representation": "They enjoy comedy.",
+        "backend_summary": "Summary: They enjoy comedy and friendship. They dislike horror.",
+    })
+    calls = []
+    def sync(*args):
+        calls.append(args)
+        return "Summary: They enjoy drama and friendship. They dislike horror.", [{"old": "comedy", "new": "drama"}]
+    monkeypatch.setattr(pilot_api, "synchronize_edit", sync)
+    monkeypatch.setitem(sys.modules, "openai", SimpleNamespace(OpenAI=lambda: None))
+    for display in ("They enjoy comedy.", "They enjoy drama.", "They enjoy drama."):
+        payload, snapshot = recommendation_payload("TEARS", display)
+        payload["summary_source_request_id"] = source_id
+        snapshot["summary_source_request_id"] = source_id
+        payload["study"] = meta("TEARS", "1b", snapshot)
+        response = client.post("/api/recommend", json=payload)
+        assert response.status_code == 200, response.text
+        assert "friendship" in recommender.last_tears_summary
+        assert "They dislike horror" in recommender.last_tears_summary
+        assert ("comedy" if "comedy" in display else "drama") in recommender.last_tears_summary
+        event = store.event_by_request(payload["study"]["request_id"], "recommendation_result")
+        assert event["payload"]["effective_model_input"]["summary"] == recommender.last_tears_summary
+        assert event["payload"]["representation"] == display
+    assert len(calls) == 1
 
 
 def baseline(client: DirectStudyClient, system: str, representation) -> tuple[dict, dict]:
@@ -306,6 +336,30 @@ def start_trial(
     )
     assert response.status_code == 200, response.text
     return response.json()["trial"]
+
+
+@pytest.mark.parametrize("system", ["TEARS", "GERS"])
+def test_candidate_policy_change_requires_new_baseline_and_blocks_existing_edits(study_client, monkeypatch, system):
+    import study_runtime
+    client, _, _ = study_client
+    representation = valid_summary() if system == "TEARS" else ["Drama"]
+    _, body = baseline(client, system, representation)
+    baseline_id = body["study"]["request_id"]
+    existing = start_trial(client, system, "2", baseline_id)
+    monkeypatch.setattr(study_runtime, "CANDIDATE_POLICY_ID", "next-candidate-policy")
+    trial_id = f"trial-{uuid4()}"
+    snapshot = {"system": system, "task_id": "2", "trial_id": trial_id,
+                "baseline_request_id": baseline_id, "target_movie_id": 101}
+    response = client.post("/api/study/trials", json={
+        "baseline_request_id": baseline_id, "target_movie_id": 101,
+        "study": meta(system, "2", snapshot, trial_id=trial_id, target=101)})
+    assert response.status_code == 409
+    assert "current candidate policy" in response.json()["detail"]
+    payload, snapshot = recommendation_payload(system, representation)
+    payload["study"] = meta(system, "2", snapshot, revision=2,
+                            trial_id=existing["trial_id"], attempt=1, target=101)
+    response = client.post("/api/recommend" if system == "TEARS" else "/api/gers", json=payload)
+    assert response.status_code == 409
 
 
 def test_task_2_and_3_trials_enforce_target_immutable_baseline_and_history(study_client):
@@ -697,12 +751,12 @@ def test_frozen_policy_task_4_and_durable_provenance(study_client):
     assert event["provenance"]["models"]["tears"]["sha256"] == "t" * 64
 
     changed_year, changed_year_snapshot = recommendation_payload(
-        "TEARS", valid_summary("year"), min_release_year=2019
+        "TEARS", valid_summary("year"), min_release_year=2014
     )
     changed_year["study"] = meta("TEARS", "1b", changed_year_snapshot)
     rejected_year = client.post("/api/recommend", json=changed_year)
     assert rejected_year.status_code == 409
-    assert "2020" in rejected_year.json()["detail"]
+    assert "all release years" in rejected_year.json()["detail"]
 
     changed_alpha, changed_alpha_snapshot = recommendation_payload(
         "TEARS", valid_summary("alpha"), alpha=0.25
@@ -747,6 +801,7 @@ def test_trial_target_selection_requires_a_durably_rendered_baseline(study_clien
 
 
 def test_summary_requests_require_the_exact_input_signature(study_client, monkeypatch):
+    monkeypatch.setattr(pilot_api, "sparse_positive_fallback", lambda *a, **k: None)
     client, _, store = study_client
     monkeypatch.delenv("OPENAI_API_KEY", raising=False)
     summary_payload = {
@@ -799,12 +854,12 @@ def test_summary_requests_require_the_exact_input_signature(study_client, monkey
         "/api/summarize", json={**summary_payload, "study": valid_study}
     )
     assert invalid_generated.status_code == 422
-    assert "frozen online validator" in invalid_generated.json()["detail"]
+    assert "online privacy and format validator" in invalid_generated.json()["detail"]
     generated_error = store.event_by_request(
         valid_study["request_id"], "summary_error"
     )
     assert generated_error is not None
-    assert "frozen online validator" in generated_error["error_json"]
+    assert "online privacy and format validator" in generated_error["error_json"]
     assert len(invalid_calls) == pilot_api.SUMMARY_MAX_ATTEMPTS
     assert len(generated_error["payload"]["generation_attempts"]) == (
         pilot_api.SUMMARY_MAX_ATTEMPTS
@@ -822,8 +877,8 @@ def test_summary_route_repairs_a_validator_failure_and_logs_attempts(
     monkeypatch.setenv("OPENAI_API_KEY", "test-key")
     outputs = iter(
         [
-            "Summary: The viewer has a short preference.",
-            valid_summary("repaired"),
+            "Summary: The viewer rated Evidence Movie 5/5 and prefers it.",
+            (valid_summary("repaired") + " They may enjoy drama."),
         ]
     )
     calls = []
@@ -866,23 +921,27 @@ def test_summary_route_repairs_a_validator_failure_and_logs_attempts(
     assert response.json()["generation"] == {
         "attempt_count": 2,
         "retry_count": 1,
-        "word_count": len(valid_summary("repaired").split()),
+        "reused": False,
+        "word_count": len((valid_summary("repaired") + " They may enjoy drama.").split()),
     }
     assert len(calls) == 2
     assert calls[0]["text"]["verbosity"] == "high"
     repair_prompt = calls[1]["input"][1]["content"]
-    assert "word_count" in repair_prompt
-    assert "requires a complete rewrite" in repair_prompt
-    assert "totaling 140-180 words" in repair_prompt
-    assert "roughly 35-45 words in every sentence" in repair_prompt
+    assert "rating_leakage" in repair_prompt
+    assert "privacy and format validator" in repair_prompt
+    assert "140-180" not in repair_prompt
+    assert "four sentences" not in repair_prompt
     assert "original private evidence" in repair_prompt
-    assert "viewing_context=I want to unwind" in repair_prompt
+    assert "VIEWING CONTEXT: I want to unwind" in repair_prompt
     event = store.event_by_request(study["request_id"], "summary_result")
     assert event is not None
     assert event["payload"]["validator"] == {"valid": True, "errors": []}
+    assert event["payload"]["backend_summary"] == response.json()["summary"]
+    assert event["payload"]["summary_policy"] == pilot_api.SUMMARY_POLICY
+    assert event["payload"]["backend_generation_attempts"] == []
     assert [item["word_count"] for item in event["payload"]["generation_attempts"]] == [
-        7,
-        len(valid_summary("repaired").split()),
+        len("Summary: The viewer rated Evidence Movie 5/5 and prefers it.".split()),
+        len((valid_summary("repaired") + " They may enjoy drama.").split()),
     ]
 
 
@@ -891,12 +950,12 @@ def test_summary_route_gives_rating_leakage_semantic_retry_guidance(
 ):
     client, _, _ = study_client
     monkeypatch.setenv("OPENAI_API_KEY", "test-key")
-    leaked = valid_summary("rating-safe").replace(
+    leaked = (valid_summary("rating-safe") + " They may enjoy drama.").replace(
         "The viewer prefers rating-safe",
         "The viewer rated rating-safe 5/5 and prefers",
         1,
     )
-    outputs = iter([leaked, valid_summary("rating-safe")])
+    outputs = iter([leaked, (valid_summary("rating-safe") + " They may enjoy drama.")])
     calls = []
 
     def create(**kwargs):
@@ -1024,3 +1083,63 @@ def test_gers_task_4_is_explicitly_blocked(study_client):
     discarded = client.post("/api/gers", json=baseline_payload)
     assert discarded.status_code == 409
     assert "no effective context input" in discarded.json()["detail"]
+
+
+def test_summary_refresh_reuses_validated_text_and_isolates_evidence(study_client, monkeypatch):
+    client, _, store = study_client
+    monkeypatch.setenv('OPENAI_API_KEY', 'test-key')
+    generations = []
+
+    def generate(*args, **kwargs):
+        generations.append(args[1])
+        return f'Summary: They may enjoy drama and thoughtful storytelling with detail {len(generations)}.', []
+
+    monkeypatch.setattr(pilot_api, '_generate_valid_tears_summary', generate)
+    monkeypatch.setitem(sys.modules, 'openai', SimpleNamespace(OpenAI=lambda: None))
+
+    def request(rating=5, context='', participant=None, session=None):
+        evidence = {'movies': [{'title': 'Evidence Movie (2019)', 'rating': rating, 'genres': ['Drama']}],
+                    'disliked': [], 'context': context}
+        study = meta('TEARS', '1a', {'system': 'TEARS', **evidence})
+        if participant:
+            study['participant_id'] = participant
+        if session:
+            study['session_id'] = session
+        response = client.post('/api/summarize', json={**evidence, 'study': study})
+        assert response.status_code == 200, response.text
+        return response.json(), study
+
+    first, first_meta = request()
+    request(rating=1)  # An unrelated request must not prime or overwrite this profile.
+    refresh, refresh_meta = request(session='new-session')
+    assert refresh['summary'] == first['summary']
+    assert refresh['summary_source_request_id'] == refresh_meta['request_id']
+    assert refresh['generation']['reused'] is True
+    assert refresh['generation']['retry_count'] == 0
+    assert len(generations) == 2
+    event = store.event_by_request(refresh_meta['request_id'], 'summary_result')
+    assert event['payload']['generation_cache']['source_request_id'] == first_meta['request_id']
+    assert event['payload']['backend_summary'] == first['summary']
+    request(context='I want to unwind')
+    request(participant='another-viewer')
+    monkeypatch.setattr(pilot_api, 'PILOT_API_SOURCE_SHA256', 'changed-renderer-or-validator')
+    request()
+    assert len(generations) == 5
+
+
+def test_concurrent_generations_converge_and_cache_survives_store_recreation(study_client):
+    _, _, store = study_client
+    first = store.remember_generated_summary('viewer', 'evidence', 'first', 'request-a')
+    assert store.remember_generated_summary('viewer', 'evidence', 'second', 'request-b') == first
+    reloaded = type(store)(store.path, store.provenance)
+    assert reloaded.generated_summary('viewer', 'evidence') == first
+    assert reloaded.generated_summary('another-viewer', 'evidence') is None
+
+
+def test_online_title_evidence_preserves_year_for_disambiguation():
+    payload = pilot_api.SummaryRequest.model_construct(
+        movies=[pilot_api.SummaryMovieEvidence(title='Soul (2020)', rating=5, genres=['Animation'])],
+        disliked=[], context='')
+    lines, evidence = pilot_api._online_generation_evidence(payload)
+    assert 'Soul (2020)' in '\n'.join(lines)
+    assert evidence['inference_payload']['positive_evidence'][0]['private_movie_title'] == 'Soul'

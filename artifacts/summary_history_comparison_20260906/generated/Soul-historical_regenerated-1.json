@@ -1,0 +1,12 @@
+{
+  "case": "Soul",
+  "version": "historical_regenerated",
+  "repeat": 1,
+  "outputs": [
+    {
+      "version": "historical_regenerated",
+      "summary": "Summary: The viewer favors animated adventure and family friendly films with whimsical or imaginative tones. They prefer stories that explore personal growth, existential themes, and emotional depth conveyed through playful or fantastical settings. No strong preference against specific genres, themes, or styles is supported. No strong dislike of particular plot points or content preferences is supported."
+    }
+  ],
+  "raw_response": "{\"summary\":\"Summary: The viewer favors animated adventure and family friendly films with whimsical or imaginative tones. They prefer stories that explore personal growth, existential themes, and emotional depth conveyed through playful or fantastical settings. No strong preference against specific genres, themes, or styles is supported. No strong dislike of particular plot points or content preferences is supported.\"}"
+}

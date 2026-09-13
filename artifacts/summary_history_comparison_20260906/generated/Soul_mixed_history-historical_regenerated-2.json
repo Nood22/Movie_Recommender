@@ -1,0 +1,12 @@
+{
+  "case": "Soul_mixed_history",
+  "version": "historical_regenerated",
+  "repeat": 2,
+  "outputs": [
+    {
+      "version": "historical_regenerated",
+      "summary": "Summary: The viewer strongly prefers high-energy genre blends that combine action and adventure with speculative science fiction and dramatic stakes. They enjoy films that mix inventive fantastical or metaphysical concepts with heartfelt character journeys and playful comedic moments, favoring stories that explore meaning, identity, and emotional growth through imaginative premises. They have no strong preference supported against any specific genres or styles in the provided history. They show no strong preference supported against particular plot points or content, and other viewers with different tastes may appreciate more subdued, purely realistic dramas or films that avoid speculative or surreal elements."
+    }
+  ],
+  "raw_response": "{\"summary\":\"Summary: The viewer strongly prefers high-energy genre blends that combine action and adventure with speculative science fiction and dramatic stakes. They enjoy films that mix inventive fantastical or metaphysical concepts with heartfelt character journeys and playful comedic moments, favoring stories that explore meaning, identity, and emotional growth through imaginative premises. They have no strong preference supported against any specific genres or styles in the provided history. They show no strong preference supported against particular plot points or content, and other viewers with different tastes may appreciate more subdued, purely realistic dramas or films that avoid speculative or surreal elements.\"}"
+}

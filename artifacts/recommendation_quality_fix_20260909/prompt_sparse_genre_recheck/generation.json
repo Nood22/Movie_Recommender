@@ -1,0 +1,84 @@
+{
+  "model": "gpt-5-mini-2025-08-07",
+  "prompt_sha256": "63e15f2263ba9fc1361025d8d53bc3965591f28535e9beb3cf9179bc4c35dbc3",
+  "api_source_sha256": "db14ee998ec255c91db1c9df55ce267fc6919f12eea80ada37e209b906e72a96",
+  "summary_policy": "shared-editable-profile-v2",
+  "records": [
+    {
+      "id": "horror-0",
+      "evidence": [
+        {
+          "title": "Get Out (2017)",
+          "rating": 5.0,
+          "genres": [
+            "Horror"
+          ]
+        }
+      ],
+      "selected_ids": [
+        168250
+      ],
+      "disliked": [],
+      "context": "",
+      "summary": "Summary: The viewer shows an interest in films that combine tense, suspenseful atmospheres with sharp social commentary; they may appreciate stories that use genre frameworks\u2014particularly those with horror-adjacent tension\u2014to explore power dynamics, racial and social themes, and the psychological unease beneath polite settings. They are likely receptive to movies that balance scares or sustained dread with incisive satire and character-driven moral conflicts, especially when the tension arises from interpersonal manipulation and cultural critiques.",
+      "valid": true,
+      "word_count": 73,
+      "missing_probe_genres": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "kind": "initial",
+          "word_count": 73,
+          "validator_errors": [],
+          "generation_errors": [],
+          "retry_errors": []
+        }
+      ]
+    },
+    {
+      "id": "horror-1",
+      "evidence": [
+        {
+          "title": "Get Out (2017)",
+          "rating": 5.0,
+          "genres": [
+            "Horror"
+          ]
+        }
+      ],
+      "selected_ids": [
+        168250
+      ],
+      "disliked": [],
+      "context": "",
+      "summary": "Summary: The viewer seems to respond to horror films that blend social satire and psychological tension, particularly stories that build unease through slow-burn suspense, unnerving domestic or interpersonal dynamics, and twist-driven revelations. They may appreciate horror in which character interactions and social commentary amplify the fear, making unsettling atmosphere and moral undercurrents as important as jump scares.",
+      "valid": true,
+      "word_count": 57,
+      "missing_probe_genres": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "kind": "initial",
+          "word_count": 59,
+          "validator_errors": [
+            "audit_process_language",
+            "grounding_missing_positive:Horror"
+          ],
+          "generation_errors": [],
+          "retry_errors": [
+            "audit_process_language",
+            "grounding_missing_positive:Horror"
+          ]
+        },
+        {
+          "attempt": 2,
+          "kind": "validator_repair",
+          "word_count": 57,
+          "validator_errors": [],
+          "generation_errors": [],
+          "retry_errors": []
+        }
+      ]
+    }
+  ]
+}

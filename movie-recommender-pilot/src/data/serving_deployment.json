@@ -2,6 +2,7 @@
   "deployment": "full-tears-and-gers-200948",
   "matrix_fingerprint": "27596ef71a4ac0f46e81ca97a40c4a9475bb1c2cc62c9db13819fe3cbeb714ce",
   "tears_model": "tears_base",
+  "tears_ranking_policy": "tears-compound-genre-alignment-v3",
   "tears_seed": 2022,
   "gers_model": "gers_recvae",
   "gers_seed": 2022,
@@ -15,15 +16,17 @@
     "request_compatibility_value": 0.5
   },
   "candidate_filter": {
-    "enabled": true,
+    "enabled": false,
     "field": "release_year",
     "operator": ">=",
-    "value": 2020,
+    "value": null,
     "scope": "candidate_ranking"
   },
   "top_k_semantics": "model_returned_observable_ranking_depth",
   "dataset_users": 200948,
   "train_users": 180948,
   "validation_users": 10000,
-  "test_users": 10000
+  "test_users": 10000,
+  "candidate_policy_id": "all-years-selected-only-v2",
+  "summary_policy": "shared-editable-profile-v2"
 }

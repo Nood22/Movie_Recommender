@@ -1,0 +1,57 @@
+{
+  "checked_at": "2026-09-13T00:06:19.993439+00:00",
+  "catalog_size": 100,
+  "year_quotas": {
+    "2015": 5,
+    "2016": 5,
+    "2017": 5,
+    "2018": 5,
+    "2019": 5,
+    "2020": 12,
+    "2021": 12,
+    "2022": 13,
+    "2023": 13
+  },
+  "older_movies": {
+    "before_year": 2015,
+    "count": 25
+  },
+  "same_year_neighbors": 0,
+  "older_movies_per_20_cards": [
+    5,
+    5,
+    5,
+    5,
+    5
+  ],
+  "onboarding_fingerprint": "8cbd07cfeff394fb1cc546a1779848d9275ed5c92ac81a22ce077bc3aec4733b",
+  "device": "cpu",
+  "backend_job": "10687616",
+  "backend_partition": "long-cpu-eek",
+  "synthetic_participant": "synthetic-catalog-year-distribution-20260912",
+  "exclude_from_study_analysis": true,
+  "live_catalog_matches_source": true,
+  "systems": {
+    "TEARS": {
+      "status": "passed",
+      "recommendations": 12,
+      "request_id": "candidate-policy-tears-a8ab5dd4-8bd5-4e88-878f-cd3938e769dc"
+    },
+    "GERS": {
+      "status": "passed",
+      "recommendations": 12,
+      "request_id": "candidate-policy-gers-66b8deda-ed9a-4bcf-b221-d344fa18f82f"
+    }
+  },
+  "local_checks": {
+    "backend_tests": 42,
+    "frontend_contract_files": 6,
+    "react_tests": 2,
+    "production_build": "passed"
+  },
+  "public_assets_match_build": {
+    "homepage": true,
+    "javascript": true,
+    "new_poster": true
+  }
+}

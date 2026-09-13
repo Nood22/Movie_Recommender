@@ -1,0 +1,244 @@
+{
+  "model": {
+    "model": "tears_base",
+    "seed": 2022,
+    "epochs": 200,
+    "path": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/full/tears_base/seed-2022/10d017146b22/best.pt",
+    "sha256": "08f2609c6dae073a1d6c2a8ba14a3121c5ff4ec807201c7f97c7d4aa3c598e2b",
+    "run_fingerprint": "969f4b6ddb710f372739a6203724716e3f2a5e77ec9c3cd62b9e5058158ac3bc"
+  },
+  "all_modules_in_eval_mode": true,
+  "same_raw_logits": true,
+  "max_absolute_logit_difference": 0.0,
+  "same_recommendations": true,
+  "first_request_items": [
+    {
+      "movie_id": 1,
+      "model_item_id": 0,
+      "imdb_id": "0114709",
+      "tmdb_id": 862,
+      "title": "Toy Story (1995)",
+      "release_year": 1995,
+      "genres": [
+        "Adventure",
+        "Animation",
+        "Children",
+        "Comedy",
+        "Fantasy"
+      ],
+      "score": 29.511629104614258,
+      "rank": 1,
+      "rank_label": "#1",
+      "raw_model_score": 3.7178142070770264
+    },
+    {
+      "movie_id": 364,
+      "model_item_id": 356,
+      "imdb_id": "0110357",
+      "tmdb_id": 8587,
+      "title": "Lion King, The (1994)",
+      "release_year": 1994,
+      "genres": [
+        "Adventure",
+        "Animation",
+        "Children",
+        "Drama",
+        "Musical",
+        "IMAX"
+      ],
+      "score": 28.768442153930664,
+      "rank": 2,
+      "rank_label": "#2",
+      "raw_model_score": 2.9746272563934326
+    },
+    {
+      "movie_id": 4886,
+      "model_item_id": 4629,
+      "imdb_id": "0198781",
+      "tmdb_id": 585,
+      "title": "Monsters, Inc. (2001)",
+      "release_year": 2001,
+      "genres": [
+        "Adventure",
+        "Animation",
+        "Children",
+        "Comedy",
+        "Fantasy"
+      ],
+      "score": 28.64779281616211,
+      "rank": 3,
+      "rank_label": "#3",
+      "raw_model_score": 2.8539774417877197
+    },
+    {
+      "movie_id": 4306,
+      "model_item_id": 4069,
+      "imdb_id": "0126029",
+      "tmdb_id": 808,
+      "title": "Shrek (2001)",
+      "release_year": 2001,
+      "genres": [
+        "Adventure",
+        "Animation",
+        "Children",
+        "Comedy",
+        "Fantasy",
+        "Romance"
+      ],
+      "score": 28.636798858642578,
+      "rank": 4,
+      "rank_label": "#4",
+      "raw_model_score": 2.8429837226867676
+    },
+    {
+      "movie_id": 588,
+      "model_item_id": 572,
+      "imdb_id": "0103639",
+      "tmdb_id": 812,
+      "title": "Aladdin (1992)",
+      "release_year": 1992,
+      "genres": [
+        "Adventure",
+        "Animation",
+        "Children",
+        "Comedy",
+        "Musical"
+      ],
+      "score": 28.6333065032959,
+      "rank": 5,
+      "rank_label": "#5",
+      "raw_model_score": 2.8394904136657715
+    },
+    {
+      "movie_id": 6377,
+      "model_item_id": 6034,
+      "imdb_id": "0266543",
+      "tmdb_id": 12,
+      "title": "Finding Nemo (2003)",
+      "release_year": 2003,
+      "genres": [
+        "Adventure",
+        "Animation",
+        "Children",
+        "Comedy"
+      ],
+      "score": 28.59060287475586,
+      "rank": 6,
+      "rank_label": "#6",
+      "raw_model_score": 2.7967872619628906
+    },
+    {
+      "movie_id": 8961,
+      "model_item_id": 7838,
+      "imdb_id": "0317705",
+      "tmdb_id": 9806,
+      "title": "Incredibles, The (2004)",
+      "release_year": 2004,
+      "genres": [
+        "Action",
+        "Adventure",
+        "Animation",
+        "Children",
+        "Comedy"
+      ],
+      "score": 28.556509017944336,
+      "rank": 7,
+      "rank_label": "#7",
+      "raw_model_score": 2.7626936435699463
+    },
+    {
+      "movie_id": 60069,
+      "model_item_id": 11090,
+      "imdb_id": "0910970",
+      "tmdb_id": 10681,
+      "title": "WALL\u00b7E (2008)",
+      "release_year": 2008,
+      "genres": [
+        "Adventure",
+        "Animation",
+        "Children",
+        "Romance",
+        "Sci-Fi"
+      ],
+      "score": 28.4917049407959,
+      "rank": 8,
+      "rank_label": "#8",
+      "raw_model_score": 2.6978893280029297
+    },
+    {
+      "movie_id": 68954,
+      "model_item_id": 11694,
+      "imdb_id": "1049413",
+      "tmdb_id": 14160,
+      "title": "Up (2009)",
+      "release_year": 2009,
+      "genres": [
+        "Adventure",
+        "Animation",
+        "Children",
+        "Drama"
+      ],
+      "score": 28.438796997070312,
+      "rank": 9,
+      "rank_label": "#9",
+      "raw_model_score": 2.64498233795166
+    },
+    {
+      "movie_id": 595,
+      "model_item_id": 579,
+      "imdb_id": "0101414",
+      "tmdb_id": 10020,
+      "title": "Beauty and the Beast (1991)",
+      "release_year": 1991,
+      "genres": [
+        "Animation",
+        "Children",
+        "Fantasy",
+        "Musical",
+        "Romance",
+        "IMAX"
+      ],
+      "score": 28.43781852722168,
+      "rank": 10,
+      "rank_label": "#10",
+      "raw_model_score": 2.6440024375915527
+    },
+    {
+      "movie_id": 551,
+      "model_item_id": 538,
+      "imdb_id": "0107688",
+      "tmdb_id": 9479,
+      "title": "Nightmare Before Christmas, The (1993)",
+      "release_year": 1993,
+      "genres": [
+        "Animation",
+        "Children",
+        "Fantasy",
+        "Musical"
+      ],
+      "score": 28.395736694335938,
+      "rank": 11,
+      "rank_label": "#11",
+      "raw_model_score": 2.6019210815429688
+    },
+    {
+      "movie_id": 3114,
+      "model_item_id": 2946,
+      "imdb_id": "0120363",
+      "tmdb_id": 863,
+      "title": "Toy Story 2 (1999)",
+      "release_year": 1999,
+      "genres": [
+        "Adventure",
+        "Animation",
+        "Children",
+        "Comedy",
+        "Fantasy"
+      ],
+      "score": 28.374710083007812,
+      "rank": 12,
+      "rank_label": "#12",
+      "raw_model_score": 2.5808939933776855
+    }
+  ]
+}

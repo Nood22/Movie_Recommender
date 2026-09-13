@@ -1,0 +1,276 @@
+{
+  "model": "gpt-5-mini-2025-08-07",
+  "prompt_sha256": "4d5bf36f2b8e812a7ec4f3253abc965c1ea3b0007d812a6edb0a3d9f013e5c4d",
+  "api_source_sha256": "b15ab71114598223019cbc9c584f3b427579127c904024102b75b38e862d15b5",
+  "summary_policy": "shared-editable-profile-v2",
+  "records": [
+    {
+      "id": "animation-0",
+      "evidence": [
+        {
+          "title": "Up (2009)",
+          "rating": 5.0,
+          "genres": [
+            "Adventure",
+            "Animation",
+            "Children",
+            "Drama"
+          ]
+        }
+      ],
+      "selected_ids": [
+        68954
+      ],
+      "disliked": [],
+      "context": "",
+      "summary": "Summary: The viewer seems to respond to heartfelt animated adventures that blend earnest dramatic emotion with broad, family-friendly storytelling. They may enjoy films in which animated worlds and adventurous journeys are grounded by sincere character moments and themes suitable for younger viewers while still carrying emotional weight for adults.",
+      "valid": true,
+      "word_count": 49,
+      "missing_probe_genres": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "kind": "initial",
+          "word_count": 60,
+          "validator_errors": [
+            "year_leakage",
+            "grounding_missing_positive:Animation|Children"
+          ],
+          "generation_errors": [],
+          "retry_errors": [
+            "year_leakage",
+            "grounding_missing_positive:Animation|Children"
+          ]
+        },
+        {
+          "attempt": 2,
+          "kind": "validator_repair",
+          "word_count": 49,
+          "validator_errors": [],
+          "generation_errors": [],
+          "retry_errors": []
+        }
+      ]
+    },
+    {
+      "id": "animation-1",
+      "evidence": [
+        {
+          "title": "Up (2009)",
+          "rating": 5.0,
+          "genres": [
+            "Adventure",
+            "Animation",
+            "Children",
+            "Drama"
+          ]
+        }
+      ],
+      "selected_ids": [
+        68954
+      ],
+      "disliked": [],
+      "context": "",
+      "summary": "Summary: The viewer may enjoy adventure, animation, children, drama, although their interest could vary from one film to another.",
+      "valid": true,
+      "word_count": 19,
+      "missing_probe_genres": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "kind": "initial",
+          "word_count": 58,
+          "validator_errors": [
+            "year_leakage",
+            "grounding_missing_positive:Animation|Children|Drama"
+          ],
+          "generation_errors": [],
+          "retry_errors": [
+            "year_leakage",
+            "grounding_missing_positive:Animation|Children|Drama"
+          ]
+        },
+        {
+          "attempt": 2,
+          "kind": "validator_repair",
+          "word_count": 47,
+          "validator_errors": [
+            "audit_process_language"
+          ],
+          "generation_errors": [],
+          "retry_errors": [
+            "audit_process_language"
+          ]
+        },
+        {
+          "attempt": 3,
+          "kind": "validator_repair",
+          "word_count": 44,
+          "validator_errors": [
+            "grounding_missing_positive:Children|Drama"
+          ],
+          "generation_errors": [],
+          "retry_errors": [
+            "grounding_missing_positive:Children|Drama"
+          ]
+        },
+        {
+          "attempt": 4,
+          "kind": "validated_sparse_fallback",
+          "word_count": 19,
+          "validator_errors": [],
+          "generation_errors": [],
+          "retry_errors": []
+        }
+      ]
+    },
+    {
+      "id": "soul-0",
+      "evidence": [
+        {
+          "title": "Soul (2020)",
+          "rating": 5.0,
+          "genres": [
+            "Adventure",
+            "Animation",
+            "Children",
+            "Comedy",
+            "Fantasy"
+          ]
+        }
+      ],
+      "selected_ids": [
+        225173
+      ],
+      "disliked": [],
+      "context": "",
+      "summary": "Summary: The viewer may enjoy adventure, animation, children, comedy, fantasy, although their interest could vary from one film to another.",
+      "valid": true,
+      "word_count": 20,
+      "missing_probe_genres": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "kind": "initial",
+          "word_count": 52,
+          "validator_errors": [
+            "year_leakage",
+            "title_leakage:Soul (2020)",
+            "grounding_missing_positive:Adventure|Animation|Children"
+          ],
+          "generation_errors": [],
+          "retry_errors": [
+            "year_leakage",
+            "title_leakage:Soul (2020)",
+            "grounding_missing_positive:Adventure|Animation|Children"
+          ]
+        },
+        {
+          "attempt": 2,
+          "kind": "validator_repair",
+          "word_count": 44,
+          "validator_errors": [
+            "grounding_missing_positive:Children"
+          ],
+          "generation_errors": [],
+          "retry_errors": [
+            "grounding_missing_positive:Children"
+          ]
+        },
+        {
+          "attempt": 3,
+          "kind": "validator_repair",
+          "word_count": 42,
+          "validator_errors": [
+            "year_leakage",
+            "grounding_missing_positive:Children"
+          ],
+          "generation_errors": [],
+          "retry_errors": [
+            "year_leakage",
+            "grounding_missing_positive:Children"
+          ]
+        },
+        {
+          "attempt": 4,
+          "kind": "validated_sparse_fallback",
+          "word_count": 20,
+          "validator_errors": [],
+          "generation_errors": [],
+          "retry_errors": []
+        }
+      ]
+    },
+    {
+      "id": "soul-1",
+      "evidence": [
+        {
+          "title": "Soul (2020)",
+          "rating": 5.0,
+          "genres": [
+            "Adventure",
+            "Animation",
+            "Children",
+            "Comedy",
+            "Fantasy"
+          ]
+        }
+      ],
+      "selected_ids": [
+        225173
+      ],
+      "disliked": [],
+      "context": "",
+      "summary": "Summary: The viewer may enjoy adventure, animation, children, comedy, fantasy, although their interest could vary from one film to another.",
+      "valid": true,
+      "word_count": 20,
+      "missing_probe_genres": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "kind": "initial",
+          "word_count": 54,
+          "validator_errors": [
+            "grounding_missing_positive:Adventure|Children"
+          ],
+          "generation_errors": [],
+          "retry_errors": [
+            "grounding_missing_positive:Adventure|Children"
+          ]
+        },
+        {
+          "attempt": 2,
+          "kind": "validator_repair",
+          "word_count": 50,
+          "validator_errors": [
+            "audit_process_language"
+          ],
+          "generation_errors": [],
+          "retry_errors": [
+            "audit_process_language"
+          ]
+        },
+        {
+          "attempt": 3,
+          "kind": "validator_repair",
+          "word_count": 47,
+          "validator_errors": [
+            "grounding_missing_positive:Children"
+          ],
+          "generation_errors": [],
+          "retry_errors": [
+            "grounding_missing_positive:Children"
+          ]
+        },
+        {
+          "attempt": 4,
+          "kind": "validated_sparse_fallback",
+          "word_count": 20,
+          "validator_errors": [],
+          "generation_errors": [],
+          "retry_errors": []
+        }
+      ]
+    }
+  ]
+}

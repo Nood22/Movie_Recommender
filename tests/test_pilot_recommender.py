@@ -15,9 +15,11 @@ from pilot_api import EXPECTED_ONBOARDING_FINGERPRINT, verify_request_provenance
 from pilot_recommender import (
     EXPECTED_MATRIX_FINGERPRINT,
     EXPECTED_PILOT_MATRIX_FINGERPRINT,
+    GERS_RUN_DIR,
     ML32M_LINKS,
     MATRIX_DIR,
     PILOT_MATRIX_DIR,
+    RECVAE_CHECKPOINT,
     PilotHybridRecommender,
 )
 from scripts.build_pilot_onboarding_catalog import select_movies
@@ -183,6 +185,33 @@ def test_frozen_pilot_manifests_match_serving_contract() -> None:
     recommender._validate_artifacts(verify_hashes=False)
 
 
+def test_promoted_gers_checkpoint_uses_the_exact_full_cohort_split() -> None:
+    manifest = json.loads((GERS_RUN_DIR / "manifest.json").read_text(encoding="utf-8"))
+    result = json.loads((GERS_RUN_DIR / "result.json").read_text(encoding="utf-8"))
+    users = pd.read_csv(MATRIX_DIR / "users.csv", usecols=["split"])
+    selection = json.loads(
+        (PROJECT_ROOT / "artifacts" / "phase6_gers_seed2022_frozen_selection.json")
+        .read_text(encoding="utf-8")
+    )
+
+    assert users["split"].value_counts().to_dict() == {
+        "train": 180_948,
+        "validation": 10_000,
+        "test": 10_000,
+    }
+    arguments = manifest["arguments"]
+    assert arguments["profile"] == "full"
+    assert arguments["model"] == "gers_recvae"
+    assert arguments["matrix_dir"] == str(MATRIX_DIR)
+    assert arguments["recvae_checkpoint"] == str(RECVAE_CHECKPOINT)
+    assert arguments["seed"] == 2022
+    assert arguments["epochs"] == 200
+    assert result["epochs_completed"] == 200
+    assert result["checkpoint_sha256"]["best.pt"] == selection["checkpoint_sha256"]
+    assert selection["train_users"] == 180_948
+    assert selection["validation"]["status"] == "passed_and_selected"
+
+
 def test_pilot_onboarding_catalog_is_training_derived_and_model_aligned() -> None:
     records = json.loads(PILOT_ONBOARDING.read_text(encoding="utf-8"))
     manifest = json.loads(
@@ -195,17 +224,30 @@ def test_pilot_onboarding_catalog_is_training_derived_and_model_aligned() -> Non
     ).set_index("movieId")
 
     assert records == select_movies(PILOT_MATRIX_DIR)
-    assert len(records) == 50
-    assert len({record["movieId"] for record in records}) == 50
+    assert len(records) == 100
+    assert len({record["movieId"] for record in records}) == 100
+    assert len({record["title"] for record in records}) == 100
+    assert [record["movieId"] for record in records] == manifest["movie_ids"]
+    quotas = {2023: 13, 2022: 13, 2021: 12, 2020: 12, **dict.fromkeys(range(2015, 2020), 5)}
+    assert manifest["year_quotas"] == {str(year): count for year, count in quotas.items()}
+    assert manifest["older_movies"] == {"before_year": 2015, "count": 25}
     assert Counter(record["releaseBand"] for record in records) == {
-        "2000-2004": 10,
-        "2005-2009": 10,
-        "2010-2014": 10,
-        "2015-2019": 10,
-        "2020-2023": 10,
+        **manifest["year_quotas"], "before-2015": 25,
     }
+    assert all(a["releaseYear"] != b["releaseYear"] for a, b in zip(records, records[1:]))
+    for offset in range(0, 100, 20):
+        assert 4 <= sum(record["releaseYear"] < 2015 for record in records[offset:offset + 20]) <= 6
+    for year in quotas:
+        rows = [record for record in records if record["releaseYear"] == year]
+        assert rows == sorted(rows, key=lambda record: (
+            -record["frozenPopularity"], -record["pilotTrainRatingCount"],
+            record["movieId"], record["title"],
+        ))
     assert manifest["dataset"] == "MovieLens 32M"
     assert manifest["selection_data"] == "train_observed only"
+    assert manifest["catalog_size"] == 100
+    assert manifest["selection_policy"] == "popular-year-quotas-v1"
+    assert manifest["popularity_field"] == "frozenPopularity"
     assert manifest["metadata_source"] == "MovieLens 32M links.csv"
     assert manifest["links_sha256"] == (
         "ef17da7710be76f7d510d5768d1b61826e3af4bf57812b9ca377e4c912123b22"

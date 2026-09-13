@@ -1,0 +1,63 @@
+{
+  "recorded_at_edt": "2026-08-20T16:41:10-04:00",
+  "phase": "full",
+  "protocol": "frozen_v10_evidence_gated_emiliano",
+  "test_metrics_used": false,
+  "phase6_complete": false,
+  "phase7_ready": false,
+  "canonical_counts": {
+    "total": 25,
+    "completed": 15,
+    "running": 4,
+    "pending_dependency": 6,
+    "failed_unresolved": 0
+  },
+  "slurm_training_attempt_counts": {
+    "total": 31,
+    "completed": 15,
+    "running": 4,
+    "pending_dependency": 6,
+    "failed_superseded": 6
+  },
+  "running": [
+    {"job_id": "10416422", "model": "tears_base", "seed": 2022, "node": "cn-g003", "started_at_edt": "2026-08-20T16:01:26-04:00", "latest_epoch": 1, "latest_metric_at_edt": "2026-08-20T16:40:48-04:00", "recent_epoch_seconds": 1128.7},
+    {"job_id": "10416423", "model": "tears_base", "seed": 2023, "node": "cn-g014", "started_at_edt": "2026-08-20T16:10:39-04:00", "latest_epoch": 0, "latest_metric_at_edt": "2026-08-20T16:31:20-04:00", "recent_epoch_seconds": 1141.1},
+    {"job_id": "10416427", "model": "tears_recvae", "seed": 2021, "node": "cn-g003", "started_at_edt": "2026-08-20T13:41:02-04:00", "latest_epoch": 7, "latest_metric_at_edt": "2026-08-20T16:34:07-04:00", "recent_epoch_seconds": 1280.4},
+    {"job_id": "10416429", "model": "tears_recvae", "seed": 2022, "node": "cn-g029", "started_at_edt": "2026-08-20T14:42:03-04:00", "latest_epoch": 4, "latest_metric_at_edt": "2026-08-20T16:30:13-04:00", "recent_epoch_seconds": 1280.2}
+  ],
+  "pending": [
+    {"job_id": "10429224", "model": "tears_base", "seed": 2020, "reason": "Dependency", "dependency": "afterany:10416422", "resume_from_epoch": 50},
+    {"job_id": "10416424", "model": "tears_base", "seed": 2024, "reason": "Dependency", "dependency": "afterany:10429224"},
+    {"job_id": "10429231", "model": "tears_base", "seed": 2021, "reason": "Dependency", "dependency": "afterany:10416423", "resume_from_epoch": 16},
+    {"job_id": "10429232", "model": "tears_recvae", "seed": 2020, "reason": "Dependency", "dependency": "afterany:10416427", "resume_from_epoch": 29},
+    {"job_id": "10416431", "model": "tears_recvae", "seed": 2023, "reason": "Dependency", "dependency": "afterany:10429232"},
+    {"job_id": "10416433", "model": "tears_recvae", "seed": 2024, "reason": "Dependency", "dependency": "afterany:10416429"}
+  ],
+  "completed_replacements": [
+    {"job_id": "10426276", "model": "gers_base", "seed": 2021, "state": "COMPLETED", "elapsed": "00:35:46", "ended_at_edt": "2026-08-20T14:14:06-04:00"},
+    {"job_id": "10426278", "model": "gers_base", "seed": 2022, "state": "COMPLETED", "elapsed": "00:36:32", "ended_at_edt": "2026-08-20T14:14:52-04:00"},
+    {"job_id": "10426292", "model": "gers_base", "seed": 2023, "state": "COMPLETED", "elapsed": "00:35:27", "ended_at_edt": "2026-08-20T14:49:35-04:00"}
+  ],
+  "failed_resume_attempts": [
+    {"job_id": "10416420", "model": "tears_base", "seed": 2020, "state": "FAILED", "exit_code": "1:0", "failed_at_edt": "2026-08-20T15:35:44-04:00", "latest_completed_epoch": 49, "replacement_job_id": "10429224"},
+    {"job_id": "10416421", "model": "tears_base", "seed": 2021, "state": "FAILED", "exit_code": "1:0", "failed_at_edt": "2026-08-20T15:35:45-04:00", "latest_completed_epoch": 15, "replacement_job_id": "10429231"},
+    {"job_id": "10416425", "model": "tears_recvae", "seed": 2020, "state": "FAILED", "exit_code": "1:0", "failed_at_edt": "2026-08-20T14:40:29-04:00", "latest_completed_epoch": 28, "replacement_job_id": "10429232"}
+  ],
+  "finalizer": {
+    "job_id": "10426384",
+    "state": "PENDING",
+    "reason": "Dependency",
+    "dependency": "afterany:10416424:10429231:10416431:10416433"
+  },
+  "eta": {
+    "method": "remaining epochs multiplied by recent per-model epoch duration along each dependency lane",
+    "tears_base_epoch_minutes": 18.9,
+    "tears_recvae_epoch_minutes": 21.3,
+    "compute_only_gate_edt": "2026-08-29T02:30:00-04:00",
+    "planning_point_edt": "2026-09-01T12:00:00-04:00",
+    "planning_window_start_edt": "2026-08-31T00:00:00-04:00",
+    "planning_window_end_edt": "2026-09-02T23:59:59-04:00",
+    "confidence": "low-to-moderate",
+    "risk": "Slurm preemption and queue reacquisition"
+  }
+}

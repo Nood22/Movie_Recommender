@@ -1,0 +1,87 @@
+{
+  "cost_and_plan_file": "full_cohort_generation_plan.json",
+  "counts": {
+    "exact_duplicate_groups": 0,
+    "formatting_failures": 0,
+    "inappropriate_abstentions": 0,
+    "justified_near_duplicate_pairs": 1,
+    "literal_placeholders": 0,
+    "missing_or_invalid_summaries": 0,
+    "near_duplicate_pairs": 1,
+    "numeric_rating_leaks": 0,
+    "positive_consistency_repair_users": 68,
+    "positive_fallbacks": 13,
+    "semantic_complete": 1000,
+    "semantic_incomplete": 0,
+    "substantive_positive_negative_contradictions": 0,
+    "title_leaks": 0,
+    "title_sanitization_users": 4,
+    "unresolved_near_duplicate_pairs": 0,
+    "unsupported_or_overstated_negative_claims": 0,
+    "users": 1000,
+    "year_leaks": 0
+  },
+  "duplicates": {
+    "exact_duplicate_groups": [],
+    "exact_duplicate_pairs_or_groups": 0,
+    "justified_near_duplicate_count": 1,
+    "near_duplicate_count": 1,
+    "near_duplicate_pairs": [
+      {
+        "justified_deterministic_template_similarity": true,
+        "left_user_id": 74219,
+        "rationale": "Both profiles appropriately use the same deterministic positive abstention, while their evidence-specific negative genre lists differ.",
+        "right_user_id": 166368,
+        "sequence_similarity": 0.9770723104056437
+      }
+    ],
+    "near_duplicate_threshold": 0.9,
+    "unresolved_near_duplicate_count": 0
+  },
+  "gates": {
+    "duplicates_clean": true,
+    "formatting_failures_zero": true,
+    "inappropriate_abstentions_zero": true,
+    "missing_or_invalid_zero": true,
+    "privacy_leakage_zero": true,
+    "semantic_completeness_100_percent": true,
+    "substantive_positive_negative_contradictions_zero": true,
+    "unsupported_or_overstated_negative_claims_zero": true
+  },
+  "length": {
+    "below_120": 955,
+    "below_150": 998,
+    "maximum": 158,
+    "mean": 85.449,
+    "median": 84.0,
+    "minimum": 27,
+    "p95_linear": 118.0
+  },
+  "operations": {
+    "consistency_remove_contradictory_positive_sentence": {
+      "occurrences": 88,
+      "users": 68
+    },
+    "discard_llm_negative_or_abstention_content": {
+      "occurrences": 1031,
+      "users": 1000
+    },
+    "insert_grounded_positive_fallback": {
+      "occurrences": 13,
+      "users": 13
+    },
+    "privacy_remove_title_example_parenthetical": {
+      "occurrences": 12,
+      "users": 4
+    }
+  },
+  "promotion_decision": "freeze_as_final_production_protocol",
+  "protocol_fingerprint": "e25639ac100659af2ebcd2f7077a485ad731db78e71e07a471b9bde529fb57de",
+  "scope": {
+    "new_summaries_generated": 0,
+    "offline_only": true,
+    "openai_requests": 0,
+    "source_artifacts_modified": false,
+    "tmdb_used": false
+  }
+}

@@ -1,0 +1,603 @@
+{
+  "errors": [],
+  "expected_runs": 25,
+  "model_summary": {
+    "gers_base": {
+      "mean_best_validation_selection_ndcg@50": 0.17721468290193906,
+      "sample_std_best_validation_selection_ndcg@50": 0.0006390514915688867,
+      "valid_seeds": 5
+    },
+    "gers_recvae": {
+      "mean_best_validation_selection_ndcg@50": 0.21663330882236922,
+      "sample_std_best_validation_selection_ndcg@50": 0.0003819848167185402,
+      "valid_seeds": 5
+    },
+    "recvae": {
+      "mean_best_validation_selection_ndcg@50": 0.23461664941852853,
+      "sample_std_best_validation_selection_ndcg@50": 0.0004699408579204626,
+      "valid_seeds": 5
+    },
+    "tears_base": {
+      "mean_best_validation_selection_ndcg@50": 0.18498020699548146,
+      "sample_std_best_validation_selection_ndcg@50": 0.0005158439910461966,
+      "valid_seeds": 5
+    },
+    "tears_recvae": {
+      "mean_best_validation_selection_ndcg@50": 0.2166339127087505,
+      "sample_std_best_validation_selection_ndcg@50": 0.0003992738383719128,
+      "valid_seeds": 5
+    }
+  },
+  "phase": 6,
+  "phase6_complete": true,
+  "phase7_ready": true,
+  "protocol": "frozen_v10_evidence_gated_emiliano",
+  "recorded_at_utc": "2026-09-07T03:12:08.830385+00:00",
+  "runs": [
+    {
+      "best_validation_selection_ndcg@50": 0.23459687677001761,
+      "checkpoint_sha256": {
+        "best.pt": "2174aff6f451676b169198fcc1e1f107a9b88d08010e527dba3e4e8391975800",
+        "final.pt": "eecfe0644086a246f17fec9bd344982021e4d9cf569031ce87d665347f012302",
+        "resume.pt": "0e8f442316c02293affbb707ee6cc0b84738b367c7cd100c345da4a5731e4f2a"
+      },
+      "epochs_completed": 200,
+      "errors": [],
+      "execution_fingerprint": "62eb61407aed1ead8cbc81923b750303b68035c923908996c200157094814599",
+      "identity_matches": true,
+      "manifest_path": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/full/recvae/seed-2020/62eb61407aed/manifest.json",
+      "matrix_dir": "/network/scratch/a/adls/FullTrainingTEARS/datasets/catalog_selection/support_20/matrix",
+      "model": "recvae",
+      "result_path": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/full/recvae/seed-2020/62eb61407aed/result.json",
+      "run_dir": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/full/recvae/seed-2020/62eb61407aed",
+      "seed": 2020,
+      "summaries": null,
+      "training_fingerprint": "3e87b30984640ecb7455db6f9b547e51c5062def454078994f6beb15931d8cfa",
+      "wandb_run_id": "62eb61407aed1ead"
+    },
+    {
+      "best_validation_selection_ndcg@50": 0.23508681038454657,
+      "checkpoint_sha256": {
+        "best.pt": "1f7b4d0a794da424bec0eeb1661740ff10a8d7dad683d83fc29c6d6245f85bdb",
+        "final.pt": "9e07ce977741445f815ef6b1e151c29ed319e4a34d8b9b7321ac91fca63a00f0",
+        "resume.pt": "6f2d3b54a71cd0606e4f3fc13b470adfc09a08546bc8f8e9a50ede67d42bc72c"
+      },
+      "epochs_completed": 200,
+      "errors": [],
+      "execution_fingerprint": "31fed35925901603099afb7cd6c34c8d5cb28d24a9d8d6fe61884a600968a69c",
+      "identity_matches": true,
+      "manifest_path": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/full/recvae/seed-2021/31fed3592590/manifest.json",
+      "matrix_dir": "/network/scratch/a/adls/FullTrainingTEARS/datasets/catalog_selection/support_20/matrix",
+      "model": "recvae",
+      "result_path": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/full/recvae/seed-2021/31fed3592590/result.json",
+      "run_dir": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/full/recvae/seed-2021/31fed3592590",
+      "seed": 2021,
+      "summaries": null,
+      "training_fingerprint": "57b506df253c42fd11123600c05a910a53ffa88bff3e59e5d3c337b25dd8adbe",
+      "wandb_run_id": "31fed35925901603"
+    },
+    {
+      "best_validation_selection_ndcg@50": 0.2350832509117261,
+      "checkpoint_sha256": {
+        "best.pt": "dcddf9fb6198841b0e30668007f2505a526265f669448a244acb16ac0f1fdc8a",
+        "final.pt": "620a786c55d53c4ac08cc5e5d10ef2a702678033e8cc01b6ac874210eedc0e70",
+        "resume.pt": "4878a71a8edb26d593292c242f7543541c95ed8f1078e659d9828f5260666de3"
+      },
+      "epochs_completed": 200,
+      "errors": [],
+      "execution_fingerprint": "e7a7e560dc42d738b6238c5f8c71b32d0a1cb3146f7f349d706582298b007317",
+      "identity_matches": true,
+      "manifest_path": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/full/recvae/seed-2022/e7a7e560dc42/manifest.json",
+      "matrix_dir": "/network/scratch/a/adls/FullTrainingTEARS/datasets/catalog_selection/support_20/matrix",
+      "model": "recvae",
+      "result_path": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/full/recvae/seed-2022/e7a7e560dc42/result.json",
+      "run_dir": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/full/recvae/seed-2022/e7a7e560dc42",
+      "seed": 2022,
+      "summaries": null,
+      "training_fingerprint": "f36ce96e3635a9320b8432f07fe8136b0a0c55aa083b3da15365f3c3b7537f98",
+      "wandb_run_id": "e7a7e560dc42d738"
+    },
+    {
+      "best_validation_selection_ndcg@50": 0.23426720321388736,
+      "checkpoint_sha256": {
+        "best.pt": "adadc0a415403b6c6a8a3e1dded421295f28226ea8fca45a9dcf5648f33131d7",
+        "final.pt": "526a50d812e8cf878bf6be8a284a7a0d3f75be111a2d06b33bf2ffd84397b8cb",
+        "resume.pt": "0bf7454f23c1253e290f1ccc073d8ae503431b6dd7a87e263123bc3a792f5c07"
+      },
+      "epochs_completed": 200,
+      "errors": [],
+      "execution_fingerprint": "864c04c2241cf39b0d3deb75fe2a9b3eb1eb81804882ad794960ca794aa70d65",
+      "identity_matches": true,
+      "manifest_path": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/full/recvae/seed-2023/864c04c2241c/manifest.json",
+      "matrix_dir": "/network/scratch/a/adls/FullTrainingTEARS/datasets/catalog_selection/support_20/matrix",
+      "model": "recvae",
+      "result_path": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/full/recvae/seed-2023/864c04c2241c/result.json",
+      "run_dir": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/full/recvae/seed-2023/864c04c2241c",
+      "seed": 2023,
+      "summaries": null,
+      "training_fingerprint": "6bab19ec06faa0c2eabc6232402c01057f790e7eb5bd474dafa066f8ca60b31a",
+      "wandb_run_id": "864c04c2241cf39b"
+    },
+    {
+      "best_validation_selection_ndcg@50": 0.234049105812465,
+      "checkpoint_sha256": {
+        "best.pt": "5336720c631e721e3afb4a6cca04830daf6b1c362fc21c7ebb42c3d0b0aa8c52",
+        "final.pt": "9c44d0b0021367b04b3bef501fe9865250f62219079ce5329d67119f09ca752a",
+        "resume.pt": "4e72c9abe2c23191ebe7ddee678b12b2b626aa4c8f49e855c45a311e05c69fb7"
+      },
+      "epochs_completed": 200,
+      "errors": [],
+      "execution_fingerprint": "561c3325321eb76ecddeb28bc573cd719b518534b9a95fa491f72c89fb381185",
+      "identity_matches": true,
+      "manifest_path": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/full/recvae/seed-2024/561c3325321e/manifest.json",
+      "matrix_dir": "/network/scratch/a/adls/FullTrainingTEARS/datasets/catalog_selection/support_20/matrix",
+      "model": "recvae",
+      "result_path": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/full/recvae/seed-2024/561c3325321e/result.json",
+      "run_dir": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/full/recvae/seed-2024/561c3325321e",
+      "seed": 2024,
+      "summaries": null,
+      "training_fingerprint": "dc9e55f374562c864e52d75558363dd6566d3c2c6cd8c929ac4b0ebe260a1154",
+      "wandb_run_id": "561c3325321eb76e"
+    },
+    {
+      "best_validation_selection_ndcg@50": 0.1765416569962737,
+      "checkpoint_sha256": {
+        "best.pt": "269f0369bf4c47e181d043556b3ba17943a80a5954c8cd15ca8cdb0fce4bf2d5",
+        "final.pt": "143aa6686a6d01788415779956377c196f86d176842c444c0a0d45ca6d91086a",
+        "resume.pt": "8578c42bb1c1dc4943bb3a5ab55078078ab2dcff9692fc32810fbc6bf76f7da5"
+      },
+      "epochs_completed": 200,
+      "errors": [],
+      "execution_fingerprint": "5245703b1e9bdba8bf89cc4030e2034228225a71ea2ce498a2d3f43ec5b01aad",
+      "identity_matches": true,
+      "manifest_path": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/full/gers_base/seed-2020/5245703b1e9b/manifest.json",
+      "matrix_dir": "/network/scratch/a/adls/FullTrainingTEARS/datasets/catalog_selection/support_20/matrix",
+      "model": "gers_base",
+      "result_path": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/full/gers_base/seed-2020/5245703b1e9b/result.json",
+      "run_dir": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/full/gers_base/seed-2020/5245703b1e9b",
+      "seed": 2020,
+      "summaries": null,
+      "training_fingerprint": "c7d89747da722fd4efb28b7141e178d5173a63b25b9f9ace8f901c98acdc0c74",
+      "wandb_run_id": "5245703b1e9bdba8"
+    },
+    {
+      "best_validation_selection_ndcg@50": 0.17718589626282694,
+      "checkpoint_sha256": {
+        "best.pt": "b3fdf693f4767a679e0502e3b801a79b2c29888badf5de04e7b0d870021c4e73",
+        "final.pt": "3e232b3218b2ee6dd0768bc5c31e298dc6ef14a090039eff483b755c41d49186",
+        "resume.pt": "212da63c856ca26974069a3c68887a105ddc37dc3b799a1776e57eda5e59587b"
+      },
+      "epochs_completed": 200,
+      "errors": [],
+      "execution_fingerprint": "312fe6237855c86e6c905d859eaeef30b86227fb50675d46a90b8c2be34639f1",
+      "identity_matches": true,
+      "manifest_path": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/full/gers_base/seed-2021/312fe6237855/manifest.json",
+      "matrix_dir": "/network/scratch/a/adls/FullTrainingTEARS/datasets/catalog_selection/support_20/matrix",
+      "model": "gers_base",
+      "result_path": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/full/gers_base/seed-2021/312fe6237855/result.json",
+      "run_dir": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/full/gers_base/seed-2021/312fe6237855",
+      "seed": 2021,
+      "summaries": null,
+      "training_fingerprint": "9d065b302588a907936937d6ee860e8675752c959b9ff9d4de893858e89046f4",
+      "wandb_run_id": "312fe6237855c86e"
+    },
+    {
+      "best_validation_selection_ndcg@50": 0.1767126074571523,
+      "checkpoint_sha256": {
+        "best.pt": "15618d97c6281de19151e9508f12684d4728d540bece8e5cb1f800e3cfb6efb9",
+        "final.pt": "30f7175590d00c61b326fa465cb3026cd9f99faa9b717d5fd0c5e0678ad26075",
+        "resume.pt": "ede7056591accb2da21338cce47bc0f65feaa64df688bc5bf016df178548f32e"
+      },
+      "epochs_completed": 200,
+      "errors": [],
+      "execution_fingerprint": "e55cc8175af5732456fe4a169ba35138cd01ba442452d57b3139edd1e8e2e0d3",
+      "identity_matches": true,
+      "manifest_path": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/full/gers_base/seed-2022/e55cc8175af5/manifest.json",
+      "matrix_dir": "/network/scratch/a/adls/FullTrainingTEARS/datasets/catalog_selection/support_20/matrix",
+      "model": "gers_base",
+      "result_path": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/full/gers_base/seed-2022/e55cc8175af5/result.json",
+      "run_dir": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/full/gers_base/seed-2022/e55cc8175af5",
+      "seed": 2022,
+      "summaries": null,
+      "training_fingerprint": "a1a048223dae8638c2ac286771bf0502d404fc712b59a16448bd6b1328ce2205",
+      "wandb_run_id": "e55cc8175af57324"
+    },
+    {
+      "best_validation_selection_ndcg@50": 0.17813521895347342,
+      "checkpoint_sha256": {
+        "best.pt": "11c33e01d98ba251e3670e791f2ab85aa206d0a90442af67fbd2067bc18e8faa",
+        "final.pt": "18a85f79ad7195cdb38c09498b141a4011669e8ae7f43fcb2e0e9cad2bec4fca",
+        "resume.pt": "47515b118e55e6d6318038e51dfabc1a73b35430d15fd0fe85e03a377a4f9115"
+      },
+      "epochs_completed": 200,
+      "errors": [],
+      "execution_fingerprint": "de84ec8f4a17278616c09f134b3ba1bf3ca69e4cbb53c538e95eb7f08eaa022a",
+      "identity_matches": true,
+      "manifest_path": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/full/gers_base/seed-2023/de84ec8f4a17/manifest.json",
+      "matrix_dir": "/network/scratch/a/adls/FullTrainingTEARS/datasets/catalog_selection/support_20/matrix",
+      "model": "gers_base",
+      "result_path": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/full/gers_base/seed-2023/de84ec8f4a17/result.json",
+      "run_dir": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/full/gers_base/seed-2023/de84ec8f4a17",
+      "seed": 2023,
+      "summaries": null,
+      "training_fingerprint": "972ef1fddbe328988bacbc5b12eb0143b81162ce191bcb2713e35baf83ac2d49",
+      "wandb_run_id": "de84ec8f4a172786"
+    },
+    {
+      "best_validation_selection_ndcg@50": 0.177498034839969,
+      "checkpoint_sha256": {
+        "best.pt": "d13d2f82a6e6ef5d68668f9782b4d56134bfbaf40293239277108e18f66b2461",
+        "final.pt": "3406d4dbc020905417f60b32760fc7e950d1b790df0bf0dfeec0f744bf2f1c24",
+        "resume.pt": "47112c71f5baf47a8af0e5c810450db1a33f230805d0a3a3180da7b62a187e67"
+      },
+      "epochs_completed": 200,
+      "errors": [],
+      "execution_fingerprint": "1f22a69bfbe593b422f972017422c03aba563c8cda117c597f7f8891d730a898",
+      "identity_matches": true,
+      "manifest_path": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/full/gers_base/seed-2024/1f22a69bfbe5/manifest.json",
+      "matrix_dir": "/network/scratch/a/adls/FullTrainingTEARS/datasets/catalog_selection/support_20/matrix",
+      "model": "gers_base",
+      "result_path": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/full/gers_base/seed-2024/1f22a69bfbe5/result.json",
+      "run_dir": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/full/gers_base/seed-2024/1f22a69bfbe5",
+      "seed": 2024,
+      "summaries": null,
+      "training_fingerprint": "1abd19b64e0a01f5ca326149ad3f53cb02ecd173b7b068ded6d8376130314cfb",
+      "wandb_run_id": "1f22a69bfbe593b4"
+    },
+    {
+      "best_validation_selection_ndcg@50": 0.18523701313552596,
+      "checkpoint_sha256": {
+        "best.pt": "5b2c55406b656fc8f256e9034e7ed40d8af93662e2ec0f753d5636c19b771746",
+        "final.pt": "809a8bc4a7b4b6c7fe154fe5e97d20ae63f807d08441d77bf532332c53f8f084",
+        "resume.pt": "6f0417d292229f546f971a30a955600c328f89742fd28ce797083c5a27abba2c"
+      },
+      "epochs_completed": 200,
+      "errors": [],
+      "execution_fingerprint": "5d0c999e296b2efd22e7a9735654679792ac8c190d73385c26fdb3e64dc10e58",
+      "identity_matches": true,
+      "manifest_path": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/full/tears_base/seed-2020/5d0c999e296b/manifest.json",
+      "matrix_dir": "/network/scratch/a/adls/FullTrainingTEARS/datasets/catalog_selection/support_20/matrix",
+      "model": "tears_base",
+      "result_path": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/full/tears_base/seed-2020/5d0c999e296b/result.json",
+      "run_dir": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/full/tears_base/seed-2020/5d0c999e296b",
+      "seed": 2020,
+      "summaries": "/network/scratch/a/adls/FullTrainingTEARS/summaries/validated/v010_frozen/final_summaries.jsonl",
+      "training_fingerprint": "38fd20d0d9ed9ae7e12fab875a90796aabc116aa03b024d50673c662b580eff0",
+      "wandb_run_id": "5d0c999e296b2efd"
+    },
+    {
+      "best_validation_selection_ndcg@50": 0.18515016286213312,
+      "checkpoint_sha256": {
+        "best.pt": "ab62b0264d9398ede496e431e9a620e969182be867e62d32b580cd8ef0d7d910",
+        "final.pt": "660de40d76f1b3a0b5996089961dd2626733a84ca65164906fbb8e71f34dcd90",
+        "resume.pt": "ebfc84389ab8f154bdfd36af36e636ff9094fc007307b0023f430332e4119c91"
+      },
+      "epochs_completed": 200,
+      "errors": [],
+      "execution_fingerprint": "0c03ec9782d1d6dab833655b41c8beeb3a271a7a1b33954131bfad6824ba09b4",
+      "identity_matches": true,
+      "manifest_path": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/full/tears_base/seed-2021/0c03ec9782d1/manifest.json",
+      "matrix_dir": "/network/scratch/a/adls/FullTrainingTEARS/datasets/catalog_selection/support_20/matrix",
+      "model": "tears_base",
+      "result_path": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/full/tears_base/seed-2021/0c03ec9782d1/result.json",
+      "run_dir": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/full/tears_base/seed-2021/0c03ec9782d1",
+      "seed": 2021,
+      "summaries": "/network/scratch/a/adls/FullTrainingTEARS/summaries/validated/v010_frozen/final_summaries.jsonl",
+      "training_fingerprint": "8cdd63c6befa5765cc768720ac4a69fd36df48d62ebbc46e3c39315b2131ef8b",
+      "wandb_run_id": "0c03ec9782d1d6da"
+    },
+    {
+      "best_validation_selection_ndcg@50": 0.18560436276358463,
+      "checkpoint_sha256": {
+        "best.pt": "08f2609c6dae073a1d6c2a8ba14a3121c5ff4ec807201c7f97c7d4aa3c598e2b",
+        "final.pt": "4e3923d0816f50e9efa72b61f1894160978e1a18b7bed470988b380c8f4cc58f",
+        "resume.pt": "c3fcc904c02c2d74850a57ed66701fe694498ca3ac4282ccca5219ace45b88be"
+      },
+      "epochs_completed": 200,
+      "errors": [],
+      "execution_fingerprint": "10d017146b22bc3a0eae04b8b93c6a51a83c9420cc5ed290f056a2fa083f3641",
+      "identity_matches": true,
+      "manifest_path": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/full/tears_base/seed-2022/10d017146b22/manifest.json",
+      "matrix_dir": "/network/scratch/a/adls/FullTrainingTEARS/datasets/catalog_selection/support_20/matrix",
+      "model": "tears_base",
+      "result_path": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/full/tears_base/seed-2022/10d017146b22/result.json",
+      "run_dir": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/full/tears_base/seed-2022/10d017146b22",
+      "seed": 2022,
+      "summaries": "/network/scratch/a/adls/FullTrainingTEARS/summaries/validated/v010_frozen/final_summaries.jsonl",
+      "training_fingerprint": "969f4b6ddb710f372739a6203724716e3f2a5e77ec9c3cd62b9e5058158ac3bc",
+      "wandb_run_id": "10d017146b22bc3a"
+    },
+    {
+      "best_validation_selection_ndcg@50": 0.18433693216122207,
+      "checkpoint_sha256": {
+        "best.pt": "b8dce0cb3f301b15ad064ad624900881232b6c6b9c21a06b591af7504a071952",
+        "final.pt": "4a4324f6e12489566d7ce93047855c9084b522068cfb06ca8403e3d67b97c620",
+        "resume.pt": "20041844441761c4b7c60fd0aac523e37ca277e7c37f6c82f981edd4668c005a"
+      },
+      "epochs_completed": 200,
+      "errors": [],
+      "execution_fingerprint": "e16952923adb21fd60c97cf73d7cff254cab196d73aa2998278933092e9c5c7c",
+      "identity_matches": true,
+      "manifest_path": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/full/tears_base/seed-2023/e16952923adb/manifest.json",
+      "matrix_dir": "/network/scratch/a/adls/FullTrainingTEARS/datasets/catalog_selection/support_20/matrix",
+      "model": "tears_base",
+      "result_path": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/full/tears_base/seed-2023/e16952923adb/result.json",
+      "run_dir": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/full/tears_base/seed-2023/e16952923adb",
+      "seed": 2023,
+      "summaries": "/network/scratch/a/adls/FullTrainingTEARS/summaries/validated/v010_frozen/final_summaries.jsonl",
+      "training_fingerprint": "741c60822df7cd010de4f41c9864fff96a9313a1399f38ebc922666d6cebe9f2",
+      "wandb_run_id": "e16952923adb21fd"
+    },
+    {
+      "best_validation_selection_ndcg@50": 0.18457256405494146,
+      "checkpoint_sha256": {
+        "best.pt": "1eddbb94f6621a80fd9fdb6d6bc6a2f6050d8fac4611e8a9c124000c932f67c7",
+        "final.pt": "a00b447ba6a3cbae2d840c58f2bf2c6e062d35e29f1d547b66c690f27cbea0db",
+        "resume.pt": "f9c2df87ef21ec41576cc7da75eaa064dd95c3765ce8219b82fb2146562000d3"
+      },
+      "epochs_completed": 200,
+      "errors": [],
+      "execution_fingerprint": "a438c1462d32cdb85ebf11bafe5e7b76eed605a26b338e53ce78471d92d2aa87",
+      "identity_matches": true,
+      "manifest_path": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/full/tears_base/seed-2024/a438c1462d32/manifest.json",
+      "matrix_dir": "/network/scratch/a/adls/FullTrainingTEARS/datasets/catalog_selection/support_20/matrix",
+      "model": "tears_base",
+      "result_path": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/full/tears_base/seed-2024/a438c1462d32/result.json",
+      "run_dir": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/full/tears_base/seed-2024/a438c1462d32",
+      "seed": 2024,
+      "summaries": "/network/scratch/a/adls/FullTrainingTEARS/summaries/validated/v010_frozen/final_summaries.jsonl",
+      "training_fingerprint": "b08a0a5173dd0fc618a8cb3cbc25a7d87de260457e54d684a00d1d9e0b339a53",
+      "wandb_run_id": "a438c1462d32cdb8"
+    },
+    {
+      "best_validation_selection_ndcg@50": 0.21665903416372112,
+      "checkpoint_sha256": {
+        "best.pt": "2d1265ff95a826a9a77f0eef679f8744a10201b1d64e77532e87700bdbbeaa83",
+        "final.pt": "61acde4e8d6a64baf3d2f9c4a0c30df6d190ef630a922668aa10969d30c9df69",
+        "resume.pt": "479d71ffbd5da0483aea442c0c15abbdcd9578e74cf147c1fd626fc6ed0e09f8"
+      },
+      "epochs_completed": 200,
+      "errors": [],
+      "execution_fingerprint": "4aa46d0e8e9e3ef68cd60db36c989ab547d37f73377ee631e9a1f27833a3f800",
+      "identity_matches": true,
+      "manifest_path": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/full/tears_recvae/seed-2020/4aa46d0e8e9e/manifest.json",
+      "matrix_dir": "/network/scratch/a/adls/FullTrainingTEARS/datasets/catalog_selection/support_20/matrix",
+      "model": "tears_recvae",
+      "result_path": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/full/tears_recvae/seed-2020/4aa46d0e8e9e/result.json",
+      "run_dir": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/full/tears_recvae/seed-2020/4aa46d0e8e9e",
+      "seed": 2020,
+      "summaries": "/network/scratch/a/adls/FullTrainingTEARS/summaries/validated/v010_frozen/final_summaries.jsonl",
+      "training_fingerprint": "b1c4a4daa41451605fe181ae0494cce9752a1015f430cbcca19e203f23b3d1c4",
+      "wandb_run_id": "4aa46d0e8e9e3ef6"
+    },
+    {
+      "best_validation_selection_ndcg@50": 0.2169464611413298,
+      "checkpoint_sha256": {
+        "best.pt": "cebbb3c1d526e4a42fbf6f9b8725710c4bed68d0cb8f43e99e2c29ae4e69dff2",
+        "final.pt": "17c76667cdf6242a2efca7605f30bf99950e8e988c843234b03e4dafe4a834dd",
+        "resume.pt": "7c6643a32acabb180e02e98de9ccf7c278f082c41734911885f8cabd0109fb13"
+      },
+      "epochs_completed": 200,
+      "errors": [],
+      "execution_fingerprint": "46fbbc08b2564a97b7711f0a2f123256d1d417b23e3135b7f71a5f3211ae9a46",
+      "identity_matches": true,
+      "manifest_path": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/full/tears_recvae/seed-2021/46fbbc08b256/manifest.json",
+      "matrix_dir": "/network/scratch/a/adls/FullTrainingTEARS/datasets/catalog_selection/support_20/matrix",
+      "model": "tears_recvae",
+      "result_path": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/full/tears_recvae/seed-2021/46fbbc08b256/result.json",
+      "run_dir": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/full/tears_recvae/seed-2021/46fbbc08b256",
+      "seed": 2021,
+      "summaries": "/network/scratch/a/adls/FullTrainingTEARS/summaries/validated/v010_frozen/final_summaries.jsonl",
+      "training_fingerprint": "edd406dbbe228eb201751598a81a2db6f5bf6fd3341ac5b5847db63e2a9d559d",
+      "wandb_run_id": "46fbbc08b2564a97"
+    },
+    {
+      "best_validation_selection_ndcg@50": 0.21656001715330028,
+      "checkpoint_sha256": {
+        "best.pt": "a9d8fb32d80f700a9f32e83b1a07951706ec00d41959c40c6ffacbb6bad23a94",
+        "final.pt": "7acfa0fb84d40b4a2b3686df32d91186f9ad3fa04ad0988f19034de4a8dfe147",
+        "resume.pt": "a61720e160710a362c7fee4c4e29330fa4677d9f1536d0dd1e50fcffe679f8fc"
+      },
+      "epochs_completed": 200,
+      "errors": [],
+      "execution_fingerprint": "23de799096a51caa993e35dc061b9b3612e7ed4ef23c5ae24becdbbfcc73161a",
+      "identity_matches": true,
+      "manifest_path": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/full/tears_recvae/seed-2022/23de799096a5/manifest.json",
+      "matrix_dir": "/network/scratch/a/adls/FullTrainingTEARS/datasets/catalog_selection/support_20/matrix",
+      "model": "tears_recvae",
+      "result_path": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/full/tears_recvae/seed-2022/23de799096a5/result.json",
+      "run_dir": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/full/tears_recvae/seed-2022/23de799096a5",
+      "seed": 2022,
+      "summaries": "/network/scratch/a/adls/FullTrainingTEARS/summaries/validated/v010_frozen/final_summaries.jsonl",
+      "training_fingerprint": "33365d07adb3446ee57b8f99f9fdaa16397dfb0c683caf76d8883dcc67264e51",
+      "wandb_run_id": "23de799096a51caa"
+    },
+    {
+      "best_validation_selection_ndcg@50": 0.21700158123507773,
+      "checkpoint_sha256": {
+        "best.pt": "dd3d5fe4f99dedc263aeae21df4773b0f5325a25a43ac087d9e8fa7948e0bad7",
+        "final.pt": "b12946896b9953d68d71d4a8b726a2141a0dc4a97f26c2c26142cfa13ce8ef7f",
+        "resume.pt": "9a65d75e0c46e62e6cd4c51e23b86f9b132fdc98d8bb727a1cbac150982628a9"
+      },
+      "epochs_completed": 200,
+      "errors": [],
+      "execution_fingerprint": "ab9b394064674024e8d84422681c36bae17151b069b5d5b5bba1ac9aa6cd0622",
+      "identity_matches": true,
+      "manifest_path": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/full/tears_recvae/seed-2023/ab9b39406467/manifest.json",
+      "matrix_dir": "/network/scratch/a/adls/FullTrainingTEARS/datasets/catalog_selection/support_20/matrix",
+      "model": "tears_recvae",
+      "result_path": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/full/tears_recvae/seed-2023/ab9b39406467/result.json",
+      "run_dir": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/full/tears_recvae/seed-2023/ab9b39406467",
+      "seed": 2023,
+      "summaries": "/network/scratch/a/adls/FullTrainingTEARS/summaries/validated/v010_frozen/final_summaries.jsonl",
+      "training_fingerprint": "c90cf8411e602950937379cb22b0b042d632d06cbba875b2981376f0c0c40a65",
+      "wandb_run_id": "ab9b394064674024"
+    },
+    {
+      "best_validation_selection_ndcg@50": 0.21600246985032354,
+      "checkpoint_sha256": {
+        "best.pt": "6ccd9c0456870ce006013d1fc1e541da3c667cddd23e58f58f4c04def92b9f9b",
+        "final.pt": "175105558450098ccc106ea12e5d0cfad35cabe35410ea1c3bea6ade8ac99a39",
+        "resume.pt": "df3d6a7f3bb34964001813f80f193ab9a68b85706f81ac12cca43dbbd0de0e62"
+      },
+      "epochs_completed": 200,
+      "errors": [],
+      "execution_fingerprint": "891e37eacb8e4d5433ce9ebb8a9bc1f79767a3dbe35660fee2edf938793c7165",
+      "identity_matches": true,
+      "manifest_path": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/full/tears_recvae/seed-2024/891e37eacb8e/manifest.json",
+      "matrix_dir": "/network/scratch/a/adls/FullTrainingTEARS/datasets/catalog_selection/support_20/matrix",
+      "model": "tears_recvae",
+      "result_path": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/full/tears_recvae/seed-2024/891e37eacb8e/result.json",
+      "run_dir": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/full/tears_recvae/seed-2024/891e37eacb8e",
+      "seed": 2024,
+      "summaries": "/network/scratch/a/adls/FullTrainingTEARS/summaries/validated/v010_frozen/final_summaries.jsonl",
+      "training_fingerprint": "0cdfbce0fdf1504ef75eb6227d20c9e63f2e83662d5fb5c771f308b57221c44b",
+      "wandb_run_id": "891e37eacb8e4d54"
+    },
+    {
+      "best_validation_selection_ndcg@50": 0.2166116132180617,
+      "checkpoint_sha256": {
+        "best.pt": "5e32944c93d99a099dfabf27d09d3de283783b3d7aee22b614c885d12355a858",
+        "final.pt": "2800d26785732fca37fb2577f148740d13b5f645624bfb92e28e04331c0287e4",
+        "resume.pt": "e1922e97d1cd5830d9e439321a1c149516e6c3aac621c50847919b2719b273b3"
+      },
+      "epochs_completed": 200,
+      "errors": [],
+      "execution_fingerprint": "daef7a64343076e69a7c165b63d9e2499428d280146b61afd27b0acf3c61d667",
+      "identity_matches": true,
+      "manifest_path": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/full/gers_recvae/seed-2020/daef7a643430/manifest.json",
+      "matrix_dir": "/network/scratch/a/adls/FullTrainingTEARS/datasets/catalog_selection/support_20/matrix",
+      "model": "gers_recvae",
+      "result_path": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/full/gers_recvae/seed-2020/daef7a643430/result.json",
+      "run_dir": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/full/gers_recvae/seed-2020/daef7a643430",
+      "seed": 2020,
+      "summaries": null,
+      "training_fingerprint": "3b29859dc5a00e374d09bc6019a23c3ceada2cf993fa3dfc3208e12fa711da1e",
+      "wandb_run_id": "daef7a64343076e6"
+    },
+    {
+      "best_validation_selection_ndcg@50": 0.2165921116092553,
+      "checkpoint_sha256": {
+        "best.pt": "dc8d6b4fefb193585a4cf2cfa0f49346222a73aca4bda5cbc17d5cf3c574e85e",
+        "final.pt": "f92f06670ca6378d5465db69135312cf2b408c88acce1d89afc764bcfc4a2d9e",
+        "resume.pt": "04172a67c3ef250070faf968a9911ec10d425a31e168b921405a09011fb09c3b"
+      },
+      "epochs_completed": 200,
+      "errors": [],
+      "execution_fingerprint": "ffd6d9f397fb1c10ea2ad0bd9ef37ca84424bb89b7080ca5de1d22403fbb7e99",
+      "identity_matches": true,
+      "manifest_path": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/full/gers_recvae/seed-2021/ffd6d9f397fb/manifest.json",
+      "matrix_dir": "/network/scratch/a/adls/FullTrainingTEARS/datasets/catalog_selection/support_20/matrix",
+      "model": "gers_recvae",
+      "result_path": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/full/gers_recvae/seed-2021/ffd6d9f397fb/result.json",
+      "run_dir": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/full/gers_recvae/seed-2021/ffd6d9f397fb",
+      "seed": 2021,
+      "summaries": null,
+      "training_fingerprint": "826b6480279a0ef9f94063385b6634d0d1233010421236fad3cfbd9bd4f6c84d",
+      "wandb_run_id": "ffd6d9f397fb1c10"
+    },
+    {
+      "best_validation_selection_ndcg@50": 0.21714801360222116,
+      "checkpoint_sha256": {
+        "best.pt": "f4755f87b133b95ee6e9919c498011efd2096ee24da3e13895f48e3d30669dea",
+        "final.pt": "d6c89c4b6c9914a07f7c020c1b18e2b29d5cb618771fde30a738f85761c4372b",
+        "resume.pt": "5333d391708363fc419f1579a4d3f77e5b8ab87a6f050d2157f9fb29935a4a6c"
+      },
+      "epochs_completed": 200,
+      "errors": [],
+      "execution_fingerprint": "d6335f29527f030b4591535fad625fe5900fafc7980850f31e10473bd43d9a99",
+      "identity_matches": true,
+      "manifest_path": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/full/gers_recvae/seed-2022/d6335f29527f/manifest.json",
+      "matrix_dir": "/network/scratch/a/adls/FullTrainingTEARS/datasets/catalog_selection/support_20/matrix",
+      "model": "gers_recvae",
+      "result_path": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/full/gers_recvae/seed-2022/d6335f29527f/result.json",
+      "run_dir": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/full/gers_recvae/seed-2022/d6335f29527f",
+      "seed": 2022,
+      "summaries": null,
+      "training_fingerprint": "d2c828c1be5af3cf37716e4efb9bf4c4eeaab7d1f91bf2ac34e0c6aa52b8171f",
+      "wandb_run_id": "d6335f29527f030b"
+    },
+    {
+      "best_validation_selection_ndcg@50": 0.21673488845618102,
+      "checkpoint_sha256": {
+        "best.pt": "e0ad17e3d464463f53bf0c1797db2e781198e1fde274520dd7f0df648fe48088",
+        "final.pt": "85cd6d417b03099bf1096c1cfa72e0c36444a9f675aa3d96ff46a097f4aa1cd0",
+        "resume.pt": "29c77922910aa43e25be77b20cac5f7176644a0f12b6799109b917a78d94614d"
+      },
+      "epochs_completed": 200,
+      "errors": [],
+      "execution_fingerprint": "06bae270c7bf1e87de52b589b6384a31408d56871ac063eac5ec6c24ad988791",
+      "identity_matches": true,
+      "manifest_path": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/full/gers_recvae/seed-2023/06bae270c7bf/manifest.json",
+      "matrix_dir": "/network/scratch/a/adls/FullTrainingTEARS/datasets/catalog_selection/support_20/matrix",
+      "model": "gers_recvae",
+      "result_path": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/full/gers_recvae/seed-2023/06bae270c7bf/result.json",
+      "run_dir": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/full/gers_recvae/seed-2023/06bae270c7bf",
+      "seed": 2023,
+      "summaries": null,
+      "training_fingerprint": "73da437906b615679e67ff8d6b66a5f3fdef5014fc6abff14bdc18f938fd7a9e",
+      "wandb_run_id": "06bae270c7bf1e87"
+    },
+    {
+      "best_validation_selection_ndcg@50": 0.21607991722612693,
+      "checkpoint_sha256": {
+        "best.pt": "6e451f5d5920631ec1019cf311444c7262e6a47937a4e917d91b97859c205d0e",
+        "final.pt": "1f2c0b98395505ae3ff86f71906d88b0f4d93ca8c331b716839398967b60b47c",
+        "resume.pt": "b626a39ea0416ec9f0d374a3289281255cc76423bdc535eb7f32df6daaa48152"
+      },
+      "epochs_completed": 200,
+      "errors": [],
+      "execution_fingerprint": "4d7e72d9dd04b98d988059dccb1f15b89fcb43987ae422cf07eb77adcf469ede",
+      "identity_matches": true,
+      "manifest_path": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/full/gers_recvae/seed-2024/4d7e72d9dd04/manifest.json",
+      "matrix_dir": "/network/scratch/a/adls/FullTrainingTEARS/datasets/catalog_selection/support_20/matrix",
+      "model": "gers_recvae",
+      "result_path": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/full/gers_recvae/seed-2024/4d7e72d9dd04/result.json",
+      "run_dir": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/full/gers_recvae/seed-2024/4d7e72d9dd04",
+      "seed": 2024,
+      "summaries": null,
+      "training_fingerprint": "b89aaa59fe3f3cea4dc56396c816e434463b39d2fd953b58612bf8a0b78c3197",
+      "wandb_run_id": "4d7e72d9dd04b98d"
+    }
+  ],
+  "summary_corpus": {
+    "actual_sha256": "763605a2a22dfa77e32c0226fb1f2318b8889b89fa9517e341fb2ac008e90b07",
+    "expected_sha256": "763605a2a22dfa77e32c0226fb1f2318b8889b89fa9517e341fb2ac008e90b07",
+    "path": "/network/scratch/a/adls/FullTrainingTEARS/summaries/validated/v010_frozen/final_summaries.jsonl",
+    "verified": true
+  },
+  "test_metrics_used": false,
+  "valid_runs": 25,
+  "wandb": {
+    "entity": "niita-mila",
+    "project": "tears-ml32m",
+    "states": {
+      "06bae270c7bf1e87": "finished",
+      "0c03ec9782d1d6da": "finished",
+      "10d017146b22bc3a": "finished",
+      "1f22a69bfbe593b4": "finished",
+      "23de799096a51caa": "finished",
+      "312fe6237855c86e": "finished",
+      "31fed35925901603": "finished",
+      "46fbbc08b2564a97": "finished",
+      "4aa46d0e8e9e3ef6": "finished",
+      "4d7e72d9dd04b98d": "finished",
+      "5245703b1e9bdba8": "finished",
+      "561c3325321eb76e": "finished",
+      "5d0c999e296b2efd": "finished",
+      "62eb61407aed1ead": "finished",
+      "864c04c2241cf39b": "finished",
+      "891e37eacb8e4d54": "finished",
+      "a438c1462d32cdb8": "finished",
+      "ab9b394064674024": "finished",
+      "d6335f29527f030b": "finished",
+      "daef7a64343076e6": "finished",
+      "de84ec8f4a172786": "finished",
+      "e16952923adb21fd": "finished",
+      "e55cc8175af57324": "finished",
+      "e7a7e560dc42d738": "finished",
+      "ffd6d9f397fb1c10": "finished"
+    },
+    "verified": true
+  }
+}

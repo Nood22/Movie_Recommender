@@ -1,0 +1,2 @@
+# Recomputable model-logit caches; keep the readable results and frozen cases.
+**/logits-*.npz

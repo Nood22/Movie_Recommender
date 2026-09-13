@@ -1,20 +1,10 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
 import pilotMovies from "../data/pilot_support20_onboarding.json";
 import { publicAsset } from "../utils/publicAsset.mjs";
 
-const releaseYear = (movie) =>
-  Number(movie.title.match(/\((\d{4})\)\s*$/)?.[1] || 0);
-const LANDING_MOVIES = [...pilotMovies]
-  .sort(
-    (first, second) =>
-      releaseYear(second) - releaseYear(first) ||
-      Number(second.pilotTrainPositiveCount) -
-        Number(first.pilotTrainPositiveCount) ||
-      Number(first.movieId) - Number(second.movieId)
-  )
-  .slice(0, 11);
+// Match the same interleaved catalog order shown on both recommendation screens.
+const LANDING_MOVIES = pilotMovies.slice(0, 11);
 const MotionLink = motion(Link);
 
 export default function LandingPage() {
@@ -23,14 +13,6 @@ export default function LandingPage() {
   const posters = LANDING_MOVIES.map((movie) =>
     publicAsset(`pilot-posters/${movie.movieId}.jpg`)
   );
-
-  // parallax
-  const [scrollY, setScrollY] = useState(0);
-  useEffect(() => {
-    const f = () => setScrollY(window.scrollY);
-    window.addEventListener("scroll", f);
-    return () => window.removeEventListener("scroll", f);
-  }, []);
 
   return (
     <motion.div
@@ -62,18 +44,11 @@ export default function LandingPage() {
                      grid grid-cols-3 gap-10"
         >
           {posters.map((p, i) => (
-            <motion.img
-              key={i}
+            <img
+              key={LANDING_MOVIES[i].movieId}
               src={p}
               alt={LANDING_MOVIES[i].title}
               className="w-64 h-96 object-cover rounded-2xl shadow-2xl opacity-[0.92] border border-white/10"
-              animate={{
-                rotateY: scrollY * 0.02,
-                rotateX: scrollY * 0.01,
-              }}
-              style={{
-                transform: `translateY(${-(scrollY * 0.1)}px)`,
-              }}
             />
           ))}
         </div>

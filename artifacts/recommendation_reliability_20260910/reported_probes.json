@@ -1,0 +1,158 @@
+[
+  {
+    "id": "request-3b8dda90-bedd-4c03-be99-437fb7379fae",
+    "summary": "Summary: The viewer may enjoy animated, family-oriented films that combine adventurous pacing with speculative, science-fiction settings. They may also appreciate gentle romantic beats woven into visually driven, child-friendly storytelling.",
+    "selected_ids": [
+      60069
+    ],
+    "expected_positive": [
+      "Animation",
+      "Children"
+    ],
+    "expected_negative": []
+  },
+  {
+    "id": "request-d3f4dbd7-7804-4ed7-800b-89b63b548a89",
+    "summary": "Summary: The viewer may be drawn to animated, family-friendly films that blend adventure with lighthearted comedy and fantastical imagination. They might appreciate stories that feel warm and playful, where vibrant animation and whimsical worldbuilding drive an uplifting, broadly appealing emotional tone.",
+    "selected_ids": [
+      225173
+    ],
+    "expected_positive": [
+      "Animation",
+      "Children"
+    ],
+    "expected_negative": []
+  },
+  {
+    "id": "request-16d659c4-253a-461a-ab92-6c730f76fea5",
+    "summary": "Summary: The viewer may enjoy animated films that blend lighthearted comedy with imaginative fantasy and a gentle sense of adventure. They might appreciate family-friendly, character-centered stories delivered with warmth and a playful, whimsical tone.",
+    "selected_ids": [
+      225173
+    ],
+    "expected_positive": [
+      "Animation",
+      "Children"
+    ],
+    "expected_negative": []
+  },
+  {
+    "id": "request-d3954aac-6c14-4b7b-a978-f9b45960243b",
+    "summary": "Summary: The viewer may respond to animated, family-oriented stories that combine brisk adventure with light comedy and imaginative, fantastical premises. They seem open to films that balance playful, child-friendly sensibilities with moments of emotional warmth and wonder.",
+    "selected_ids": [
+      225173
+    ],
+    "expected_positive": [
+      "Animation",
+      "Children"
+    ],
+    "expected_negative": []
+  },
+  {
+    "id": "request-a2d64f5d-4731-43de-bf9d-eefde42f8ad9",
+    "summary": "Summary: The viewer may be drawn to family-friendly animated adventures that blend playful, imaginative visuals with a sincere, character-driven emotional core. They seem to respond to stories where a spirited journey\u2014often framed as an external quest\u2014also surfaces intimate themes of loss, friendship, intergenerational connection, and personal growth, allowing for both lighthearted humor and moments of heartfelt drama.",
+    "selected_ids": [
+      68954
+    ],
+    "expected_positive": [
+      "Animation",
+      "Children"
+    ],
+    "expected_negative": []
+  },
+  {
+    "id": "request-27dde26d-59e2-44a2-bf71-5750a4a702e7",
+    "summary": "Summary: The viewer may enjoy films that favor animation as their primary storytelling mode, particularly those that combine whimsical fantasy and light comedy with a family-oriented, adventurous sensibility. They might be drawn to warm, playful narratives aimed at younger audiences that still incorporate imaginative, otherworldly or metaphysical elements rather than strictly realistic stories.",
+    "selected_ids": [
+      225173
+    ],
+    "expected_positive": [
+      "Animation",
+      "Children"
+    ],
+    "expected_negative": []
+  },
+  {
+    "id": "request-b3864863-8f42-44b7-b940-e6a926442118",
+    "summary": "Summary: The viewer may be drawn to animated stories that mix adventurous plots with heartfelt, dramatic moments and family-friendly appeal. They might appreciate films that pair imaginative, journey-driven premises with emotional themes suitable for children and broader family audiences.",
+    "selected_ids": [
+      68954
+    ],
+    "expected_positive": [
+      "Animation",
+      "Children"
+    ],
+    "expected_negative": []
+  },
+  {
+    "id": "request-b45d8092-31ef-4419-b581-936d0be823ad",
+    "summary": "Summary: The viewer may be drawn to epic, high-fantasy storytelling that centers on a sprawling quest and a large ensemble of characters working toward a single, consequential goal. They may also appreciate immersive worldbuilding, mythic stakes, and a sense of camaraderie and adventure carried across wide, cinematic landscapes.",
+    "selected_ids": [
+      4993
+    ],
+    "expected_positive": [
+      "Animation",
+      "Children"
+    ],
+    "expected_negative": []
+  },
+  {
+    "id": "request-913f036b-e826-44de-9c05-d3e2f5f374f3",
+    "summary": "Summary: The viewer may appreciate films that blend a sense of heartfelt adventure with animated, family-friendly storytelling. They might respond to emotionally grounded plots delivered through whimsical, visually expressive animation that balances playful moments with sincere dramatic beats.",
+    "selected_ids": [
+      68954
+    ],
+    "expected_positive": [
+      "Animation",
+      "Children"
+    ],
+    "expected_negative": []
+  },
+  {
+    "id": "request-0dfcbc16-7e48-457c-8e3f-236afb0c8f1a",
+    "summary": "Summary: The viewer may enjoy films that use animation and family-friendly storytelling\u2014particularly lighthearted, comedic adventures with whimsical or fantastical elements. They seem open to imaginative, visually driven stories aimed at younger or broad audiences, where playful tone and accessible humor are central.",
+    "selected_ids": [
+      225173
+    ],
+    "expected_positive": [
+      "Animation",
+      "Children"
+    ],
+    "expected_negative": []
+  },
+  {
+    "id": "request-d1741877-6185-43c9-9a12-c395eedf7bf1",
+    "summary": "Summary: The viewer may be drawn to family-friendly animated fare that blends lighthearted comedy with imaginative, fantastical settings and a sense of adventure. They seem receptive to character-focused stories that balance playful, child-oriented moments with emotionally warm, visually inventive storytelling.",
+    "selected_ids": [
+      225173
+    ],
+    "expected_positive": [
+      "Animation",
+      "Children"
+    ],
+    "expected_negative": []
+  },
+  {
+    "id": "request-22a77bba-5da4-4378-b62a-f2d4590e4836",
+    "summary": "Summary: The viewer may be drawn to animated, family-oriented films that blend gentle comedy with fantastical, adventurous storytelling. They may appreciate warm, imaginative narratives that balance playful humor and whimsical visuals suited to children and broad family audiences.",
+    "selected_ids": [
+      225173
+    ],
+    "expected_positive": [
+      "Animation",
+      "Children"
+    ],
+    "expected_negative": []
+  },
+  {
+    "id": "request-65a8fef9-329c-4a52-9f50-9c6c09f2fcba",
+    "summary": "Summary: The viewer may enjoy animated, family-friendly films that combine adventure and fantasy with broad comedic tone and light romantic elements. They might be drawn to upbeat, playful stories aimed at children and general audiences that blend action-oriented plots with humor and a touch of romance.",
+    "selected_ids": [
+      4306
+    ],
+    "expected_positive": [
+      "Animation",
+      "Children"
+    ],
+    "expected_negative": []
+  }
+]

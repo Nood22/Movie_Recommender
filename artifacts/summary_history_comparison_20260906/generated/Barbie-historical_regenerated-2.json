@@ -1,0 +1,12 @@
+{
+  "case": "Barbie",
+  "version": "historical_regenerated",
+  "repeat": 2,
+  "outputs": [
+    {
+      "version": "historical_regenerated",
+      "summary": "Summary: The viewer strongly prefers comedies and enjoys lighthearted, humorous films. The viewer likes upbeat, playful narratives with satirical or whimsical elements that explore identity and self discovery. No strong dislike is supported. No strong dislike is supported."
+    }
+  ],
+  "raw_response": "{\"summary\":\"Summary: The viewer strongly prefers comedies and enjoys lighthearted, humorous films. The viewer likes upbeat, playful narratives with satirical or whimsical elements that explore identity and self discovery. No strong dislike is supported. No strong dislike is supported.\"}"
+}

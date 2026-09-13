@@ -1,0 +1,68 @@
+[
+  {
+    "id": "lotr-0",
+    "summary": "Summary: The viewer may enjoy expansive, high-fantasy stories that emphasize epic adventure, sprawling quests, and richly imagined secondary worlds. They might respond well to narratives that blend grand stakes with ensemble casts and a sense of mythic scale, where journey-driven plots and detailed worldbuilding are central to the experience.",
+    "selected_ids": [
+      4993
+    ]
+  },
+  {
+    "id": "barbie-0",
+    "summary": "Summary: The viewer may enjoy upbeat, broadly comic films with a playful, self-aware tone and vibrant visual style. They might appreciate stories that blend satire with lighthearted humor and that lean into high-concept premises delivered in an accessible, entertaining way.",
+    "selected_ids": [
+      288513
+    ]
+  },
+  {
+    "id": "horror-0",
+    "summary": "Summary: The viewer may be drawn to films that blend suspenseful, unsettling atmospheres with socially sharp themes and darkly ironic humor. They might appreciate tense storytelling that uses psychological horror or thriller mechanics to explore social dynamics and moral unease rather than relying solely on jump scares.",
+    "selected_ids": [
+      168250
+    ]
+  },
+  {
+    "id": "romance-0",
+    "summary": "Summary: The viewer may enjoy intimate, character-driven romantic dramas that focus on slow-building emotional relationships and personal introspection. They seem receptive to nuanced, sensual storytelling that emphasizes atmosphere, interior life, and the complexities of a developing same-sex romance rather than broad plot mechanics or high-concept spectacle.",
+    "selected_ids": [
+      168492
+    ]
+  },
+  {
+    "id": "animation-0",
+    "summary": "Summary: The viewer appears receptive to heartfelt, character-driven stories that blend gentle adventure with emotional depth and whimsical visual imagination. They may enjoy films that pair wonder-filled, family-friendly animation with grounded dramatic moments\u2014stories that balance lighthearted, playful sequences and imaginative setpieces with poignant themes about connection, loss, or personal growth.",
+    "selected_ids": [
+      68954
+    ]
+  },
+  {
+    "id": "explicit_dislike-0",
+    "summary": "Summary: The viewer may enjoy sweeping, high-fantasy adventure stories that combine an epic quest structure with richly imagined worlds, ensemble casts undertaking dangerous journeys, and a strong sense of mythic stakes and heroic purpose. They might respond well to films that emphasize immersive worldbuilding, a clear good-versus-evil dynamic, and the emotional bonds forged between companions on a perilous mission.",
+    "selected_ids": [
+      4993
+    ]
+  },
+  {
+    "id": "unwind-0",
+    "summary": "Summary: The viewer may enjoy sweeping, immersive fantasy adventures that emphasize epic quests, expansive worldbuilding, and a strong sense of mythic stakes. When unwinding, they might prefer stories that combine action-driven journeying with rich lore and ensemble dynamics, offering both spectacle and an emotional through-line without a narrow focus on modern or domestic settings.",
+    "selected_ids": [
+      4993
+    ]
+  },
+  {
+    "id": "weak_negative-0",
+    "summary": "Summary: The viewer may respond well to sprawling high-fantasy adventure with epic worldbuilding, heroic quests, and a sense of wonder rooted in mythic stakes and large-scale journeys. They may be less interested in contemporary horror-oriented films that foreground social-thriller scares or unsettling psychological dread.",
+    "selected_ids": [
+      4993,
+      168250
+    ]
+  },
+  {
+    "id": "rich_fantasy-0",
+    "summary": "Summary: The viewer shows a clear preference for sweeping adventure and high-fantasy storytelling. They appreciate expansive quests set in richly imagined worlds, with epic stakes, mythical elements, and ensemble-driven journeys that emphasize exploration, camaraderie, and heroic endeavor.",
+    "selected_ids": [
+      4993,
+      5952,
+      7153
+    ]
+  }
+]

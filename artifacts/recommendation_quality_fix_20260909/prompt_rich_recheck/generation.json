@@ -1,0 +1,124 @@
+{
+  "model": "gpt-5-mini-2025-08-07",
+  "prompt_sha256": "4d5bf36f2b8e812a7ec4f3253abc965c1ea3b0007d812a6edb0a3d9f013e5c4d",
+  "api_source_sha256": "73834052550ad5fedf51b1b7165fc45a79c96cb15668da0c5ba09b9c74adc18c",
+  "summary_policy": "shared-editable-profile-v2",
+  "records": [
+    {
+      "id": "rich_fantasy-0",
+      "evidence": [
+        {
+          "title": "Lord of the Rings: The Fellowship of the Ring, The (2001)",
+          "rating": 5.0,
+          "genres": [
+            "Adventure",
+            "Fantasy"
+          ]
+        },
+        {
+          "title": "Lord of the Rings: The Two Towers, The (2002)",
+          "rating": 5.0,
+          "genres": [
+            "Adventure",
+            "Fantasy"
+          ]
+        },
+        {
+          "title": "Lord of the Rings: The Return of the King, The (2003)",
+          "rating": 4.0,
+          "genres": [
+            "Action",
+            "Adventure",
+            "Drama",
+            "Fantasy"
+          ]
+        }
+      ],
+      "selected_ids": [
+        4993,
+        5952,
+        7153
+      ],
+      "disliked": [],
+      "context": "",
+      "summary": "Summary: The viewer prefers films in the adventure and fantasy realms, gravitating toward stories built around expansive journeys and imaginative worlds. They may especially enjoy high-stakes quests and richly realized settings that emphasize exploration, wonder, and sweeping, mythic scope.",
+      "valid": true,
+      "word_count": 39,
+      "missing_probe_genres": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "kind": "initial",
+          "word_count": 43,
+          "validator_errors": [
+            "unsupported_slot_mentioned:Drama"
+          ],
+          "generation_errors": [],
+          "retry_errors": [
+            "unsupported_slot_mentioned:Drama"
+          ]
+        },
+        {
+          "attempt": 2,
+          "kind": "validator_repair",
+          "word_count": 39,
+          "validator_errors": [],
+          "generation_errors": [],
+          "retry_errors": []
+        }
+      ]
+    },
+    {
+      "id": "rich_fantasy-1",
+      "evidence": [
+        {
+          "title": "Lord of the Rings: The Fellowship of the Ring, The (2001)",
+          "rating": 5.0,
+          "genres": [
+            "Adventure",
+            "Fantasy"
+          ]
+        },
+        {
+          "title": "Lord of the Rings: The Two Towers, The (2002)",
+          "rating": 5.0,
+          "genres": [
+            "Adventure",
+            "Fantasy"
+          ]
+        },
+        {
+          "title": "Lord of the Rings: The Return of the King, The (2003)",
+          "rating": 4.0,
+          "genres": [
+            "Action",
+            "Adventure",
+            "Drama",
+            "Fantasy"
+          ]
+        }
+      ],
+      "selected_ids": [
+        4993,
+        5952,
+        7153
+      ],
+      "disliked": [],
+      "context": "",
+      "summary": "Summary: The viewer strongly prefers adventure and fantasy films. They are drawn to expansive, worldbuilding-driven stories that follow heroic quests and ensemble journeys across varied landscapes, favoring mythic tone, high stakes, and sweeping, epic scope.",
+      "valid": true,
+      "word_count": 35,
+      "missing_probe_genres": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "kind": "initial",
+          "word_count": 35,
+          "validator_errors": [],
+          "generation_errors": [],
+          "retry_errors": []
+        }
+      ]
+    }
+  ]
+}

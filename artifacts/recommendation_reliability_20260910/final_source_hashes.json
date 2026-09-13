@@ -1,0 +1,13 @@
+{
+  "pilot_api.py": "448662c187c8eb745d3aa4477af370ab966d773363cc25936bcf299dc8a1b268",
+  "study_runtime.py": "3d2a6cfcfd811d855aca27add0a3e8b02591763d520e37cf3094ffca983b9d31",
+  "tears_preference_ranking.py": "4b82e964c396586068b9061fa2b18d7943edd5fff57f0f0b95d89ccfa6e39a53",
+  "movie-recommender-pilot/src/data/serving_deployment.json": "3472b79c50cf13175f777fe25f3f41e54ce8c3c032b5b63a99e44528196437a2",
+  "movie-recommender-pilot/build/index.html": "f79d7a7fd4b7793b8ae1130eebe4ebf4de9efea51eb8c09e339e07d3d0d80acc",
+  "scripts/check_tears_request_independence.py": "2f638887bff7d83dd6d6dce0e78073110280c0da5184b4cef977cfd5f14c7d7e",
+  "scripts/evaluate_tears_genre_coverage.py": "d3e27ea3c6c4d6e62a95557909254f4606c268c602bc5031069ea616c1b926aa",
+  "scripts/smoke_tears_refresh.py": "f5238e878e517482f7db95bfb33cf56d7e2a3f9d8063b068d19b9fc36cf1573c",
+  "tests/test_tears_preference_ranking.py": "caa8ba3b23e3486ee08c40f80e0fbca32f0fc196c2fc24412f43ff1e96f59aa6",
+  "tests/test_tears_summary_views.py": "9c465e86f0a788d3e14bb982b721bbff2ada5f79bb9e1a7aac50cbe6dcf1d038",
+  "tests/test_study_readiness.py": "5043d196583925f170f55f2f11b17224afd17eb721e7ed7d52b31d1f7a7dbcca"
+}

@@ -1,0 +1,37 @@
+{
+  "case": "Soul",
+  "version": "current",
+  "repeat": 2,
+  "outputs": [
+    {
+      "version": "current_backend",
+      "summary": "Summary: The viewer shows a tentative preference for adventure and animated family oriented films with imaginative premises, inferred from a single positively received animated adventure, so this pattern is limited and does not establish a broad genre preference. They seem open to lighthearted, character focused storytelling that incorporates humor alongside inventive settings, but this conclusion is cautious because it rests on only one example and cannot reliably predict interest in varied narrative complexities, tonal shifts, or more adult oriented thematic treatments. No strong preference is supported for disliked genres or styles, leaving this aspect of the viewer's taste unspecified without implying that they welcome every genre or share the same response to all approaches to storytelling. No strong preference is supported for disliked plot points or content, leaving the viewer's individual boundaries unspecified without identifying unwanted story elements or assuming that content enjoyed by other viewers would suit their own personal tastes."
+    },
+    {
+      "version": "current_display",
+      "summary": "Summary: The viewer shows a narrow, positive inclination toward animated stories that blend imaginative, emotionally reflective themes with light comedic moments and a sense of wonder. They may appreciate films that feel adventurous and family-friendly while also exploring introspective or existential ideas through whimsical fantasy elements and warm, character-driven humor."
+    }
+  ],
+  "backend_attempts": [
+    {
+      "word_count": 158,
+      "errors": [
+        "grounding_positive_on_unsupported:Comedy|Fantasy"
+      ]
+    },
+    {
+      "word_count": 152,
+      "errors": []
+    }
+  ],
+  "display_attempts": [
+    {
+      "attempt": 1,
+      "kind": "initial",
+      "word_count": 50,
+      "validator_errors": [],
+      "generation_errors": [],
+      "retry_errors": []
+    }
+  ]
+}

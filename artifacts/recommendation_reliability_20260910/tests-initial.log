@@ -1,0 +1,72 @@
+....................................................................F... [ 84%]
+.............                                                            [100%]
+=================================== FAILURES ===================================
+_______ test_summary_route_repairs_a_validator_failure_and_logs_attempts _______
+
+study_client = (<test_study_readiness.DirectStudyClient object at 0x7f79a2427df0>, <test_study_readiness.FakeRecommender object at 0x7f79a24246d0>, <study_runtime.StudyStore object at 0x7f79a2424730>)
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f79a2425d80>
+
+    def test_summary_route_repairs_a_validator_failure_and_logs_attempts(
+        study_client, monkeypatch
+    ):
+        client, _, store = study_client
+        monkeypatch.setenv("OPENAI_API_KEY", "test-key")
+        outputs = iter(
+            [
+                "Summary: The viewer rated Evidence Movie 5/5 and prefers it.",
+                (valid_summary("repaired") + " They may enjoy drama."),
+            ]
+        )
+        calls = []
+    
+        def create(**kwargs):
+            calls.append(kwargs)
+            return SimpleNamespace(
+                output_text=json.dumps({"summary": next(outputs)})
+            )
+    
+        monkeypatch.setitem(
+            sys.modules,
+            "openai",
+            SimpleNamespace(
+                OpenAI=lambda: SimpleNamespace(
+                    responses=SimpleNamespace(create=create)
+                )
+            ),
+        )
+        summary_payload = {
+            "movies": [
+                {"title": "Evidence Movie (2019)", "rating": 5, "genres": ["Drama"]}
+            ],
+            "disliked": [],
+            "context": "I want to unwind",
+        }
+        snapshot = {
+            "system": "TEARS",
+            "movies": summary_payload["movies"],
+            "disliked": [],
+            "context": "I want to unwind",
+        }
+        study = meta("TEARS", "1a", snapshot)
+    
+        response = client.post(
+            "/api/summarize", json={**summary_payload, "study": study}
+        )
+    
+        assert response.status_code == 200, response.text
+>       assert response.json()["generation"] == {
+            "attempt_count": 2,
+            "retry_count": 1,
+            "word_count": len((valid_summary("repaired") + " They may enjoy drama.").split()),
+        }
+E       AssertionError: assert {'attempt_cou...d_count': 161} == {'attempt_cou...d_count': 161}
+E         
+E         Omitting 3 identical items, use -vv to show
+E         Left contains 1 more item:
+E         {'reused': False}
+E         Use -v to get more diff
+
+tests/test_study_readiness.py:921: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_study_readiness.py::test_summary_route_repairs_a_validator_failure_and_logs_attempts
+1 failed, 84 passed in 40.62s

@@ -138,12 +138,15 @@ profile-edit attempt in Task 2 or Task 3.
 
 ## Deployment constraints for version 1.0.0
 
-- Serving retains the existing release-year candidate filter
-  `release_year >= 2020`. It is part of every trial's immutable settings and is
-  recorded in both the deployment manifest and study log. This contract does
-  not authorize removing or changing it.
-- Candidate catalog, onboarding exclusions, observable top-K semantics, model
-  checkpoints, scoring, and latent representations remain frozen.
+- The September 9 recommendation-quality repair uses candidate policy
+  `all-years-selected-only-v2` for both systems: no release-year cutoff, and
+  unselected onboarding films remain eligible. Selected films and any explicit
+  request exclusions are masked. This replaces the previous 2015 cutoff and
+  blanket onboarding exclusions for new baselines.
+- Candidate policy, exclusions, observable top-K semantics, model checkpoints,
+  scoring, and latent representations remain frozen within each trial. Candidate
+  policy IDs are recorded in immutable inputs; a baseline from an older policy
+  cannot start a new trial or be reused for an edit under the new settings.
 - The current GERS selected-movie interaction vector uses a fixed value of 5.0
   per selected movie. This is an unresolved protocol/model-interface issue and
   is not changed by the study-readiness hardening pass.

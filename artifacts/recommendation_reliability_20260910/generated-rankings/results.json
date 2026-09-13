@@ -1,0 +1,3964 @@
+{
+  "model": {
+    "model": "tears_base",
+    "seed": 2022,
+    "epochs": 200,
+    "path": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/full/tears_base/seed-2022/10d017146b22/best.pt",
+    "sha256": "08f2609c6dae073a1d6c2a8ba14a3121c5ff4ec807201c7f97c7d4aa3c598e2b",
+    "run_fingerprint": "969f4b6ddb710f372739a6203724716e3f2a5e77ec9c3cd62b9e5058158ac3bc"
+  },
+  "seed": 20260909,
+  "source_sha256": {
+    "scripts/evaluate_tears_quality.py": "9903251c211f0de561751a2e5e187c7f052674fbc41ec266b0d5280121cc4ea2",
+    "tears_preference_ranking.py": "4b82e964c396586068b9061fa2b18d7943edd5fff57f0f0b95d89ccfa6e39a53",
+    "artifacts/recommendation_quality_fix_20260909/legacy_ranking.py": "4a5042b20c4982418ac27bc68891d6d1ccef2b3ff35a14a416d922cc7fb73960"
+  },
+  "matrix_manifest_sha256": "779acf055f77e9e7862c505774b627b3c60b7d051f99613e875cd969e6d7e5a0",
+  "validation_users": 0,
+  "probe_sha256": "697166fb63c007a41e62e360a1f1cfb95b75cf9b977eb645d0d8173852883789",
+  "metric_scope": "Validation targets are held-out ratings. Probe genre metrics are diagnostics only. No test targets used.",
+  "cases": [
+    {
+      "id": "animation-0",
+      "candidates": "legacy_2015_onboarding",
+      "ranking": "raw",
+      "summary": "Summary: The viewer may enjoy animated, family-friendly films with elements of adventure, drama. Their interest could vary from one film to another.",
+      "extracted_preferences": {
+        "preferred_genres": [
+          "Adventure",
+          "Animation",
+          "Children",
+          "Drama"
+        ],
+        "avoided_genres": [],
+        "conflicting_genres": [],
+        "preferred_genre_combinations": [
+          [
+            "Animation",
+            "Children"
+          ]
+        ]
+      },
+      "top12": [
+        {
+          "movie_id": 128360,
+          "title": "The Hateful Eight (2015)",
+          "genres": "Western",
+          "raw_score": 1.015934944152832
+        },
+        {
+          "movie_id": 139385,
+          "title": "The Revenant (2015)",
+          "genres": "Adventure|Drama",
+          "raw_score": 0.7765631079673767
+        },
+        {
+          "movie_id": 166528,
+          "title": "Rogue One: A Star Wars Story (2016)",
+          "genres": "Action|Adventure|Fantasy|Sci-Fi",
+          "raw_score": 0.659271776676178
+        },
+        {
+          "movie_id": 122922,
+          "title": "Doctor Strange (2016)",
+          "genres": "Action|Adventure|Sci-Fi",
+          "raw_score": 0.6168422698974609
+        },
+        {
+          "movie_id": 177765,
+          "title": "Coco (2017)",
+          "genres": "Adventure|Animation|Children",
+          "raw_score": 0.6054638028144836
+        },
+        {
+          "movie_id": 122892,
+          "title": "Avengers: Age of Ultron (2015)",
+          "genres": "Action|Adventure|Sci-Fi",
+          "raw_score": 0.5967602133750916
+        },
+        {
+          "movie_id": 187593,
+          "title": "Deadpool 2 (2018)",
+          "genres": "Action|Comedy|Sci-Fi",
+          "raw_score": 0.594093382358551
+        },
+        {
+          "movie_id": 122920,
+          "title": "Captain America: Civil War (2016)",
+          "genres": "Action|Sci-Fi|Thriller",
+          "raw_score": 0.5773634910583496
+        },
+        {
+          "movie_id": 207313,
+          "title": "Knives Out (2019)",
+          "genres": "Comedy|Crime|Drama|Mystery|Thriller",
+          "raw_score": 0.5189751386642456
+        },
+        {
+          "movie_id": 122900,
+          "title": "Ant-Man (2015)",
+          "genres": "Action|Adventure|Sci-Fi",
+          "raw_score": 0.47466984391212463
+        },
+        {
+          "movie_id": 166461,
+          "title": "Moana (2016)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy",
+          "raw_score": 0.41096511483192444
+        },
+        {
+          "movie_id": 168248,
+          "title": "John Wick: Chapter Two (2017)",
+          "genres": "Action|Crime|Thriller",
+          "raw_score": 0.3988880515098572
+        }
+      ],
+      "all_preferred_fraction": null,
+      "avoided_fraction": null
+    },
+    {
+      "id": "animation-0",
+      "candidates": "legacy_2015_onboarding",
+      "ranking": "legacy_tiers",
+      "summary": "Summary: The viewer may enjoy animated, family-friendly films with elements of adventure, drama. Their interest could vary from one film to another.",
+      "extracted_preferences": {
+        "preferred_genres": [
+          "Adventure",
+          "Animation",
+          "Children",
+          "Drama"
+        ],
+        "avoided_genres": [],
+        "conflicting_genres": [],
+        "preferred_genre_combinations": [
+          [
+            "Animation",
+            "Children"
+          ]
+        ]
+      },
+      "top12": [
+        {
+          "movie_id": 139385,
+          "title": "The Revenant (2015)",
+          "genres": "Adventure|Drama",
+          "raw_score": 0.7765631079673767
+        },
+        {
+          "movie_id": 166528,
+          "title": "Rogue One: A Star Wars Story (2016)",
+          "genres": "Action|Adventure|Fantasy|Sci-Fi",
+          "raw_score": 0.659271776676178
+        },
+        {
+          "movie_id": 122922,
+          "title": "Doctor Strange (2016)",
+          "genres": "Action|Adventure|Sci-Fi",
+          "raw_score": 0.6168422698974609
+        },
+        {
+          "movie_id": 177765,
+          "title": "Coco (2017)",
+          "genres": "Adventure|Animation|Children",
+          "raw_score": 0.6054638028144836
+        },
+        {
+          "movie_id": 122892,
+          "title": "Avengers: Age of Ultron (2015)",
+          "genres": "Action|Adventure|Sci-Fi",
+          "raw_score": 0.5967602133750916
+        },
+        {
+          "movie_id": 207313,
+          "title": "Knives Out (2019)",
+          "genres": "Comedy|Crime|Drama|Mystery|Thriller",
+          "raw_score": 0.5189751386642456
+        },
+        {
+          "movie_id": 122900,
+          "title": "Ant-Man (2015)",
+          "genres": "Action|Adventure|Sci-Fi",
+          "raw_score": 0.47466984391212463
+        },
+        {
+          "movie_id": 166461,
+          "title": "Moana (2016)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy",
+          "raw_score": 0.41096511483192444
+        },
+        {
+          "movie_id": 122926,
+          "title": "Untitled Spider-Man Reboot (2017)",
+          "genres": "Action|Adventure|Fantasy",
+          "raw_score": 0.37394028902053833
+        },
+        {
+          "movie_id": 202429,
+          "title": "Once Upon a Time in Hollywood (2019)",
+          "genres": "Comedy|Drama",
+          "raw_score": 0.3261806070804596
+        },
+        {
+          "movie_id": 139644,
+          "title": "Sicario (2015)",
+          "genres": "Crime|Drama|Mystery",
+          "raw_score": 0.3230228126049042
+        },
+        {
+          "movie_id": 122906,
+          "title": "Black Panther (2017)",
+          "genres": "Action|Adventure|Sci-Fi",
+          "raw_score": 0.31546393036842346
+        }
+      ],
+      "all_preferred_fraction": null,
+      "avoided_fraction": null
+    },
+    {
+      "id": "animation-0",
+      "candidates": "legacy_2015_onboarding",
+      "ranking": "serving",
+      "summary": "Summary: The viewer may enjoy animated, family-friendly films with elements of adventure, drama. Their interest could vary from one film to another.",
+      "extracted_preferences": {
+        "preferred_genres": [
+          "Adventure",
+          "Animation",
+          "Children",
+          "Drama"
+        ],
+        "avoided_genres": [],
+        "conflicting_genres": [],
+        "preferred_genre_combinations": [
+          [
+            "Animation",
+            "Children"
+          ]
+        ]
+      },
+      "top12": [
+        {
+          "movie_id": 177765,
+          "title": "Coco (2017)",
+          "genres": "Adventure|Animation|Children",
+          "raw_score": 0.6054638028144836
+        },
+        {
+          "movie_id": 166461,
+          "title": "Moana (2016)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy",
+          "raw_score": 0.41096511483192444
+        },
+        {
+          "movie_id": 187541,
+          "title": "Incredibles 2 (2018)",
+          "genres": "Action|Adventure|Animation|Children",
+          "raw_score": 0.2516797184944153
+        },
+        {
+          "movie_id": 135887,
+          "title": "Minions (2015)",
+          "genres": "Adventure|Animation|Children|Comedy",
+          "raw_score": -0.3185884952545166
+        },
+        {
+          "movie_id": 162578,
+          "title": "Kubo and the Two Strings (2016)",
+          "genres": "Adventure|Animation|Children|Fantasy",
+          "raw_score": -0.35679084062576294
+        },
+        {
+          "movie_id": 201588,
+          "title": "Toy Story 4 (2019)",
+          "genres": "Adventure|Animation|Children|Comedy",
+          "raw_score": -0.4614931643009186
+        },
+        {
+          "movie_id": 167036,
+          "title": "Sing (2016)",
+          "genres": "Animation|Children|Comedy",
+          "raw_score": -0.8789523243904114
+        },
+        {
+          "movie_id": 281096,
+          "title": "Puss in Boots: The Last Wish (2022)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy",
+          "raw_score": -0.9260965585708618
+        },
+        {
+          "movie_id": 194016,
+          "title": "Ralph Breaks the Internet (2018)",
+          "genres": "Animation|Children",
+          "raw_score": -0.9526579976081848
+        },
+        {
+          "movie_id": 208939,
+          "title": "Klaus (2019)",
+          "genres": "Adventure|Animation|Children|Comedy",
+          "raw_score": -1.0128964185714722
+        },
+        {
+          "movie_id": 130520,
+          "title": "Home (2015)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy|Sci-Fi",
+          "raw_score": -1.107228398323059
+        },
+        {
+          "movie_id": 213207,
+          "title": "Onward (2020)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy",
+          "raw_score": -1.1308807134628296
+        }
+      ],
+      "all_preferred_fraction": null,
+      "avoided_fraction": null
+    },
+    {
+      "id": "animation-0",
+      "candidates": "legacy_2015_onboarding",
+      "ranking": "bounded_coverage",
+      "summary": "Summary: The viewer may enjoy animated, family-friendly films with elements of adventure, drama. Their interest could vary from one film to another.",
+      "extracted_preferences": {
+        "preferred_genres": [
+          "Adventure",
+          "Animation",
+          "Children",
+          "Drama"
+        ],
+        "avoided_genres": [],
+        "conflicting_genres": [],
+        "preferred_genre_combinations": [
+          [
+            "Animation",
+            "Children"
+          ]
+        ]
+      },
+      "top12": [
+        {
+          "movie_id": 177765,
+          "title": "Coco (2017)",
+          "genres": "Adventure|Animation|Children",
+          "raw_score": 0.6054638028144836
+        },
+        {
+          "movie_id": 166461,
+          "title": "Moana (2016)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy",
+          "raw_score": 0.41096511483192444
+        },
+        {
+          "movie_id": 187541,
+          "title": "Incredibles 2 (2018)",
+          "genres": "Action|Adventure|Animation|Children",
+          "raw_score": 0.2516797184944153
+        },
+        {
+          "movie_id": 139385,
+          "title": "The Revenant (2015)",
+          "genres": "Adventure|Drama",
+          "raw_score": 0.7765631079673767
+        },
+        {
+          "movie_id": 135887,
+          "title": "Minions (2015)",
+          "genres": "Adventure|Animation|Children|Comedy",
+          "raw_score": -0.3185884952545166
+        },
+        {
+          "movie_id": 162578,
+          "title": "Kubo and the Two Strings (2016)",
+          "genres": "Adventure|Animation|Children|Fantasy",
+          "raw_score": -0.35679084062576294
+        },
+        {
+          "movie_id": 157296,
+          "title": "Finding Dory (2016)",
+          "genres": "Adventure|Animation|Comedy",
+          "raw_score": 0.14568296074867249
+        },
+        {
+          "movie_id": 201588,
+          "title": "Toy Story 4 (2019)",
+          "genres": "Adventure|Animation|Children|Comedy",
+          "raw_score": -0.4614931643009186
+        },
+        {
+          "movie_id": 166528,
+          "title": "Rogue One: A Star Wars Story (2016)",
+          "genres": "Action|Adventure|Fantasy|Sci-Fi",
+          "raw_score": 0.659271776676178
+        },
+        {
+          "movie_id": 122922,
+          "title": "Doctor Strange (2016)",
+          "genres": "Action|Adventure|Sci-Fi",
+          "raw_score": 0.6168422698974609
+        },
+        {
+          "movie_id": 122892,
+          "title": "Avengers: Age of Ultron (2015)",
+          "genres": "Action|Adventure|Sci-Fi",
+          "raw_score": 0.5967602133750916
+        },
+        {
+          "movie_id": 128360,
+          "title": "The Hateful Eight (2015)",
+          "genres": "Western",
+          "raw_score": 1.015934944152832
+        }
+      ],
+      "all_preferred_fraction": null,
+      "avoided_fraction": null
+    },
+    {
+      "id": "animation-0",
+      "candidates": "legacy_2015_onboarding",
+      "ranking": "bounded_similarity",
+      "summary": "Summary: The viewer may enjoy animated, family-friendly films with elements of adventure, drama. Their interest could vary from one film to another.",
+      "extracted_preferences": {
+        "preferred_genres": [
+          "Adventure",
+          "Animation",
+          "Children",
+          "Drama"
+        ],
+        "avoided_genres": [],
+        "conflicting_genres": [],
+        "preferred_genre_combinations": [
+          [
+            "Animation",
+            "Children"
+          ]
+        ]
+      },
+      "top12": [
+        {
+          "movie_id": 177765,
+          "title": "Coco (2017)",
+          "genres": "Adventure|Animation|Children",
+          "raw_score": 0.6054638028144836
+        },
+        {
+          "movie_id": 187541,
+          "title": "Incredibles 2 (2018)",
+          "genres": "Action|Adventure|Animation|Children",
+          "raw_score": 0.2516797184944153
+        },
+        {
+          "movie_id": 166461,
+          "title": "Moana (2016)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy",
+          "raw_score": 0.41096511483192444
+        },
+        {
+          "movie_id": 139385,
+          "title": "The Revenant (2015)",
+          "genres": "Adventure|Drama",
+          "raw_score": 0.7765631079673767
+        },
+        {
+          "movie_id": 135887,
+          "title": "Minions (2015)",
+          "genres": "Adventure|Animation|Children|Comedy",
+          "raw_score": -0.3185884952545166
+        },
+        {
+          "movie_id": 157296,
+          "title": "Finding Dory (2016)",
+          "genres": "Adventure|Animation|Comedy",
+          "raw_score": 0.14568296074867249
+        },
+        {
+          "movie_id": 128360,
+          "title": "The Hateful Eight (2015)",
+          "genres": "Western",
+          "raw_score": 1.015934944152832
+        },
+        {
+          "movie_id": 201588,
+          "title": "Toy Story 4 (2019)",
+          "genres": "Adventure|Animation|Children|Comedy",
+          "raw_score": -0.4614931643009186
+        },
+        {
+          "movie_id": 122922,
+          "title": "Doctor Strange (2016)",
+          "genres": "Action|Adventure|Sci-Fi",
+          "raw_score": 0.6168422698974609
+        },
+        {
+          "movie_id": 166528,
+          "title": "Rogue One: A Star Wars Story (2016)",
+          "genres": "Action|Adventure|Fantasy|Sci-Fi",
+          "raw_score": 0.659271776676178
+        },
+        {
+          "movie_id": 122892,
+          "title": "Avengers: Age of Ultron (2015)",
+          "genres": "Action|Adventure|Sci-Fi",
+          "raw_score": 0.5967602133750916
+        },
+        {
+          "movie_id": 162578,
+          "title": "Kubo and the Two Strings (2016)",
+          "genres": "Adventure|Animation|Children|Fantasy",
+          "raw_score": -0.35679084062576294
+        }
+      ],
+      "all_preferred_fraction": null,
+      "avoided_fraction": null
+    },
+    {
+      "id": "animation-0",
+      "candidates": "selected_only_all_years",
+      "ranking": "raw",
+      "summary": "Summary: The viewer may enjoy animated, family-friendly films with elements of adventure, drama. Their interest could vary from one film to another.",
+      "extracted_preferences": {
+        "preferred_genres": [
+          "Adventure",
+          "Animation",
+          "Children",
+          "Drama"
+        ],
+        "avoided_genres": [],
+        "conflicting_genres": [],
+        "preferred_genre_combinations": [
+          [
+            "Animation",
+            "Children"
+          ]
+        ]
+      },
+      "top12": [
+        {
+          "movie_id": 318,
+          "title": "Shawshank Redemption, The (1994)",
+          "genres": "Crime|Drama",
+          "raw_score": 3.3842806816101074
+        },
+        {
+          "movie_id": 296,
+          "title": "Pulp Fiction (1994)",
+          "genres": "Comedy|Crime|Drama|Thriller",
+          "raw_score": 3.318479299545288
+        },
+        {
+          "movie_id": 356,
+          "title": "Forrest Gump (1994)",
+          "genres": "Comedy|Drama|Romance|War",
+          "raw_score": 3.2140398025512695
+        },
+        {
+          "movie_id": 593,
+          "title": "Silence of the Lambs, The (1991)",
+          "genres": "Crime|Horror|Thriller",
+          "raw_score": 3.212181329727173
+        },
+        {
+          "movie_id": 1,
+          "title": "Toy Story (1995)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy",
+          "raw_score": 3.1674435138702393
+        },
+        {
+          "movie_id": 260,
+          "title": "Star Wars: Episode IV - A New Hope (1977)",
+          "genres": "Action|Adventure|Sci-Fi",
+          "raw_score": 3.0968434810638428
+        },
+        {
+          "movie_id": 47,
+          "title": "Seven (a.k.a. Se7en) (1995)",
+          "genres": "Mystery|Thriller",
+          "raw_score": 3.036001443862915
+        },
+        {
+          "movie_id": 50,
+          "title": "Usual Suspects, The (1995)",
+          "genres": "Crime|Mystery|Thriller",
+          "raw_score": 2.9202840328216553
+        },
+        {
+          "movie_id": 858,
+          "title": "Godfather, The (1972)",
+          "genres": "Crime|Drama",
+          "raw_score": 2.892624616622925
+        },
+        {
+          "movie_id": 480,
+          "title": "Jurassic Park (1993)",
+          "genres": "Action|Adventure|Sci-Fi|Thriller",
+          "raw_score": 2.883603572845459
+        },
+        {
+          "movie_id": 364,
+          "title": "Lion King, The (1994)",
+          "genres": "Adventure|Animation|Children|Drama|Musical|IMAX",
+          "raw_score": 2.8764383792877197
+        },
+        {
+          "movie_id": 589,
+          "title": "Terminator 2: Judgment Day (1991)",
+          "genres": "Action|Sci-Fi",
+          "raw_score": 2.8654346466064453
+        }
+      ],
+      "all_preferred_fraction": null,
+      "avoided_fraction": null
+    },
+    {
+      "id": "animation-0",
+      "candidates": "selected_only_all_years",
+      "ranking": "legacy_tiers",
+      "summary": "Summary: The viewer may enjoy animated, family-friendly films with elements of adventure, drama. Their interest could vary from one film to another.",
+      "extracted_preferences": {
+        "preferred_genres": [
+          "Adventure",
+          "Animation",
+          "Children",
+          "Drama"
+        ],
+        "avoided_genres": [],
+        "conflicting_genres": [],
+        "preferred_genre_combinations": [
+          [
+            "Animation",
+            "Children"
+          ]
+        ]
+      },
+      "top12": [
+        {
+          "movie_id": 318,
+          "title": "Shawshank Redemption, The (1994)",
+          "genres": "Crime|Drama",
+          "raw_score": 3.3842806816101074
+        },
+        {
+          "movie_id": 296,
+          "title": "Pulp Fiction (1994)",
+          "genres": "Comedy|Crime|Drama|Thriller",
+          "raw_score": 3.318479299545288
+        },
+        {
+          "movie_id": 356,
+          "title": "Forrest Gump (1994)",
+          "genres": "Comedy|Drama|Romance|War",
+          "raw_score": 3.2140398025512695
+        },
+        {
+          "movie_id": 1,
+          "title": "Toy Story (1995)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy",
+          "raw_score": 3.1674435138702393
+        },
+        {
+          "movie_id": 260,
+          "title": "Star Wars: Episode IV - A New Hope (1977)",
+          "genres": "Action|Adventure|Sci-Fi",
+          "raw_score": 3.0968434810638428
+        },
+        {
+          "movie_id": 858,
+          "title": "Godfather, The (1972)",
+          "genres": "Crime|Drama",
+          "raw_score": 2.892624616622925
+        },
+        {
+          "movie_id": 480,
+          "title": "Jurassic Park (1993)",
+          "genres": "Action|Adventure|Sci-Fi|Thriller",
+          "raw_score": 2.883603572845459
+        },
+        {
+          "movie_id": 364,
+          "title": "Lion King, The (1994)",
+          "genres": "Adventure|Animation|Children|Drama|Musical|IMAX",
+          "raw_score": 2.8764383792877197
+        },
+        {
+          "movie_id": 110,
+          "title": "Braveheart (1995)",
+          "genres": "Action|Drama|War",
+          "raw_score": 2.8526949882507324
+        },
+        {
+          "movie_id": 527,
+          "title": "Schindler's List (1993)",
+          "genres": "Drama|War",
+          "raw_score": 2.837380886077881
+        },
+        {
+          "movie_id": 2959,
+          "title": "Fight Club (1999)",
+          "genres": "Action|Crime|Drama|Thriller",
+          "raw_score": 2.808197021484375
+        },
+        {
+          "movie_id": 1210,
+          "title": "Star Wars: Episode VI - Return of the Jedi (1983)",
+          "genres": "Action|Adventure|Sci-Fi",
+          "raw_score": 2.767009735107422
+        }
+      ],
+      "all_preferred_fraction": null,
+      "avoided_fraction": null
+    },
+    {
+      "id": "animation-0",
+      "candidates": "selected_only_all_years",
+      "ranking": "serving",
+      "summary": "Summary: The viewer may enjoy animated, family-friendly films with elements of adventure, drama. Their interest could vary from one film to another.",
+      "extracted_preferences": {
+        "preferred_genres": [
+          "Adventure",
+          "Animation",
+          "Children",
+          "Drama"
+        ],
+        "avoided_genres": [],
+        "conflicting_genres": [],
+        "preferred_genre_combinations": [
+          [
+            "Animation",
+            "Children"
+          ]
+        ]
+      },
+      "top12": [
+        {
+          "movie_id": 1,
+          "title": "Toy Story (1995)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy",
+          "raw_score": 3.1674435138702393
+        },
+        {
+          "movie_id": 364,
+          "title": "Lion King, The (1994)",
+          "genres": "Adventure|Animation|Children|Drama|Musical|IMAX",
+          "raw_score": 2.8764383792877197
+        },
+        {
+          "movie_id": 588,
+          "title": "Aladdin (1992)",
+          "genres": "Adventure|Animation|Children|Comedy|Musical",
+          "raw_score": 2.7655699253082275
+        },
+        {
+          "movie_id": 595,
+          "title": "Beauty and the Beast (1991)",
+          "genres": "Animation|Children|Fantasy|Musical|Romance|IMAX",
+          "raw_score": 2.526421308517456
+        },
+        {
+          "movie_id": 4306,
+          "title": "Shrek (2001)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy|Romance",
+          "raw_score": 2.4353551864624023
+        },
+        {
+          "movie_id": 551,
+          "title": "Nightmare Before Christmas, The (1993)",
+          "genres": "Animation|Children|Fantasy|Musical",
+          "raw_score": 2.3544023036956787
+        },
+        {
+          "movie_id": 4886,
+          "title": "Monsters, Inc. (2001)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy",
+          "raw_score": 2.2961647510528564
+        },
+        {
+          "movie_id": 6377,
+          "title": "Finding Nemo (2003)",
+          "genres": "Adventure|Animation|Children|Comedy",
+          "raw_score": 2.294771671295166
+        },
+        {
+          "movie_id": 8961,
+          "title": "Incredibles, The (2004)",
+          "genres": "Action|Adventure|Animation|Children|Comedy",
+          "raw_score": 2.206044912338257
+        },
+        {
+          "movie_id": 3114,
+          "title": "Toy Story 2 (1999)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy",
+          "raw_score": 2.1624956130981445
+        },
+        {
+          "movie_id": 594,
+          "title": "Snow White and the Seven Dwarfs (1937)",
+          "genres": "Animation|Children|Drama|Fantasy|Musical",
+          "raw_score": 2.0992743968963623
+        },
+        {
+          "movie_id": 60069,
+          "title": "WALL\u00b7E (2008)",
+          "genres": "Adventure|Animation|Children|Romance|Sci-Fi",
+          "raw_score": 2.0612597465515137
+        }
+      ],
+      "all_preferred_fraction": null,
+      "avoided_fraction": null
+    },
+    {
+      "id": "animation-0",
+      "candidates": "selected_only_all_years",
+      "ranking": "bounded_coverage",
+      "summary": "Summary: The viewer may enjoy animated, family-friendly films with elements of adventure, drama. Their interest could vary from one film to another.",
+      "extracted_preferences": {
+        "preferred_genres": [
+          "Adventure",
+          "Animation",
+          "Children",
+          "Drama"
+        ],
+        "avoided_genres": [],
+        "conflicting_genres": [],
+        "preferred_genre_combinations": [
+          [
+            "Animation",
+            "Children"
+          ]
+        ]
+      },
+      "top12": [
+        {
+          "movie_id": 1,
+          "title": "Toy Story (1995)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy",
+          "raw_score": 3.1674435138702393
+        },
+        {
+          "movie_id": 364,
+          "title": "Lion King, The (1994)",
+          "genres": "Adventure|Animation|Children|Drama|Musical|IMAX",
+          "raw_score": 2.8764383792877197
+        },
+        {
+          "movie_id": 588,
+          "title": "Aladdin (1992)",
+          "genres": "Adventure|Animation|Children|Comedy|Musical",
+          "raw_score": 2.7655699253082275
+        },
+        {
+          "movie_id": 4306,
+          "title": "Shrek (2001)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy|Romance",
+          "raw_score": 2.4353551864624023
+        },
+        {
+          "movie_id": 318,
+          "title": "Shawshank Redemption, The (1994)",
+          "genres": "Crime|Drama",
+          "raw_score": 3.3842806816101074
+        },
+        {
+          "movie_id": 4886,
+          "title": "Monsters, Inc. (2001)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy",
+          "raw_score": 2.2961647510528564
+        },
+        {
+          "movie_id": 6377,
+          "title": "Finding Nemo (2003)",
+          "genres": "Adventure|Animation|Children|Comedy",
+          "raw_score": 2.294771671295166
+        },
+        {
+          "movie_id": 260,
+          "title": "Star Wars: Episode IV - A New Hope (1977)",
+          "genres": "Action|Adventure|Sci-Fi",
+          "raw_score": 3.0968434810638428
+        },
+        {
+          "movie_id": 296,
+          "title": "Pulp Fiction (1994)",
+          "genres": "Comedy|Crime|Drama|Thriller",
+          "raw_score": 3.318479299545288
+        },
+        {
+          "movie_id": 8961,
+          "title": "Incredibles, The (2004)",
+          "genres": "Action|Adventure|Animation|Children|Comedy",
+          "raw_score": 2.206044912338257
+        },
+        {
+          "movie_id": 595,
+          "title": "Beauty and the Beast (1991)",
+          "genres": "Animation|Children|Fantasy|Musical|Romance|IMAX",
+          "raw_score": 2.526421308517456
+        },
+        {
+          "movie_id": 3114,
+          "title": "Toy Story 2 (1999)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy",
+          "raw_score": 2.1624956130981445
+        }
+      ],
+      "all_preferred_fraction": null,
+      "avoided_fraction": null
+    },
+    {
+      "id": "animation-0",
+      "candidates": "selected_only_all_years",
+      "ranking": "bounded_similarity",
+      "summary": "Summary: The viewer may enjoy animated, family-friendly films with elements of adventure, drama. Their interest could vary from one film to another.",
+      "extracted_preferences": {
+        "preferred_genres": [
+          "Adventure",
+          "Animation",
+          "Children",
+          "Drama"
+        ],
+        "avoided_genres": [],
+        "conflicting_genres": [],
+        "preferred_genre_combinations": [
+          [
+            "Animation",
+            "Children"
+          ]
+        ]
+      },
+      "top12": [
+        {
+          "movie_id": 1,
+          "title": "Toy Story (1995)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy",
+          "raw_score": 3.1674435138702393
+        },
+        {
+          "movie_id": 364,
+          "title": "Lion King, The (1994)",
+          "genres": "Adventure|Animation|Children|Drama|Musical|IMAX",
+          "raw_score": 2.8764383792877197
+        },
+        {
+          "movie_id": 588,
+          "title": "Aladdin (1992)",
+          "genres": "Adventure|Animation|Children|Comedy|Musical",
+          "raw_score": 2.7655699253082275
+        },
+        {
+          "movie_id": 318,
+          "title": "Shawshank Redemption, The (1994)",
+          "genres": "Crime|Drama",
+          "raw_score": 3.3842806816101074
+        },
+        {
+          "movie_id": 296,
+          "title": "Pulp Fiction (1994)",
+          "genres": "Comedy|Crime|Drama|Thriller",
+          "raw_score": 3.318479299545288
+        },
+        {
+          "movie_id": 6377,
+          "title": "Finding Nemo (2003)",
+          "genres": "Adventure|Animation|Children|Comedy",
+          "raw_score": 2.294771671295166
+        },
+        {
+          "movie_id": 260,
+          "title": "Star Wars: Episode IV - A New Hope (1977)",
+          "genres": "Action|Adventure|Sci-Fi",
+          "raw_score": 3.0968434810638428
+        },
+        {
+          "movie_id": 356,
+          "title": "Forrest Gump (1994)",
+          "genres": "Comedy|Drama|Romance|War",
+          "raw_score": 3.2140398025512695
+        },
+        {
+          "movie_id": 593,
+          "title": "Silence of the Lambs, The (1991)",
+          "genres": "Crime|Horror|Thriller",
+          "raw_score": 3.212181329727173
+        },
+        {
+          "movie_id": 4306,
+          "title": "Shrek (2001)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy|Romance",
+          "raw_score": 2.4353551864624023
+        },
+        {
+          "movie_id": 4886,
+          "title": "Monsters, Inc. (2001)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy",
+          "raw_score": 2.2961647510528564
+        },
+        {
+          "movie_id": 480,
+          "title": "Jurassic Park (1993)",
+          "genres": "Action|Adventure|Sci-Fi|Thriller",
+          "raw_score": 2.883603572845459
+        }
+      ],
+      "all_preferred_fraction": null,
+      "avoided_fraction": null
+    },
+    {
+      "id": "animation-1",
+      "candidates": "legacy_2015_onboarding",
+      "ranking": "raw",
+      "summary": "Summary: The viewer may respond to animated, family-oriented adventure stories that blend whimsical, imaginative journeys with sincere emotional drama. They may particularly appreciate narratives that combine playful visual invention and heartfelt themes\u2014such as enduring relationships, poignant character growth, and moments of bittersweet uplift\u2014presented for a broad (including younger) audience.",
+      "extracted_preferences": {
+        "preferred_genres": [
+          "Adventure",
+          "Animation",
+          "Children",
+          "Drama"
+        ],
+        "avoided_genres": [],
+        "conflicting_genres": [],
+        "preferred_genre_combinations": [
+          [
+            "Animation",
+            "Children"
+          ]
+        ]
+      },
+      "top12": [
+        {
+          "movie_id": 177765,
+          "title": "Coco (2017)",
+          "genres": "Adventure|Animation|Children",
+          "raw_score": 3.4087636470794678
+        },
+        {
+          "movie_id": 166461,
+          "title": "Moana (2016)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy",
+          "raw_score": 2.9411981105804443
+        },
+        {
+          "movie_id": 163134,
+          "title": "Your Name. (2016)",
+          "genres": "Animation|Drama|Fantasy|Romance",
+          "raw_score": 2.604044198989868
+        },
+        {
+          "movie_id": 162578,
+          "title": "Kubo and the Two Strings (2016)",
+          "genres": "Adventure|Animation|Children|Fantasy",
+          "raw_score": 2.495312213897705
+        },
+        {
+          "movie_id": 157296,
+          "title": "Finding Dory (2016)",
+          "genres": "Adventure|Animation|Comedy",
+          "raw_score": 2.4458112716674805
+        },
+        {
+          "movie_id": 187541,
+          "title": "Incredibles 2 (2018)",
+          "genres": "Action|Adventure|Animation|Children",
+          "raw_score": 2.3999416828155518
+        },
+        {
+          "movie_id": 122922,
+          "title": "Doctor Strange (2016)",
+          "genres": "Action|Adventure|Sci-Fi",
+          "raw_score": 2.177360773086548
+        },
+        {
+          "movie_id": 160718,
+          "title": "Piper (2016)",
+          "genres": "Animation",
+          "raw_score": 2.142092227935791
+        },
+        {
+          "movie_id": 201588,
+          "title": "Toy Story 4 (2019)",
+          "genres": "Adventure|Animation|Children|Comedy",
+          "raw_score": 2.028456687927246
+        },
+        {
+          "movie_id": 166528,
+          "title": "Rogue One: A Star Wars Story (2016)",
+          "genres": "Action|Adventure|Fantasy|Sci-Fi",
+          "raw_score": 2.022355556488037
+        },
+        {
+          "movie_id": 135143,
+          "title": "Fantastic Beasts and Where to Find Them (2016)",
+          "genres": "Fantasy",
+          "raw_score": 1.9890992641448975
+        },
+        {
+          "movie_id": 122920,
+          "title": "Captain America: Civil War (2016)",
+          "genres": "Action|Sci-Fi|Thriller",
+          "raw_score": 1.9161661863327026
+        }
+      ],
+      "all_preferred_fraction": null,
+      "avoided_fraction": null
+    },
+    {
+      "id": "animation-1",
+      "candidates": "legacy_2015_onboarding",
+      "ranking": "legacy_tiers",
+      "summary": "Summary: The viewer may respond to animated, family-oriented adventure stories that blend whimsical, imaginative journeys with sincere emotional drama. They may particularly appreciate narratives that combine playful visual invention and heartfelt themes\u2014such as enduring relationships, poignant character growth, and moments of bittersweet uplift\u2014presented for a broad (including younger) audience.",
+      "extracted_preferences": {
+        "preferred_genres": [
+          "Adventure",
+          "Animation",
+          "Children",
+          "Drama"
+        ],
+        "avoided_genres": [],
+        "conflicting_genres": [],
+        "preferred_genre_combinations": [
+          [
+            "Animation",
+            "Children"
+          ]
+        ]
+      },
+      "top12": [
+        {
+          "movie_id": 177765,
+          "title": "Coco (2017)",
+          "genres": "Adventure|Animation|Children",
+          "raw_score": 3.4087636470794678
+        },
+        {
+          "movie_id": 166461,
+          "title": "Moana (2016)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy",
+          "raw_score": 2.9411981105804443
+        },
+        {
+          "movie_id": 163134,
+          "title": "Your Name. (2016)",
+          "genres": "Animation|Drama|Fantasy|Romance",
+          "raw_score": 2.604044198989868
+        },
+        {
+          "movie_id": 162578,
+          "title": "Kubo and the Two Strings (2016)",
+          "genres": "Adventure|Animation|Children|Fantasy",
+          "raw_score": 2.495312213897705
+        },
+        {
+          "movie_id": 157296,
+          "title": "Finding Dory (2016)",
+          "genres": "Adventure|Animation|Comedy",
+          "raw_score": 2.4458112716674805
+        },
+        {
+          "movie_id": 187541,
+          "title": "Incredibles 2 (2018)",
+          "genres": "Action|Adventure|Animation|Children",
+          "raw_score": 2.3999416828155518
+        },
+        {
+          "movie_id": 122922,
+          "title": "Doctor Strange (2016)",
+          "genres": "Action|Adventure|Sci-Fi",
+          "raw_score": 2.177360773086548
+        },
+        {
+          "movie_id": 160718,
+          "title": "Piper (2016)",
+          "genres": "Animation",
+          "raw_score": 2.142092227935791
+        },
+        {
+          "movie_id": 201588,
+          "title": "Toy Story 4 (2019)",
+          "genres": "Adventure|Animation|Children|Comedy",
+          "raw_score": 2.028456687927246
+        },
+        {
+          "movie_id": 166528,
+          "title": "Rogue One: A Star Wars Story (2016)",
+          "genres": "Action|Adventure|Fantasy|Sci-Fi",
+          "raw_score": 2.022355556488037
+        },
+        {
+          "movie_id": 135143,
+          "title": "Fantastic Beasts and Where to Find Them (2016)",
+          "genres": "Fantasy",
+          "raw_score": 1.9890992641448975
+        },
+        {
+          "movie_id": 122920,
+          "title": "Captain America: Civil War (2016)",
+          "genres": "Action|Sci-Fi|Thriller",
+          "raw_score": 1.9161661863327026
+        }
+      ],
+      "all_preferred_fraction": null,
+      "avoided_fraction": null
+    },
+    {
+      "id": "animation-1",
+      "candidates": "legacy_2015_onboarding",
+      "ranking": "serving",
+      "summary": "Summary: The viewer may respond to animated, family-oriented adventure stories that blend whimsical, imaginative journeys with sincere emotional drama. They may particularly appreciate narratives that combine playful visual invention and heartfelt themes\u2014such as enduring relationships, poignant character growth, and moments of bittersweet uplift\u2014presented for a broad (including younger) audience.",
+      "extracted_preferences": {
+        "preferred_genres": [
+          "Adventure",
+          "Animation",
+          "Children",
+          "Drama"
+        ],
+        "avoided_genres": [],
+        "conflicting_genres": [],
+        "preferred_genre_combinations": [
+          [
+            "Animation",
+            "Children"
+          ]
+        ]
+      },
+      "top12": [
+        {
+          "movie_id": 177765,
+          "title": "Coco (2017)",
+          "genres": "Adventure|Animation|Children",
+          "raw_score": 3.4087636470794678
+        },
+        {
+          "movie_id": 166461,
+          "title": "Moana (2016)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy",
+          "raw_score": 2.9411981105804443
+        },
+        {
+          "movie_id": 162578,
+          "title": "Kubo and the Two Strings (2016)",
+          "genres": "Adventure|Animation|Children|Fantasy",
+          "raw_score": 2.495312213897705
+        },
+        {
+          "movie_id": 187541,
+          "title": "Incredibles 2 (2018)",
+          "genres": "Action|Adventure|Animation|Children",
+          "raw_score": 2.3999416828155518
+        },
+        {
+          "movie_id": 201588,
+          "title": "Toy Story 4 (2019)",
+          "genres": "Adventure|Animation|Children|Comedy",
+          "raw_score": 2.028456687927246
+        },
+        {
+          "movie_id": 208939,
+          "title": "Klaus (2019)",
+          "genres": "Adventure|Animation|Children|Comedy",
+          "raw_score": 1.874046802520752
+        },
+        {
+          "movie_id": 135887,
+          "title": "Minions (2015)",
+          "genres": "Adventure|Animation|Children|Comedy",
+          "raw_score": 1.8150688409805298
+        },
+        {
+          "movie_id": 213207,
+          "title": "Onward (2020)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy",
+          "raw_score": 1.7101019620895386
+        },
+        {
+          "movie_id": 136016,
+          "title": "The Good Dinosaur (2015)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy",
+          "raw_score": 1.4913266897201538
+        },
+        {
+          "movie_id": 281096,
+          "title": "Puss in Boots: The Last Wish (2022)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy",
+          "raw_score": 1.4695234298706055
+        },
+        {
+          "movie_id": 194016,
+          "title": "Ralph Breaks the Internet (2018)",
+          "genres": "Animation|Children",
+          "raw_score": 1.4576796293258667
+        },
+        {
+          "movie_id": 196417,
+          "title": "How to Train Your Dragon: The Hidden World (2019)",
+          "genres": "Adventure|Animation|Children",
+          "raw_score": 1.4244484901428223
+        }
+      ],
+      "all_preferred_fraction": null,
+      "avoided_fraction": null
+    },
+    {
+      "id": "animation-1",
+      "candidates": "legacy_2015_onboarding",
+      "ranking": "bounded_coverage",
+      "summary": "Summary: The viewer may respond to animated, family-oriented adventure stories that blend whimsical, imaginative journeys with sincere emotional drama. They may particularly appreciate narratives that combine playful visual invention and heartfelt themes\u2014such as enduring relationships, poignant character growth, and moments of bittersweet uplift\u2014presented for a broad (including younger) audience.",
+      "extracted_preferences": {
+        "preferred_genres": [
+          "Adventure",
+          "Animation",
+          "Children",
+          "Drama"
+        ],
+        "avoided_genres": [],
+        "conflicting_genres": [],
+        "preferred_genre_combinations": [
+          [
+            "Animation",
+            "Children"
+          ]
+        ]
+      },
+      "top12": [
+        {
+          "movie_id": 177765,
+          "title": "Coco (2017)",
+          "genres": "Adventure|Animation|Children",
+          "raw_score": 3.4087636470794678
+        },
+        {
+          "movie_id": 166461,
+          "title": "Moana (2016)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy",
+          "raw_score": 2.9411981105804443
+        },
+        {
+          "movie_id": 162578,
+          "title": "Kubo and the Two Strings (2016)",
+          "genres": "Adventure|Animation|Children|Fantasy",
+          "raw_score": 2.495312213897705
+        },
+        {
+          "movie_id": 187541,
+          "title": "Incredibles 2 (2018)",
+          "genres": "Action|Adventure|Animation|Children",
+          "raw_score": 2.3999416828155518
+        },
+        {
+          "movie_id": 201588,
+          "title": "Toy Story 4 (2019)",
+          "genres": "Adventure|Animation|Children|Comedy",
+          "raw_score": 2.028456687927246
+        },
+        {
+          "movie_id": 208939,
+          "title": "Klaus (2019)",
+          "genres": "Adventure|Animation|Children|Comedy",
+          "raw_score": 1.874046802520752
+        },
+        {
+          "movie_id": 135887,
+          "title": "Minions (2015)",
+          "genres": "Adventure|Animation|Children|Comedy",
+          "raw_score": 1.8150688409805298
+        },
+        {
+          "movie_id": 213207,
+          "title": "Onward (2020)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy",
+          "raw_score": 1.7101019620895386
+        },
+        {
+          "movie_id": 157296,
+          "title": "Finding Dory (2016)",
+          "genres": "Adventure|Animation|Comedy",
+          "raw_score": 2.4458112716674805
+        },
+        {
+          "movie_id": 136016,
+          "title": "The Good Dinosaur (2015)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy",
+          "raw_score": 1.4913266897201538
+        },
+        {
+          "movie_id": 281096,
+          "title": "Puss in Boots: The Last Wish (2022)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy",
+          "raw_score": 1.4695234298706055
+        },
+        {
+          "movie_id": 196417,
+          "title": "How to Train Your Dragon: The Hidden World (2019)",
+          "genres": "Adventure|Animation|Children",
+          "raw_score": 1.4244484901428223
+        }
+      ],
+      "all_preferred_fraction": null,
+      "avoided_fraction": null
+    },
+    {
+      "id": "animation-1",
+      "candidates": "legacy_2015_onboarding",
+      "ranking": "bounded_similarity",
+      "summary": "Summary: The viewer may respond to animated, family-oriented adventure stories that blend whimsical, imaginative journeys with sincere emotional drama. They may particularly appreciate narratives that combine playful visual invention and heartfelt themes\u2014such as enduring relationships, poignant character growth, and moments of bittersweet uplift\u2014presented for a broad (including younger) audience.",
+      "extracted_preferences": {
+        "preferred_genres": [
+          "Adventure",
+          "Animation",
+          "Children",
+          "Drama"
+        ],
+        "avoided_genres": [],
+        "conflicting_genres": [],
+        "preferred_genre_combinations": [
+          [
+            "Animation",
+            "Children"
+          ]
+        ]
+      },
+      "top12": [
+        {
+          "movie_id": 177765,
+          "title": "Coco (2017)",
+          "genres": "Adventure|Animation|Children",
+          "raw_score": 3.4087636470794678
+        },
+        {
+          "movie_id": 166461,
+          "title": "Moana (2016)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy",
+          "raw_score": 2.9411981105804443
+        },
+        {
+          "movie_id": 187541,
+          "title": "Incredibles 2 (2018)",
+          "genres": "Action|Adventure|Animation|Children",
+          "raw_score": 2.3999416828155518
+        },
+        {
+          "movie_id": 162578,
+          "title": "Kubo and the Two Strings (2016)",
+          "genres": "Adventure|Animation|Children|Fantasy",
+          "raw_score": 2.495312213897705
+        },
+        {
+          "movie_id": 201588,
+          "title": "Toy Story 4 (2019)",
+          "genres": "Adventure|Animation|Children|Comedy",
+          "raw_score": 2.028456687927246
+        },
+        {
+          "movie_id": 208939,
+          "title": "Klaus (2019)",
+          "genres": "Adventure|Animation|Children|Comedy",
+          "raw_score": 1.874046802520752
+        },
+        {
+          "movie_id": 135887,
+          "title": "Minions (2015)",
+          "genres": "Adventure|Animation|Children|Comedy",
+          "raw_score": 1.8150688409805298
+        },
+        {
+          "movie_id": 196417,
+          "title": "How to Train Your Dragon: The Hidden World (2019)",
+          "genres": "Adventure|Animation|Children",
+          "raw_score": 1.4244484901428223
+        },
+        {
+          "movie_id": 157296,
+          "title": "Finding Dory (2016)",
+          "genres": "Adventure|Animation|Comedy",
+          "raw_score": 2.4458112716674805
+        },
+        {
+          "movie_id": 213207,
+          "title": "Onward (2020)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy",
+          "raw_score": 1.7101019620895386
+        },
+        {
+          "movie_id": 163134,
+          "title": "Your Name. (2016)",
+          "genres": "Animation|Drama|Fantasy|Romance",
+          "raw_score": 2.604044198989868
+        },
+        {
+          "movie_id": 194016,
+          "title": "Ralph Breaks the Internet (2018)",
+          "genres": "Animation|Children",
+          "raw_score": 1.4576796293258667
+        }
+      ],
+      "all_preferred_fraction": null,
+      "avoided_fraction": null
+    },
+    {
+      "id": "animation-1",
+      "candidates": "selected_only_all_years",
+      "ranking": "raw",
+      "summary": "Summary: The viewer may respond to animated, family-oriented adventure stories that blend whimsical, imaginative journeys with sincere emotional drama. They may particularly appreciate narratives that combine playful visual invention and heartfelt themes\u2014such as enduring relationships, poignant character growth, and moments of bittersweet uplift\u2014presented for a broad (including younger) audience.",
+      "extracted_preferences": {
+        "preferred_genres": [
+          "Adventure",
+          "Animation",
+          "Children",
+          "Drama"
+        ],
+        "avoided_genres": [],
+        "conflicting_genres": [],
+        "preferred_genre_combinations": [
+          [
+            "Animation",
+            "Children"
+          ]
+        ]
+      },
+      "top12": [
+        {
+          "movie_id": 1,
+          "title": "Toy Story (1995)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy",
+          "raw_score": 4.4265875816345215
+        },
+        {
+          "movie_id": 5618,
+          "title": "Spirited Away (Sen to Chihiro no kamikakushi) (2001)",
+          "genres": "Adventure|Animation|Fantasy",
+          "raw_score": 4.386621952056885
+        },
+        {
+          "movie_id": 60069,
+          "title": "WALL\u00b7E (2008)",
+          "genres": "Adventure|Animation|Children|Romance|Sci-Fi",
+          "raw_score": 4.355384826660156
+        },
+        {
+          "movie_id": 4886,
+          "title": "Monsters, Inc. (2001)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy",
+          "raw_score": 4.269506454467773
+        },
+        {
+          "movie_id": 6377,
+          "title": "Finding Nemo (2003)",
+          "genres": "Adventure|Animation|Children|Comedy",
+          "raw_score": 4.264623641967773
+        },
+        {
+          "movie_id": 50872,
+          "title": "Ratatouille (2007)",
+          "genres": "Animation|Children|Drama",
+          "raw_score": 4.170426845550537
+        },
+        {
+          "movie_id": 4306,
+          "title": "Shrek (2001)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy|Romance",
+          "raw_score": 4.127391815185547
+        },
+        {
+          "movie_id": 134853,
+          "title": "Inside Out (2015)",
+          "genres": "Adventure|Animation|Children|Comedy|Drama|Fantasy",
+          "raw_score": 4.073966026306152
+        },
+        {
+          "movie_id": 5971,
+          "title": "My Neighbor Totoro (Tonari no Totoro) (1988)",
+          "genres": "Animation|Children|Drama|Fantasy",
+          "raw_score": 4.057239532470703
+        },
+        {
+          "movie_id": 8961,
+          "title": "Incredibles, The (2004)",
+          "genres": "Action|Adventure|Animation|Children|Comedy",
+          "raw_score": 4.0550537109375
+        },
+        {
+          "movie_id": 7153,
+          "title": "Lord of the Rings: The Return of the King, The (2003)",
+          "genres": "Action|Adventure|Drama|Fantasy",
+          "raw_score": 4.030749320983887
+        },
+        {
+          "movie_id": 356,
+          "title": "Forrest Gump (1994)",
+          "genres": "Comedy|Drama|Romance|War",
+          "raw_score": 4.025522232055664
+        }
+      ],
+      "all_preferred_fraction": null,
+      "avoided_fraction": null
+    },
+    {
+      "id": "animation-1",
+      "candidates": "selected_only_all_years",
+      "ranking": "legacy_tiers",
+      "summary": "Summary: The viewer may respond to animated, family-oriented adventure stories that blend whimsical, imaginative journeys with sincere emotional drama. They may particularly appreciate narratives that combine playful visual invention and heartfelt themes\u2014such as enduring relationships, poignant character growth, and moments of bittersweet uplift\u2014presented for a broad (including younger) audience.",
+      "extracted_preferences": {
+        "preferred_genres": [
+          "Adventure",
+          "Animation",
+          "Children",
+          "Drama"
+        ],
+        "avoided_genres": [],
+        "conflicting_genres": [],
+        "preferred_genre_combinations": [
+          [
+            "Animation",
+            "Children"
+          ]
+        ]
+      },
+      "top12": [
+        {
+          "movie_id": 1,
+          "title": "Toy Story (1995)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy",
+          "raw_score": 4.4265875816345215
+        },
+        {
+          "movie_id": 5618,
+          "title": "Spirited Away (Sen to Chihiro no kamikakushi) (2001)",
+          "genres": "Adventure|Animation|Fantasy",
+          "raw_score": 4.386621952056885
+        },
+        {
+          "movie_id": 60069,
+          "title": "WALL\u00b7E (2008)",
+          "genres": "Adventure|Animation|Children|Romance|Sci-Fi",
+          "raw_score": 4.355384826660156
+        },
+        {
+          "movie_id": 4886,
+          "title": "Monsters, Inc. (2001)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy",
+          "raw_score": 4.269506454467773
+        },
+        {
+          "movie_id": 6377,
+          "title": "Finding Nemo (2003)",
+          "genres": "Adventure|Animation|Children|Comedy",
+          "raw_score": 4.264623641967773
+        },
+        {
+          "movie_id": 50872,
+          "title": "Ratatouille (2007)",
+          "genres": "Animation|Children|Drama",
+          "raw_score": 4.170426845550537
+        },
+        {
+          "movie_id": 4306,
+          "title": "Shrek (2001)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy|Romance",
+          "raw_score": 4.127391815185547
+        },
+        {
+          "movie_id": 134853,
+          "title": "Inside Out (2015)",
+          "genres": "Adventure|Animation|Children|Comedy|Drama|Fantasy",
+          "raw_score": 4.073966026306152
+        },
+        {
+          "movie_id": 5971,
+          "title": "My Neighbor Totoro (Tonari no Totoro) (1988)",
+          "genres": "Animation|Children|Drama|Fantasy",
+          "raw_score": 4.057239532470703
+        },
+        {
+          "movie_id": 8961,
+          "title": "Incredibles, The (2004)",
+          "genres": "Action|Adventure|Animation|Children|Comedy",
+          "raw_score": 4.0550537109375
+        },
+        {
+          "movie_id": 7153,
+          "title": "Lord of the Rings: The Return of the King, The (2003)",
+          "genres": "Action|Adventure|Drama|Fantasy",
+          "raw_score": 4.030749320983887
+        },
+        {
+          "movie_id": 356,
+          "title": "Forrest Gump (1994)",
+          "genres": "Comedy|Drama|Romance|War",
+          "raw_score": 4.025522232055664
+        }
+      ],
+      "all_preferred_fraction": null,
+      "avoided_fraction": null
+    },
+    {
+      "id": "animation-1",
+      "candidates": "selected_only_all_years",
+      "ranking": "serving",
+      "summary": "Summary: The viewer may respond to animated, family-oriented adventure stories that blend whimsical, imaginative journeys with sincere emotional drama. They may particularly appreciate narratives that combine playful visual invention and heartfelt themes\u2014such as enduring relationships, poignant character growth, and moments of bittersweet uplift\u2014presented for a broad (including younger) audience.",
+      "extracted_preferences": {
+        "preferred_genres": [
+          "Adventure",
+          "Animation",
+          "Children",
+          "Drama"
+        ],
+        "avoided_genres": [],
+        "conflicting_genres": [],
+        "preferred_genre_combinations": [
+          [
+            "Animation",
+            "Children"
+          ]
+        ]
+      },
+      "top12": [
+        {
+          "movie_id": 1,
+          "title": "Toy Story (1995)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy",
+          "raw_score": 4.4265875816345215
+        },
+        {
+          "movie_id": 60069,
+          "title": "WALL\u00b7E (2008)",
+          "genres": "Adventure|Animation|Children|Romance|Sci-Fi",
+          "raw_score": 4.355384826660156
+        },
+        {
+          "movie_id": 4886,
+          "title": "Monsters, Inc. (2001)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy",
+          "raw_score": 4.269506454467773
+        },
+        {
+          "movie_id": 6377,
+          "title": "Finding Nemo (2003)",
+          "genres": "Adventure|Animation|Children|Comedy",
+          "raw_score": 4.264623641967773
+        },
+        {
+          "movie_id": 50872,
+          "title": "Ratatouille (2007)",
+          "genres": "Animation|Children|Drama",
+          "raw_score": 4.170426845550537
+        },
+        {
+          "movie_id": 4306,
+          "title": "Shrek (2001)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy|Romance",
+          "raw_score": 4.127391815185547
+        },
+        {
+          "movie_id": 134853,
+          "title": "Inside Out (2015)",
+          "genres": "Adventure|Animation|Children|Comedy|Drama|Fantasy",
+          "raw_score": 4.073966026306152
+        },
+        {
+          "movie_id": 5971,
+          "title": "My Neighbor Totoro (Tonari no Totoro) (1988)",
+          "genres": "Animation|Children|Drama|Fantasy",
+          "raw_score": 4.057239532470703
+        },
+        {
+          "movie_id": 8961,
+          "title": "Incredibles, The (2004)",
+          "genres": "Action|Adventure|Animation|Children|Comedy",
+          "raw_score": 4.0550537109375
+        },
+        {
+          "movie_id": 78499,
+          "title": "Toy Story 3 (2010)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy|IMAX",
+          "raw_score": 3.922495126724243
+        },
+        {
+          "movie_id": 76093,
+          "title": "How to Train Your Dragon (2010)",
+          "genres": "Adventure|Animation|Children|Fantasy|IMAX",
+          "raw_score": 3.9195706844329834
+        },
+        {
+          "movie_id": 364,
+          "title": "Lion King, The (1994)",
+          "genres": "Adventure|Animation|Children|Drama|Musical|IMAX",
+          "raw_score": 3.806216239929199
+        }
+      ],
+      "all_preferred_fraction": null,
+      "avoided_fraction": null
+    },
+    {
+      "id": "animation-1",
+      "candidates": "selected_only_all_years",
+      "ranking": "bounded_coverage",
+      "summary": "Summary: The viewer may respond to animated, family-oriented adventure stories that blend whimsical, imaginative journeys with sincere emotional drama. They may particularly appreciate narratives that combine playful visual invention and heartfelt themes\u2014such as enduring relationships, poignant character growth, and moments of bittersweet uplift\u2014presented for a broad (including younger) audience.",
+      "extracted_preferences": {
+        "preferred_genres": [
+          "Adventure",
+          "Animation",
+          "Children",
+          "Drama"
+        ],
+        "avoided_genres": [],
+        "conflicting_genres": [],
+        "preferred_genre_combinations": [
+          [
+            "Animation",
+            "Children"
+          ]
+        ]
+      },
+      "top12": [
+        {
+          "movie_id": 1,
+          "title": "Toy Story (1995)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy",
+          "raw_score": 4.4265875816345215
+        },
+        {
+          "movie_id": 60069,
+          "title": "WALL\u00b7E (2008)",
+          "genres": "Adventure|Animation|Children|Romance|Sci-Fi",
+          "raw_score": 4.355384826660156
+        },
+        {
+          "movie_id": 4886,
+          "title": "Monsters, Inc. (2001)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy",
+          "raw_score": 4.269506454467773
+        },
+        {
+          "movie_id": 6377,
+          "title": "Finding Nemo (2003)",
+          "genres": "Adventure|Animation|Children|Comedy",
+          "raw_score": 4.264623641967773
+        },
+        {
+          "movie_id": 134853,
+          "title": "Inside Out (2015)",
+          "genres": "Adventure|Animation|Children|Comedy|Drama|Fantasy",
+          "raw_score": 4.073966026306152
+        },
+        {
+          "movie_id": 4306,
+          "title": "Shrek (2001)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy|Romance",
+          "raw_score": 4.127391815185547
+        },
+        {
+          "movie_id": 8961,
+          "title": "Incredibles, The (2004)",
+          "genres": "Action|Adventure|Animation|Children|Comedy",
+          "raw_score": 4.0550537109375
+        },
+        {
+          "movie_id": 364,
+          "title": "Lion King, The (1994)",
+          "genres": "Adventure|Animation|Children|Drama|Musical|IMAX",
+          "raw_score": 3.806216239929199
+        },
+        {
+          "movie_id": 78499,
+          "title": "Toy Story 3 (2010)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy|IMAX",
+          "raw_score": 3.922495126724243
+        },
+        {
+          "movie_id": 76093,
+          "title": "How to Train Your Dragon (2010)",
+          "genres": "Adventure|Animation|Children|Fantasy|IMAX",
+          "raw_score": 3.9195706844329834
+        },
+        {
+          "movie_id": 5618,
+          "title": "Spirited Away (Sen to Chihiro no kamikakushi) (2001)",
+          "genres": "Adventure|Animation|Fantasy",
+          "raw_score": 4.386621952056885
+        },
+        {
+          "movie_id": 50872,
+          "title": "Ratatouille (2007)",
+          "genres": "Animation|Children|Drama",
+          "raw_score": 4.170426845550537
+        }
+      ],
+      "all_preferred_fraction": null,
+      "avoided_fraction": null
+    },
+    {
+      "id": "animation-1",
+      "candidates": "selected_only_all_years",
+      "ranking": "bounded_similarity",
+      "summary": "Summary: The viewer may respond to animated, family-oriented adventure stories that blend whimsical, imaginative journeys with sincere emotional drama. They may particularly appreciate narratives that combine playful visual invention and heartfelt themes\u2014such as enduring relationships, poignant character growth, and moments of bittersweet uplift\u2014presented for a broad (including younger) audience.",
+      "extracted_preferences": {
+        "preferred_genres": [
+          "Adventure",
+          "Animation",
+          "Children",
+          "Drama"
+        ],
+        "avoided_genres": [],
+        "conflicting_genres": [],
+        "preferred_genre_combinations": [
+          [
+            "Animation",
+            "Children"
+          ]
+        ]
+      },
+      "top12": [
+        {
+          "movie_id": 6377,
+          "title": "Finding Nemo (2003)",
+          "genres": "Adventure|Animation|Children|Comedy",
+          "raw_score": 4.264623641967773
+        },
+        {
+          "movie_id": 1,
+          "title": "Toy Story (1995)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy",
+          "raw_score": 4.4265875816345215
+        },
+        {
+          "movie_id": 50872,
+          "title": "Ratatouille (2007)",
+          "genres": "Animation|Children|Drama",
+          "raw_score": 4.170426845550537
+        },
+        {
+          "movie_id": 60069,
+          "title": "WALL\u00b7E (2008)",
+          "genres": "Adventure|Animation|Children|Romance|Sci-Fi",
+          "raw_score": 4.355384826660156
+        },
+        {
+          "movie_id": 4886,
+          "title": "Monsters, Inc. (2001)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy",
+          "raw_score": 4.269506454467773
+        },
+        {
+          "movie_id": 134853,
+          "title": "Inside Out (2015)",
+          "genres": "Adventure|Animation|Children|Comedy|Drama|Fantasy",
+          "raw_score": 4.073966026306152
+        },
+        {
+          "movie_id": 8961,
+          "title": "Incredibles, The (2004)",
+          "genres": "Action|Adventure|Animation|Children|Comedy",
+          "raw_score": 4.0550537109375
+        },
+        {
+          "movie_id": 5618,
+          "title": "Spirited Away (Sen to Chihiro no kamikakushi) (2001)",
+          "genres": "Adventure|Animation|Fantasy",
+          "raw_score": 4.386621952056885
+        },
+        {
+          "movie_id": 4306,
+          "title": "Shrek (2001)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy|Romance",
+          "raw_score": 4.127391815185547
+        },
+        {
+          "movie_id": 5971,
+          "title": "My Neighbor Totoro (Tonari no Totoro) (1988)",
+          "genres": "Animation|Children|Drama|Fantasy",
+          "raw_score": 4.057239532470703
+        },
+        {
+          "movie_id": 5218,
+          "title": "Ice Age (2002)",
+          "genres": "Adventure|Animation|Children|Comedy",
+          "raw_score": 3.569385051727295
+        },
+        {
+          "movie_id": 177765,
+          "title": "Coco (2017)",
+          "genres": "Adventure|Animation|Children",
+          "raw_score": 3.4087636470794678
+        }
+      ],
+      "all_preferred_fraction": null,
+      "avoided_fraction": null
+    },
+    {
+      "id": "soul-0",
+      "candidates": "legacy_2015_onboarding",
+      "ranking": "raw",
+      "summary": "Summary: The viewer may enjoy animated, family-friendly films that combine playful adventure with light comedy and imaginative fantasy elements. They seem receptive to warm, character-focused stories told through animation that balance whimsy and accessible themes suitable for children and family audiences.",
+      "extracted_preferences": {
+        "preferred_genres": [
+          "Adventure",
+          "Animation",
+          "Children",
+          "Comedy",
+          "Fantasy"
+        ],
+        "avoided_genres": [],
+        "conflicting_genres": [],
+        "preferred_genre_combinations": [
+          [
+            "Animation",
+            "Children"
+          ]
+        ]
+      },
+      "top12": [
+        {
+          "movie_id": 177765,
+          "title": "Coco (2017)",
+          "genres": "Adventure|Animation|Children",
+          "raw_score": 1.1799182891845703
+        },
+        {
+          "movie_id": 122922,
+          "title": "Doctor Strange (2016)",
+          "genres": "Action|Adventure|Sci-Fi",
+          "raw_score": 1.1626132726669312
+        },
+        {
+          "movie_id": 166528,
+          "title": "Rogue One: A Star Wars Story (2016)",
+          "genres": "Action|Adventure|Fantasy|Sci-Fi",
+          "raw_score": 1.0998173952102661
+        },
+        {
+          "movie_id": 122920,
+          "title": "Captain America: Civil War (2016)",
+          "genres": "Action|Sci-Fi|Thriller",
+          "raw_score": 1.0722160339355469
+        },
+        {
+          "movie_id": 122892,
+          "title": "Avengers: Age of Ultron (2015)",
+          "genres": "Action|Adventure|Sci-Fi",
+          "raw_score": 1.067325234413147
+        },
+        {
+          "movie_id": 122900,
+          "title": "Ant-Man (2015)",
+          "genres": "Action|Adventure|Sci-Fi",
+          "raw_score": 1.0655949115753174
+        },
+        {
+          "movie_id": 166461,
+          "title": "Moana (2016)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy",
+          "raw_score": 1.0495198965072632
+        },
+        {
+          "movie_id": 207313,
+          "title": "Knives Out (2019)",
+          "genres": "Comedy|Crime|Drama|Mystery|Thriller",
+          "raw_score": 0.981391191482544
+        },
+        {
+          "movie_id": 122906,
+          "title": "Black Panther (2017)",
+          "genres": "Action|Adventure|Sci-Fi",
+          "raw_score": 0.9086918234825134
+        },
+        {
+          "movie_id": 122926,
+          "title": "Untitled Spider-Man Reboot (2017)",
+          "genres": "Action|Adventure|Fantasy",
+          "raw_score": 0.8971877098083496
+        },
+        {
+          "movie_id": 187593,
+          "title": "Deadpool 2 (2018)",
+          "genres": "Action|Comedy|Sci-Fi",
+          "raw_score": 0.8743264079093933
+        },
+        {
+          "movie_id": 171763,
+          "title": "Baby Driver (2017)",
+          "genres": "Action|Crime|Thriller",
+          "raw_score": 0.8649054765701294
+        }
+      ],
+      "all_preferred_fraction": null,
+      "avoided_fraction": null
+    },
+    {
+      "id": "soul-0",
+      "candidates": "legacy_2015_onboarding",
+      "ranking": "legacy_tiers",
+      "summary": "Summary: The viewer may enjoy animated, family-friendly films that combine playful adventure with light comedy and imaginative fantasy elements. They seem receptive to warm, character-focused stories told through animation that balance whimsy and accessible themes suitable for children and family audiences.",
+      "extracted_preferences": {
+        "preferred_genres": [
+          "Adventure",
+          "Animation",
+          "Children",
+          "Comedy",
+          "Fantasy"
+        ],
+        "avoided_genres": [],
+        "conflicting_genres": [],
+        "preferred_genre_combinations": [
+          [
+            "Animation",
+            "Children"
+          ]
+        ]
+      },
+      "top12": [
+        {
+          "movie_id": 177765,
+          "title": "Coco (2017)",
+          "genres": "Adventure|Animation|Children",
+          "raw_score": 1.1799182891845703
+        },
+        {
+          "movie_id": 122922,
+          "title": "Doctor Strange (2016)",
+          "genres": "Action|Adventure|Sci-Fi",
+          "raw_score": 1.1626132726669312
+        },
+        {
+          "movie_id": 166528,
+          "title": "Rogue One: A Star Wars Story (2016)",
+          "genres": "Action|Adventure|Fantasy|Sci-Fi",
+          "raw_score": 1.0998173952102661
+        },
+        {
+          "movie_id": 122892,
+          "title": "Avengers: Age of Ultron (2015)",
+          "genres": "Action|Adventure|Sci-Fi",
+          "raw_score": 1.067325234413147
+        },
+        {
+          "movie_id": 122900,
+          "title": "Ant-Man (2015)",
+          "genres": "Action|Adventure|Sci-Fi",
+          "raw_score": 1.0655949115753174
+        },
+        {
+          "movie_id": 166461,
+          "title": "Moana (2016)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy",
+          "raw_score": 1.0495198965072632
+        },
+        {
+          "movie_id": 207313,
+          "title": "Knives Out (2019)",
+          "genres": "Comedy|Crime|Drama|Mystery|Thriller",
+          "raw_score": 0.981391191482544
+        },
+        {
+          "movie_id": 122906,
+          "title": "Black Panther (2017)",
+          "genres": "Action|Adventure|Sci-Fi",
+          "raw_score": 0.9086918234825134
+        },
+        {
+          "movie_id": 122926,
+          "title": "Untitled Spider-Man Reboot (2017)",
+          "genres": "Action|Adventure|Fantasy",
+          "raw_score": 0.8971877098083496
+        },
+        {
+          "movie_id": 187593,
+          "title": "Deadpool 2 (2018)",
+          "genres": "Action|Comedy|Sci-Fi",
+          "raw_score": 0.8743264079093933
+        },
+        {
+          "movie_id": 187541,
+          "title": "Incredibles 2 (2018)",
+          "genres": "Action|Adventure|Animation|Children",
+          "raw_score": 0.8396890163421631
+        },
+        {
+          "movie_id": 143355,
+          "title": "Wonder Woman (2017)",
+          "genres": "Action|Adventure|Fantasy",
+          "raw_score": 0.8220806121826172
+        }
+      ],
+      "all_preferred_fraction": null,
+      "avoided_fraction": null
+    },
+    {
+      "id": "soul-0",
+      "candidates": "legacy_2015_onboarding",
+      "ranking": "serving",
+      "summary": "Summary: The viewer may enjoy animated, family-friendly films that combine playful adventure with light comedy and imaginative fantasy elements. They seem receptive to warm, character-focused stories told through animation that balance whimsy and accessible themes suitable for children and family audiences.",
+      "extracted_preferences": {
+        "preferred_genres": [
+          "Adventure",
+          "Animation",
+          "Children",
+          "Comedy",
+          "Fantasy"
+        ],
+        "avoided_genres": [],
+        "conflicting_genres": [],
+        "preferred_genre_combinations": [
+          [
+            "Animation",
+            "Children"
+          ]
+        ]
+      },
+      "top12": [
+        {
+          "movie_id": 177765,
+          "title": "Coco (2017)",
+          "genres": "Adventure|Animation|Children",
+          "raw_score": 1.1799182891845703
+        },
+        {
+          "movie_id": 166461,
+          "title": "Moana (2016)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy",
+          "raw_score": 1.0495198965072632
+        },
+        {
+          "movie_id": 187541,
+          "title": "Incredibles 2 (2018)",
+          "genres": "Action|Adventure|Animation|Children",
+          "raw_score": 0.8396890163421631
+        },
+        {
+          "movie_id": 162578,
+          "title": "Kubo and the Two Strings (2016)",
+          "genres": "Adventure|Animation|Children|Fantasy",
+          "raw_score": 0.5651294589042664
+        },
+        {
+          "movie_id": 135887,
+          "title": "Minions (2015)",
+          "genres": "Adventure|Animation|Children|Comedy",
+          "raw_score": 0.36188653111457825
+        },
+        {
+          "movie_id": 201588,
+          "title": "Toy Story 4 (2019)",
+          "genres": "Adventure|Animation|Children|Comedy",
+          "raw_score": 0.2924489378929138
+        },
+        {
+          "movie_id": 194016,
+          "title": "Ralph Breaks the Internet (2018)",
+          "genres": "Animation|Children",
+          "raw_score": 0.07996558398008347
+        },
+        {
+          "movie_id": 213207,
+          "title": "Onward (2020)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy",
+          "raw_score": 0.009661449119448662
+        },
+        {
+          "movie_id": 208939,
+          "title": "Klaus (2019)",
+          "genres": "Adventure|Animation|Children|Comedy",
+          "raw_score": -0.027689781039953232
+        },
+        {
+          "movie_id": 167036,
+          "title": "Sing (2016)",
+          "genres": "Animation|Children|Comedy",
+          "raw_score": -0.08171197772026062
+        },
+        {
+          "movie_id": 260667,
+          "title": "Encanto (2021)",
+          "genres": "Adventure|Animation|Children|Fantasy",
+          "raw_score": -0.08204974234104156
+        },
+        {
+          "movie_id": 281096,
+          "title": "Puss in Boots: The Last Wish (2022)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy",
+          "raw_score": -0.19904349744319916
+        }
+      ],
+      "all_preferred_fraction": null,
+      "avoided_fraction": null
+    },
+    {
+      "id": "soul-0",
+      "candidates": "legacy_2015_onboarding",
+      "ranking": "bounded_coverage",
+      "summary": "Summary: The viewer may enjoy animated, family-friendly films that combine playful adventure with light comedy and imaginative fantasy elements. They seem receptive to warm, character-focused stories told through animation that balance whimsy and accessible themes suitable for children and family audiences.",
+      "extracted_preferences": {
+        "preferred_genres": [
+          "Adventure",
+          "Animation",
+          "Children",
+          "Comedy",
+          "Fantasy"
+        ],
+        "avoided_genres": [],
+        "conflicting_genres": [],
+        "preferred_genre_combinations": [
+          [
+            "Animation",
+            "Children"
+          ]
+        ]
+      },
+      "top12": [
+        {
+          "movie_id": 166461,
+          "title": "Moana (2016)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy",
+          "raw_score": 1.0495198965072632
+        },
+        {
+          "movie_id": 177765,
+          "title": "Coco (2017)",
+          "genres": "Adventure|Animation|Children",
+          "raw_score": 1.1799182891845703
+        },
+        {
+          "movie_id": 162578,
+          "title": "Kubo and the Two Strings (2016)",
+          "genres": "Adventure|Animation|Children|Fantasy",
+          "raw_score": 0.5651294589042664
+        },
+        {
+          "movie_id": 187541,
+          "title": "Incredibles 2 (2018)",
+          "genres": "Action|Adventure|Animation|Children",
+          "raw_score": 0.8396890163421631
+        },
+        {
+          "movie_id": 166528,
+          "title": "Rogue One: A Star Wars Story (2016)",
+          "genres": "Action|Adventure|Fantasy|Sci-Fi",
+          "raw_score": 1.0998173952102661
+        },
+        {
+          "movie_id": 122926,
+          "title": "Untitled Spider-Man Reboot (2017)",
+          "genres": "Action|Adventure|Fantasy",
+          "raw_score": 0.8971877098083496
+        },
+        {
+          "movie_id": 135887,
+          "title": "Minions (2015)",
+          "genres": "Adventure|Animation|Children|Comedy",
+          "raw_score": 0.36188653111457825
+        },
+        {
+          "movie_id": 122922,
+          "title": "Doctor Strange (2016)",
+          "genres": "Action|Adventure|Sci-Fi",
+          "raw_score": 1.1626132726669312
+        },
+        {
+          "movie_id": 143355,
+          "title": "Wonder Woman (2017)",
+          "genres": "Action|Adventure|Fantasy",
+          "raw_score": 0.8220806121826172
+        },
+        {
+          "movie_id": 213207,
+          "title": "Onward (2020)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy",
+          "raw_score": 0.009661449119448662
+        },
+        {
+          "movie_id": 157296,
+          "title": "Finding Dory (2016)",
+          "genres": "Adventure|Animation|Comedy",
+          "raw_score": 0.6689711809158325
+        },
+        {
+          "movie_id": 201588,
+          "title": "Toy Story 4 (2019)",
+          "genres": "Adventure|Animation|Children|Comedy",
+          "raw_score": 0.2924489378929138
+        }
+      ],
+      "all_preferred_fraction": null,
+      "avoided_fraction": null
+    },
+    {
+      "id": "soul-0",
+      "candidates": "legacy_2015_onboarding",
+      "ranking": "bounded_similarity",
+      "summary": "Summary: The viewer may enjoy animated, family-friendly films that combine playful adventure with light comedy and imaginative fantasy elements. They seem receptive to warm, character-focused stories told through animation that balance whimsy and accessible themes suitable for children and family audiences.",
+      "extracted_preferences": {
+        "preferred_genres": [
+          "Adventure",
+          "Animation",
+          "Children",
+          "Comedy",
+          "Fantasy"
+        ],
+        "avoided_genres": [],
+        "conflicting_genres": [],
+        "preferred_genre_combinations": [
+          [
+            "Animation",
+            "Children"
+          ]
+        ]
+      },
+      "top12": [
+        {
+          "movie_id": 166461,
+          "title": "Moana (2016)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy",
+          "raw_score": 1.0495198965072632
+        },
+        {
+          "movie_id": 177765,
+          "title": "Coco (2017)",
+          "genres": "Adventure|Animation|Children",
+          "raw_score": 1.1799182891845703
+        },
+        {
+          "movie_id": 162578,
+          "title": "Kubo and the Two Strings (2016)",
+          "genres": "Adventure|Animation|Children|Fantasy",
+          "raw_score": 0.5651294589042664
+        },
+        {
+          "movie_id": 187541,
+          "title": "Incredibles 2 (2018)",
+          "genres": "Action|Adventure|Animation|Children",
+          "raw_score": 0.8396890163421631
+        },
+        {
+          "movie_id": 166528,
+          "title": "Rogue One: A Star Wars Story (2016)",
+          "genres": "Action|Adventure|Fantasy|Sci-Fi",
+          "raw_score": 1.0998173952102661
+        },
+        {
+          "movie_id": 135887,
+          "title": "Minions (2015)",
+          "genres": "Adventure|Animation|Children|Comedy",
+          "raw_score": 0.36188653111457825
+        },
+        {
+          "movie_id": 122926,
+          "title": "Untitled Spider-Man Reboot (2017)",
+          "genres": "Action|Adventure|Fantasy",
+          "raw_score": 0.8971877098083496
+        },
+        {
+          "movie_id": 213207,
+          "title": "Onward (2020)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy",
+          "raw_score": 0.009661449119448662
+        },
+        {
+          "movie_id": 157296,
+          "title": "Finding Dory (2016)",
+          "genres": "Adventure|Animation|Comedy",
+          "raw_score": 0.6689711809158325
+        },
+        {
+          "movie_id": 201588,
+          "title": "Toy Story 4 (2019)",
+          "genres": "Adventure|Animation|Children|Comedy",
+          "raw_score": 0.2924489378929138
+        },
+        {
+          "movie_id": 122922,
+          "title": "Doctor Strange (2016)",
+          "genres": "Action|Adventure|Sci-Fi",
+          "raw_score": 1.1626132726669312
+        },
+        {
+          "movie_id": 143355,
+          "title": "Wonder Woman (2017)",
+          "genres": "Action|Adventure|Fantasy",
+          "raw_score": 0.8220806121826172
+        }
+      ],
+      "all_preferred_fraction": null,
+      "avoided_fraction": null
+    },
+    {
+      "id": "soul-0",
+      "candidates": "selected_only_all_years",
+      "ranking": "raw",
+      "summary": "Summary: The viewer may enjoy animated, family-friendly films that combine playful adventure with light comedy and imaginative fantasy elements. They seem receptive to warm, character-focused stories told through animation that balance whimsy and accessible themes suitable for children and family audiences.",
+      "extracted_preferences": {
+        "preferred_genres": [
+          "Adventure",
+          "Animation",
+          "Children",
+          "Comedy",
+          "Fantasy"
+        ],
+        "avoided_genres": [],
+        "conflicting_genres": [],
+        "preferred_genre_combinations": [
+          [
+            "Animation",
+            "Children"
+          ]
+        ]
+      },
+      "top12": [
+        {
+          "movie_id": 1,
+          "title": "Toy Story (1995)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy",
+          "raw_score": 3.494896411895752
+        },
+        {
+          "movie_id": 260,
+          "title": "Star Wars: Episode IV - A New Hope (1977)",
+          "genres": "Action|Adventure|Sci-Fi",
+          "raw_score": 3.1925268173217773
+        },
+        {
+          "movie_id": 318,
+          "title": "Shawshank Redemption, The (1994)",
+          "genres": "Crime|Drama",
+          "raw_score": 2.981834650039673
+        },
+        {
+          "movie_id": 296,
+          "title": "Pulp Fiction (1994)",
+          "genres": "Comedy|Crime|Drama|Thriller",
+          "raw_score": 2.906128168106079
+        },
+        {
+          "movie_id": 780,
+          "title": "Independence Day (a.k.a. ID4) (1996)",
+          "genres": "Action|Adventure|Sci-Fi|Thriller",
+          "raw_score": 2.9043591022491455
+        },
+        {
+          "movie_id": 1073,
+          "title": "Willy Wonka & the Chocolate Factory (1971)",
+          "genres": "Children|Comedy|Fantasy|Musical",
+          "raw_score": 2.8981752395629883
+        },
+        {
+          "movie_id": 588,
+          "title": "Aladdin (1992)",
+          "genres": "Adventure|Animation|Children|Comedy|Musical",
+          "raw_score": 2.8874616622924805
+        },
+        {
+          "movie_id": 364,
+          "title": "Lion King, The (1994)",
+          "genres": "Adventure|Animation|Children|Drama|Musical|IMAX",
+          "raw_score": 2.883272171020508
+        },
+        {
+          "movie_id": 648,
+          "title": "Mission: Impossible (1996)",
+          "genres": "Action|Adventure|Mystery|Thriller",
+          "raw_score": 2.882810592651367
+        },
+        {
+          "movie_id": 32,
+          "title": "Twelve Monkeys (a.k.a. 12 Monkeys) (1995)",
+          "genres": "Mystery|Sci-Fi|Thriller",
+          "raw_score": 2.877825975418091
+        },
+        {
+          "movie_id": 1210,
+          "title": "Star Wars: Episode VI - Return of the Jedi (1983)",
+          "genres": "Action|Adventure|Sci-Fi",
+          "raw_score": 2.8758044242858887
+        },
+        {
+          "movie_id": 356,
+          "title": "Forrest Gump (1994)",
+          "genres": "Comedy|Drama|Romance|War",
+          "raw_score": 2.871251344680786
+        }
+      ],
+      "all_preferred_fraction": null,
+      "avoided_fraction": null
+    },
+    {
+      "id": "soul-0",
+      "candidates": "selected_only_all_years",
+      "ranking": "legacy_tiers",
+      "summary": "Summary: The viewer may enjoy animated, family-friendly films that combine playful adventure with light comedy and imaginative fantasy elements. They seem receptive to warm, character-focused stories told through animation that balance whimsy and accessible themes suitable for children and family audiences.",
+      "extracted_preferences": {
+        "preferred_genres": [
+          "Adventure",
+          "Animation",
+          "Children",
+          "Comedy",
+          "Fantasy"
+        ],
+        "avoided_genres": [],
+        "conflicting_genres": [],
+        "preferred_genre_combinations": [
+          [
+            "Animation",
+            "Children"
+          ]
+        ]
+      },
+      "top12": [
+        {
+          "movie_id": 1,
+          "title": "Toy Story (1995)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy",
+          "raw_score": 3.494896411895752
+        },
+        {
+          "movie_id": 260,
+          "title": "Star Wars: Episode IV - A New Hope (1977)",
+          "genres": "Action|Adventure|Sci-Fi",
+          "raw_score": 3.1925268173217773
+        },
+        {
+          "movie_id": 296,
+          "title": "Pulp Fiction (1994)",
+          "genres": "Comedy|Crime|Drama|Thriller",
+          "raw_score": 2.906128168106079
+        },
+        {
+          "movie_id": 780,
+          "title": "Independence Day (a.k.a. ID4) (1996)",
+          "genres": "Action|Adventure|Sci-Fi|Thriller",
+          "raw_score": 2.9043591022491455
+        },
+        {
+          "movie_id": 1073,
+          "title": "Willy Wonka & the Chocolate Factory (1971)",
+          "genres": "Children|Comedy|Fantasy|Musical",
+          "raw_score": 2.8981752395629883
+        },
+        {
+          "movie_id": 588,
+          "title": "Aladdin (1992)",
+          "genres": "Adventure|Animation|Children|Comedy|Musical",
+          "raw_score": 2.8874616622924805
+        },
+        {
+          "movie_id": 364,
+          "title": "Lion King, The (1994)",
+          "genres": "Adventure|Animation|Children|Drama|Musical|IMAX",
+          "raw_score": 2.883272171020508
+        },
+        {
+          "movie_id": 648,
+          "title": "Mission: Impossible (1996)",
+          "genres": "Action|Adventure|Mystery|Thriller",
+          "raw_score": 2.882810592651367
+        },
+        {
+          "movie_id": 1210,
+          "title": "Star Wars: Episode VI - Return of the Jedi (1983)",
+          "genres": "Action|Adventure|Sci-Fi",
+          "raw_score": 2.8758044242858887
+        },
+        {
+          "movie_id": 356,
+          "title": "Forrest Gump (1994)",
+          "genres": "Comedy|Drama|Romance|War",
+          "raw_score": 2.871251344680786
+        },
+        {
+          "movie_id": 480,
+          "title": "Jurassic Park (1993)",
+          "genres": "Action|Adventure|Sci-Fi|Thriller",
+          "raw_score": 2.841557741165161
+        },
+        {
+          "movie_id": 608,
+          "title": "Fargo (1996)",
+          "genres": "Comedy|Crime|Drama|Thriller",
+          "raw_score": 2.7455503940582275
+        }
+      ],
+      "all_preferred_fraction": null,
+      "avoided_fraction": null
+    },
+    {
+      "id": "soul-0",
+      "candidates": "selected_only_all_years",
+      "ranking": "serving",
+      "summary": "Summary: The viewer may enjoy animated, family-friendly films that combine playful adventure with light comedy and imaginative fantasy elements. They seem receptive to warm, character-focused stories told through animation that balance whimsy and accessible themes suitable for children and family audiences.",
+      "extracted_preferences": {
+        "preferred_genres": [
+          "Adventure",
+          "Animation",
+          "Children",
+          "Comedy",
+          "Fantasy"
+        ],
+        "avoided_genres": [],
+        "conflicting_genres": [],
+        "preferred_genre_combinations": [
+          [
+            "Animation",
+            "Children"
+          ]
+        ]
+      },
+      "top12": [
+        {
+          "movie_id": 1,
+          "title": "Toy Story (1995)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy",
+          "raw_score": 3.494896411895752
+        },
+        {
+          "movie_id": 588,
+          "title": "Aladdin (1992)",
+          "genres": "Adventure|Animation|Children|Comedy|Musical",
+          "raw_score": 2.8874616622924805
+        },
+        {
+          "movie_id": 364,
+          "title": "Lion King, The (1994)",
+          "genres": "Adventure|Animation|Children|Drama|Musical|IMAX",
+          "raw_score": 2.883272171020508
+        },
+        {
+          "movie_id": 595,
+          "title": "Beauty and the Beast (1991)",
+          "genres": "Animation|Children|Fantasy|Musical|Romance|IMAX",
+          "raw_score": 2.6935431957244873
+        },
+        {
+          "movie_id": 551,
+          "title": "Nightmare Before Christmas, The (1993)",
+          "genres": "Animation|Children|Fantasy|Musical",
+          "raw_score": 2.530900001525879
+        },
+        {
+          "movie_id": 4306,
+          "title": "Shrek (2001)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy|Romance",
+          "raw_score": 2.3722972869873047
+        },
+        {
+          "movie_id": 4886,
+          "title": "Monsters, Inc. (2001)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy",
+          "raw_score": 2.3435001373291016
+        },
+        {
+          "movie_id": 594,
+          "title": "Snow White and the Seven Dwarfs (1937)",
+          "genres": "Animation|Children|Drama|Fantasy|Musical",
+          "raw_score": 2.3374593257904053
+        },
+        {
+          "movie_id": 8961,
+          "title": "Incredibles, The (2004)",
+          "genres": "Action|Adventure|Animation|Children|Comedy",
+          "raw_score": 2.3179073333740234
+        },
+        {
+          "movie_id": 6377,
+          "title": "Finding Nemo (2003)",
+          "genres": "Adventure|Animation|Children|Comedy",
+          "raw_score": 2.292585849761963
+        },
+        {
+          "movie_id": 783,
+          "title": "Hunchback of Notre Dame, The (1996)",
+          "genres": "Animation|Children|Drama|Musical|Romance",
+          "raw_score": 2.239386558532715
+        },
+        {
+          "movie_id": 3114,
+          "title": "Toy Story 2 (1999)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy",
+          "raw_score": 2.1970624923706055
+        }
+      ],
+      "all_preferred_fraction": null,
+      "avoided_fraction": null
+    },
+    {
+      "id": "soul-0",
+      "candidates": "selected_only_all_years",
+      "ranking": "bounded_coverage",
+      "summary": "Summary: The viewer may enjoy animated, family-friendly films that combine playful adventure with light comedy and imaginative fantasy elements. They seem receptive to warm, character-focused stories told through animation that balance whimsy and accessible themes suitable for children and family audiences.",
+      "extracted_preferences": {
+        "preferred_genres": [
+          "Adventure",
+          "Animation",
+          "Children",
+          "Comedy",
+          "Fantasy"
+        ],
+        "avoided_genres": [],
+        "conflicting_genres": [],
+        "preferred_genre_combinations": [
+          [
+            "Animation",
+            "Children"
+          ]
+        ]
+      },
+      "top12": [
+        {
+          "movie_id": 1,
+          "title": "Toy Story (1995)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy",
+          "raw_score": 3.494896411895752
+        },
+        {
+          "movie_id": 588,
+          "title": "Aladdin (1992)",
+          "genres": "Adventure|Animation|Children|Comedy|Musical",
+          "raw_score": 2.8874616622924805
+        },
+        {
+          "movie_id": 364,
+          "title": "Lion King, The (1994)",
+          "genres": "Adventure|Animation|Children|Drama|Musical|IMAX",
+          "raw_score": 2.883272171020508
+        },
+        {
+          "movie_id": 4306,
+          "title": "Shrek (2001)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy|Romance",
+          "raw_score": 2.3722972869873047
+        },
+        {
+          "movie_id": 4886,
+          "title": "Monsters, Inc. (2001)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy",
+          "raw_score": 2.3435001373291016
+        },
+        {
+          "movie_id": 595,
+          "title": "Beauty and the Beast (1991)",
+          "genres": "Animation|Children|Fantasy|Musical|Romance|IMAX",
+          "raw_score": 2.6935431957244873
+        },
+        {
+          "movie_id": 1073,
+          "title": "Willy Wonka & the Chocolate Factory (1971)",
+          "genres": "Children|Comedy|Fantasy|Musical",
+          "raw_score": 2.8981752395629883
+        },
+        {
+          "movie_id": 3114,
+          "title": "Toy Story 2 (1999)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy",
+          "raw_score": 2.1970624923706055
+        },
+        {
+          "movie_id": 673,
+          "title": "Space Jam (1996)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy|Sci-Fi",
+          "raw_score": 2.1375839710235596
+        },
+        {
+          "movie_id": 551,
+          "title": "Nightmare Before Christmas, The (1993)",
+          "genres": "Animation|Children|Fantasy|Musical",
+          "raw_score": 2.530900001525879
+        },
+        {
+          "movie_id": 661,
+          "title": "James and the Giant Peach (1996)",
+          "genres": "Adventure|Animation|Children|Fantasy|Musical",
+          "raw_score": 2.160701036453247
+        },
+        {
+          "movie_id": 260,
+          "title": "Star Wars: Episode IV - A New Hope (1977)",
+          "genres": "Action|Adventure|Sci-Fi",
+          "raw_score": 3.1925268173217773
+        }
+      ],
+      "all_preferred_fraction": null,
+      "avoided_fraction": null
+    },
+    {
+      "id": "soul-0",
+      "candidates": "selected_only_all_years",
+      "ranking": "bounded_similarity",
+      "summary": "Summary: The viewer may enjoy animated, family-friendly films that combine playful adventure with light comedy and imaginative fantasy elements. They seem receptive to warm, character-focused stories told through animation that balance whimsy and accessible themes suitable for children and family audiences.",
+      "extracted_preferences": {
+        "preferred_genres": [
+          "Adventure",
+          "Animation",
+          "Children",
+          "Comedy",
+          "Fantasy"
+        ],
+        "avoided_genres": [],
+        "conflicting_genres": [],
+        "preferred_genre_combinations": [
+          [
+            "Animation",
+            "Children"
+          ]
+        ]
+      },
+      "top12": [
+        {
+          "movie_id": 1,
+          "title": "Toy Story (1995)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy",
+          "raw_score": 3.494896411895752
+        },
+        {
+          "movie_id": 4886,
+          "title": "Monsters, Inc. (2001)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy",
+          "raw_score": 2.3435001373291016
+        },
+        {
+          "movie_id": 588,
+          "title": "Aladdin (1992)",
+          "genres": "Adventure|Animation|Children|Comedy|Musical",
+          "raw_score": 2.8874616622924805
+        },
+        {
+          "movie_id": 3114,
+          "title": "Toy Story 2 (1999)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy",
+          "raw_score": 2.1970624923706055
+        },
+        {
+          "movie_id": 4306,
+          "title": "Shrek (2001)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy|Romance",
+          "raw_score": 2.3722972869873047
+        },
+        {
+          "movie_id": 1073,
+          "title": "Willy Wonka & the Chocolate Factory (1971)",
+          "genres": "Children|Comedy|Fantasy|Musical",
+          "raw_score": 2.8981752395629883
+        },
+        {
+          "movie_id": 2,
+          "title": "Jumanji (1995)",
+          "genres": "Adventure|Children|Fantasy",
+          "raw_score": 2.4460628032684326
+        },
+        {
+          "movie_id": 364,
+          "title": "Lion King, The (1994)",
+          "genres": "Adventure|Animation|Children|Drama|Musical|IMAX",
+          "raw_score": 2.883272171020508
+        },
+        {
+          "movie_id": 6377,
+          "title": "Finding Nemo (2003)",
+          "genres": "Adventure|Animation|Children|Comedy",
+          "raw_score": 2.292585849761963
+        },
+        {
+          "movie_id": 260,
+          "title": "Star Wars: Episode IV - A New Hope (1977)",
+          "genres": "Action|Adventure|Sci-Fi",
+          "raw_score": 3.1925268173217773
+        },
+        {
+          "movie_id": 673,
+          "title": "Space Jam (1996)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy|Sci-Fi",
+          "raw_score": 2.1375839710235596
+        },
+        {
+          "movie_id": 551,
+          "title": "Nightmare Before Christmas, The (1993)",
+          "genres": "Animation|Children|Fantasy|Musical",
+          "raw_score": 2.530900001525879
+        }
+      ],
+      "all_preferred_fraction": null,
+      "avoided_fraction": null
+    },
+    {
+      "id": "soul-1",
+      "candidates": "legacy_2015_onboarding",
+      "ranking": "raw",
+      "summary": "Summary: The viewer seems to respond to animated stories that combine Adventure and Fantasy elements with a warm, family-oriented (Children) tone, often delivered through playful Comedy. They may prefer films that foreground inventive Animation, gentle humor, uplifting emotional themes, and a sense of wonder that balances adventurous stakes with accessible, child-friendly reflection.",
+      "extracted_preferences": {
+        "preferred_genres": [
+          "Adventure",
+          "Animation",
+          "Children",
+          "Comedy",
+          "Fantasy"
+        ],
+        "avoided_genres": [],
+        "conflicting_genres": [],
+        "preferred_genre_combinations": [
+          [
+            "Animation",
+            "Children"
+          ]
+        ]
+      },
+      "top12": [
+        {
+          "movie_id": 177765,
+          "title": "Coco (2017)",
+          "genres": "Adventure|Animation|Children",
+          "raw_score": 2.4092206954956055
+        },
+        {
+          "movie_id": 166461,
+          "title": "Moana (2016)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy",
+          "raw_score": 2.215672492980957
+        },
+        {
+          "movie_id": 122922,
+          "title": "Doctor Strange (2016)",
+          "genres": "Action|Adventure|Sci-Fi",
+          "raw_score": 2.059326648712158
+        },
+        {
+          "movie_id": 122900,
+          "title": "Ant-Man (2015)",
+          "genres": "Action|Adventure|Sci-Fi",
+          "raw_score": 1.8990325927734375
+        },
+        {
+          "movie_id": 166528,
+          "title": "Rogue One: A Star Wars Story (2016)",
+          "genres": "Action|Adventure|Fantasy|Sci-Fi",
+          "raw_score": 1.83754301071167
+        },
+        {
+          "movie_id": 122892,
+          "title": "Avengers: Age of Ultron (2015)",
+          "genres": "Action|Adventure|Sci-Fi",
+          "raw_score": 1.8325761556625366
+        },
+        {
+          "movie_id": 162578,
+          "title": "Kubo and the Two Strings (2016)",
+          "genres": "Adventure|Animation|Children|Fantasy",
+          "raw_score": 1.7981083393096924
+        },
+        {
+          "movie_id": 122920,
+          "title": "Captain America: Civil War (2016)",
+          "genres": "Action|Sci-Fi|Thriller",
+          "raw_score": 1.7688369750976562
+        },
+        {
+          "movie_id": 187541,
+          "title": "Incredibles 2 (2018)",
+          "genres": "Action|Adventure|Animation|Children",
+          "raw_score": 1.7541382312774658
+        },
+        {
+          "movie_id": 163134,
+          "title": "Your Name. (2016)",
+          "genres": "Animation|Drama|Fantasy|Romance",
+          "raw_score": 1.7316129207611084
+        },
+        {
+          "movie_id": 157296,
+          "title": "Finding Dory (2016)",
+          "genres": "Adventure|Animation|Comedy",
+          "raw_score": 1.720309853553772
+        },
+        {
+          "movie_id": 135143,
+          "title": "Fantastic Beasts and Where to Find Them (2016)",
+          "genres": "Fantasy",
+          "raw_score": 1.6894283294677734
+        }
+      ],
+      "all_preferred_fraction": null,
+      "avoided_fraction": null
+    },
+    {
+      "id": "soul-1",
+      "candidates": "legacy_2015_onboarding",
+      "ranking": "legacy_tiers",
+      "summary": "Summary: The viewer seems to respond to animated stories that combine Adventure and Fantasy elements with a warm, family-oriented (Children) tone, often delivered through playful Comedy. They may prefer films that foreground inventive Animation, gentle humor, uplifting emotional themes, and a sense of wonder that balances adventurous stakes with accessible, child-friendly reflection.",
+      "extracted_preferences": {
+        "preferred_genres": [
+          "Adventure",
+          "Animation",
+          "Children",
+          "Comedy",
+          "Fantasy"
+        ],
+        "avoided_genres": [],
+        "conflicting_genres": [],
+        "preferred_genre_combinations": [
+          [
+            "Animation",
+            "Children"
+          ]
+        ]
+      },
+      "top12": [
+        {
+          "movie_id": 177765,
+          "title": "Coco (2017)",
+          "genres": "Adventure|Animation|Children",
+          "raw_score": 2.4092206954956055
+        },
+        {
+          "movie_id": 166461,
+          "title": "Moana (2016)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy",
+          "raw_score": 2.215672492980957
+        },
+        {
+          "movie_id": 122922,
+          "title": "Doctor Strange (2016)",
+          "genres": "Action|Adventure|Sci-Fi",
+          "raw_score": 2.059326648712158
+        },
+        {
+          "movie_id": 122900,
+          "title": "Ant-Man (2015)",
+          "genres": "Action|Adventure|Sci-Fi",
+          "raw_score": 1.8990325927734375
+        },
+        {
+          "movie_id": 166528,
+          "title": "Rogue One: A Star Wars Story (2016)",
+          "genres": "Action|Adventure|Fantasy|Sci-Fi",
+          "raw_score": 1.83754301071167
+        },
+        {
+          "movie_id": 122892,
+          "title": "Avengers: Age of Ultron (2015)",
+          "genres": "Action|Adventure|Sci-Fi",
+          "raw_score": 1.8325761556625366
+        },
+        {
+          "movie_id": 162578,
+          "title": "Kubo and the Two Strings (2016)",
+          "genres": "Adventure|Animation|Children|Fantasy",
+          "raw_score": 1.7981083393096924
+        },
+        {
+          "movie_id": 187541,
+          "title": "Incredibles 2 (2018)",
+          "genres": "Action|Adventure|Animation|Children",
+          "raw_score": 1.7541382312774658
+        },
+        {
+          "movie_id": 163134,
+          "title": "Your Name. (2016)",
+          "genres": "Animation|Drama|Fantasy|Romance",
+          "raw_score": 1.7316129207611084
+        },
+        {
+          "movie_id": 157296,
+          "title": "Finding Dory (2016)",
+          "genres": "Adventure|Animation|Comedy",
+          "raw_score": 1.720309853553772
+        },
+        {
+          "movie_id": 122926,
+          "title": "Untitled Spider-Man Reboot (2017)",
+          "genres": "Action|Adventure|Fantasy",
+          "raw_score": 1.6700345277786255
+        },
+        {
+          "movie_id": 187593,
+          "title": "Deadpool 2 (2018)",
+          "genres": "Action|Comedy|Sci-Fi",
+          "raw_score": 1.6084485054016113
+        }
+      ],
+      "all_preferred_fraction": null,
+      "avoided_fraction": null
+    },
+    {
+      "id": "soul-1",
+      "candidates": "legacy_2015_onboarding",
+      "ranking": "serving",
+      "summary": "Summary: The viewer seems to respond to animated stories that combine Adventure and Fantasy elements with a warm, family-oriented (Children) tone, often delivered through playful Comedy. They may prefer films that foreground inventive Animation, gentle humor, uplifting emotional themes, and a sense of wonder that balances adventurous stakes with accessible, child-friendly reflection.",
+      "extracted_preferences": {
+        "preferred_genres": [
+          "Adventure",
+          "Animation",
+          "Children",
+          "Comedy",
+          "Fantasy"
+        ],
+        "avoided_genres": [],
+        "conflicting_genres": [],
+        "preferred_genre_combinations": [
+          [
+            "Animation",
+            "Children"
+          ]
+        ]
+      },
+      "top12": [
+        {
+          "movie_id": 177765,
+          "title": "Coco (2017)",
+          "genres": "Adventure|Animation|Children",
+          "raw_score": 2.4092206954956055
+        },
+        {
+          "movie_id": 166461,
+          "title": "Moana (2016)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy",
+          "raw_score": 2.215672492980957
+        },
+        {
+          "movie_id": 162578,
+          "title": "Kubo and the Two Strings (2016)",
+          "genres": "Adventure|Animation|Children|Fantasy",
+          "raw_score": 1.7981083393096924
+        },
+        {
+          "movie_id": 187541,
+          "title": "Incredibles 2 (2018)",
+          "genres": "Action|Adventure|Animation|Children",
+          "raw_score": 1.7541382312774658
+        },
+        {
+          "movie_id": 135887,
+          "title": "Minions (2015)",
+          "genres": "Adventure|Animation|Children|Comedy",
+          "raw_score": 1.2568873167037964
+        },
+        {
+          "movie_id": 201588,
+          "title": "Toy Story 4 (2019)",
+          "genres": "Adventure|Animation|Children|Comedy",
+          "raw_score": 1.1106364727020264
+        },
+        {
+          "movie_id": 208939,
+          "title": "Klaus (2019)",
+          "genres": "Adventure|Animation|Children|Comedy",
+          "raw_score": 0.9133636355400085
+        },
+        {
+          "movie_id": 213207,
+          "title": "Onward (2020)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy",
+          "raw_score": 0.7868776917457581
+        },
+        {
+          "movie_id": 194016,
+          "title": "Ralph Breaks the Internet (2018)",
+          "genres": "Animation|Children",
+          "raw_score": 0.7857129573822021
+        },
+        {
+          "movie_id": 130520,
+          "title": "Home (2015)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy|Sci-Fi",
+          "raw_score": 0.725581169128418
+        },
+        {
+          "movie_id": 136016,
+          "title": "The Good Dinosaur (2015)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy",
+          "raw_score": 0.6660605669021606
+        },
+        {
+          "movie_id": 167036,
+          "title": "Sing (2016)",
+          "genres": "Animation|Children|Comedy",
+          "raw_score": 0.6454905271530151
+        }
+      ],
+      "all_preferred_fraction": null,
+      "avoided_fraction": null
+    },
+    {
+      "id": "soul-1",
+      "candidates": "legacy_2015_onboarding",
+      "ranking": "bounded_coverage",
+      "summary": "Summary: The viewer seems to respond to animated stories that combine Adventure and Fantasy elements with a warm, family-oriented (Children) tone, often delivered through playful Comedy. They may prefer films that foreground inventive Animation, gentle humor, uplifting emotional themes, and a sense of wonder that balances adventurous stakes with accessible, child-friendly reflection.",
+      "extracted_preferences": {
+        "preferred_genres": [
+          "Adventure",
+          "Animation",
+          "Children",
+          "Comedy",
+          "Fantasy"
+        ],
+        "avoided_genres": [],
+        "conflicting_genres": [],
+        "preferred_genre_combinations": [
+          [
+            "Animation",
+            "Children"
+          ]
+        ]
+      },
+      "top12": [
+        {
+          "movie_id": 166461,
+          "title": "Moana (2016)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy",
+          "raw_score": 2.215672492980957
+        },
+        {
+          "movie_id": 177765,
+          "title": "Coco (2017)",
+          "genres": "Adventure|Animation|Children",
+          "raw_score": 2.4092206954956055
+        },
+        {
+          "movie_id": 162578,
+          "title": "Kubo and the Two Strings (2016)",
+          "genres": "Adventure|Animation|Children|Fantasy",
+          "raw_score": 1.7981083393096924
+        },
+        {
+          "movie_id": 187541,
+          "title": "Incredibles 2 (2018)",
+          "genres": "Action|Adventure|Animation|Children",
+          "raw_score": 1.7541382312774658
+        },
+        {
+          "movie_id": 213207,
+          "title": "Onward (2020)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy",
+          "raw_score": 0.7868776917457581
+        },
+        {
+          "movie_id": 135887,
+          "title": "Minions (2015)",
+          "genres": "Adventure|Animation|Children|Comedy",
+          "raw_score": 1.2568873167037964
+        },
+        {
+          "movie_id": 157296,
+          "title": "Finding Dory (2016)",
+          "genres": "Adventure|Animation|Comedy",
+          "raw_score": 1.720309853553772
+        },
+        {
+          "movie_id": 130520,
+          "title": "Home (2015)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy|Sci-Fi",
+          "raw_score": 0.725581169128418
+        },
+        {
+          "movie_id": 166528,
+          "title": "Rogue One: A Star Wars Story (2016)",
+          "genres": "Action|Adventure|Fantasy|Sci-Fi",
+          "raw_score": 1.83754301071167
+        },
+        {
+          "movie_id": 136016,
+          "title": "The Good Dinosaur (2015)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy",
+          "raw_score": 0.6660605669021606
+        },
+        {
+          "movie_id": 163134,
+          "title": "Your Name. (2016)",
+          "genres": "Animation|Drama|Fantasy|Romance",
+          "raw_score": 1.7316129207611084
+        },
+        {
+          "movie_id": 201588,
+          "title": "Toy Story 4 (2019)",
+          "genres": "Adventure|Animation|Children|Comedy",
+          "raw_score": 1.1106364727020264
+        }
+      ],
+      "all_preferred_fraction": null,
+      "avoided_fraction": null
+    },
+    {
+      "id": "soul-1",
+      "candidates": "legacy_2015_onboarding",
+      "ranking": "bounded_similarity",
+      "summary": "Summary: The viewer seems to respond to animated stories that combine Adventure and Fantasy elements with a warm, family-oriented (Children) tone, often delivered through playful Comedy. They may prefer films that foreground inventive Animation, gentle humor, uplifting emotional themes, and a sense of wonder that balances adventurous stakes with accessible, child-friendly reflection.",
+      "extracted_preferences": {
+        "preferred_genres": [
+          "Adventure",
+          "Animation",
+          "Children",
+          "Comedy",
+          "Fantasy"
+        ],
+        "avoided_genres": [],
+        "conflicting_genres": [],
+        "preferred_genre_combinations": [
+          [
+            "Animation",
+            "Children"
+          ]
+        ]
+      },
+      "top12": [
+        {
+          "movie_id": 166461,
+          "title": "Moana (2016)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy",
+          "raw_score": 2.215672492980957
+        },
+        {
+          "movie_id": 177765,
+          "title": "Coco (2017)",
+          "genres": "Adventure|Animation|Children",
+          "raw_score": 2.4092206954956055
+        },
+        {
+          "movie_id": 162578,
+          "title": "Kubo and the Two Strings (2016)",
+          "genres": "Adventure|Animation|Children|Fantasy",
+          "raw_score": 1.7981083393096924
+        },
+        {
+          "movie_id": 187541,
+          "title": "Incredibles 2 (2018)",
+          "genres": "Action|Adventure|Animation|Children",
+          "raw_score": 1.7541382312774658
+        },
+        {
+          "movie_id": 213207,
+          "title": "Onward (2020)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy",
+          "raw_score": 0.7868776917457581
+        },
+        {
+          "movie_id": 135887,
+          "title": "Minions (2015)",
+          "genres": "Adventure|Animation|Children|Comedy",
+          "raw_score": 1.2568873167037964
+        },
+        {
+          "movie_id": 157296,
+          "title": "Finding Dory (2016)",
+          "genres": "Adventure|Animation|Comedy",
+          "raw_score": 1.720309853553772
+        },
+        {
+          "movie_id": 136016,
+          "title": "The Good Dinosaur (2015)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy",
+          "raw_score": 0.6660605669021606
+        },
+        {
+          "movie_id": 201588,
+          "title": "Toy Story 4 (2019)",
+          "genres": "Adventure|Animation|Children|Comedy",
+          "raw_score": 1.1106364727020264
+        },
+        {
+          "movie_id": 281096,
+          "title": "Puss in Boots: The Last Wish (2022)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy",
+          "raw_score": 0.5116551518440247
+        },
+        {
+          "movie_id": 163134,
+          "title": "Your Name. (2016)",
+          "genres": "Animation|Drama|Fantasy|Romance",
+          "raw_score": 1.7316129207611084
+        },
+        {
+          "movie_id": 166528,
+          "title": "Rogue One: A Star Wars Story (2016)",
+          "genres": "Action|Adventure|Fantasy|Sci-Fi",
+          "raw_score": 1.83754301071167
+        }
+      ],
+      "all_preferred_fraction": null,
+      "avoided_fraction": null
+    },
+    {
+      "id": "soul-1",
+      "candidates": "selected_only_all_years",
+      "ranking": "raw",
+      "summary": "Summary: The viewer seems to respond to animated stories that combine Adventure and Fantasy elements with a warm, family-oriented (Children) tone, often delivered through playful Comedy. They may prefer films that foreground inventive Animation, gentle humor, uplifting emotional themes, and a sense of wonder that balances adventurous stakes with accessible, child-friendly reflection.",
+      "extracted_preferences": {
+        "preferred_genres": [
+          "Adventure",
+          "Animation",
+          "Children",
+          "Comedy",
+          "Fantasy"
+        ],
+        "avoided_genres": [],
+        "conflicting_genres": [],
+        "preferred_genre_combinations": [
+          [
+            "Animation",
+            "Children"
+          ]
+        ]
+      },
+      "top12": [
+        {
+          "movie_id": 1,
+          "title": "Toy Story (1995)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy",
+          "raw_score": 3.635995864868164
+        },
+        {
+          "movie_id": 60069,
+          "title": "WALL\u00b7E (2008)",
+          "genres": "Adventure|Animation|Children|Romance|Sci-Fi",
+          "raw_score": 3.495981216430664
+        },
+        {
+          "movie_id": 68954,
+          "title": "Up (2009)",
+          "genres": "Adventure|Animation|Children|Drama",
+          "raw_score": 3.4761674404144287
+        },
+        {
+          "movie_id": 5618,
+          "title": "Spirited Away (Sen to Chihiro no kamikakushi) (2001)",
+          "genres": "Adventure|Animation|Fantasy",
+          "raw_score": 3.4054479598999023
+        },
+        {
+          "movie_id": 4886,
+          "title": "Monsters, Inc. (2001)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy",
+          "raw_score": 3.3771510124206543
+        },
+        {
+          "movie_id": 50872,
+          "title": "Ratatouille (2007)",
+          "genres": "Animation|Children|Drama",
+          "raw_score": 3.3334968090057373
+        },
+        {
+          "movie_id": 6377,
+          "title": "Finding Nemo (2003)",
+          "genres": "Adventure|Animation|Children|Comedy",
+          "raw_score": 3.3168323040008545
+        },
+        {
+          "movie_id": 8961,
+          "title": "Incredibles, The (2004)",
+          "genres": "Action|Adventure|Animation|Children|Comedy",
+          "raw_score": 3.3049240112304688
+        },
+        {
+          "movie_id": 4306,
+          "title": "Shrek (2001)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy|Romance",
+          "raw_score": 3.284907102584839
+        },
+        {
+          "movie_id": 2571,
+          "title": "Matrix, The (1999)",
+          "genres": "Action|Sci-Fi|Thriller",
+          "raw_score": 3.264417886734009
+        },
+        {
+          "movie_id": 260,
+          "title": "Star Wars: Episode IV - A New Hope (1977)",
+          "genres": "Action|Adventure|Sci-Fi",
+          "raw_score": 3.258955955505371
+        },
+        {
+          "movie_id": 31658,
+          "title": "Howl's Moving Castle (Hauru no ugoku shiro) (2004)",
+          "genres": "Adventure|Animation|Fantasy|Romance",
+          "raw_score": 3.143730640411377
+        }
+      ],
+      "all_preferred_fraction": null,
+      "avoided_fraction": null
+    },
+    {
+      "id": "soul-1",
+      "candidates": "selected_only_all_years",
+      "ranking": "legacy_tiers",
+      "summary": "Summary: The viewer seems to respond to animated stories that combine Adventure and Fantasy elements with a warm, family-oriented (Children) tone, often delivered through playful Comedy. They may prefer films that foreground inventive Animation, gentle humor, uplifting emotional themes, and a sense of wonder that balances adventurous stakes with accessible, child-friendly reflection.",
+      "extracted_preferences": {
+        "preferred_genres": [
+          "Adventure",
+          "Animation",
+          "Children",
+          "Comedy",
+          "Fantasy"
+        ],
+        "avoided_genres": [],
+        "conflicting_genres": [],
+        "preferred_genre_combinations": [
+          [
+            "Animation",
+            "Children"
+          ]
+        ]
+      },
+      "top12": [
+        {
+          "movie_id": 1,
+          "title": "Toy Story (1995)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy",
+          "raw_score": 3.635995864868164
+        },
+        {
+          "movie_id": 60069,
+          "title": "WALL\u00b7E (2008)",
+          "genres": "Adventure|Animation|Children|Romance|Sci-Fi",
+          "raw_score": 3.495981216430664
+        },
+        {
+          "movie_id": 68954,
+          "title": "Up (2009)",
+          "genres": "Adventure|Animation|Children|Drama",
+          "raw_score": 3.4761674404144287
+        },
+        {
+          "movie_id": 5618,
+          "title": "Spirited Away (Sen to Chihiro no kamikakushi) (2001)",
+          "genres": "Adventure|Animation|Fantasy",
+          "raw_score": 3.4054479598999023
+        },
+        {
+          "movie_id": 4886,
+          "title": "Monsters, Inc. (2001)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy",
+          "raw_score": 3.3771510124206543
+        },
+        {
+          "movie_id": 50872,
+          "title": "Ratatouille (2007)",
+          "genres": "Animation|Children|Drama",
+          "raw_score": 3.3334968090057373
+        },
+        {
+          "movie_id": 6377,
+          "title": "Finding Nemo (2003)",
+          "genres": "Adventure|Animation|Children|Comedy",
+          "raw_score": 3.3168323040008545
+        },
+        {
+          "movie_id": 8961,
+          "title": "Incredibles, The (2004)",
+          "genres": "Action|Adventure|Animation|Children|Comedy",
+          "raw_score": 3.3049240112304688
+        },
+        {
+          "movie_id": 4306,
+          "title": "Shrek (2001)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy|Romance",
+          "raw_score": 3.284907102584839
+        },
+        {
+          "movie_id": 260,
+          "title": "Star Wars: Episode IV - A New Hope (1977)",
+          "genres": "Action|Adventure|Sci-Fi",
+          "raw_score": 3.258955955505371
+        },
+        {
+          "movie_id": 31658,
+          "title": "Howl's Moving Castle (Hauru no ugoku shiro) (2004)",
+          "genres": "Adventure|Animation|Fantasy|Romance",
+          "raw_score": 3.143730640411377
+        },
+        {
+          "movie_id": 76093,
+          "title": "How to Train Your Dragon (2010)",
+          "genres": "Adventure|Animation|Children|Fantasy|IMAX",
+          "raw_score": 3.1364548206329346
+        }
+      ],
+      "all_preferred_fraction": null,
+      "avoided_fraction": null
+    },
+    {
+      "id": "soul-1",
+      "candidates": "selected_only_all_years",
+      "ranking": "serving",
+      "summary": "Summary: The viewer seems to respond to animated stories that combine Adventure and Fantasy elements with a warm, family-oriented (Children) tone, often delivered through playful Comedy. They may prefer films that foreground inventive Animation, gentle humor, uplifting emotional themes, and a sense of wonder that balances adventurous stakes with accessible, child-friendly reflection.",
+      "extracted_preferences": {
+        "preferred_genres": [
+          "Adventure",
+          "Animation",
+          "Children",
+          "Comedy",
+          "Fantasy"
+        ],
+        "avoided_genres": [],
+        "conflicting_genres": [],
+        "preferred_genre_combinations": [
+          [
+            "Animation",
+            "Children"
+          ]
+        ]
+      },
+      "top12": [
+        {
+          "movie_id": 1,
+          "title": "Toy Story (1995)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy",
+          "raw_score": 3.635995864868164
+        },
+        {
+          "movie_id": 60069,
+          "title": "WALL\u00b7E (2008)",
+          "genres": "Adventure|Animation|Children|Romance|Sci-Fi",
+          "raw_score": 3.495981216430664
+        },
+        {
+          "movie_id": 68954,
+          "title": "Up (2009)",
+          "genres": "Adventure|Animation|Children|Drama",
+          "raw_score": 3.4761674404144287
+        },
+        {
+          "movie_id": 4886,
+          "title": "Monsters, Inc. (2001)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy",
+          "raw_score": 3.3771510124206543
+        },
+        {
+          "movie_id": 50872,
+          "title": "Ratatouille (2007)",
+          "genres": "Animation|Children|Drama",
+          "raw_score": 3.3334968090057373
+        },
+        {
+          "movie_id": 6377,
+          "title": "Finding Nemo (2003)",
+          "genres": "Adventure|Animation|Children|Comedy",
+          "raw_score": 3.3168323040008545
+        },
+        {
+          "movie_id": 8961,
+          "title": "Incredibles, The (2004)",
+          "genres": "Action|Adventure|Animation|Children|Comedy",
+          "raw_score": 3.3049240112304688
+        },
+        {
+          "movie_id": 4306,
+          "title": "Shrek (2001)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy|Romance",
+          "raw_score": 3.284907102584839
+        },
+        {
+          "movie_id": 76093,
+          "title": "How to Train Your Dragon (2010)",
+          "genres": "Adventure|Animation|Children|Fantasy|IMAX",
+          "raw_score": 3.1364548206329346
+        },
+        {
+          "movie_id": 5971,
+          "title": "My Neighbor Totoro (Tonari no Totoro) (1988)",
+          "genres": "Animation|Children|Drama|Fantasy",
+          "raw_score": 3.0866541862487793
+        },
+        {
+          "movie_id": 134853,
+          "title": "Inside Out (2015)",
+          "genres": "Adventure|Animation|Children|Comedy|Drama|Fantasy",
+          "raw_score": 3.0828583240509033
+        },
+        {
+          "movie_id": 3114,
+          "title": "Toy Story 2 (1999)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy",
+          "raw_score": 3.0039522647857666
+        }
+      ],
+      "all_preferred_fraction": null,
+      "avoided_fraction": null
+    },
+    {
+      "id": "soul-1",
+      "candidates": "selected_only_all_years",
+      "ranking": "bounded_coverage",
+      "summary": "Summary: The viewer seems to respond to animated stories that combine Adventure and Fantasy elements with a warm, family-oriented (Children) tone, often delivered through playful Comedy. They may prefer films that foreground inventive Animation, gentle humor, uplifting emotional themes, and a sense of wonder that balances adventurous stakes with accessible, child-friendly reflection.",
+      "extracted_preferences": {
+        "preferred_genres": [
+          "Adventure",
+          "Animation",
+          "Children",
+          "Comedy",
+          "Fantasy"
+        ],
+        "avoided_genres": [],
+        "conflicting_genres": [],
+        "preferred_genre_combinations": [
+          [
+            "Animation",
+            "Children"
+          ]
+        ]
+      },
+      "top12": [
+        {
+          "movie_id": 1,
+          "title": "Toy Story (1995)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy",
+          "raw_score": 3.635995864868164
+        },
+        {
+          "movie_id": 4886,
+          "title": "Monsters, Inc. (2001)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy",
+          "raw_score": 3.3771510124206543
+        },
+        {
+          "movie_id": 4306,
+          "title": "Shrek (2001)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy|Romance",
+          "raw_score": 3.284907102584839
+        },
+        {
+          "movie_id": 60069,
+          "title": "WALL\u00b7E (2008)",
+          "genres": "Adventure|Animation|Children|Romance|Sci-Fi",
+          "raw_score": 3.495981216430664
+        },
+        {
+          "movie_id": 134853,
+          "title": "Inside Out (2015)",
+          "genres": "Adventure|Animation|Children|Comedy|Drama|Fantasy",
+          "raw_score": 3.0828583240509033
+        },
+        {
+          "movie_id": 68954,
+          "title": "Up (2009)",
+          "genres": "Adventure|Animation|Children|Drama",
+          "raw_score": 3.4761674404144287
+        },
+        {
+          "movie_id": 6377,
+          "title": "Finding Nemo (2003)",
+          "genres": "Adventure|Animation|Children|Comedy",
+          "raw_score": 3.3168323040008545
+        },
+        {
+          "movie_id": 8961,
+          "title": "Incredibles, The (2004)",
+          "genres": "Action|Adventure|Animation|Children|Comedy",
+          "raw_score": 3.3049240112304688
+        },
+        {
+          "movie_id": 76093,
+          "title": "How to Train Your Dragon (2010)",
+          "genres": "Adventure|Animation|Children|Fantasy|IMAX",
+          "raw_score": 3.1364548206329346
+        },
+        {
+          "movie_id": 3114,
+          "title": "Toy Story 2 (1999)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy",
+          "raw_score": 3.0039522647857666
+        },
+        {
+          "movie_id": 5618,
+          "title": "Spirited Away (Sen to Chihiro no kamikakushi) (2001)",
+          "genres": "Adventure|Animation|Fantasy",
+          "raw_score": 3.4054479598999023
+        },
+        {
+          "movie_id": 78499,
+          "title": "Toy Story 3 (2010)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy|IMAX",
+          "raw_score": 2.988008499145508
+        }
+      ],
+      "all_preferred_fraction": null,
+      "avoided_fraction": null
+    },
+    {
+      "id": "soul-1",
+      "candidates": "selected_only_all_years",
+      "ranking": "bounded_similarity",
+      "summary": "Summary: The viewer seems to respond to animated stories that combine Adventure and Fantasy elements with a warm, family-oriented (Children) tone, often delivered through playful Comedy. They may prefer films that foreground inventive Animation, gentle humor, uplifting emotional themes, and a sense of wonder that balances adventurous stakes with accessible, child-friendly reflection.",
+      "extracted_preferences": {
+        "preferred_genres": [
+          "Adventure",
+          "Animation",
+          "Children",
+          "Comedy",
+          "Fantasy"
+        ],
+        "avoided_genres": [],
+        "conflicting_genres": [],
+        "preferred_genre_combinations": [
+          [
+            "Animation",
+            "Children"
+          ]
+        ]
+      },
+      "top12": [
+        {
+          "movie_id": 1,
+          "title": "Toy Story (1995)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy",
+          "raw_score": 3.635995864868164
+        },
+        {
+          "movie_id": 4886,
+          "title": "Monsters, Inc. (2001)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy",
+          "raw_score": 3.3771510124206543
+        },
+        {
+          "movie_id": 4306,
+          "title": "Shrek (2001)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy|Romance",
+          "raw_score": 3.284907102584839
+        },
+        {
+          "movie_id": 6377,
+          "title": "Finding Nemo (2003)",
+          "genres": "Adventure|Animation|Children|Comedy",
+          "raw_score": 3.3168323040008545
+        },
+        {
+          "movie_id": 68954,
+          "title": "Up (2009)",
+          "genres": "Adventure|Animation|Children|Drama",
+          "raw_score": 3.4761674404144287
+        },
+        {
+          "movie_id": 134853,
+          "title": "Inside Out (2015)",
+          "genres": "Adventure|Animation|Children|Comedy|Drama|Fantasy",
+          "raw_score": 3.0828583240509033
+        },
+        {
+          "movie_id": 3114,
+          "title": "Toy Story 2 (1999)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy",
+          "raw_score": 3.0039522647857666
+        },
+        {
+          "movie_id": 5618,
+          "title": "Spirited Away (Sen to Chihiro no kamikakushi) (2001)",
+          "genres": "Adventure|Animation|Fantasy",
+          "raw_score": 3.4054479598999023
+        },
+        {
+          "movie_id": 8961,
+          "title": "Incredibles, The (2004)",
+          "genres": "Action|Adventure|Animation|Children|Comedy",
+          "raw_score": 3.3049240112304688
+        },
+        {
+          "movie_id": 60069,
+          "title": "WALL\u00b7E (2008)",
+          "genres": "Adventure|Animation|Children|Romance|Sci-Fi",
+          "raw_score": 3.495981216430664
+        },
+        {
+          "movie_id": 76093,
+          "title": "How to Train Your Dragon (2010)",
+          "genres": "Adventure|Animation|Children|Fantasy|IMAX",
+          "raw_score": 3.1364548206329346
+        },
+        {
+          "movie_id": 5971,
+          "title": "My Neighbor Totoro (Tonari no Totoro) (1988)",
+          "genres": "Animation|Children|Drama|Fantasy",
+          "raw_score": 3.0866541862487793
+        }
+      ],
+      "all_preferred_fraction": null,
+      "avoided_fraction": null
+    }
+  ],
+  "aggregate": {},
+  "edit_pairs": []
+}

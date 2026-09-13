@@ -1,0 +1,12 @@
+{
+  "case": "Barbie",
+  "version": "historical_regenerated",
+  "repeat": 1,
+  "outputs": [
+    {
+      "version": "historical_regenerated",
+      "summary": "Summary: The viewer shows a strong liking for comedy and upbeat, stylized films. They favor narratives that emphasize playful satire, vibrant aesthetics, and protagonist-driven journeys with a focus on self discovery and social commentary. No strong dislike of any genre is supported by the available viewing history. No strong dislike of specific plot points or content preferences is supported and others may enjoy a wider range of tones and genres than this single viewing implies."
+    }
+  ],
+  "raw_response": "{\"summary\":\"Summary: The viewer shows a strong liking for comedy and upbeat, stylized films. They favor narratives that emphasize playful satire, vibrant aesthetics, and protagonist-driven journeys with a focus on self discovery and social commentary. No strong dislike of any genre is supported by the available viewing history. No strong dislike of specific plot points or content preferences is supported and others may enjoy a wider range of tones and genres than this single viewing implies.\"}"
+}

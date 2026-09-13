@@ -304,12 +304,27 @@ def _rng_state() -> dict[str, Any]:
     }
 
 
+def resolve_resume_path(explicit: Path | None, run_dir: Path) -> Path | None:
+    if explicit is not None:
+        return explicit
+    automatic = run_dir / "resume.pt"
+    return automatic if automatic.is_file() else None
+
+
+def _cpu_byte_tensor(value: Any) -> torch.Tensor:
+    if isinstance(value, torch.Tensor):
+        return value.detach().to(device="cpu", dtype=torch.uint8)
+    return torch.as_tensor(value, dtype=torch.uint8, device="cpu")
+
+
 def _restore_rng_state(state: dict[str, Any]) -> None:
     random.setstate(state["python"])
     np.random.set_state(state["numpy"])
-    torch.set_rng_state(state["torch"])
+    torch.set_rng_state(_cpu_byte_tensor(state["torch"]))
     if torch.cuda.is_available() and state.get("cuda") is not None:
-        torch.cuda.set_rng_state_all(state["cuda"])
+        torch.cuda.set_rng_state_all(
+            [_cpu_byte_tensor(cuda_state) for cuda_state in state["cuda"]]
+        )
 
 
 def run(args: argparse.Namespace) -> dict[str, Any]:
@@ -428,8 +443,9 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
         }
         metrics_path = run_dir / "metrics.jsonl"
         start, best, stale = 0, -np.inf, 0
-        if args.resume:
-            saved = torch.load(args.resume, map_location=device, weights_only=False)
+        loaded_resume = resolve_resume_path(args.resume, run_dir)
+        if loaded_resume:
+            saved = torch.load(loaded_resume, map_location="cpu", weights_only=False)
             if saved["fingerprint"] != fingerprint:
                 raise RuntimeError("Checkpoint fingerprint mismatch")
             _unwrap(model).load_state_dict(saved["model"])
@@ -448,6 +464,7 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
             "wandb_run_id": tracking_fingerprint[:16],
             "training_fingerprint": fingerprint,
             "execution_fingerprint": tracking_fingerprint,
+            "resume_checkpoint_loaded": str(loaded_resume) if loaded_resume else None,
             "artifact_references": artifact_references,
         }
         if is_primary:

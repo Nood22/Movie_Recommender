@@ -1,0 +1,233 @@
+{
+  "confirmed_title_leaks": {
+    "count": 4,
+    "percent_of_all": 0.4,
+    "records_file": "title_leak_cases.jsonl"
+  },
+  "conflicting_rating_evidence": {
+    "interpretation": "Mixed genre evidence raises the failure rate, but is not sufficient to explain it: semantic repair remains common without conflicts.",
+    "nonconflict_semantic_repair_rate_percent": 75.39,
+    "nonconflict_semantic_repair_users": 389,
+    "nonconflict_users": 516,
+    "semantic_repair_rate_percent": 88.84,
+    "semantic_repair_users": 430,
+    "users": 484
+  },
+  "counterfactual_smallest_change": {
+    "negative_semantic_repair_users_addressed": 819,
+    "recommendation": "Move ownership of the negative slot out of free-form generation: append exactly one deterministic supported-genre sentence or one deterministic abstention from the precomputed evidence object. Keep V2 positive prose unchanged. Render the Summary prefix in code.",
+    "remaining_observed_formatting_only_users_before_deterministic_wrapper": 48
+  },
+  "evidence_strata": {
+    "all_users": {
+      "no_negative_evidence": 136,
+      "supported_negative": 201,
+      "weak_or_ambiguous": 663
+    },
+    "changed_users": {
+      "no_negative_evidence": 100,
+      "supported_negative": 201,
+      "weak_or_ambiguous": 566
+    }
+  },
+  "length": {
+    "aggregate_final_words": 85220,
+    "aggregate_raw_words": 112444,
+    "aggregate_word_reduction": 27224,
+    "final_mean_words": 85.22,
+    "mean_reduction_percent": 24.21,
+    "mean_reduction_words": 27.22,
+    "raw_mean_words": 112.44
+  },
+  "manual_sample_contradictions": {
+    "count": 11,
+    "manual_sample_denominator": 120,
+    "percent": 9.17,
+    "records_file": "contradiction_cases.jsonl"
+  },
+  "material_compression": {
+    "aggregate_final_words": 53795,
+    "aggregate_raw_words": 78836,
+    "aggregate_word_reduction": 25041,
+    "exclusive_operation_category_operation_counts": {
+      "abstention_or_evidence_caveat": 79,
+      "generic_negative_assertion": 4,
+      "inferred_negative_plot_theme_style_or_tone": 681,
+      "negative_genre_generalization": 166
+    },
+    "exclusive_operation_category_positive_word_reduction": {
+      "abstention_or_evidence_caveat": 275,
+      "generic_negative_assertion": 7,
+      "inferred_negative_plot_theme_style_or_tone": 21692,
+      "negative_genre_generalization": 4111
+    },
+    "exclusive_operation_category_user_counts_overlapping": {
+      "abstention_or_evidence_caveat": 79,
+      "generic_negative_assertion": 4,
+      "inferred_negative_plot_theme_style_or_tone": 603,
+      "negative_genre_generalization": 151
+    },
+    "incomplete_user_ids": [
+      126769
+    ],
+    "percent_of_all": 65.7,
+    "semantic_content_flags_lost_or_replaced_user_counts_overlapping": {
+      "contains_rating_evidence_language": 111,
+      "has_broad_generalization_language": 608,
+      "is_abstention": 290,
+      "mentions_any_genre": 631,
+      "mentions_non_genre_plot_theme_style_attribute": 603,
+      "mentions_other_viewers": 338
+    },
+    "semantically_complete": 656,
+    "semantically_incomplete": 1,
+    "users": 657
+  },
+  "operation_counts_overlapping": {
+    "abstention_to_supported_negative": {
+      "count": 98,
+      "operation_occurrences": 98,
+      "percent_of_all_1000": 9.8,
+      "percent_of_changed_867": 11.3
+    },
+    "format_add_summary_prefix": {
+      "count": 216,
+      "operation_occurrences": 216,
+      "percent_of_all_1000": 21.6,
+      "percent_of_changed_867": 24.91
+    },
+    "format_malformed_abstention_leadin": {
+      "count": 56,
+      "operation_occurrences": 56,
+      "percent_of_all_1000": 5.6,
+      "percent_of_changed_867": 6.46
+    },
+    "format_remove_literal_instruction_or_placeholder": {
+      "count": 1,
+      "operation_occurrences": 2,
+      "percent_of_all_1000": 0.1,
+      "percent_of_changed_867": 0.12
+    },
+    "grounding_narrow_or_neutralize": {
+      "count": 232,
+      "operation_occurrences": 232,
+      "percent_of_all_1000": 23.2,
+      "percent_of_changed_867": 26.76
+    },
+    "remove_additional_negative_or_abstention_span": {
+      "count": 756,
+      "operation_occurrences": 782,
+      "percent_of_all_1000": 75.6,
+      "percent_of_changed_867": 87.2
+    }
+  },
+  "primary_failure_types_mutually_exclusive": {
+    "extra_forced_negative_or_duplicate_abstention_removed": {
+      "count": 489,
+      "percent_of_all_1000": 48.9,
+      "percent_of_changed_867": 56.4
+    },
+    "formatting_only": {
+      "count": 48,
+      "percent_of_all_1000": 4.8,
+      "percent_of_changed_867": 5.54
+    },
+    "inappropriate_abstention_despite_supported_negative_genre": {
+      "count": 98,
+      "percent_of_all_1000": 9.8,
+      "percent_of_changed_867": 11.3
+    },
+    "overbroad_negative_claim_narrowed_to_supported_genres": {
+      "count": 99,
+      "percent_of_all_1000": 9.9,
+      "percent_of_changed_867": 11.42
+    },
+    "unsupported_negative_claim_neutralized_no_supported_genre": {
+      "count": 133,
+      "percent_of_all_1000": 13.3,
+      "percent_of_changed_867": 15.34
+    }
+  },
+  "repaired_span_content_exclusive_operation_category": {
+    "abstention_or_evidence_caveat": {
+      "operation_occurrences": 125,
+      "positive_word_reduction_across_operations": 393,
+      "users": 125
+    },
+    "generic_negative_assertion": {
+      "operation_occurrences": 4,
+      "positive_word_reduction_across_operations": 7,
+      "users": 4
+    },
+    "inferred_negative_plot_theme_style_or_tone": {
+      "operation_occurrences": 781,
+      "positive_word_reduction_across_operations": 23299,
+      "users": 701
+    },
+    "negative_genre_generalization": {
+      "operation_occurrences": 202,
+      "positive_word_reduction_across_operations": 4716,
+      "users": 187
+    }
+  },
+  "repaired_span_content_overlapping_user_counts": {
+    "contains_rating_evidence_language": {
+      "count": 118,
+      "percent_of_all_1000": 11.8,
+      "percent_of_changed_867": 13.61
+    },
+    "has_broad_generalization_language": {
+      "count": 693,
+      "percent_of_all_1000": 69.3,
+      "percent_of_changed_867": 79.93
+    },
+    "is_abstention": {
+      "count": 378,
+      "percent_of_all_1000": 37.8,
+      "percent_of_changed_867": 43.6
+    },
+    "mentions_any_genre": {
+      "count": 726,
+      "percent_of_all_1000": 72.6,
+      "percent_of_changed_867": 83.74
+    },
+    "mentions_non_genre_plot_theme_style_attribute": {
+      "count": 701,
+      "percent_of_all_1000": 70.1,
+      "percent_of_changed_867": 80.85
+    },
+    "mentions_other_viewers": {
+      "count": 343,
+      "percent_of_all_1000": 34.3,
+      "percent_of_changed_867": 39.56
+    }
+  },
+  "scope": {
+    "changed_users": 867,
+    "offline_only": true,
+    "openai_calls": 0,
+    "source_artifacts_modified": false,
+    "tmdb_used": false,
+    "unchanged_users": 133,
+    "users": 1000
+  },
+  "semantic_vs_formatting": {
+    "formatting_only_users": {
+      "count": 48,
+      "percent_of_all_1000": 4.8,
+      "percent_of_changed_867": 5.54
+    },
+    "semantic_repair_users": {
+      "count": 819,
+      "percent_of_all_1000": 81.9,
+      "percent_of_changed_867": 94.46
+    }
+  },
+  "supported_content_preservation": {
+    "interpretation": "Some replaced broad spans contained supported genre tokens, but the generic replacement retained the complete licensed genre set. No supported positive sentence or supported negative genre was omitted.",
+    "positive_sentences_preserved_users": 1000,
+    "supported_negative_evidence_omitted_users": 0,
+    "supported_negative_evidence_users": 201,
+    "users_where_repaired_span_also_mentioned_a_supported_genre": 141
+  }
+}

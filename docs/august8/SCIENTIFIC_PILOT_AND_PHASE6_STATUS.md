@@ -1,5 +1,17 @@
 # Scientific-pilot completion and Phase 6 forecast
 
+> Production update (2026-08-19): Phase 6 full training is submitted. Frozen V10
+> summaries cover all 200,948 users (`sha256 763605a2…e90b07`). Twenty-five
+> seed-2020–2024 jobs are queued on one A100L each: RecVAE `10416410`–`10416414`,
+> GERS Base `10416415`–`10416419`, TEARS Base `10416420`–`10416424`, and hybrids
+> `10416425`–`10416434`. TEARS Base waits for all RecVAE jobs; each hybrid waits
+> for its same-seed RecVAE `best.pt`. Test evaluation remains blocked. Ledger:
+> `artifacts/phase6_full_submission.json`.
+>
+> Production update (2026-08-18): the frozen V10 summary run recovered under
+> Slurm job `10403598` and the completion audit was written locally on 2026-08-19.
+> See [`../august18/FROZEN_V10_PRODUCTION_RECOVERY_REPORT.md`](../august18/FROZEN_V10_PRODUCTION_RECOVERY_REPORT.md).
+
 **Audited:** 2026-08-08 08:37 EDT  
 **Scope:** amended Phase 5 scientific pilot, Phase 6 cohort, and remaining-time forecast  
 **Machine-readable snapshot:** `scientific_pilot_artifact_audit.json`
@@ -115,4 +127,3 @@ experiments.
 - Slurm logs: `/network/scratch/a/adls/FullTrainingTEARS/logs`
 - Scaling plan: `docs/auguest6/ML32M_TEARS_GERS_SCALING_PLAN.md`
 - Runbook: `docs/auguest6/ML32M_TRAINING_RUNBOOK.md`
-

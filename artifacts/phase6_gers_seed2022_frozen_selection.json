@@ -1,0 +1,70 @@
+{
+  "created_at": "2026-08-27",
+  "decision": "full-cohort GERS operational deployment promotion",
+  "approval_basis": [
+    "artifacts/phase6_promotion_approval.json",
+    "user request on 2026-08-27 to deploy only a finalized valid full-cohort GERS checkpoint"
+  ],
+  "model": "gers_recvae",
+  "seed": 2022,
+  "selection_split": "validation",
+  "selection_metric": "mean_ndcg@50_across_alpha_0_0.5_1",
+  "selection_value": 0.21714801360222116,
+  "best_epoch_zero_based": 21,
+  "best_epoch_one_based": 22,
+  "epochs_completed": 200,
+  "run_id": "d6335f29527f030b",
+  "slurm_job_id": "10416430",
+  "run_manifest": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/full/gers_recvae/seed-2022/d6335f29527f/manifest.json",
+  "checkpoint": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/full/gers_recvae/seed-2022/d6335f29527f/best.pt",
+  "checkpoint_sha256": "f4755f87b133b95ee6e9919c498011efd2096ee24da3e13895f48e3d30669dea",
+  "run_fingerprint": "d2c828c1be5af3cf37716e4efb9bf4c4eeaab7d1f91bf2ac34e0c6aa52b8171f",
+  "paired_recvae_checkpoint": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/full/recvae/seed-2022/e7a7e560dc42/best.pt",
+  "paired_recvae_checkpoint_sha256": "dcddf9fb6198841b0e30668007f2505a526265f669448a244acb16ac0f1fdc8a",
+  "matrix_dir": "/network/scratch/a/adls/FullTrainingTEARS/datasets/catalog_selection/support_20/matrix",
+  "matrix_fingerprint": "27596ef71a4ac0f46e81ca97a40c4a9475bb1c2cc62c9db13819fe3cbeb714ce",
+  "dataset_users": 200948,
+  "train_users": 180948,
+  "validation_users": 10000,
+  "test_users": 10000,
+  "validation": {
+    "status": "passed_and_selected",
+    "eligible_users": 9920,
+    "selection_ndcg@50": 0.21714801360222116,
+    "alpha_0_ndcg@50": 0.23272505670545562,
+    "alpha_0.5_ndcg@50": 0.2427558061050912,
+    "alpha_1_ndcg@50": 0.17596317799611677,
+    "local_result_status": "complete_200_of_200_epochs",
+    "wandb_status": "finished",
+    "checkpoint_hash_verified_on_disk": true
+  },
+  "selection_candidates": [
+    {
+      "seed": 2020,
+      "validation_selection_ndcg@50": 0.2166116132180617,
+      "epochs_completed": 200
+    },
+    {
+      "seed": 2021,
+      "validation_selection_ndcg@50": 0.2165921116092553,
+      "epochs_completed": 200
+    },
+    {
+      "seed": 2022,
+      "validation_selection_ndcg@50": 0.21714801360222116,
+      "epochs_completed": 200
+    },
+    {
+      "seed": 2023,
+      "validation_selection_ndcg@50": 0.21673488845618102,
+      "epochs_completed": 200
+    },
+    {
+      "seed": 2024,
+      "validation_selection_ndcg@50": 0.21607991722612693,
+      "epochs_completed": 200
+    }
+  ],
+  "test_metrics_used_for_selection": false,
+  "scope_note": "This freezes the existing best full-cohort GERS-RecVAE validation checkpoint for the participant website without retraining or changing scoring, ranking, alpha, filters, or model code."
+}

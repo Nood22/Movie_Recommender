@@ -1,0 +1,217 @@
+{
+  "model": "gpt-5-mini-2025-08-07",
+  "cases": [
+    {
+      "case": "one_positive_item",
+      "negative_evidence_status": "NONE",
+      "after": {
+        "summary": "Summary: The viewer shows a narrow, cautious preference for drama films; they may be drawn to emotionally weighty, character-focused stories with serious interpersonal or moral conflicts. They might appreciate films that emphasize dialogue and character development over spectacle.",
+        "word_count": 38,
+        "sentence_count": 2,
+        "grounding": {
+          "passed": true,
+          "details": {}
+        },
+        "salient_coverage": {
+          "passed": true,
+          "missing_keyword_groups": []
+        },
+        "leakage": {
+          "title": false,
+          "year": false,
+          "rating": false
+        },
+        "validator": {
+          "passed": true,
+          "errors": []
+        },
+        "latency_ms": 5123.0,
+        "attempts": 2
+      }
+    },
+    {
+      "case": "one_negative_item",
+      "negative_evidence_status": "WEAK",
+      "after": {
+        "summary": "Summary: The viewer may be somewhat less interested in horror-leaning films, particularly those with intense or traditional horror elements.",
+        "word_count": 19,
+        "sentence_count": 1,
+        "grounding": {
+          "passed": true,
+          "details": {}
+        },
+        "salient_coverage": {
+          "passed": true,
+          "missing_keyword_groups": []
+        },
+        "leakage": {
+          "title": false,
+          "year": false,
+          "rating": false
+        },
+        "validator": {
+          "passed": true,
+          "errors": []
+        },
+        "latency_ms": 905.9,
+        "attempts": 1
+      }
+    },
+    {
+      "case": "one_positive_plus_one_negative",
+      "negative_evidence_status": "WEAK",
+      "after": {
+        "summary": "Summary: The viewer seems to have a positive inclination toward drama-oriented, courtroom-focused stories that emphasize character conflict and moral or legal dilemmas. They may be somewhat less interested in horror-leaning material, particularly films that foreground sustained scares, gore, or intense shock elements.",
+        "word_count": 42,
+        "sentence_count": 2,
+        "grounding": {
+          "passed": true,
+          "details": {}
+        },
+        "salient_coverage": {
+          "passed": true,
+          "missing_keyword_groups": []
+        },
+        "leakage": {
+          "title": false,
+          "year": false,
+          "rating": false
+        },
+        "validator": {
+          "passed": true,
+          "errors": []
+        },
+        "latency_ms": 3160.7,
+        "attempts": 2
+      }
+    },
+    {
+      "case": "sparse_weak_negative_evidence",
+      "negative_evidence_status": "WEAK",
+      "after": {
+        "summary": "Summary: The viewer may be somewhat less interested in standalone adventure-style expedition films, particularly those focused on extended trail or expedition narratives.",
+        "word_count": 22,
+        "sentence_count": 1,
+        "grounding": {
+          "passed": true,
+          "details": {}
+        },
+        "salient_coverage": {
+          "passed": true,
+          "missing_keyword_groups": []
+        },
+        "leakage": {
+          "title": false,
+          "year": false,
+          "rating": false
+        },
+        "validator": {
+          "passed": true,
+          "errors": []
+        },
+        "latency_ms": 1854.6,
+        "attempts": 2
+      }
+    },
+    {
+      "case": "rich_positive_evidence",
+      "negative_evidence_status": "NONE",
+      "after": {
+        "summary": "Summary: The viewer shows a clear preference for heartfelt, character-focused dramas and warm comedies that emphasize relationships and everyday emotional moments. They respond to stories centered on family connections, reconciliations, and personal growth, often delivered through gentle, introspective drama. At the same time they appreciate lightness and warmth in comedic storytelling\u2014humor that arises from close-knit communities, neighborly interactions, and small, domestic pleasures rather than broad slapstick. Overall, they favor emotionally resonant, human-scale narratives that balance sincere dramatic stakes with moments of warmth and charm.",
+        "word_count": 84,
+        "sentence_count": 4,
+        "grounding": {
+          "passed": true,
+          "details": {
+            "represented_positive_genres": [
+              "Comedy",
+              "Drama"
+            ]
+          }
+        },
+        "salient_coverage": {
+          "passed": true,
+          "missing_keyword_groups": []
+        },
+        "leakage": {
+          "title": false,
+          "year": false,
+          "rating": false
+        },
+        "validator": {
+          "passed": true,
+          "errors": []
+        },
+        "latency_ms": 1938.6,
+        "attempts": 1
+      }
+    },
+    {
+      "case": "rich_mixed_evidence",
+      "negative_evidence_status": "STRONG",
+      "after": {
+        "summary": "Summary: The viewer tends to prefer drama-focused films that center on emotional relationships, family dynamics, and heartfelt personal moments; they respond to character-driven storytelling and emotionally resonant narratives. The viewer is likely to avoid horror films and generally does not favor works that depend on jump scares, gruesome imagery, or sustained suspense typical of horror genre conventions.",
+        "word_count": 57,
+        "sentence_count": 2,
+        "grounding": {
+          "passed": true,
+          "details": {
+            "represented_positive_genres": [
+              "Drama"
+            ],
+            "represented_negative_genres": [
+              "Horror"
+            ]
+          }
+        },
+        "salient_coverage": {
+          "passed": true,
+          "missing_keyword_groups": []
+        },
+        "leakage": {
+          "title": false,
+          "year": false,
+          "rating": false
+        },
+        "validator": {
+          "passed": true,
+          "errors": []
+        },
+        "latency_ms": 1622.8,
+        "attempts": 1
+      }
+    },
+    {
+      "case": "conflicting_genres",
+      "negative_evidence_status": "WEAK",
+      "after": {
+        "summary": "Summary: The viewer appears to respond well to dramas that emphasize warm interpersonal moments and family-centered reunions; they may appreciate films with intimate emotional beats and character-focused relational dynamics. Conversely, they may be less drawn to dramas that lean heavily into bleak monologues, protracted arguments, or emotionally cold farewells, particularly when those elements dominate the tone. Overall their taste in drama seems selective and context-dependent, favoring empathetic, restorative emotional narratives over relentlessly bleak or confrontational executions.",
+        "word_count": 76,
+        "sentence_count": 3,
+        "grounding": {
+          "passed": true,
+          "details": {}
+        },
+        "salient_coverage": {
+          "passed": true,
+          "missing_keyword_groups": []
+        },
+        "leakage": {
+          "title": false,
+          "year": false,
+          "rating": false
+        },
+        "validator": {
+          "passed": true,
+          "errors": []
+        },
+        "latency_ms": 1858.0,
+        "attempts": 1
+      }
+    }
+  ],
+  "all_after_grounded": true,
+  "all_after_salient_coverage": true,
+  "all_after_leakage_free": true,
+  "all_after_validator_passed": true
+}

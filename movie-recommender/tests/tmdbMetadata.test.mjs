@@ -34,21 +34,19 @@ test("render filtering excludes only selections and exact duplicate IDs", () => 
 
 test("render filtering defensively excludes the onboarding catalog", () => {
   const recommendations = [
-    { movie_id: 2028, title: "Saving Private Ryan (1998)" },
-    { movie_id: 9998, title: "Saving Private Ryan (1998)" },
-    { movie_id: 4000, title: "Outside Movie (2001)" },
-    { movie_id: 4000, title: "Outside Movie (2001)" },
+    { movie_id: 2028, title: "Saving Private Ryan (1998)", rank: 1, rank_label: "#1" },
+    { movie_id: 9998, title: "Saving Private Ryan (1998)", rank: 2, rank_label: "#2" },
+    { movie_id: 4000, title: "Outside Movie (2001)", rank: 3, rank_label: "#3" },
+    { movie_id: 4000, title: "Outside Movie (2001)", rank: 4, rank_label: "#4" },
   ];
   const catalog = [
     { movieId: 2028, title: "Saving Private Ryan (1998)" },
   ];
 
-  assert.deepEqual(
-    filterRecommendationRecords(recommendations, [], catalog).map(
-      (movie) => movie.movie_id
-    ),
-    [4000]
-  );
+  const filtered = filterRecommendationRecords(recommendations, [], catalog);
+  assert.deepEqual(filtered.map((movie) => movie.movie_id), [4000]);
+  assert.deepEqual(filtered.map((movie) => movie.rank), [1]);
+  assert.deepEqual(filtered.map((movie) => movie.rank_label), ["#1"]);
 });
 
 test("canonical title/year safeguard is exact", () => {

@@ -1,0 +1,208 @@
+{
+  "request_id": "request-2ede7033-7016-4fd5-a969-11aac8c12edf",
+  "items": [
+    {
+      "genres": [
+        "Action",
+        "Adventure",
+        "Drama",
+        "Fantasy"
+      ],
+      "imdb_id": "0167260",
+      "model_item_id": 6740,
+      "movie_id": 7153,
+      "rank": 1,
+      "rank_label": "#1",
+      "raw_model_score": 3.8161823749542236,
+      "release_year": 2003,
+      "score": 15.884611129760742,
+      "title": "Lord of the Rings: The Return of the King, The (2003)",
+      "tmdb_id": 122
+    },
+    {
+      "genres": [
+        "Adventure",
+        "Fantasy"
+      ],
+      "imdb_id": "0167261",
+      "model_item_id": 5640,
+      "movie_id": 5952,
+      "rank": 2,
+      "rank_label": "#2",
+      "raw_model_score": 3.7731175422668457,
+      "release_year": 2002,
+      "score": 15.841547012329102,
+      "title": "Lord of the Rings: The Two Towers, The (2002)",
+      "tmdb_id": 121
+    },
+    {
+      "genres": [
+        "Action",
+        "Adventure",
+        "Sci-Fi"
+      ],
+      "imdb_id": "0076759",
+      "model_item_id": 254,
+      "movie_id": 260,
+      "rank": 3,
+      "rank_label": "#3",
+      "raw_model_score": 3.606295585632324,
+      "release_year": 1977,
+      "score": 15.674724578857422,
+      "title": "Star Wars: Episode IV - A New Hope (1977)",
+      "tmdb_id": 11
+    },
+    {
+      "genres": [
+        "Action",
+        "Adventure",
+        "Sci-Fi"
+      ],
+      "imdb_id": "0080684",
+      "model_item_id": 1137,
+      "movie_id": 1196,
+      "rank": 4,
+      "rank_label": "#4",
+      "raw_model_score": 3.3779211044311523,
+      "release_year": 1980,
+      "score": 15.44635009765625,
+      "title": "Star Wars: Episode V - The Empire Strikes Back (1980)",
+      "tmdb_id": 1891
+    },
+    {
+      "genres": [
+        "Action",
+        "Adventure"
+      ],
+      "imdb_id": "0082971",
+      "model_item_id": 1139,
+      "movie_id": 1198,
+      "rank": 5,
+      "rank_label": "#5",
+      "raw_model_score": 3.305675506591797,
+      "release_year": 1981,
+      "score": 15.374104499816895,
+      "title": "Raiders of the Lost Ark (Indiana Jones and the Raiders of the Lost Ark) (1981)",
+      "tmdb_id": 85
+    },
+    {
+      "genres": [
+        "Action",
+        "Adventure",
+        "Sci-Fi"
+      ],
+      "imdb_id": "0086190",
+      "model_item_id": 1150,
+      "movie_id": 1210,
+      "rank": 6,
+      "rank_label": "#6",
+      "raw_model_score": 3.280838966369629,
+      "release_year": 1983,
+      "score": 15.349267959594727,
+      "title": "Star Wars: Episode VI - Return of the Jedi (1983)",
+      "tmdb_id": 1892
+    },
+    {
+      "genres": [
+        "Action",
+        "Adventure"
+      ],
+      "imdb_id": "0097576",
+      "model_item_id": 1229,
+      "movie_id": 1291,
+      "rank": 7,
+      "rank_label": "#7",
+      "raw_model_score": 2.9147722721099854,
+      "release_year": 1989,
+      "score": 14.983201026916504,
+      "title": "Indiana Jones and the Last Crusade (1989)",
+      "tmdb_id": 89
+    },
+    {
+      "genres": [
+        "Adventure",
+        "Fantasy",
+        "IMAX"
+      ],
+      "imdb_id": "0903624",
+      "model_item_id": 14248,
+      "movie_id": 98809,
+      "rank": 8,
+      "rank_label": "#8",
+      "raw_model_score": 2.7285842895507812,
+      "release_year": 2012,
+      "score": 14.797013282775879,
+      "title": "Hobbit: An Unexpected Journey, The (2012)",
+      "tmdb_id": 49051
+    },
+    {
+      "genres": [
+        "Action",
+        "Adventure",
+        "Drama"
+      ],
+      "imdb_id": "0172495",
+      "model_item_id": 3369,
+      "movie_id": 3578,
+      "rank": 9,
+      "rank_label": "#9",
+      "raw_model_score": 2.7232842445373535,
+      "release_year": 2000,
+      "score": 14.79171371459961,
+      "title": "Gladiator (2000)",
+      "tmdb_id": 98
+    },
+    {
+      "genres": [
+        "Action",
+        "Adventure",
+        "Comedy",
+        "Fantasy"
+      ],
+      "imdb_id": "0325980",
+      "model_item_id": 6181,
+      "movie_id": 6539,
+      "rank": 10,
+      "rank_label": "#10",
+      "raw_model_score": 2.7223360538482666,
+      "release_year": 2003,
+      "score": 14.790764808654785,
+      "title": "Pirates of the Caribbean: The Curse of the Black Pearl (2003)",
+      "tmdb_id": 22
+    },
+    {
+      "genres": [
+        "Adventure",
+        "Comedy",
+        "Sci-Fi"
+      ],
+      "imdb_id": "0088763",
+      "model_item_id": 1208,
+      "movie_id": 1270,
+      "rank": 11,
+      "rank_label": "#11",
+      "raw_model_score": 2.663919448852539,
+      "release_year": 1985,
+      "score": 14.732348442077637,
+      "title": "Back to the Future (1985)",
+      "tmdb_id": 105
+    },
+    {
+      "genres": [
+        "Action",
+        "Adventure",
+        "Sci-Fi"
+      ],
+      "imdb_id": "2015381",
+      "model_item_id": 15279,
+      "movie_id": 112852,
+      "rank": 12,
+      "rank_label": "#12",
+      "raw_model_score": 2.6515986919403076,
+      "release_year": 2014,
+      "score": 14.720027923583984,
+      "title": "Guardians of the Galaxy (2014)",
+      "tmdb_id": 118340
+    }
+  ]
+}

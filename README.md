@@ -5,6 +5,10 @@ models, and a reproducible quality-improvement pipeline for MovieLens 1M.
 
 Start here:
 
+- [`docs/RECOMMENDATION_REFRESH_RELIABILITY.md`](docs/RECOMMENDATION_REFRESH_RELIABILITY.md)
+  explains the September 10 pilot repair for refresh inconsistency, repeated
+  franchises, and the distinction between onboarding cards and model candidates.
+
 - [`docs/auguest6/ML32M_TEARS_GERS_SCALING_PLAN.md`](docs/auguest6/ML32M_TEARS_GERS_SCALING_PLAN.md)
   defines the approved MovieLens 32M research scaling plan; the adjacent
   [`ML32M_TRAINING_RUNBOOK.md`](docs/auguest6/ML32M_TRAINING_RUNBOOK.md) documents

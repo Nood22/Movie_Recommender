@@ -1,0 +1,90 @@
+{
+  "tears_ranking_policy": "tears-compound-genre-alignment-v3",
+  "status": "running",
+  "deployment": "full-tears-and-gers-200948",
+  "device": "cpu",
+  "users": 200948,
+  "splits": {
+    "train": 180948,
+    "validation": 10000,
+    "test": 10000
+  },
+  "items": 22343,
+  "catalog_support": 20,
+  "matrix_fingerprint": "27596ef71a4ac0f46e81ca97a40c4a9475bb1c2cc62c9db13819fe3cbeb714ce",
+  "catalog": {
+    "path": "/network/scratch/a/adls/FullTrainingTEARS/datasets/catalog_selection/support_20/matrix/catalog.csv",
+    "sha256": "ac8b369749f8305bd712ec011150ff57b21459fe48be052f515ce5e291e00961",
+    "links_path": "/home/mila/a/adls/tears_project_final/ml-32m/links.csv",
+    "links_sha256": "ef17da7710be76f7d510d5768d1b61826e3af4bf57812b9ca377e4c912123b22"
+  },
+  "models": {
+    "recvae": {
+      "path": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/full/recvae/seed-2022/e7a7e560dc42/best.pt",
+      "sha256": "dcddf9fb6198841b0e30668007f2505a526265f669448a244acb16ac0f1fdc8a"
+    },
+    "tears": {
+      "model": "tears_base",
+      "seed": 2022,
+      "epochs": 200,
+      "path": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/full/tears_base/seed-2022/10d017146b22/best.pt",
+      "sha256": "08f2609c6dae073a1d6c2a8ba14a3121c5ff4ec807201c7f97c7d4aa3c598e2b",
+      "run_fingerprint": "969f4b6ddb710f372739a6203724716e3f2a5e77ec9c3cd62b9e5058158ac3bc"
+    },
+    "gers": {
+      "model": "gers_recvae",
+      "scope": "full-cohort-180948-train",
+      "seed": 2022,
+      "epochs": 200,
+      "best_epoch": 22,
+      "path": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/full/gers_recvae/seed-2022/d6335f29527f/best.pt",
+      "sha256": "f4755f87b133b95ee6e9919c498011efd2096ee24da3e13895f48e3d30669dea",
+      "run_fingerprint": "d2c828c1be5af3cf37716e4efb9bf4c4eeaab7d1f91bf2ac34e0c6aa52b8171f"
+    }
+  },
+  "onboarding": {
+    "path": "/home/mila/a/adls/tears_project_final/movie-recommender-pilot/src/data/pilot_support20_onboarding.json",
+    "manifest_path": "/home/mila/a/adls/tears_project_final/movie-recommender-pilot/src/data/pilot_support20_onboarding.manifest.json",
+    "fingerprint": "5011c0b4c934fe78d6c845d4efc1632c128c1654bea9162a429d59dd103bb6a7",
+    "items": 100
+  },
+  "study": {
+    "protocol_id": "tears-gers-human-study-tasks",
+    "protocol_version": "1.0.0",
+    "instrument_configured": false,
+    "durable_log_counts": {
+      "events": 480,
+      "trials": 4,
+      "attempts": 4,
+      "evaluations": 0
+    },
+    "candidate_policy_id": "all-years-selected-only-v2",
+    "candidate_filter": {
+      "enabled": false,
+      "field": "release_year",
+      "operator": ">=",
+      "value": null,
+      "scope": "candidate_ranking"
+    }
+  },
+  "online_task1a": {
+    "summary_policy": "shared-editable-profile-v2",
+    "backend_prompt_sha256": "4d5bf36f2b8e812a7ec4f3253abc965c1ea3b0007d812a6edb0a3d9f013e5c4d",
+    "summary_views_sha256": "e1d05d4cb84b3633db629bd4a533aabfbe6d758c39b0ff6f705710d3568a61e5",
+    "backend_reasoning_effort": "low",
+    "edit_reasoning_effort": null,
+    "legacy_edit_reasoning_effort": "medium",
+    "backend_word_range": null,
+    "backend_sentences": null,
+    "negative_rating_maximum": 2,
+    "source_sha256_at_process_start": "448662c187c8eb745d3aa4477af370ab966d773363cc25936bcf299dc8a1b268",
+    "system_prompt_sha256": "4d5bf36f2b8e812a7ec4f3253abc965c1ea3b0007d812a6edb0a3d9f013e5c4d",
+    "model": "gpt-5-mini-2025-08-07",
+    "max_attempts": 3,
+    "reasoning_effort": "low",
+    "text_verbosity": "high",
+    "max_output_tokens": 2000,
+    "structured_output": "viewer_profile strict JSON schema",
+    "store": false
+  }
+}

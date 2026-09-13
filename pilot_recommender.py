@@ -16,6 +16,7 @@ from tears_training.artifacts import sha256_file
 from tears_training.config import load_config
 from tears_training.models import EditableBase, HybridVAE
 from tears_training.train import make_model
+from tears_preference_ranking import POLICY_ID, align_scores, explicit_genre_preferences
 
 
 PROJECT_ROOT = Path(__file__).resolve().parent
@@ -407,12 +408,23 @@ class PilotHybridRecommender:
                 encoded.input_ids.to(self.device),
                 encoded.attention_mask.to(self.device),
             )
-        return self._ranked_items(
-            logits,
+            preferences = explicit_genre_preferences(summary)
+            if not hasattr(self, "_genre_membership"):
+                item_genres = [set(str(value).split("|")) for value in self.catalog.genres]
+                self._genre_membership = {
+                    genre: torch.tensor([genre in row for row in item_genres], device=self.device)
+                    for genre in self.genre_names
+                }
+            ranking_scores = align_scores(logits, self._genre_membership, preferences)
+        items = self._ranked_items(
+            ranking_scores,
             [*liked, *excluded],
             top_k,
             min_release_year,
         )
+        for item in items:
+            item["raw_model_score"] = float(logits[0, item["model_item_id"]].item())
+        return items
 
     def recommend_gers(
         self,
@@ -442,6 +454,7 @@ class PilotHybridRecommender:
 
     def status(self) -> dict[str, Any]:
         return {
+            "tears_ranking_policy": POLICY_ID,
             "status": "running",
             "deployment": "full-tears-and-gers-200948",
             "device": str(self.device),

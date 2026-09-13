@@ -225,9 +225,15 @@ def build_execution_plan(args: argparse.Namespace, config: Any, root: Path) -> d
         seeds = (2024,) if args.phase == "pilot" else config.seeds
 
     jobs: list[dict[str, Any]] = []
-    schedules = (
-        ((200, True), (300, False)) if args.phase == "smoke" and args.rung in {200, 300} else ((args.rung, False),)
-    )
+    if args.phase == "smoke" and args.rung in {200, 300}:
+        schedules = ((200, True), (300, False))
+    elif args.phase in {"pilot", "full"}:
+        schedule = raw_selection.get("schedule") or {}
+        epochs = int(schedule.get("epochs", 200))
+        fixed = bool(schedule.get("fixed_epochs", True))
+        schedules = ((epochs, fixed),)
+    else:
+        schedules = ((args.rung, False),)
     for seed in seeds:
         for model in models:
             recvae_checkpoint = None

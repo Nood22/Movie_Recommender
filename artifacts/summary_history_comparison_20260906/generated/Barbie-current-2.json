@@ -1,0 +1,43 @@
+{
+  "case": "Barbie",
+  "version": "current",
+  "repeat": 2,
+  "outputs": [
+    {
+      "version": "current_backend",
+      "summary": "Summary: The viewer shows a preference for films that foreground lighthearted and comedic tones, as indicated by enjoyment of a comedy instance, so they likely appreciate humor driven pacing, playful setups, and situations that prioritize levity, though this evidence is limited and does not define all comedic substyles. No strong preference is supported for specific plot points, themes, or content elements beyond a general openness to comedic framing, so there is insufficient evidence to claim favored narrative beats, emotional arcs, character types, or recurring motifs and further viewing choices would be needed to refine those particulars. No strong preference is supported for disliked genres or styles, leaving this aspect of the viewer's taste unspecified without implying that they welcome every genre or share the same response to all approaches to storytelling. No strong preference is supported for disliked plot points or content, leaving the viewer's individual boundaries unspecified without identifying unwanted story elements or assuming that content enjoyed by other viewers would suit their own personal tastes."
+    },
+    {
+      "version": "current_display",
+      "summary": "Summary: The viewer seems receptive to lighthearted, comedic entertainment that blends playful satire with broad, self-aware humor. They may appreciate films that lean into whimsical premises and upbeat, fast-paced storytelling delivered with a wink rather than solemnity."
+    }
+  ],
+  "backend_attempts": [
+    {
+      "word_count": 167,
+      "errors": []
+    }
+  ],
+  "display_attempts": [
+    {
+      "attempt": 1,
+      "kind": "initial",
+      "word_count": 44,
+      "validator_errors": [
+        "audit_process_language"
+      ],
+      "generation_errors": [],
+      "retry_errors": [
+        "audit_process_language"
+      ]
+    },
+    {
+      "attempt": 2,
+      "kind": "validator_repair",
+      "word_count": 37,
+      "validator_errors": [],
+      "generation_errors": [],
+      "retry_errors": []
+    }
+  ]
+}

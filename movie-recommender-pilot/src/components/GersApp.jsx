@@ -21,12 +21,9 @@ import {
 
 
 const TMDB_KEY = process.env.REACT_APP_TMDB_API_KEY || "";
-const MIN_RECOMMENDATION_YEAR = 2020;
+const MIN_RECOMMENDATION_YEAR = servingDeployment.candidate_filter.value;
 const GERS_ALPHA = 0.5;
 const FIXED_MOVIELENS_CATALOG = deduplicateSelectableCatalog(pilotMovies);
-const FIXED_MOVIELENS_CATALOG_IDS = FIXED_MOVIELENS_CATALOG.map((movie) =>
-  Number(movie.movieId)
-);
 
 function normalizeGenre(g) {
   return g
@@ -266,7 +263,7 @@ useEffect(() => {
         })),
         // The onboarding catalog is for preference elicitation only. Neither
         // selected nor unselected catalog titles may reappear as results.
-        excluded_movie_ids: FIXED_MOVIELENS_CATALOG_IDS,
+        excluded_movie_ids: [],
         catalog_fingerprint: servingDeployment.matrix_fingerprint,
         onboarding_fingerprint: pilotManifest.fingerprint,
         context,

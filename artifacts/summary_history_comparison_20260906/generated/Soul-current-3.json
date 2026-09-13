@@ -1,0 +1,43 @@
+{
+  "case": "Soul",
+  "version": "current",
+  "repeat": 3,
+  "outputs": [
+    {
+      "version": "current_backend",
+      "summary": "Summary: The viewer shows a preference for films classified as adventure, animation, children, comedy, and fantasy, indicating an inclination toward imaginative visual storytelling, playful or whimsical tones, and family oriented narratives, while acknowledging that the evidence is limited to genre labels. They have no strong preference supported for particular plot points, themes, or specific narrative beats based on the supplied history, so it is not possible to reliably characterize favored emotional arcs, philosophical questions, or recurring character journeys beyond what the genre labels suggest. No strong preference is supported for disliked genres or styles, leaving this aspect of the viewer's taste unspecified without implying that they welcome every genre or share the same response to all approaches to storytelling. No strong preference is supported for disliked plot points or content, leaving the viewer's individual boundaries unspecified without identifying unwanted story elements or assuming that content enjoyed by other viewers would suit their own personal tastes."
+    },
+    {
+      "version": "current_display",
+      "summary": "Summary: The viewer seems to enjoy whimsical, animated stories that blend imaginative fantasy with warm humor and heartfelt themes. They may prefer films that feel kid-friendly yet thoughtful—animation that combines playful adventure and comedy with emotional, reflective moments."
+    }
+  ],
+  "backend_attempts": [
+    {
+      "word_count": 155,
+      "errors": []
+    }
+  ],
+  "display_attempts": [
+    {
+      "attempt": 1,
+      "kind": "initial",
+      "word_count": 42,
+      "validator_errors": [
+        "audit_process_language"
+      ],
+      "generation_errors": [],
+      "retry_errors": [
+        "audit_process_language"
+      ]
+    },
+    {
+      "attempt": 2,
+      "kind": "validator_repair",
+      "word_count": 38,
+      "validator_errors": [],
+      "generation_errors": [],
+      "retry_errors": []
+    }
+  ]
+}

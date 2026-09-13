@@ -1,0 +1,807 @@
+{
+  "participant": "synthetic-refresh-reliability-91989816d4494fd3a5a64040921c2385",
+  "exclude_from_study_analysis": true,
+  "replays": [
+    {
+      "source_request_id": "request-0dfcbc16-7e48-457c-8e3f-236afb0c8f1a",
+      "request": {
+        "liked_movie_ids": [
+          225173
+        ],
+        "preference_evidence": [
+          {
+            "movie_id": 225173,
+            "rating": 5.0
+          }
+        ],
+        "excluded_movie_ids": [],
+        "catalog_fingerprint": "27596ef71a4ac0f46e81ca97a40c4a9475bb1c2cc62c9db13819fe3cbeb714ce",
+        "onboarding_fingerprint": "5011c0b4c934fe78d6c845d4efc1632c128c1654bea9162a429d59dd103bb6a7",
+        "context": "",
+        "alpha": 0.5,
+        "top_k": 12,
+        "min_release_year": null,
+        "summary": "Summary: The viewer may enjoy films that use animation and family-friendly storytelling\u2014particularly lighthearted, comedic adventures with whimsical or fantastical elements. They seem open to imaginative, visually driven stories aimed at younger or broad audiences, where playful tone and accessible humor are central.",
+        "study": {
+          "protocol_id": "tears-gers-human-study-tasks",
+          "protocol_version": "1.0.0",
+          "participant_id": "synthetic-refresh-reliability-91989816d4494fd3a5a64040921c2385",
+          "session_id": "refresh-0faaa80d715a4b9f8e7e8ea9f0992a53",
+          "system": "TEARS",
+          "task_id": "1b",
+          "representation_revision": 1,
+          "request_id": "21f38a6f5d4b4230a94668a7128ac1de",
+          "input_signature": "e173e7d358f0e804a9023221270d4aa5b84e82854372725a070edda1c0b6a1c6"
+        }
+      },
+      "response": {
+        "items": [
+          {
+            "movie_id": 4886,
+            "model_item_id": 4629,
+            "imdb_id": "0198781",
+            "tmdb_id": 585,
+            "title": "Monsters, Inc. (2001)",
+            "release_year": 2001,
+            "genres": [
+              "Adventure",
+              "Animation",
+              "Children",
+              "Comedy",
+              "Fantasy"
+            ],
+            "score": 33.43363571166992,
+            "rank": 1,
+            "rank_label": "#1",
+            "raw_model_score": 3.2594900131225586
+          },
+          {
+            "movie_id": 4306,
+            "model_item_id": 4069,
+            "imdb_id": "0126029",
+            "tmdb_id": 808,
+            "title": "Shrek (2001)",
+            "release_year": 2001,
+            "genres": [
+              "Adventure",
+              "Animation",
+              "Children",
+              "Comedy",
+              "Fantasy",
+              "Romance"
+            ],
+            "score": 33.40113067626953,
+            "rank": 2,
+            "rank_label": "#2",
+            "raw_model_score": 3.226984977722168
+          },
+          {
+            "movie_id": 6377,
+            "model_item_id": 6034,
+            "imdb_id": "0266543",
+            "tmdb_id": 12,
+            "title": "Finding Nemo (2003)",
+            "release_year": 2003,
+            "genres": [
+              "Adventure",
+              "Animation",
+              "Children",
+              "Comedy"
+            ],
+            "score": 33.38380813598633,
+            "rank": 3,
+            "rank_label": "#3",
+            "raw_model_score": 3.2096614837646484
+          },
+          {
+            "movie_id": 8961,
+            "model_item_id": 7838,
+            "imdb_id": "0317705",
+            "tmdb_id": 9806,
+            "title": "Incredibles, The (2004)",
+            "release_year": 2004,
+            "genres": [
+              "Action",
+              "Adventure",
+              "Animation",
+              "Children",
+              "Comedy"
+            ],
+            "score": 33.298004150390625,
+            "rank": 4,
+            "rank_label": "#4",
+            "raw_model_score": 3.1238584518432617
+          },
+          {
+            "movie_id": 1,
+            "model_item_id": 0,
+            "imdb_id": "0114709",
+            "tmdb_id": 862,
+            "title": "Toy Story (1995)",
+            "release_year": 1995,
+            "genres": [
+              "Adventure",
+              "Animation",
+              "Children",
+              "Comedy",
+              "Fantasy"
+            ],
+            "score": 33.26261520385742,
+            "rank": 5,
+            "rank_label": "#5",
+            "raw_model_score": 3.0884690284729004
+          },
+          {
+            "movie_id": 5218,
+            "model_item_id": 4950,
+            "imdb_id": "0268380",
+            "tmdb_id": 425,
+            "title": "Ice Age (2002)",
+            "release_year": 2002,
+            "genres": [
+              "Adventure",
+              "Animation",
+              "Children",
+              "Comedy"
+            ],
+            "score": 33.18084716796875,
+            "rank": 6,
+            "rank_label": "#6",
+            "raw_model_score": 3.006701946258545
+          },
+          {
+            "movie_id": 68954,
+            "model_item_id": 11694,
+            "imdb_id": "1049413",
+            "tmdb_id": 14160,
+            "title": "Up (2009)",
+            "release_year": 2009,
+            "genres": [
+              "Adventure",
+              "Animation",
+              "Children",
+              "Drama"
+            ],
+            "score": 33.1560173034668,
+            "rank": 7,
+            "rank_label": "#7",
+            "raw_model_score": 2.9818689823150635
+          },
+          {
+            "movie_id": 50872,
+            "model_item_id": 10268,
+            "imdb_id": "0382932",
+            "tmdb_id": 2062,
+            "title": "Ratatouille (2007)",
+            "release_year": 2007,
+            "genres": [
+              "Animation",
+              "Children",
+              "Drama"
+            ],
+            "score": 33.14381408691406,
+            "rank": 8,
+            "rank_label": "#8",
+            "raw_model_score": 2.9696688652038574
+          },
+          {
+            "movie_id": 60069,
+            "model_item_id": 11090,
+            "imdb_id": "0910970",
+            "tmdb_id": 10681,
+            "title": "WALL\u00b7E (2008)",
+            "release_year": 2008,
+            "genres": [
+              "Adventure",
+              "Animation",
+              "Children",
+              "Romance",
+              "Sci-Fi"
+            ],
+            "score": 33.13209533691406,
+            "rank": 9,
+            "rank_label": "#9",
+            "raw_model_score": 2.957948684692383
+          },
+          {
+            "movie_id": 8360,
+            "model_item_id": 7384,
+            "imdb_id": "0298148",
+            "tmdb_id": 809,
+            "title": "Shrek 2 (2004)",
+            "release_year": 2004,
+            "genres": [
+              "Adventure",
+              "Animation",
+              "Children",
+              "Comedy",
+              "Musical",
+              "Romance"
+            ],
+            "score": 33.03325271606445,
+            "rank": 10,
+            "rank_label": "#10",
+            "raw_model_score": 2.8591055870056152
+          },
+          {
+            "movie_id": 3114,
+            "model_item_id": 2946,
+            "imdb_id": "0120363",
+            "tmdb_id": 863,
+            "title": "Toy Story 2 (1999)",
+            "release_year": 1999,
+            "genres": [
+              "Adventure",
+              "Animation",
+              "Children",
+              "Comedy",
+              "Fantasy"
+            ],
+            "score": 33.032588958740234,
+            "rank": 11,
+            "rank_label": "#11",
+            "raw_model_score": 2.858443260192871
+          },
+          {
+            "movie_id": 76093,
+            "model_item_id": 12356,
+            "imdb_id": "0892769",
+            "tmdb_id": 10191,
+            "title": "How to Train Your Dragon (2010)",
+            "release_year": 2010,
+            "genres": [
+              "Adventure",
+              "Animation",
+              "Children",
+              "Fantasy",
+              "IMAX"
+            ],
+            "score": 33.01507568359375,
+            "rank": 12,
+            "rank_label": "#12",
+            "raw_model_score": 2.840928077697754
+          }
+        ],
+        "study": {
+          "protocol_id": "tears-gers-human-study-tasks",
+          "protocol_version": "1.0.0",
+          "request_id": "21f38a6f5d4b4230a94668a7128ac1de",
+          "input_signature": "e173e7d358f0e804a9023221270d4aa5b84e82854372725a070edda1c0b6a1c6",
+          "task_id": "1b",
+          "trial_id": null,
+          "attempt": null
+        },
+        "trial": null
+      }
+    },
+    {
+      "source_request_id": "request-22a77bba-5da4-4378-b62a-f2d4590e4836",
+      "request": {
+        "liked_movie_ids": [
+          225173
+        ],
+        "preference_evidence": [
+          {
+            "movie_id": 225173,
+            "rating": 5.0
+          }
+        ],
+        "excluded_movie_ids": [],
+        "catalog_fingerprint": "27596ef71a4ac0f46e81ca97a40c4a9475bb1c2cc62c9db13819fe3cbeb714ce",
+        "onboarding_fingerprint": "5011c0b4c934fe78d6c845d4efc1632c128c1654bea9162a429d59dd103bb6a7",
+        "context": "",
+        "alpha": 0.5,
+        "top_k": 12,
+        "min_release_year": null,
+        "summary": "Summary: The viewer may be drawn to animated, family-oriented films that blend gentle comedy with fantastical, adventurous storytelling. They may appreciate warm, imaginative narratives that balance playful humor and whimsical visuals suited to children and broad family audiences.",
+        "study": {
+          "protocol_id": "tears-gers-human-study-tasks",
+          "protocol_version": "1.0.0",
+          "participant_id": "synthetic-refresh-reliability-91989816d4494fd3a5a64040921c2385",
+          "session_id": "refresh-0faaa80d715a4b9f8e7e8ea9f0992a53",
+          "system": "TEARS",
+          "task_id": "1b",
+          "representation_revision": 1,
+          "request_id": "c3d6197f42d4450dbc3eea900892269f",
+          "input_signature": "c32ef10a544c3ba3cc3510c00e429522dea4f14138aac23b1a9f40b93af3b688"
+        }
+      },
+      "response": {
+        "items": [
+          {
+            "movie_id": 1,
+            "model_item_id": 0,
+            "imdb_id": "0114709",
+            "tmdb_id": 862,
+            "title": "Toy Story (1995)",
+            "release_year": 1995,
+            "genres": [
+              "Adventure",
+              "Animation",
+              "Children",
+              "Comedy",
+              "Fantasy"
+            ],
+            "score": 29.511634826660156,
+            "rank": 1,
+            "rank_label": "#1",
+            "raw_model_score": 3.7178151607513428
+          },
+          {
+            "movie_id": 364,
+            "model_item_id": 356,
+            "imdb_id": "0110357",
+            "tmdb_id": 8587,
+            "title": "Lion King, The (1994)",
+            "release_year": 1994,
+            "genres": [
+              "Adventure",
+              "Animation",
+              "Children",
+              "Drama",
+              "Musical",
+              "IMAX"
+            ],
+            "score": 28.768447875976562,
+            "rank": 2,
+            "rank_label": "#2",
+            "raw_model_score": 2.97462797164917
+          },
+          {
+            "movie_id": 4886,
+            "model_item_id": 4629,
+            "imdb_id": "0198781",
+            "tmdb_id": 585,
+            "title": "Monsters, Inc. (2001)",
+            "release_year": 2001,
+            "genres": [
+              "Adventure",
+              "Animation",
+              "Children",
+              "Comedy",
+              "Fantasy"
+            ],
+            "score": 28.647796630859375,
+            "rank": 3,
+            "rank_label": "#3",
+            "raw_model_score": 2.8539774417877197
+          },
+          {
+            "movie_id": 4306,
+            "model_item_id": 4069,
+            "imdb_id": "0126029",
+            "tmdb_id": 808,
+            "title": "Shrek (2001)",
+            "release_year": 2001,
+            "genres": [
+              "Adventure",
+              "Animation",
+              "Children",
+              "Comedy",
+              "Fantasy",
+              "Romance"
+            ],
+            "score": 28.636802673339844,
+            "rank": 4,
+            "rank_label": "#4",
+            "raw_model_score": 2.8429837226867676
+          },
+          {
+            "movie_id": 588,
+            "model_item_id": 572,
+            "imdb_id": "0103639",
+            "tmdb_id": 812,
+            "title": "Aladdin (1992)",
+            "release_year": 1992,
+            "genres": [
+              "Adventure",
+              "Animation",
+              "Children",
+              "Comedy",
+              "Musical"
+            ],
+            "score": 28.633310317993164,
+            "rank": 5,
+            "rank_label": "#5",
+            "raw_model_score": 2.839491128921509
+          },
+          {
+            "movie_id": 6377,
+            "model_item_id": 6034,
+            "imdb_id": "0266543",
+            "tmdb_id": 12,
+            "title": "Finding Nemo (2003)",
+            "release_year": 2003,
+            "genres": [
+              "Adventure",
+              "Animation",
+              "Children",
+              "Comedy"
+            ],
+            "score": 28.590606689453125,
+            "rank": 6,
+            "rank_label": "#6",
+            "raw_model_score": 2.7967867851257324
+          },
+          {
+            "movie_id": 8961,
+            "model_item_id": 7838,
+            "imdb_id": "0317705",
+            "tmdb_id": 9806,
+            "title": "Incredibles, The (2004)",
+            "release_year": 2004,
+            "genres": [
+              "Action",
+              "Adventure",
+              "Animation",
+              "Children",
+              "Comedy"
+            ],
+            "score": 28.5565128326416,
+            "rank": 7,
+            "rank_label": "#7",
+            "raw_model_score": 2.762693166732788
+          },
+          {
+            "movie_id": 60069,
+            "model_item_id": 11090,
+            "imdb_id": "0910970",
+            "tmdb_id": 10681,
+            "title": "WALL\u00b7E (2008)",
+            "release_year": 2008,
+            "genres": [
+              "Adventure",
+              "Animation",
+              "Children",
+              "Romance",
+              "Sci-Fi"
+            ],
+            "score": 28.491708755493164,
+            "rank": 8,
+            "rank_label": "#8",
+            "raw_model_score": 2.6978888511657715
+          },
+          {
+            "movie_id": 68954,
+            "model_item_id": 11694,
+            "imdb_id": "1049413",
+            "tmdb_id": 14160,
+            "title": "Up (2009)",
+            "release_year": 2009,
+            "genres": [
+              "Adventure",
+              "Animation",
+              "Children",
+              "Drama"
+            ],
+            "score": 28.438800811767578,
+            "rank": 9,
+            "rank_label": "#9",
+            "raw_model_score": 2.644981861114502
+          },
+          {
+            "movie_id": 595,
+            "model_item_id": 579,
+            "imdb_id": "0101414",
+            "tmdb_id": 10020,
+            "title": "Beauty and the Beast (1991)",
+            "release_year": 1991,
+            "genres": [
+              "Animation",
+              "Children",
+              "Fantasy",
+              "Musical",
+              "Romance",
+              "IMAX"
+            ],
+            "score": 28.437822341918945,
+            "rank": 10,
+            "rank_label": "#10",
+            "raw_model_score": 2.64400315284729
+          },
+          {
+            "movie_id": 551,
+            "model_item_id": 538,
+            "imdb_id": "0107688",
+            "tmdb_id": 9479,
+            "title": "Nightmare Before Christmas, The (1993)",
+            "release_year": 1993,
+            "genres": [
+              "Animation",
+              "Children",
+              "Fantasy",
+              "Musical"
+            ],
+            "score": 28.395740509033203,
+            "rank": 11,
+            "rank_label": "#11",
+            "raw_model_score": 2.601922035217285
+          },
+          {
+            "movie_id": 3114,
+            "model_item_id": 2946,
+            "imdb_id": "0120363",
+            "tmdb_id": 863,
+            "title": "Toy Story 2 (1999)",
+            "release_year": 1999,
+            "genres": [
+              "Adventure",
+              "Animation",
+              "Children",
+              "Comedy",
+              "Fantasy"
+            ],
+            "score": 28.374713897705078,
+            "rank": 12,
+            "rank_label": "#12",
+            "raw_model_score": 2.5808942317962646
+          }
+        ],
+        "study": {
+          "protocol_id": "tears-gers-human-study-tasks",
+          "protocol_version": "1.0.0",
+          "request_id": "c3d6197f42d4450dbc3eea900892269f",
+          "input_signature": "c32ef10a544c3ba3cc3510c00e429522dea4f14138aac23b1a9f40b93af3b688",
+          "task_id": "1b",
+          "trial_id": null,
+          "attempt": null
+        },
+        "trial": null
+      }
+    }
+  ],
+  "refresh": [
+    {
+      "summary": "Summary: The viewer may enjoy imaginative animated stories that combine adventurous, family-friendly sensibilities with playful comedy and fantastical elements. They seem drawn to films that balance lighthearted humor and accessible children's appeal with a whimsical, uplifting tone\u2014suggesting a liking for animated, genre-blending tales that feel both fun and inventive.",
+      "summary_source_request_id": "56a695720d264f4f852630777c67bb1c",
+      "validator": {
+        "valid": true,
+        "errors": []
+      },
+      "generation": {
+        "attempt_count": 1,
+        "retry_count": 0,
+        "reused": false,
+        "word_count": 49
+      },
+      "study": {
+        "protocol_id": "tears-gers-human-study-tasks",
+        "protocol_version": "1.0.0",
+        "request_id": "56a695720d264f4f852630777c67bb1c",
+        "input_signature": "ee4d8f2ec39d211267b9631624a6d00ab5230b4d8c878ca2abfeddaac0dfaf0c",
+        "task_id": "1a",
+        "trial_id": null,
+        "attempt": null
+      }
+    },
+    {
+      "summary": "Summary: The viewer may enjoy imaginative animated stories that combine adventurous, family-friendly sensibilities with playful comedy and fantastical elements. They seem drawn to films that balance lighthearted humor and accessible children's appeal with a whimsical, uplifting tone\u2014suggesting a liking for animated, genre-blending tales that feel both fun and inventive.",
+      "summary_source_request_id": "96041402f7fd4c5eb696a42148ea132a",
+      "validator": {
+        "valid": true,
+        "errors": []
+      },
+      "generation": {
+        "attempt_count": 0,
+        "retry_count": 0,
+        "reused": true,
+        "word_count": 49
+      },
+      "study": {
+        "protocol_id": "tears-gers-human-study-tasks",
+        "protocol_version": "1.0.0",
+        "request_id": "96041402f7fd4c5eb696a42148ea132a",
+        "input_signature": "ee4d8f2ec39d211267b9631624a6d00ab5230b4d8c878ca2abfeddaac0dfaf0c",
+        "task_id": "1a",
+        "trial_id": null,
+        "attempt": null
+      }
+    }
+  ],
+  "gers": {
+    "items": [
+      {
+        "movie_id": 2571,
+        "model_item_id": 2414,
+        "imdb_id": "0133093",
+        "tmdb_id": 603,
+        "title": "Matrix, The (1999)",
+        "release_year": 1999,
+        "genres": [
+          "Action",
+          "Sci-Fi",
+          "Thriller"
+        ],
+        "score": 6.900947570800781,
+        "rank": 1,
+        "rank_label": "#1"
+      },
+      {
+        "movie_id": 164179,
+        "model_item_id": 18328,
+        "imdb_id": "2543164",
+        "tmdb_id": 329865,
+        "title": "Arrival (2016)",
+        "release_year": 2016,
+        "genres": [
+          "Sci-Fi"
+        ],
+        "score": 6.716767311096191,
+        "rank": 2,
+        "rank_label": "#2"
+      },
+      {
+        "movie_id": 109487,
+        "model_item_id": 15054,
+        "imdb_id": "0816692",
+        "tmdb_id": 157336,
+        "title": "Interstellar (2014)",
+        "release_year": 2014,
+        "genres": [
+          "Sci-Fi",
+          "IMAX"
+        ],
+        "score": 6.661709785461426,
+        "rank": 3,
+        "rank_label": "#3"
+      },
+      {
+        "movie_id": 1196,
+        "model_item_id": 1137,
+        "imdb_id": "0080684",
+        "tmdb_id": 1891,
+        "title": "Star Wars: Episode V - The Empire Strikes Back (1980)",
+        "release_year": 1980,
+        "genres": [
+          "Action",
+          "Adventure",
+          "Sci-Fi"
+        ],
+        "score": 6.657037734985352,
+        "rank": 4,
+        "rank_label": "#4"
+      },
+      {
+        "movie_id": 260,
+        "model_item_id": 254,
+        "imdb_id": "0076759",
+        "tmdb_id": 11,
+        "title": "Star Wars: Episode IV - A New Hope (1977)",
+        "release_year": 1977,
+        "genres": [
+          "Action",
+          "Adventure",
+          "Sci-Fi"
+        ],
+        "score": 6.656806468963623,
+        "rank": 5,
+        "rank_label": "#5"
+      },
+      {
+        "movie_id": 134130,
+        "model_item_id": 16565,
+        "imdb_id": "3659388",
+        "tmdb_id": 286217,
+        "title": "The Martian (2015)",
+        "release_year": 2015,
+        "genres": [
+          "Adventure",
+          "Drama",
+          "Sci-Fi"
+        ],
+        "score": 6.5989861488342285,
+        "rank": 6,
+        "rank_label": "#6"
+      },
+      {
+        "movie_id": 4993,
+        "model_item_id": 4733,
+        "imdb_id": "0120737",
+        "tmdb_id": 120,
+        "title": "Lord of the Rings: The Fellowship of the Ring, The (2001)",
+        "release_year": 2001,
+        "genres": [
+          "Adventure",
+          "Fantasy"
+        ],
+        "score": 6.476303577423096,
+        "rank": 7,
+        "rank_label": "#7"
+      },
+      {
+        "movie_id": 79132,
+        "model_item_id": 12600,
+        "imdb_id": "1375666",
+        "tmdb_id": 27205,
+        "title": "Inception (2010)",
+        "release_year": 2010,
+        "genres": [
+          "Action",
+          "Crime",
+          "Drama",
+          "Mystery",
+          "Sci-Fi",
+          "Thriller",
+          "IMAX"
+        ],
+        "score": 6.320507526397705,
+        "rank": 8,
+        "rank_label": "#8"
+      },
+      {
+        "movie_id": 924,
+        "model_item_id": 883,
+        "imdb_id": "0062622",
+        "tmdb_id": 62,
+        "title": "2001: A Space Odyssey (1968)",
+        "release_year": 1968,
+        "genres": [
+          "Adventure",
+          "Drama",
+          "Sci-Fi"
+        ],
+        "score": 6.30213737487793,
+        "rank": 9,
+        "rank_label": "#9"
+      },
+      {
+        "movie_id": 7153,
+        "model_item_id": 6740,
+        "imdb_id": "0167260",
+        "tmdb_id": 122,
+        "title": "Lord of the Rings: The Return of the King, The (2003)",
+        "release_year": 2003,
+        "genres": [
+          "Action",
+          "Adventure",
+          "Drama",
+          "Fantasy"
+        ],
+        "score": 6.293479919433594,
+        "rank": 10,
+        "rank_label": "#10"
+      },
+      {
+        "movie_id": 541,
+        "model_item_id": 529,
+        "imdb_id": "0083658",
+        "tmdb_id": 78,
+        "title": "Blade Runner (1982)",
+        "release_year": 1982,
+        "genres": [
+          "Action",
+          "Sci-Fi",
+          "Thriller"
+        ],
+        "score": 6.279244422912598,
+        "rank": 11,
+        "rank_label": "#11"
+      },
+      {
+        "movie_id": 5952,
+        "model_item_id": 5640,
+        "imdb_id": "0167261",
+        "tmdb_id": 121,
+        "title": "Lord of the Rings: The Two Towers, The (2002)",
+        "release_year": 2002,
+        "genres": [
+          "Adventure",
+          "Fantasy"
+        ],
+        "score": 6.272274494171143,
+        "rank": 12,
+        "rank_label": "#12"
+      }
+    ],
+    "study": {
+      "protocol_id": "tears-gers-human-study-tasks",
+      "protocol_version": "1.0.0",
+      "request_id": "candidate-policy-gers-2d22fcb5-f656-46e7-9c6b-bbbae807649f",
+      "input_signature": "3d13e2f0c46eec263ecae2c0351531c3bf3325b793cc9f225072b787f1c37623",
+      "task_id": "1b",
+      "trial_id": null,
+      "attempt": null
+    },
+    "trial": null
+  }
+}

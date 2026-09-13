@@ -66,6 +66,32 @@ export function filterRecommendationRecords(
   });
 }
 
+export function recommendationRankMovement(
+  recommendation,
+  previousRecommendations
+) {
+  if (!Array.isArray(previousRecommendations) || previousRecommendations.length === 0) {
+    return null;
+  }
+  const previous = previousRecommendations.find((candidate) =>
+    recommendation.movie_id != null && candidate.movie_id != null
+      ? Number(candidate.movie_id) === Number(recommendation.movie_id)
+      : candidate.title === recommendation.title
+  );
+  const previousRank = Number(previous?.rank);
+  const currentRank = Number(recommendation.rank);
+  if (!previous || !Number.isFinite(previousRank) || !Number.isFinite(currentRank)) {
+    return null;
+  }
+  const difference = previousRank - currentRank;
+  if (difference === 0) return null;
+  return {
+    direction: difference > 0 ? "up" : "down",
+    symbol: difference > 0 ? "↑" : "↓",
+    positions: Math.abs(difference),
+  };
+}
+
 export function resolveMovieLensRecommendation(item, verifiedTMDBMetadata) {
   const movieId = Number(item?.movie_id);
   if (!Number.isInteger(movieId)) {

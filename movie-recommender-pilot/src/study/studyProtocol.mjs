@@ -34,6 +34,9 @@ export function newStudyId(prefix) {
 
 export function recommendationInputSnapshot(system, payload) {
   return {
+    ...(system === "TEARS" && payload.summary_source_request_id
+      ? { summary_source_request_id: payload.summary_source_request_id }
+      : {}),
     system,
     liked_movie_ids: [...payload.liked_movie_ids],
     preference_evidence: payload.preference_evidence.map((movie) => ({

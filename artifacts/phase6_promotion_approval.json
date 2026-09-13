@@ -1,0 +1,11 @@
+{
+  "approved": true,
+  "approved_by": "user request to proceed with Phase 6 full training on frozen V10 summaries",
+  "approved_at": "2026-08-19",
+  "wave1_plan_fingerprint": "a315f39a43ac2480697e4fe2d5f3fc4ac1e4219f84366c7f325dcd7f369d8201",
+  "phase": "full",
+  "seeds": [2020, 2021, 2022, 2023, 2024],
+  "summaries_sha256": "763605a2a22dfa77e32c0226fb1f2318b8889b89fa9517e341fb2ac008e90b07",
+  "matrix_fingerprint": "27596ef71a4ac0f46e81ca97a40c4a9475bb1c2cc62c9db13819fe3cbeb714ce",
+  "test_metrics_used": false
+}

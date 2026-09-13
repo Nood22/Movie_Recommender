@@ -1,0 +1,118 @@
+{
+  "model": "gpt-5-mini-2025-08-07",
+  "prompt_sha256": "63e15f2263ba9fc1361025d8d53bc3965591f28535e9beb3cf9179bc4c35dbc3",
+  "api_source_sha256": "cfad4dbe857b64b1e8e77da44c82bcd4c365067b3437a97db37f510874f7844e",
+  "summary_policy": "shared-editable-profile-v2",
+  "records": [
+    {
+      "id": "explicit_dislike-0",
+      "evidence": [
+        {
+          "title": "Lord of the Rings: The Fellowship of the Ring, The (2001)",
+          "rating": 5.0,
+          "genres": [
+            "Adventure",
+            "Fantasy"
+          ]
+        }
+      ],
+      "selected_ids": [
+        4993
+      ],
+      "disliked": [
+        "Horror"
+      ],
+      "context": "",
+      "valid": false,
+      "error": "Generated TEARS summary failed the online privacy and format validator after 3 attempts: grounding_missing_negative:Horror, grounding_positive_on_unsupported:Horror",
+      "attempts": [
+        {
+          "attempt": 1,
+          "kind": "initial",
+          "word_count": 55,
+          "validator_errors": [
+            "audit_process_language"
+          ],
+          "generation_errors": [],
+          "retry_errors": [
+            "audit_process_language"
+          ]
+        },
+        {
+          "attempt": 2,
+          "kind": "validator_repair",
+          "word_count": 58,
+          "validator_errors": [
+            "audit_process_language"
+          ],
+          "generation_errors": [],
+          "retry_errors": [
+            "audit_process_language"
+          ]
+        },
+        {
+          "attempt": 3,
+          "kind": "validator_repair",
+          "word_count": 46,
+          "validator_errors": [
+            "grounding_missing_negative:Horror",
+            "grounding_positive_on_unsupported:Horror"
+          ],
+          "generation_errors": [],
+          "retry_errors": [
+            "grounding_missing_negative:Horror",
+            "grounding_positive_on_unsupported:Horror"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "explicit_dislike-1",
+      "evidence": [
+        {
+          "title": "Lord of the Rings: The Fellowship of the Ring, The (2001)",
+          "rating": 5.0,
+          "genres": [
+            "Adventure",
+            "Fantasy"
+          ]
+        }
+      ],
+      "selected_ids": [
+        4993
+      ],
+      "disliked": [
+        "Horror"
+      ],
+      "context": "",
+      "summary": "Summary: The viewer seems open to sweeping, high-fantasy adventure with epic scope, quests, and richly imagined worlds\u2014they may appreciate immersive journeys that emphasize exploration, fellowship, and mythic stakes. They do not like horror and will avoid films intended to frighten, unsettle, or rely on graphic or suspense-driven scares.",
+      "valid": true,
+      "word_count": 48,
+      "missing_probe_genres": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "kind": "initial",
+          "word_count": 69,
+          "validator_errors": [
+            "audit_process_language",
+            "grounding_missing_negative:Horror"
+          ],
+          "generation_errors": [],
+          "retry_errors": [
+            "audit_process_language",
+            "grounding_missing_negative:Horror"
+          ]
+        },
+        {
+          "attempt": 2,
+          "kind": "validator_repair",
+          "word_count": 48,
+          "validator_errors": [],
+          "generation_errors": [],
+          "retry_errors": []
+        }
+      ]
+    }
+  ]
+}

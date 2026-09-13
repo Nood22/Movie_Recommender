@@ -24,7 +24,7 @@ The serving manifest identifies the deployment as
 `full-tears-and-gers-200948` and pins the promoted GERS checkpoint SHA-256 to
 `f4755f87b133b95ee6e9919c498011efd2096ee24da3e13895f48e3d30669dea`.
 
-The existing `release_year >= 2020` serving policy remains fixed, is rejected if
+The shared `release_year >= 2015` serving policy remains fixed, is rejected if
 a request attempts to change it, and is recorded in the deployment manifest,
 trial immutable snapshot, result payload, and event provenance. TEARS alpha is
 fixed at the compatibility value `0.5`, labeled `not_applicable`, and rejected

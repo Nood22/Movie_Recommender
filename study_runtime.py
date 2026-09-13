@@ -12,6 +12,7 @@ import sqlite3
 from threading import RLock
 from typing import Any, Iterator, Mapping
 from uuid import uuid4
+from tears_preference_ranking import POLICY_ID as TEARS_RANKING_POLICY
 
 
 PROTOCOL_ID = "tears-gers-human-study-tasks"
@@ -19,12 +20,13 @@ PROTOCOL_VERSION = "1.0.0"
 MAX_PROFILE_EDIT_ATTEMPTS = 5
 CANONICAL_CONTEXT = "I want to unwind"
 YEAR_FILTER_POLICY = {
-    "enabled": True,
+    "enabled": False,
     "field": "release_year",
     "operator": ">=",
-    "value": 2020,
+    "value": None,
     "scope": "candidate_ranking",
 }
+CANDIDATE_POLICY_ID = "all-years-selected-only-v2"
 
 
 def utc_now() -> str:
@@ -79,6 +81,8 @@ def recommendation_input_snapshot(system: str, payload: Any) -> dict[str, Any]:
     if system == "TEARS":
         # Participant-authored edits are part of the signed evidence verbatim.
         base["representation"] = payload.summary
+        if getattr(payload, "summary_source_request_id", None):
+            base["summary_source_request_id"] = payload.summary_source_request_id
     else:
         # Order and duplicates are semantically meaningful genre frequencies.
         base["representation"] = list(payload.genres)
@@ -98,6 +102,10 @@ def immutable_trial_snapshot(system: str, payload: Any) -> dict[str, Any]:
     """Fields frozen after target selection; representation is deliberately absent."""
 
     return {
+        "candidate_policy_id": CANDIDATE_POLICY_ID,
+        **({"tears_ranking_policy": TEARS_RANKING_POLICY} if system == "TEARS" else {}),
+        **({"summary_source_request_id": payload.summary_source_request_id}
+           if system == "TEARS" and getattr(payload, "summary_source_request_id", None) else {}),
         "system": system,
         "liked_movie_ids": list(payload.liked_movie_ids),
         "preference_evidence": [
@@ -281,6 +289,14 @@ class StudyStore:
                 CREATE INDEX IF NOT EXISTS events_trial
                     ON events(trial_id, attempt_number);
 
+                CREATE TABLE IF NOT EXISTS generated_summary_cache (
+                    participant_id TEXT NOT NULL,
+                    cache_key TEXT NOT NULL,
+                    summary TEXT NOT NULL,
+                    source_request_id TEXT NOT NULL,
+                    PRIMARY KEY (participant_id, cache_key)
+                );
+
                 CREATE TABLE IF NOT EXISTS trials (
                     trial_id TEXT PRIMARY KEY,
                     created_at TEXT NOT NULL,
@@ -399,6 +415,48 @@ class StudyStore:
         result["provenance"] = json.loads(result.pop("provenance_json"))
         return result
 
+    def generated_summary(self, participant_id: str, cache_key: str):
+        """Reuse validated generation for identical evidence within one participant."""
+        with self._connect() as connection:
+            row = connection.execute(
+                "SELECT summary, source_request_id FROM generated_summary_cache "
+                "WHERE participant_id = ? AND cache_key = ?",
+                (participant_id, cache_key),
+            ).fetchone()
+        return dict(row) if row else None
+
+    def remember_generated_summary(
+        self, participant_id: str, cache_key: str, summary: str, source_request_id: str
+    ):
+        # Concurrent generations converge on the first validated result. Never
+        # share personal context between participants or cache participant edits.
+        with self._transaction() as connection:
+            connection.execute(
+                "INSERT OR IGNORE INTO generated_summary_cache VALUES (?, ?, ?, ?)",
+                (participant_id, cache_key, summary, source_request_id),
+            )
+            row = connection.execute(
+                "SELECT summary, source_request_id FROM generated_summary_cache "
+                "WHERE participant_id = ? AND cache_key = ?",
+                (participant_id, cache_key),
+            ).fetchone()
+        return dict(row)
+
+    def synchronized_summary(self, meta: Any, source_id: str, display: str):
+        """Reuse the same encoded profile for identical participant edits."""
+        values = self._meta(meta)
+        with self._connect() as connection:
+            row = connection.execute(
+                """SELECT payload_json FROM events
+                   WHERE event_type = 'recommendation_result' AND status = 'completed'
+                     AND participant_id = ? AND session_id = ? AND system = 'TEARS'
+                     AND json_extract(payload_json, '$.effective_model_input.summary_source_request_id') = ?
+                     AND json_extract(payload_json, '$.effective_model_input.display_summary') = ?
+                   ORDER BY rowid DESC LIMIT 1""",
+                (values["participant_id"], values["session_id"], source_id, display),
+            ).fetchone()
+        return json.loads(row[0])["effective_model_input"] if row else None
+
     def create_trial(
         self,
         meta: Any,
@@ -433,6 +491,10 @@ class StudyStore:
         if observation["state"] != "returned":
             raise StudyConflict("The target must be selected from the baseline ranking")
         immutable = baseline["payload"]["immutable_trial_input"]
+        if immutable.get("candidate_policy_id") != CANDIDATE_POLICY_ID:
+            raise StudyConflict("Get a new baseline recommendation under the current candidate policy before starting a trial")
+        if values["system"] == "TEARS" and immutable.get("tears_ranking_policy") != TEARS_RANKING_POLICY:
+            raise StudyConflict("Get a new baseline recommendation under the current TEARS ranking policy before starting a trial")
         representation = baseline["payload"]["representation"]
         with self._transaction() as connection:
             try:

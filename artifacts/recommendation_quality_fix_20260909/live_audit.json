@@ -1,0 +1,48 @@
+{
+  "checks": [
+    {
+      "stage": "generated",
+      "request_id": "609967d466f7440580832522794aa541",
+      "shared_summary_exact_match": true
+    },
+    {
+      "stage": "baseline",
+      "request_id": "29b11c118a934d6c81819c8195fa22ba",
+      "model_input_equals_display": true,
+      "patches": [],
+      "selected_movie_excluded": true,
+      "count": 12,
+      "top3": [
+        "Lord of the Rings: The Return of the King, The (2003)",
+        "Lord of the Rings: The Two Towers, The (2002)",
+        "Matrix, The (1999)"
+      ]
+    },
+    {
+      "stage": "edited",
+      "request_id": "606348cd8a8f468f94606890ccf7aa63",
+      "model_input_equals_display": true,
+      "patches": [],
+      "selected_movie_excluded": true,
+      "count": 12,
+      "top3": [
+        "Lord of the Rings: The Return of the King, The (2003)",
+        "Lord of the Rings: The Two Towers, The (2002)",
+        "Matrix, The (1999)"
+      ]
+    },
+    {
+      "stage": "removed",
+      "request_id": "0eb98d5a62e04469b23649e84763e804",
+      "model_input_equals_display": true,
+      "patches": [],
+      "selected_movie_excluded": true,
+      "count": 12,
+      "top3": [
+        "Forrest Gump (1994)",
+        "Shawshank Redemption, The (1994)",
+        "Star Wars: Episode IV - A New Hope (1977)"
+      ]
+    }
+  ]
+}

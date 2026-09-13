@@ -1,0 +1,61 @@
+{
+  "case": "Soul_mixed_history",
+  "version": "current",
+  "repeat": 3,
+  "outputs": [
+    {
+      "version": "current_backend",
+      "summary": "Summary: no strong preference is supported for categorical genre likes in this profile because the available positive viewing history spans multiple broad categories without producing a clear, exclusive pattern that would permit asserting a stable liking for any single genre family across different storytelling approaches. No strong preference is supported for specific plot points, themes, or storytelling devices in this record because the examples include varied tones and narrative aims, leaving only a tentative, noncommittal indication that the viewer has sampled diverse kinds of cinematic pacing and emotional range. No strong preference is supported for disliked genres or styles, leaving this aspect of the viewer's taste unspecified without implying that they welcome every genre or share the same response to all approaches to storytelling. No strong preference is supported for disliked plot points or content, leaving the viewer's individual boundaries unspecified without identifying unwanted story elements or assuming that content enjoyed by other viewers would suit their own personal tastes."
+    },
+    {
+      "version": "current_display",
+      "summary": "Summary: The viewer seems to favor films that blend high-concept, imaginative premises with emotional or comedic heart. They may enjoy stories that combine speculative or fantastical worldbuilding—often with action or adventurous momentum—with character-driven drama and moments of humor or whimsy, especially when inventive storytelling and emotional stakes are prominent."
+    }
+  ],
+  "backend_attempts": [
+    {
+      "word_count": 157,
+      "errors": [
+        "grounding_positive_on_unsupported:Action|Adventure|Comedy|Fantasy|Sci-Fi"
+      ]
+    },
+    {
+      "word_count": 160,
+      "errors": []
+    }
+  ],
+  "display_attempts": [
+    {
+      "attempt": 1,
+      "kind": "initial",
+      "word_count": 50,
+      "validator_errors": [
+        "grounding_positive_on_unsupported:Action"
+      ],
+      "generation_errors": [],
+      "retry_errors": [
+        "grounding_positive_on_unsupported:Action"
+      ]
+    },
+    {
+      "attempt": 2,
+      "kind": "validator_repair",
+      "word_count": 48,
+      "validator_errors": [
+        "audit_process_language"
+      ],
+      "generation_errors": [],
+      "retry_errors": [
+        "audit_process_language"
+      ]
+    },
+    {
+      "attempt": 3,
+      "kind": "validator_repair",
+      "word_count": 49,
+      "validator_errors": [],
+      "generation_errors": [],
+      "retry_errors": []
+    }
+  ]
+}

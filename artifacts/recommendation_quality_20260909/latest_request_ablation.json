@@ -1,0 +1,1683 @@
+{
+  "recorded_at": "2026-09-09T19:49:56.916+00:00",
+  "request_id": "request-4e7ed11f-1c60-4976-89cd-ee98012d2fd0",
+  "model": {
+    "model": "tears_base",
+    "seed": 2022,
+    "epochs": 200,
+    "path": "/network/scratch/a/adls/FullTrainingTEARS/checkpoints/full/tears_base/seed-2022/10d017146b22/best.pt",
+    "sha256": "08f2609c6dae073a1d6c2a8ba14a3121c5ff4ec807201c7f97c7d4aa3c598e2b",
+    "run_fingerprint": "969f4b6ddb710f372739a6203724716e3f2a5e77ec9c3cd62b9e5058158ac3bc"
+  },
+  "profiles": {
+    "backend": "Summary: The viewer prefers works labeled Adventure and Fantasy, suggesting an interest in expansive worldbuilding and journey driven plots, while acknowledging that this conclusion rests on a single positive example and so remains tentative rather than broadly confirmed. No strong preference is supported for particular plot points or themes based on the available history, because the single positive example does not substantiate reliable conclusions about preferences for specific narrative devices, motifs, pacing, or character arcs beyond the tentative genre indication noted above. No strong preference is supported for disliked genres or styles, leaving this aspect of the viewer's taste unspecified without implying that they welcome every genre or share the same response to all approaches to storytelling. No strong preference is supported for disliked plot points or content, leaving the viewer's individual boundaries unspecified without identifying unwanted story elements or assuming that content enjoyed by other viewers would suit their own personal tastes.",
+    "display": "Summary: The viewer seems to respond positively to expansive, high-fantasy adventure that emphasizes epic journeys, richly imagined worlds, and ensemble casts undertaking a perilous quest. They may enjoy narratives that combine sweeping action and stakes with mythic or fantastical elements presented on a grand scale."
+  },
+  "logged_top12": [
+    "The Revenant (2015)",
+    "Rogue One: A Star Wars Story (2016)",
+    "Doctor Strange (2016)",
+    "Avengers: Age of Ultron (2015)",
+    "Ant-Man (2015)",
+    "Mission: Impossible - Rogue Nation (2015)",
+    "Spectre (2015)",
+    "Jurassic World (2015)",
+    "Star Wars: The Last Jedi (2017)",
+    "Black Panther (2017)",
+    "Wonder Woman (2017)",
+    "Untitled Spider-Man Reboot (2017)"
+  ],
+  "experiments": [
+    {
+      "profile": "backend",
+      "aligned": false,
+      "candidate_policy": "current",
+      "preferences": {
+        "preferred_genres": [
+          "Adventure",
+          "Fantasy"
+        ],
+        "avoided_genres": [],
+        "conflicting_genres": []
+      },
+      "items": [
+        {
+          "movie_id": 128360,
+          "title": "The Hateful Eight (2015)",
+          "genres": [
+            "Western"
+          ],
+          "score": 1.091712236404419
+        },
+        {
+          "movie_id": 139644,
+          "title": "Sicario (2015)",
+          "genres": [
+            "Crime",
+            "Drama",
+            "Mystery"
+          ],
+          "score": 0.7682774662971497
+        },
+        {
+          "movie_id": 139385,
+          "title": "The Revenant (2015)",
+          "genres": [
+            "Adventure",
+            "Drama"
+          ],
+          "score": 0.7162361145019531
+        },
+        {
+          "movie_id": 166528,
+          "title": "Rogue One: A Star Wars Story (2016)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Fantasy",
+            "Sci-Fi"
+          ],
+          "score": 0.6660614013671875
+        },
+        {
+          "movie_id": 122922,
+          "title": "Doctor Strange (2016)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Sci-Fi"
+          ],
+          "score": 0.48470717668533325
+        },
+        {
+          "movie_id": 168248,
+          "title": "John Wick: Chapter Two (2017)",
+          "genres": [
+            "Action",
+            "Crime",
+            "Thriller"
+          ],
+          "score": 0.4769975543022156
+        },
+        {
+          "movie_id": 122892,
+          "title": "Avengers: Age of Ultron (2015)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Sci-Fi"
+          ],
+          "score": 0.4658670425415039
+        },
+        {
+          "movie_id": 207313,
+          "title": "Knives Out (2019)",
+          "genres": [
+            "Comedy",
+            "Crime",
+            "Drama",
+            "Mystery",
+            "Thriller"
+          ],
+          "score": 0.44263744354248047
+        },
+        {
+          "movie_id": 122920,
+          "title": "Captain America: Civil War (2016)",
+          "genres": [
+            "Action",
+            "Sci-Fi",
+            "Thriller"
+          ],
+          "score": 0.4197356104850769
+        },
+        {
+          "movie_id": 142488,
+          "title": "Spotlight (2015)",
+          "genres": [
+            "Thriller"
+          ],
+          "score": 0.3695239722728729
+        },
+        {
+          "movie_id": 122900,
+          "title": "Ant-Man (2015)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Sci-Fi"
+          ],
+          "score": 0.36744600534439087
+        },
+        {
+          "movie_id": 111781,
+          "title": "Mission: Impossible - Rogue Nation (2015)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Thriller"
+          ],
+          "score": 0.33673524856567383
+        }
+      ]
+    },
+    {
+      "profile": "backend",
+      "aligned": false,
+      "candidate_policy": "selected_only",
+      "preferences": {
+        "preferred_genres": [
+          "Adventure",
+          "Fantasy"
+        ],
+        "avoided_genres": [],
+        "conflicting_genres": []
+      },
+      "items": [
+        {
+          "movie_id": 122882,
+          "title": "Mad Max: Fury Road (2015)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Sci-Fi",
+            "Thriller"
+          ],
+          "score": 1.371414303779602
+        },
+        {
+          "movie_id": 115713,
+          "title": "Ex Machina (2015)",
+          "genres": [
+            "Drama",
+            "Sci-Fi",
+            "Thriller"
+          ],
+          "score": 1.163083791732788
+        },
+        {
+          "movie_id": 128360,
+          "title": "The Hateful Eight (2015)",
+          "genres": [
+            "Western"
+          ],
+          "score": 1.091712236404419
+        },
+        {
+          "movie_id": 134130,
+          "title": "The Martian (2015)",
+          "genres": [
+            "Adventure",
+            "Drama",
+            "Sci-Fi"
+          ],
+          "score": 1.0521901845932007
+        },
+        {
+          "movie_id": 122886,
+          "title": "Star Wars: Episode VII - The Force Awakens (2015)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Fantasy",
+            "Sci-Fi",
+            "IMAX"
+          ],
+          "score": 1.0324337482452393
+        },
+        {
+          "movie_id": 164179,
+          "title": "Arrival (2016)",
+          "genres": [
+            "Sci-Fi"
+          ],
+          "score": 1.0281424522399902
+        },
+        {
+          "movie_id": 176371,
+          "title": "Blade Runner 2049 (2017)",
+          "genres": [
+            "Sci-Fi"
+          ],
+          "score": 1.0082812309265137
+        },
+        {
+          "movie_id": 122904,
+          "title": "Deadpool (2016)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Comedy",
+            "Sci-Fi"
+          ],
+          "score": 0.964763879776001
+        },
+        {
+          "movie_id": 139644,
+          "title": "Sicario (2015)",
+          "genres": [
+            "Crime",
+            "Drama",
+            "Mystery"
+          ],
+          "score": 0.7682774662971497
+        },
+        {
+          "movie_id": 134853,
+          "title": "Inside Out (2015)",
+          "genres": [
+            "Adventure",
+            "Animation",
+            "Children",
+            "Comedy",
+            "Drama",
+            "Fantasy"
+          ],
+          "score": 0.7455399632453918
+        },
+        {
+          "movie_id": 119145,
+          "title": "Kingsman: The Secret Service (2015)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Comedy",
+            "Crime"
+          ],
+          "score": 0.7405601739883423
+        },
+        {
+          "movie_id": 168252,
+          "title": "Logan (2017)",
+          "genres": [
+            "Action",
+            "Sci-Fi"
+          ],
+          "score": 0.7365139722824097
+        }
+      ]
+    },
+    {
+      "profile": "backend",
+      "aligned": false,
+      "candidate_policy": "selected_only_all_years",
+      "preferences": {
+        "preferred_genres": [
+          "Adventure",
+          "Fantasy"
+        ],
+        "avoided_genres": [],
+        "conflicting_genres": []
+      },
+      "items": [
+        {
+          "movie_id": 32,
+          "title": "Twelve Monkeys (a.k.a. 12 Monkeys) (1995)",
+          "genres": [
+            "Mystery",
+            "Sci-Fi",
+            "Thriller"
+          ],
+          "score": 3.3565521240234375
+        },
+        {
+          "movie_id": 296,
+          "title": "Pulp Fiction (1994)",
+          "genres": [
+            "Comedy",
+            "Crime",
+            "Drama",
+            "Thriller"
+          ],
+          "score": 3.348170757293701
+        },
+        {
+          "movie_id": 47,
+          "title": "Seven (a.k.a. Se7en) (1995)",
+          "genres": [
+            "Mystery",
+            "Thriller"
+          ],
+          "score": 3.301009178161621
+        },
+        {
+          "movie_id": 50,
+          "title": "Usual Suspects, The (1995)",
+          "genres": [
+            "Crime",
+            "Mystery",
+            "Thriller"
+          ],
+          "score": 3.295053482055664
+        },
+        {
+          "movie_id": 318,
+          "title": "Shawshank Redemption, The (1994)",
+          "genres": [
+            "Crime",
+            "Drama"
+          ],
+          "score": 3.1762757301330566
+        },
+        {
+          "movie_id": 593,
+          "title": "Silence of the Lambs, The (1991)",
+          "genres": [
+            "Crime",
+            "Horror",
+            "Thriller"
+          ],
+          "score": 3.1615476608276367
+        },
+        {
+          "movie_id": 589,
+          "title": "Terminator 2: Judgment Day (1991)",
+          "genres": [
+            "Action",
+            "Sci-Fi"
+          ],
+          "score": 3.1361680030822754
+        },
+        {
+          "movie_id": 293,
+          "title": "L\u00e9on: The Professional (a.k.a. The Professional) (L\u00e9on) (1994)",
+          "genres": [
+            "Action",
+            "Crime",
+            "Drama",
+            "Thriller"
+          ],
+          "score": 3.0978822708129883
+        },
+        {
+          "movie_id": 260,
+          "title": "Star Wars: Episode IV - A New Hope (1977)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Sci-Fi"
+          ],
+          "score": 3.079343557357788
+        },
+        {
+          "movie_id": 6,
+          "title": "Heat (1995)",
+          "genres": [
+            "Action",
+            "Crime",
+            "Thriller"
+          ],
+          "score": 3.0613138675689697
+        },
+        {
+          "movie_id": 608,
+          "title": "Fargo (1996)",
+          "genres": [
+            "Comedy",
+            "Crime",
+            "Drama",
+            "Thriller"
+          ],
+          "score": 3.0438404083251953
+        },
+        {
+          "movie_id": 858,
+          "title": "Godfather, The (1972)",
+          "genres": [
+            "Crime",
+            "Drama"
+          ],
+          "score": 2.933760643005371
+        }
+      ]
+    },
+    {
+      "profile": "backend",
+      "aligned": true,
+      "candidate_policy": "current",
+      "preferences": {
+        "preferred_genres": [
+          "Adventure",
+          "Fantasy"
+        ],
+        "avoided_genres": [],
+        "conflicting_genres": []
+      },
+      "items": [
+        {
+          "movie_id": 139385,
+          "title": "The Revenant (2015)",
+          "genres": [
+            "Adventure",
+            "Drama"
+          ],
+          "score": 14.690013885498047
+        },
+        {
+          "movie_id": 166528,
+          "title": "Rogue One: A Star Wars Story (2016)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Fantasy",
+            "Sci-Fi"
+          ],
+          "score": 14.639839172363281
+        },
+        {
+          "movie_id": 122922,
+          "title": "Doctor Strange (2016)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Sci-Fi"
+          ],
+          "score": 14.458484649658203
+        },
+        {
+          "movie_id": 122892,
+          "title": "Avengers: Age of Ultron (2015)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Sci-Fi"
+          ],
+          "score": 14.439644813537598
+        },
+        {
+          "movie_id": 122900,
+          "title": "Ant-Man (2015)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Sci-Fi"
+          ],
+          "score": 14.34122371673584
+        },
+        {
+          "movie_id": 111781,
+          "title": "Mission: Impossible - Rogue Nation (2015)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Thriller"
+          ],
+          "score": 14.31051254272461
+        },
+        {
+          "movie_id": 136020,
+          "title": "Spectre (2015)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Crime"
+          ],
+          "score": 14.181469917297363
+        },
+        {
+          "movie_id": 117529,
+          "title": "Jurassic World (2015)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Drama",
+            "Sci-Fi",
+            "Thriller"
+          ],
+          "score": 14.103363037109375
+        },
+        {
+          "movie_id": 179819,
+          "title": "Star Wars: The Last Jedi (2017)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Fantasy",
+            "Sci-Fi"
+          ],
+          "score": 14.08370304107666
+        },
+        {
+          "movie_id": 122906,
+          "title": "Black Panther (2017)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Sci-Fi"
+          ],
+          "score": 14.053736686706543
+        },
+        {
+          "movie_id": 143355,
+          "title": "Wonder Woman (2017)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Fantasy"
+          ],
+          "score": 14.038313865661621
+        },
+        {
+          "movie_id": 122926,
+          "title": "Untitled Spider-Man Reboot (2017)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Fantasy"
+          ],
+          "score": 14.017523765563965
+        }
+      ]
+    },
+    {
+      "profile": "backend",
+      "aligned": true,
+      "candidate_policy": "selected_only",
+      "preferences": {
+        "preferred_genres": [
+          "Adventure",
+          "Fantasy"
+        ],
+        "avoided_genres": [],
+        "conflicting_genres": []
+      },
+      "items": [
+        {
+          "movie_id": 122882,
+          "title": "Mad Max: Fury Road (2015)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Sci-Fi",
+            "Thriller"
+          ],
+          "score": 15.345191955566406
+        },
+        {
+          "movie_id": 134130,
+          "title": "The Martian (2015)",
+          "genres": [
+            "Adventure",
+            "Drama",
+            "Sci-Fi"
+          ],
+          "score": 15.025967597961426
+        },
+        {
+          "movie_id": 122886,
+          "title": "Star Wars: Episode VII - The Force Awakens (2015)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Fantasy",
+            "Sci-Fi",
+            "IMAX"
+          ],
+          "score": 15.006211280822754
+        },
+        {
+          "movie_id": 122904,
+          "title": "Deadpool (2016)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Comedy",
+            "Sci-Fi"
+          ],
+          "score": 14.938541412353516
+        },
+        {
+          "movie_id": 134853,
+          "title": "Inside Out (2015)",
+          "genres": [
+            "Adventure",
+            "Animation",
+            "Children",
+            "Comedy",
+            "Drama",
+            "Fantasy"
+          ],
+          "score": 14.719317436218262
+        },
+        {
+          "movie_id": 119145,
+          "title": "Kingsman: The Secret Service (2015)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Comedy",
+            "Crime"
+          ],
+          "score": 14.714338302612305
+        },
+        {
+          "movie_id": 139385,
+          "title": "The Revenant (2015)",
+          "genres": [
+            "Adventure",
+            "Drama"
+          ],
+          "score": 14.690013885498047
+        },
+        {
+          "movie_id": 166528,
+          "title": "Rogue One: A Star Wars Story (2016)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Fantasy",
+            "Sci-Fi"
+          ],
+          "score": 14.639839172363281
+        },
+        {
+          "movie_id": 122912,
+          "title": "Avengers: Infinity War - Part I (2018)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Sci-Fi"
+          ],
+          "score": 14.493013381958008
+        },
+        {
+          "movie_id": 122922,
+          "title": "Doctor Strange (2016)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Sci-Fi"
+          ],
+          "score": 14.458484649658203
+        },
+        {
+          "movie_id": 122892,
+          "title": "Avengers: Age of Ultron (2015)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Sci-Fi"
+          ],
+          "score": 14.439644813537598
+        },
+        {
+          "movie_id": 122916,
+          "title": "Thor: Ragnarok (2017)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Sci-Fi"
+          ],
+          "score": 14.426072120666504
+        }
+      ]
+    },
+    {
+      "profile": "backend",
+      "aligned": true,
+      "candidate_policy": "selected_only_all_years",
+      "preferences": {
+        "preferred_genres": [
+          "Adventure",
+          "Fantasy"
+        ],
+        "avoided_genres": [],
+        "conflicting_genres": []
+      },
+      "items": [
+        {
+          "movie_id": 260,
+          "title": "Star Wars: Episode IV - A New Hope (1977)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Sci-Fi"
+          ],
+          "score": 17.05312156677246
+        },
+        {
+          "movie_id": 480,
+          "title": "Jurassic Park (1993)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Sci-Fi",
+            "Thriller"
+          ],
+          "score": 16.877788543701172
+        },
+        {
+          "movie_id": 648,
+          "title": "Mission: Impossible (1996)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Mystery",
+            "Thriller"
+          ],
+          "score": 16.85264778137207
+        },
+        {
+          "movie_id": 1,
+          "title": "Toy Story (1995)",
+          "genres": [
+            "Adventure",
+            "Animation",
+            "Children",
+            "Comedy",
+            "Fantasy"
+          ],
+          "score": 16.776508331298828
+        },
+        {
+          "movie_id": 1210,
+          "title": "Star Wars: Episode VI - Return of the Jedi (1983)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Sci-Fi"
+          ],
+          "score": 16.775005340576172
+        },
+        {
+          "movie_id": 733,
+          "title": "Rock, The (1996)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Thriller"
+          ],
+          "score": 16.764291763305664
+        },
+        {
+          "movie_id": 780,
+          "title": "Independence Day (a.k.a. ID4) (1996)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Sci-Fi",
+            "Thriller"
+          ],
+          "score": 16.750988006591797
+        },
+        {
+          "movie_id": 380,
+          "title": "True Lies (1994)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Comedy",
+            "Romance",
+            "Thriller"
+          ],
+          "score": 16.673954010009766
+        },
+        {
+          "movie_id": 1198,
+          "title": "Raiders of the Lost Ark (Indiana Jones and the Raiders of the Lost Ark) (1981)",
+          "genres": [
+            "Action",
+            "Adventure"
+          ],
+          "score": 16.672687530517578
+        },
+        {
+          "movie_id": 1196,
+          "title": "Star Wars: Episode V - The Empire Strikes Back (1980)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Sci-Fi"
+          ],
+          "score": 16.65643882751465
+        },
+        {
+          "movie_id": 150,
+          "title": "Apollo 13 (1995)",
+          "genres": [
+            "Adventure",
+            "Drama",
+            "IMAX"
+          ],
+          "score": 16.584842681884766
+        },
+        {
+          "movie_id": 1201,
+          "title": "Good, the Bad and the Ugly, The (Buono, il brutto, il cattivo, Il) (1966)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Western"
+          ],
+          "score": 16.5660400390625
+        }
+      ]
+    },
+    {
+      "profile": "display",
+      "aligned": false,
+      "candidate_policy": "current",
+      "preferences": {
+        "preferred_genres": [
+          "Action",
+          "Fantasy"
+        ],
+        "avoided_genres": [],
+        "conflicting_genres": []
+      },
+      "items": [
+        {
+          "movie_id": 166528,
+          "title": "Rogue One: A Star Wars Story (2016)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Fantasy",
+            "Sci-Fi"
+          ],
+          "score": 2.5491631031036377
+        },
+        {
+          "movie_id": 122922,
+          "title": "Doctor Strange (2016)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Sci-Fi"
+          ],
+          "score": 2.1708436012268066
+        },
+        {
+          "movie_id": 135143,
+          "title": "Fantastic Beasts and Where to Find Them (2016)",
+          "genres": [
+            "Fantasy"
+          ],
+          "score": 2.075697422027588
+        },
+        {
+          "movie_id": 122892,
+          "title": "Avengers: Age of Ultron (2015)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Sci-Fi"
+          ],
+          "score": 1.9246960878372192
+        },
+        {
+          "movie_id": 122920,
+          "title": "Captain America: Civil War (2016)",
+          "genres": [
+            "Action",
+            "Sci-Fi",
+            "Thriller"
+          ],
+          "score": 1.912598967552185
+        },
+        {
+          "movie_id": 122926,
+          "title": "Untitled Spider-Man Reboot (2017)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Fantasy"
+          ],
+          "score": 1.7966718673706055
+        },
+        {
+          "movie_id": 187593,
+          "title": "Deadpool 2 (2018)",
+          "genres": [
+            "Action",
+            "Comedy",
+            "Sci-Fi"
+          ],
+          "score": 1.7282872200012207
+        },
+        {
+          "movie_id": 139385,
+          "title": "The Revenant (2015)",
+          "genres": [
+            "Adventure",
+            "Drama"
+          ],
+          "score": 1.6640067100524902
+        },
+        {
+          "movie_id": 143355,
+          "title": "Wonder Woman (2017)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Fantasy"
+          ],
+          "score": 1.6366188526153564
+        },
+        {
+          "movie_id": 122906,
+          "title": "Black Panther (2017)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Sci-Fi"
+          ],
+          "score": 1.623789668083191
+        },
+        {
+          "movie_id": 179819,
+          "title": "Star Wars: The Last Jedi (2017)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Fantasy",
+            "Sci-Fi"
+          ],
+          "score": 1.5702868700027466
+        },
+        {
+          "movie_id": 177765,
+          "title": "Coco (2017)",
+          "genres": [
+            "Adventure",
+            "Animation",
+            "Children"
+          ],
+          "score": 1.521199345588684
+        }
+      ]
+    },
+    {
+      "profile": "display",
+      "aligned": false,
+      "candidate_policy": "selected_only",
+      "preferences": {
+        "preferred_genres": [
+          "Action",
+          "Fantasy"
+        ],
+        "avoided_genres": [],
+        "conflicting_genres": []
+      },
+      "items": [
+        {
+          "movie_id": 122886,
+          "title": "Star Wars: Episode VII - The Force Awakens (2015)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Fantasy",
+            "Sci-Fi",
+            "IMAX"
+          ],
+          "score": 2.9580092430114746
+        },
+        {
+          "movie_id": 122912,
+          "title": "Avengers: Infinity War - Part I (2018)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Sci-Fi"
+          ],
+          "score": 2.7618465423583984
+        },
+        {
+          "movie_id": 134130,
+          "title": "The Martian (2015)",
+          "genres": [
+            "Adventure",
+            "Drama",
+            "Sci-Fi"
+          ],
+          "score": 2.7081494331359863
+        },
+        {
+          "movie_id": 122916,
+          "title": "Thor: Ragnarok (2017)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Sci-Fi"
+          ],
+          "score": 2.6158554553985596
+        },
+        {
+          "movie_id": 166528,
+          "title": "Rogue One: A Star Wars Story (2016)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Fantasy",
+            "Sci-Fi"
+          ],
+          "score": 2.5491631031036377
+        },
+        {
+          "movie_id": 122914,
+          "title": "Avengers: Infinity War - Part II (2019)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Sci-Fi"
+          ],
+          "score": 2.47407865524292
+        },
+        {
+          "movie_id": 122882,
+          "title": "Mad Max: Fury Road (2015)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Sci-Fi",
+            "Thriller"
+          ],
+          "score": 2.420325994491577
+        },
+        {
+          "movie_id": 122904,
+          "title": "Deadpool (2016)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Comedy",
+            "Sci-Fi"
+          ],
+          "score": 2.378401041030884
+        },
+        {
+          "movie_id": 122918,
+          "title": "Guardians of the Galaxy 2 (2017)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Sci-Fi"
+          ],
+          "score": 2.2618181705474854
+        },
+        {
+          "movie_id": 168252,
+          "title": "Logan (2017)",
+          "genres": [
+            "Action",
+            "Sci-Fi"
+          ],
+          "score": 2.24906325340271
+        },
+        {
+          "movie_id": 134853,
+          "title": "Inside Out (2015)",
+          "genres": [
+            "Adventure",
+            "Animation",
+            "Children",
+            "Comedy",
+            "Drama",
+            "Fantasy"
+          ],
+          "score": 2.2185606956481934
+        },
+        {
+          "movie_id": 164179,
+          "title": "Arrival (2016)",
+          "genres": [
+            "Sci-Fi"
+          ],
+          "score": 2.1892149448394775
+        }
+      ]
+    },
+    {
+      "profile": "display",
+      "aligned": false,
+      "candidate_policy": "selected_only_all_years",
+      "preferences": {
+        "preferred_genres": [
+          "Action",
+          "Fantasy"
+        ],
+        "avoided_genres": [],
+        "conflicting_genres": []
+      },
+      "items": [
+        {
+          "movie_id": 7153,
+          "title": "Lord of the Rings: The Return of the King, The (2003)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Drama",
+            "Fantasy"
+          ],
+          "score": 5.216792106628418
+        },
+        {
+          "movie_id": 5952,
+          "title": "Lord of the Rings: The Two Towers, The (2002)",
+          "genres": [
+            "Adventure",
+            "Fantasy"
+          ],
+          "score": 5.176453590393066
+        },
+        {
+          "movie_id": 260,
+          "title": "Star Wars: Episode IV - A New Hope (1977)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Sci-Fi"
+          ],
+          "score": 5.036266326904297
+        },
+        {
+          "movie_id": 1196,
+          "title": "Star Wars: Episode V - The Empire Strikes Back (1980)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Sci-Fi"
+          ],
+          "score": 4.711215496063232
+        },
+        {
+          "movie_id": 1210,
+          "title": "Star Wars: Episode VI - Return of the Jedi (1983)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Sci-Fi"
+          ],
+          "score": 4.667370319366455
+        },
+        {
+          "movie_id": 1198,
+          "title": "Raiders of the Lost Ark (Indiana Jones and the Raiders of the Lost Ark) (1981)",
+          "genres": [
+            "Action",
+            "Adventure"
+          ],
+          "score": 4.619951248168945
+        },
+        {
+          "movie_id": 2571,
+          "title": "Matrix, The (1999)",
+          "genres": [
+            "Action",
+            "Sci-Fi",
+            "Thriller"
+          ],
+          "score": 4.610133171081543
+        },
+        {
+          "movie_id": 1291,
+          "title": "Indiana Jones and the Last Crusade (1989)",
+          "genres": [
+            "Action",
+            "Adventure"
+          ],
+          "score": 4.140584468841553
+        },
+        {
+          "movie_id": 58559,
+          "title": "Dark Knight, The (2008)",
+          "genres": [
+            "Action",
+            "Crime",
+            "Drama",
+            "IMAX"
+          ],
+          "score": 4.1028923988342285
+        },
+        {
+          "movie_id": 318,
+          "title": "Shawshank Redemption, The (1994)",
+          "genres": [
+            "Crime",
+            "Drama"
+          ],
+          "score": 4.0752272605896
+        },
+        {
+          "movie_id": 858,
+          "title": "Godfather, The (1972)",
+          "genres": [
+            "Crime",
+            "Drama"
+          ],
+          "score": 3.9518282413482666
+        },
+        {
+          "movie_id": 79132,
+          "title": "Inception (2010)",
+          "genres": [
+            "Action",
+            "Crime",
+            "Drama",
+            "Mystery",
+            "Sci-Fi",
+            "Thriller",
+            "IMAX"
+          ],
+          "score": 3.896803379058838
+        }
+      ]
+    },
+    {
+      "profile": "display",
+      "aligned": true,
+      "candidate_policy": "current",
+      "preferences": {
+        "preferred_genres": [
+          "Action",
+          "Fantasy"
+        ],
+        "avoided_genres": [],
+        "conflicting_genres": []
+      },
+      "items": [
+        {
+          "movie_id": 166528,
+          "title": "Rogue One: A Star Wars Story (2016)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Fantasy",
+            "Sci-Fi"
+          ],
+          "score": 17.822099685668945
+        },
+        {
+          "movie_id": 122922,
+          "title": "Doctor Strange (2016)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Sci-Fi"
+          ],
+          "score": 17.44378089904785
+        },
+        {
+          "movie_id": 135143,
+          "title": "Fantastic Beasts and Where to Find Them (2016)",
+          "genres": [
+            "Fantasy"
+          ],
+          "score": 17.348634719848633
+        },
+        {
+          "movie_id": 122892,
+          "title": "Avengers: Age of Ultron (2015)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Sci-Fi"
+          ],
+          "score": 17.197633743286133
+        },
+        {
+          "movie_id": 122920,
+          "title": "Captain America: Civil War (2016)",
+          "genres": [
+            "Action",
+            "Sci-Fi",
+            "Thriller"
+          ],
+          "score": 17.185535430908203
+        },
+        {
+          "movie_id": 122926,
+          "title": "Untitled Spider-Man Reboot (2017)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Fantasy"
+          ],
+          "score": 17.069608688354492
+        },
+        {
+          "movie_id": 187593,
+          "title": "Deadpool 2 (2018)",
+          "genres": [
+            "Action",
+            "Comedy",
+            "Sci-Fi"
+          ],
+          "score": 17.001224517822266
+        },
+        {
+          "movie_id": 143355,
+          "title": "Wonder Woman (2017)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Fantasy"
+          ],
+          "score": 16.909555435180664
+        },
+        {
+          "movie_id": 122906,
+          "title": "Black Panther (2017)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Sci-Fi"
+          ],
+          "score": 16.896726608276367
+        },
+        {
+          "movie_id": 179819,
+          "title": "Star Wars: The Last Jedi (2017)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Fantasy",
+            "Sci-Fi"
+          ],
+          "score": 16.843223571777344
+        },
+        {
+          "movie_id": 122890,
+          "title": "Warcraft (2016)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Fantasy"
+          ],
+          "score": 16.791208267211914
+        },
+        {
+          "movie_id": 122900,
+          "title": "Ant-Man (2015)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Sci-Fi"
+          ],
+          "score": 16.78969383239746
+        }
+      ]
+    },
+    {
+      "profile": "display",
+      "aligned": true,
+      "candidate_policy": "selected_only",
+      "preferences": {
+        "preferred_genres": [
+          "Action",
+          "Fantasy"
+        ],
+        "avoided_genres": [],
+        "conflicting_genres": []
+      },
+      "items": [
+        {
+          "movie_id": 122886,
+          "title": "Star Wars: Episode VII - The Force Awakens (2015)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Fantasy",
+            "Sci-Fi",
+            "IMAX"
+          ],
+          "score": 18.230945587158203
+        },
+        {
+          "movie_id": 122912,
+          "title": "Avengers: Infinity War - Part I (2018)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Sci-Fi"
+          ],
+          "score": 18.03478240966797
+        },
+        {
+          "movie_id": 122916,
+          "title": "Thor: Ragnarok (2017)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Sci-Fi"
+          ],
+          "score": 17.888792037963867
+        },
+        {
+          "movie_id": 166528,
+          "title": "Rogue One: A Star Wars Story (2016)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Fantasy",
+            "Sci-Fi"
+          ],
+          "score": 17.822099685668945
+        },
+        {
+          "movie_id": 122914,
+          "title": "Avengers: Infinity War - Part II (2019)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Sci-Fi"
+          ],
+          "score": 17.74701499938965
+        },
+        {
+          "movie_id": 122882,
+          "title": "Mad Max: Fury Road (2015)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Sci-Fi",
+            "Thriller"
+          ],
+          "score": 17.693262100219727
+        },
+        {
+          "movie_id": 122904,
+          "title": "Deadpool (2016)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Comedy",
+            "Sci-Fi"
+          ],
+          "score": 17.651338577270508
+        },
+        {
+          "movie_id": 122918,
+          "title": "Guardians of the Galaxy 2 (2017)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Sci-Fi"
+          ],
+          "score": 17.53475570678711
+        },
+        {
+          "movie_id": 168252,
+          "title": "Logan (2017)",
+          "genres": [
+            "Action",
+            "Sci-Fi"
+          ],
+          "score": 17.52199935913086
+        },
+        {
+          "movie_id": 134853,
+          "title": "Inside Out (2015)",
+          "genres": [
+            "Adventure",
+            "Animation",
+            "Children",
+            "Comedy",
+            "Drama",
+            "Fantasy"
+          ],
+          "score": 17.491497039794922
+        },
+        {
+          "movie_id": 122922,
+          "title": "Doctor Strange (2016)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Sci-Fi"
+          ],
+          "score": 17.44378089904785
+        },
+        {
+          "movie_id": 135143,
+          "title": "Fantastic Beasts and Where to Find Them (2016)",
+          "genres": [
+            "Fantasy"
+          ],
+          "score": 17.348634719848633
+        }
+      ]
+    },
+    {
+      "profile": "display",
+      "aligned": true,
+      "candidate_policy": "selected_only_all_years",
+      "preferences": {
+        "preferred_genres": [
+          "Action",
+          "Fantasy"
+        ],
+        "avoided_genres": [],
+        "conflicting_genres": []
+      },
+      "items": [
+        {
+          "movie_id": 7153,
+          "title": "Lord of the Rings: The Return of the King, The (2003)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Drama",
+            "Fantasy"
+          ],
+          "score": 20.489728927612305
+        },
+        {
+          "movie_id": 5952,
+          "title": "Lord of the Rings: The Two Towers, The (2002)",
+          "genres": [
+            "Adventure",
+            "Fantasy"
+          ],
+          "score": 20.449390411376953
+        },
+        {
+          "movie_id": 260,
+          "title": "Star Wars: Episode IV - A New Hope (1977)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Sci-Fi"
+          ],
+          "score": 20.3092041015625
+        },
+        {
+          "movie_id": 1196,
+          "title": "Star Wars: Episode V - The Empire Strikes Back (1980)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Sci-Fi"
+          ],
+          "score": 19.98415184020996
+        },
+        {
+          "movie_id": 1210,
+          "title": "Star Wars: Episode VI - Return of the Jedi (1983)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Sci-Fi"
+          ],
+          "score": 19.9403076171875
+        },
+        {
+          "movie_id": 1198,
+          "title": "Raiders of the Lost Ark (Indiana Jones and the Raiders of the Lost Ark) (1981)",
+          "genres": [
+            "Action",
+            "Adventure"
+          ],
+          "score": 19.892887115478516
+        },
+        {
+          "movie_id": 2571,
+          "title": "Matrix, The (1999)",
+          "genres": [
+            "Action",
+            "Sci-Fi",
+            "Thriller"
+          ],
+          "score": 19.88306999206543
+        },
+        {
+          "movie_id": 1291,
+          "title": "Indiana Jones and the Last Crusade (1989)",
+          "genres": [
+            "Action",
+            "Adventure"
+          ],
+          "score": 19.41352081298828
+        },
+        {
+          "movie_id": 58559,
+          "title": "Dark Knight, The (2008)",
+          "genres": [
+            "Action",
+            "Crime",
+            "Drama",
+            "IMAX"
+          ],
+          "score": 19.375829696655273
+        },
+        {
+          "movie_id": 79132,
+          "title": "Inception (2010)",
+          "genres": [
+            "Action",
+            "Crime",
+            "Drama",
+            "Mystery",
+            "Sci-Fi",
+            "Thriller",
+            "IMAX"
+          ],
+          "score": 19.169740676879883
+        },
+        {
+          "movie_id": 110,
+          "title": "Braveheart (1995)",
+          "genres": [
+            "Action",
+            "Drama",
+            "War"
+          ],
+          "score": 19.153169631958008
+        },
+        {
+          "movie_id": 3578,
+          "title": "Gladiator (2000)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Drama"
+          ],
+          "score": 19.148822784423828
+        }
+      ]
+    }
+  ],
+  "catalog_items": 22343,
+  "items_2015_plus": 4584,
+  "eligible_current": 4544
+}

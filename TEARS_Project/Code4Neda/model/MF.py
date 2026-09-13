@@ -14,7 +14,12 @@ import time
 #import SentenceTransformer
 from transformers.models.phi import PhiPreTrainedModel
 from transformers.modeling_outputs import SequenceClassifierOutputWithPast
-from sentence_transformers import SentenceTransformer
+# Optional experiment-only dependencies are not required by the TEARS T5Vae
+# checkpoint path. Keep this legacy module importable in lean inference envs.
+try:
+    from sentence_transformers import SentenceTransformer
+except ImportError:  # pragma: no cover - only used by unrelated legacy classes
+    SentenceTransformer = None
 from transformers.models.t5.modeling_t5 import T5PreTrainedModel, T5Model, T5ClassificationHead,T5EncoderModel
 from transformers.models.phi.modeling_phi import PhiConfig,PhiModel
 from typing import List, Optional, Tuple, Union
@@ -24,7 +29,10 @@ from transformers import AutoConfig
 from transformers import AutoModel,BitsAndBytesConfig
 from peft import LoraConfig, TaskType, PeftModel,get_peft_model,prepare_model_for_kbit_training
 from transformers import T5Tokenizer ,AutoTokenizer
-import ot 
+try:
+    import ot
+except ImportError:  # pragma: no cover - unused by the TEARS inference classes
+    ot = None
 #import deepbopy
 from copy import deepcopy
 
@@ -2970,4 +2978,3 @@ def get_OT_RecVAE(args,num_movies):
 
 
     return model ,None
-

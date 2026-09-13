@@ -1,0 +1,13 @@
+
+> movie-recommender-pilot@0.1.0 test
+> react-scripts test --watchAll=false --runInBand
+
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+PASS src/components/TearsApp.test.jsx (7.696 s)
+PASS src/App.test.js
+
+Test Suites: 2 passed, 2 total
+Tests:       2 passed, 2 total
+Snapshots:   0 total
+Time:        12.08 s
+Ran all test suites.

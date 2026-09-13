@@ -1,0 +1,82 @@
+{
+  "cost": {
+    "final_positive_only_projection": {
+      "conservative_reserved_cost_ceiling_usd": 243.84184985165416,
+      "cost_formula": "uncached_input_tokens * $0.25/M + cached_input_tokens * $0.025/M + output_tokens * $2.00/M",
+      "estimated_input_tokens_1000": 1253829.84357454,
+      "estimated_output_tokens_1000": 118791.93367001554,
+      "maximum_output_tokens_per_request": 450,
+      "method": "Apply the paid calibration's actual/proxy token ratios to the same 1,000 histories with the frozen positive-only prompt and offline-extracted positive response lengths.",
+      "not_exact_until_api_usage_is_returned": true,
+      "projected_actual_cost_usd": 110.73065282589874,
+      "projected_input_tokens_200948": 251954599.4066167,
+      "projected_output_tokens_200948": 23871001.487122282
+    },
+    "paid_calibration_observed": {
+      "exact_cost_usd": 0.690776750000001,
+      "input_tokens": 1312459,
+      "old_v2_projected_full_cohort_cost_usd": 138.8102063590002,
+      "output_tokens": 181331,
+      "users": 1000
+    },
+    "pricing_basis": {
+      "batch_usd_per_million_tokens": {
+        "cached_input": 0.025,
+        "output": 2.0,
+        "uncached_input": 0.25
+      },
+      "must_reverify_immediately_before_submission": true,
+      "source": "https://developers.openai.com/api/docs/models/gpt-5-mini"
+    }
+  },
+  "execution": {
+    "checkpoint_after_each_shard": true,
+    "full_validation_before_training": true,
+    "request_type": "OpenAI Batch Responses API",
+    "shard_sizes": [
+      40000,
+      40000,
+      40000,
+      40000,
+      40948
+    ],
+    "shards": 5,
+    "standard_wandb_monitoring": true,
+    "tears_training_started": false,
+    "weave": false
+  },
+  "input": {
+    "frozen_cohort_users": "/network/scratch/a/adls/FullTrainingTEARS/datasets/catalog_selection/support_20/matrix/users.csv",
+    "frozen_observed_history_construction": {
+      "maximum_items": 50,
+      "order": "timestamp_descending_movieId_descending_tiebreak",
+      "template": "\\n{title}\\nRating: {rating}\\n\\\\Genres: {genres}\\n",
+      "validation_test_scope": "frozen_observed_70_percent_only"
+    },
+    "maximum_history_items": 50
+  },
+  "model": "gpt-5-mini-2025-08-07",
+  "paths": {
+    "audit_report": "/network/scratch/a/adls/FullTrainingTEARS/full_ml32m_emiliano_prompt/full_cohort/final_positive_deterministic_negative_20260816/reports/final_audit_report.json",
+    "checkpoints": "/network/scratch/a/adls/FullTrainingTEARS/full_ml32m_emiliano_prompt/full_cohort/final_positive_deterministic_negative_20260816/checkpoints",
+    "composition_records": "/network/scratch/a/adls/FullTrainingTEARS/full_ml32m_emiliano_prompt/full_cohort/final_positive_deterministic_negative_20260816/validated/composition_records.jsonl",
+    "final_summaries": "/network/scratch/a/adls/FullTrainingTEARS/full_ml32m_emiliano_prompt/full_cohort/final_positive_deterministic_negative_20260816/validated/final_summaries.jsonl",
+    "provenance": "/network/scratch/a/adls/FullTrainingTEARS/full_ml32m_emiliano_prompt/full_cohort/final_positive_deterministic_negative_20260816/protocol.json",
+    "raw_api_responses": "/network/scratch/a/adls/FullTrainingTEARS/full_ml32m_emiliano_prompt/full_cohort/final_positive_deterministic_negative_20260816/responses",
+    "raw_positive_summaries": "/network/scratch/a/adls/FullTrainingTEARS/full_ml32m_emiliano_prompt/full_cohort/final_positive_deterministic_negative_20260816/validated/raw_positive_summaries.jsonl",
+    "request_manifests": "/network/scratch/a/adls/FullTrainingTEARS/full_ml32m_emiliano_prompt/full_cohort/final_positive_deterministic_negative_20260816/requests",
+    "root": "/network/scratch/a/adls/FullTrainingTEARS/full_ml32m_emiliano_prompt/full_cohort/final_positive_deterministic_negative_20260816"
+  },
+  "pre_submission_requirements": [
+    "reverify HOME/scratch capacity and quotas",
+    "reverify current official model and Batch API pricing",
+    "materialize and hash exactly 200,948 unique requests",
+    "run genericity and no-user-exception tests",
+    "obtain explicit user authorization for the paid submission"
+  ],
+  "protocol_fingerprint": "e25639ac100659af2ebcd2f7077a485ad731db78e71e07a471b9bde529fb57de",
+  "protocol_version": "tears-final-positive-llm-deterministic-negative-20260816",
+  "requests_submitted": 0,
+  "status": "planned_not_submitted",
+  "users": 200948
+}

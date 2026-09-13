@@ -1,0 +1,12 @@
+{
+  "case": "Barbie",
+  "version": "historical_regenerated",
+  "repeat": 3,
+  "outputs": [
+    {
+      "version": "historical_regenerated",
+      "summary": "Summary: The viewer shows a strong preference for comedy films. The viewer prefers upbeat, satirical, and visually vibrant stories that play with cultural tropes and self aware humor. The viewer has no strong dislike supported by the viewing history. The viewer has no strong dislike of specific plot points or content preferences supported by the viewing history; other viewers who prefer quieter or more serious dramas may enjoy different films."
+    }
+  ],
+  "raw_response": "{\"summary\":\"Summary: The viewer shows a strong preference for comedy films. The viewer prefers upbeat, satirical, and visually vibrant stories that play with cultural tropes and self aware humor. The viewer has no strong dislike supported by the viewing history. The viewer has no strong dislike of specific plot points or content preferences supported by the viewing history; other viewers who prefer quieter or more serious dramas may enjoy different films.\"}"
+}

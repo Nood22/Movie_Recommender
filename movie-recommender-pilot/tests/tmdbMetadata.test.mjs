@@ -4,9 +4,29 @@ import test from "node:test";
 import {
   clearTMDBMetadataCache,
   filterRecommendationRecords,
+  recommendationRankMovement,
   resolveMovieLensRecommendation,
   resolveVerifiedTMDBMetadata,
 } from "../src/utils/tmdbMetadata.mjs";
+
+test("reports exact up/down rank movement for retained recommendations", () => {
+  const previous = [
+    { movie_id: 10, title: "First (2020)", rank: 8 },
+    { movie_id: 20, title: "Second (2020)", rank: 3 },
+  ];
+  assert.deepEqual(
+    recommendationRankMovement({ movie_id: 10, rank: 2 }, previous),
+    { direction: "up", symbol: "↑", positions: 6 }
+  );
+  assert.deepEqual(
+    recommendationRankMovement({ movie_id: 20, rank: 7 }, previous),
+    { direction: "down", symbol: "↓", positions: 4 }
+  );
+  assert.equal(
+    recommendationRankMovement({ movie_id: 30, rank: 1 }, previous),
+    null
+  );
+});
 
 test("defensively excludes the complete onboarding catalog", () => {
   const catalog = [{ movieId: 4993, title: "Example (2001)" }];

@@ -30,7 +30,10 @@ __pycache__/
 
 # Root generated folders
 /model/
-/slurm/
+/slurm/*
+!/slurm/tears_pilot_api.sbatch
+!/slurm/tears_pilot_api_cpu.sbatch
+!/slurm/tears_pilot_gateway.sbatch
 
 # Root symlink to dataset
 /data

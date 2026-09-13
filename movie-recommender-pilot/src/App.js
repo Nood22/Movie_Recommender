@@ -14,8 +14,17 @@ function WrapperGers() {
 }
 
 export default function App() {
+  // The same build is exposed both at the canonical root URL and at /pilot.
+  // Select the router base from the incoming URL instead of baking /pilot into
+  // every client-side route at build time.
+  const basename =
+    window.location.pathname === "/pilot" ||
+    window.location.pathname.startsWith("/pilot/")
+      ? "/pilot"
+      : "/";
+
   return (
-    <Router basename={process.env.PUBLIC_URL || "/"}>
+    <Router basename={basename}>
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/tears" element={<WrapperTears />} />

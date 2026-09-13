@@ -1,0 +1,64 @@
+[
+  {
+    "request_id": "21f38a6f5d4b4230a94668a7128ac1de",
+    "visible_equals_encoded": true,
+    "ranking_policy": {
+      "avoided_genres": [],
+      "conflicting_genres": [],
+      "id": "tears-compound-genre-alignment-v3",
+      "preferred_genre_combinations": [
+        [
+          "Animation",
+          "Children"
+        ]
+      ],
+      "preferred_genres": [
+        "Adventure",
+        "Animation",
+        "Children",
+        "Comedy",
+        "Fantasy"
+      ],
+      "score_semantics": "model_logit_plus_explicit_compound_genre_priority"
+    }
+  },
+  {
+    "request_id": "c3d6197f42d4450dbc3eea900892269f",
+    "visible_equals_encoded": true,
+    "ranking_policy": {
+      "avoided_genres": [],
+      "conflicting_genres": [],
+      "id": "tears-compound-genre-alignment-v3",
+      "preferred_genre_combinations": [
+        [
+          "Animation",
+          "Children"
+        ]
+      ],
+      "preferred_genres": [
+        "Adventure",
+        "Animation",
+        "Children",
+        "Comedy",
+        "Fantasy"
+      ],
+      "score_semantics": "model_logit_plus_explicit_compound_genre_priority"
+    }
+  },
+  {
+    "request_id": "56a695720d264f4f852630777c67bb1c",
+    "generation_cache": {
+      "key": "9aa5382c2c30871f5ef3d491ae8f3b9b70e0878830e65c082fb04c4ea67822d0",
+      "reused": false,
+      "source_request_id": "56a695720d264f4f852630777c67bb1c"
+    }
+  },
+  {
+    "request_id": "96041402f7fd4c5eb696a42148ea132a",
+    "generation_cache": {
+      "key": "9aa5382c2c30871f5ef3d491ae8f3b9b70e0878830e65c082fb04c4ea67822d0",
+      "reused": true,
+      "source_request_id": "56a695720d264f4f852630777c67bb1c"
+    }
+  }
+]

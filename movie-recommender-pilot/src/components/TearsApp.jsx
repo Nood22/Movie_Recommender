@@ -5,14 +5,13 @@ import { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import { motion } from "framer-motion";
 import {
-  filterRecommendationRecords,
+  recommendationRankMovement,
   resolveMovieLensRecommendation,
   resolveVerifiedTMDBMetadata,
 } from "../utils/tmdbMetadata.mjs";
 import {
   canonicalMovieLensId,
   deduplicateSelectableCatalog,
-  selectableCatalogMovieIds,
 } from "../utils/selectableCatalog.mjs";
 import { publicAsset } from "../utils/publicAsset.mjs";
 import { apiErrorMessage } from "../utils/apiError.mjs";
@@ -24,10 +23,9 @@ import {
   summaryInputSnapshot,
 } from "../study/studyProtocol.mjs";
 const TEARS_ALPHA = 0.5;
-const MIN_RECOMMENDATION_YEAR = 2020;
+const MIN_RECOMMENDATION_YEAR = servingDeployment.candidate_filter.value;
 const TMDB_KEY = process.env.REACT_APP_TMDB_API_KEY || "";
 const SELECTABLE_MOVIES = deduplicateSelectableCatalog(pilotMovies);
-const ONBOARDING_CATALOG_MOVIE_IDS = selectableCatalogMovieIds(pilotMovies);
 
 function normalizeMovieId(movieId) {
   const numericId = Number(movieId);
@@ -58,6 +56,7 @@ export default function TearsApp({ goBack }) {
   const [selected, setSelected] = useState([]);
   const [movieRatings, setMovieRatings] = useState({});
   const [summary, setSummary] = useState("");
+  const [summarySourceRequestId, setSummarySourceRequestId] = useState(null);
   const [summaryError, setSummaryError] = useState("");
   const [recommendationError, setRecommendationError] = useState("");
   const context = "";
@@ -86,8 +85,10 @@ export default function TearsApp({ goBack }) {
     activeRecommendationRequest.current = null;
     currentRecommendationSignature.current = `dirty-${recommendationRequestId.current}`;
     if (clearVisible) {
+      if (recommendations.length > 0) {
+        setPrevious(recommendations);
+      }
       setRecommendations([]);
-      setPrevious([]);
     }
     setLoading(false);
   };
@@ -127,6 +128,7 @@ const requestSummary = async (
   revision = representationRevisionRef.current
 ) => {
   const requestId = ++summaryRequestId.current;
+  setSummarySourceRequestId(null);
   if (likedMovies.length === 0) {
     setSummary("");
     setSummaryError("");
@@ -175,6 +177,7 @@ const requestSummary = async (
       responseMatchesCurrent(meta, res.data.study, meta.input_signature)
     ) {
       setSummary(res.data.summary || "");
+      setSummarySourceRequestId(res.data.summary_source_request_id || null);
       invalidateRecommendations();
     }
   } catch (err) {
@@ -245,20 +248,22 @@ const handleRatingChange = async (movieId, value) => {
     const requestId = ++recommendationRequestId.current;
     setLoading(true);
     setRecommendationError("");
+    if (recommendations.length > 0) {
+      setPrevious(recommendations);
+    }
     setRecommendations([]);
 
     try {
-      setPrevious(recommendations);
-
       const payload = {
         // Participant edits are signed and submitted verbatim.
         summary,
+        summary_source_request_id: summarySourceRequestId,
         liked_movie_ids: selected.map((movie) => Number(movie.movieId)),
         preference_evidence: selected.map((movie) => ({
           movie_id: Number(movie.movieId),
           rating: movieRatings[movie.movieId],
         })),
-        excluded_movie_ids: ONBOARDING_CATALOG_MOVIE_IDS,
+        excluded_movie_ids: [],
         catalog_fingerprint: servingDeployment.matrix_fingerprint,
         onboarding_fingerprint: pilotManifest.fingerprint,
         context,
@@ -290,15 +295,11 @@ const handleRatingChange = async (movieId, value) => {
       const selectedMovieIds = new Set(
         selected.map((movie) => normalizeMovieId(movie.movieId))
       );
-      const onboardingCatalogMovieIds = new Set(
-        ONBOARDING_CATALOG_MOVIE_IDS.map(normalizeMovieId)
-      );
       const seenRecommendationIds = new Set();
       const items = rawItems.filter((item) => {
         const movieId = normalizeMovieId(item.movie_id);
         if (
           selectedMovieIds.has(movieId) ||
-          onboardingCatalogMovieIds.has(movieId) ||
           seenRecommendationIds.has(movieId)
         ) {
           return false;
@@ -360,29 +361,9 @@ const handleRatingChange = async (movieId, value) => {
   /* ---------------------------------------------------------
       RANK CHANGE
   ----------------------------------------------------------*/
-  function getRankChange(movie) {
-    if (!previousRecommendations.length) return null;
-
-    const matchesMovie = (candidate) =>
-      movie.movie_id != null && candidate.movie_id != null
-        ? candidate.movie_id === movie.movie_id
-        : candidate.title === movie.title;
-    const prev = previousRecommendations.find(matchesMovie);
-    const now = recommendations.find(matchesMovie);
-
-    if (!prev || !now) return null;
-
-    const diff = prev.rank - now.rank;
-    if (diff > 0) return `⬆ +${diff}`;
-    if (diff < 0) return `⬇ ${diff}`;
-    return "–";
-  }
-
-  const renderedRecommendations = filterRecommendationRecords(
-    recommendations,
-    selected,
-    SELECTABLE_MOVIES
-  );
+  // Render the exact records persisted above; onboarding membership must not
+  // hide valid recommendations or create gaps in their server-assigned ranks.
+  const renderedRecommendations = recommendations;
 
   /* ---------------------------------------------------------
       UI RENDER
@@ -551,12 +532,13 @@ const handleRatingChange = async (movieId, value) => {
           <h2 className="text-lg font-semibold mb-2">Your Summary</h2>
           {summaryLoading && (
             <p className="text-xs text-[#80E7FF] mb-2">
-              Refining your instant summary in the background…
+              Generating your taste summary…
             </p>
           )}
           <textarea
-            className="w-full h-40 resize-none overflow-y-auto bg-white/5 border border-white/10 p-3
-              rounded-lg text-sm mb-4"
+            aria-label="Editable movie taste summary"
+            className="w-full h-72 min-h-[18rem] sm:h-80 xl:h-[22rem] resize-y overflow-y-auto
+              bg-white/5 border border-white/10 p-4 rounded-lg text-sm leading-relaxed mb-4"
             value={summary}
             onChange={(e) => {
               summaryRequestId.current += 1;
@@ -625,6 +607,10 @@ const handleRatingChange = async (movieId, value) => {
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
                 {renderedRecommendations.map((m) => {
                   const resolvedMovieId = m.movie_id;
+                  const rankMovement = recommendationRankMovement(
+                    m,
+                    previousRecommendations
+                  );
                   return (
                   <motion.div
                     key={String(resolvedMovieId)}
@@ -632,6 +618,19 @@ const handleRatingChange = async (movieId, value) => {
                     className="relative bg-white/10 backdrop-blur-lg rounded-xl p-2
                       hover:shadow-[0_0_20px_#00C8FF55] transition-all"
                   >
+                    {rankMovement && (
+                      <span
+                        aria-label={`Moved ${rankMovement.direction} ${rankMovement.positions} ${rankMovement.positions === 1 ? "position" : "positions"}`}
+                        title={`Moved ${rankMovement.direction} ${rankMovement.positions} ${rankMovement.positions === 1 ? "position" : "positions"}`}
+                        className={`absolute right-3 top-3 z-30 rounded-full border px-2 py-1
+                          text-xs font-bold shadow-lg backdrop-blur-md
+                          ${rankMovement.direction === "up"
+                            ? "border-emerald-300/70 bg-emerald-950/90 text-emerald-200"
+                            : "border-amber-300/70 bg-amber-950/90 text-amber-200"}`}
+                      >
+                        {rankMovement.symbol} {rankMovement.positions}
+                      </span>
+                    )}
                     {m.poster_url ? (
                       <img
                         src={m.poster_url}
@@ -663,9 +662,9 @@ const handleRatingChange = async (movieId, value) => {
 
                         <p className="text-[12px] text-green-300 font-bold">
                           {m.rank_label}{" "}
-                          {getRankChange(m) && (
+                          {rankMovement && (
                             <span className="ml-1 text-purple-300">
-                              ({getRankChange(m)})
+                              ({rankMovement.symbol} {rankMovement.positions})
                             </span>
                           )}
                         </p>

@@ -1,0 +1,53 @@
+{
+  "recorded_at_edt": "2026-08-19T12:39:00-04:00",
+  "phase": "full",
+  "protocol": "frozen_v10_evidence_gated_emiliano",
+  "summaries": {
+    "accepted_users": 200948,
+    "expected_users": 200948,
+    "sha256": "763605a2a22dfa77e32c0226fb1f2318b8889b89fa9517e341fb2ac008e90b07",
+    "exact_cumulative_cost_usd": 76.74543560000174,
+    "every_user_accounted_for_exactly_once": true
+  },
+  "queue_counts": {
+    "running": 4,
+    "pending": 21,
+    "failed": 0,
+    "completed": 0
+  },
+  "jobs": [
+    {"job_id": "10416410", "model": "recvae", "seed": 2020, "state": "RUNNING", "reason_or_node": "cn-g016", "elapsed": "00:03:25"},
+    {"job_id": "10416411", "model": "recvae", "seed": 2021, "state": "RUNNING", "reason_or_node": "cn-g024", "elapsed": "00:02:58"},
+    {"job_id": "10416412", "model": "recvae", "seed": 2022, "state": "RUNNING", "reason_or_node": "cn-g019", "elapsed": "00:02:25"},
+    {"job_id": "10416413", "model": "recvae", "seed": 2023, "state": "RUNNING", "reason_or_node": "cn-g029", "elapsed": "00:01:43"},
+    {"job_id": "10416414", "model": "recvae", "seed": 2024, "state": "PENDING", "reason_or_node": "Dependency", "elapsed": "00:00:00"},
+    {"job_id": "10416415", "model": "gers_base", "seed": 2020, "state": "PENDING", "reason_or_node": "Resources", "elapsed": "00:00:00"},
+    {"job_id": "10416416", "model": "gers_base", "seed": 2021, "state": "PENDING", "reason_or_node": "Priority", "elapsed": "00:00:00"},
+    {"job_id": "10416417", "model": "gers_base", "seed": 2022, "state": "PENDING", "reason_or_node": "Priority", "elapsed": "00:00:00"},
+    {"job_id": "10416418", "model": "gers_base", "seed": 2023, "state": "PENDING", "reason_or_node": "Priority", "elapsed": "00:00:00"},
+    {"job_id": "10416419", "model": "gers_base", "seed": 2024, "state": "PENDING", "reason_or_node": "Dependency", "elapsed": "00:00:00"},
+    {"job_id": "10416420", "model": "tears_base", "seed": 2020, "state": "PENDING", "reason_or_node": "Dependency", "elapsed": "00:00:00"},
+    {"job_id": "10416421", "model": "tears_base", "seed": 2021, "state": "PENDING", "reason_or_node": "Dependency", "elapsed": "00:00:00"},
+    {"job_id": "10416422", "model": "tears_base", "seed": 2022, "state": "PENDING", "reason_or_node": "Dependency", "elapsed": "00:00:00"},
+    {"job_id": "10416423", "model": "tears_base", "seed": 2023, "state": "PENDING", "reason_or_node": "Dependency", "elapsed": "00:00:00"},
+    {"job_id": "10416424", "model": "tears_base", "seed": 2024, "state": "PENDING", "reason_or_node": "Dependency", "elapsed": "00:00:00"},
+    {"job_id": "10416425", "model": "tears_recvae", "seed": 2020, "state": "PENDING", "reason_or_node": "Dependency", "elapsed": "00:00:00"},
+    {"job_id": "10416426", "model": "gers_recvae", "seed": 2020, "state": "PENDING", "reason_or_node": "Dependency", "elapsed": "00:00:00"},
+    {"job_id": "10416427", "model": "tears_recvae", "seed": 2021, "state": "PENDING", "reason_or_node": "Dependency", "elapsed": "00:00:00"},
+    {"job_id": "10416428", "model": "gers_recvae", "seed": 2021, "state": "PENDING", "reason_or_node": "Dependency", "elapsed": "00:00:00"},
+    {"job_id": "10416429", "model": "tears_recvae", "seed": 2022, "state": "PENDING", "reason_or_node": "Dependency", "elapsed": "00:00:00"},
+    {"job_id": "10416430", "model": "gers_recvae", "seed": 2022, "state": "PENDING", "reason_or_node": "Dependency", "elapsed": "00:00:00"},
+    {"job_id": "10416431", "model": "tears_recvae", "seed": 2023, "state": "PENDING", "reason_or_node": "Dependency", "elapsed": "00:00:00"},
+    {"job_id": "10416432", "model": "gers_recvae", "seed": 2023, "state": "PENDING", "reason_or_node": "Dependency", "elapsed": "00:00:00"},
+    {"job_id": "10416433", "model": "tears_recvae", "seed": 2024, "state": "PENDING", "reason_or_node": "Dependency", "elapsed": "00:00:00"},
+    {"job_id": "10416434", "model": "gers_recvae", "seed": 2024, "state": "PENDING", "reason_or_node": "Dependency", "elapsed": "00:00:00"}
+  ],
+  "unrelated_running": [
+    {"job_id": "10314035", "name": "tears_public", "state": "RUNNING", "node": "cn-a007"},
+    {"job_id": "10416215", "name": "mila-code", "state": "RUNNING", "node": "cn-c032"}
+  ],
+  "prior_summary_jobs": [
+    {"job_id": "10403598", "name": "v10_full_cohort", "state": "FAILED", "exit_code": "1:0"},
+    {"job_id": "10416328", "name": "v10_full_cohort", "state": "FAILED", "exit_code": "1:0"}
+  ]
+}

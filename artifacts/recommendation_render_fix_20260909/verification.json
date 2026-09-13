@@ -1,0 +1,19 @@
+{
+  "component_sha256": "4f358eabc5b4832cd3bca14a71b08213b36a51058632aa0fb4d8e577e12423ac",
+  "staged_index_sha256": "f79d7a7fd4b7793b8ae1130eebe4ebf4de9efea51eb8c09e339e07d3d0d80acc",
+  "reported_request_id": "request-2ede7033-7016-4fd5-a969-11aac8c12edf",
+  "api_count": 12,
+  "previous_render_count": 7,
+  "hidden_ranks": [
+    1,
+    2,
+    9,
+    10,
+    12
+  ],
+  "published_at": "2026-09-10T02:49:23.736086+00:00",
+  "component_tests": "2 passed",
+  "frontend_contract_files": "6 passed",
+  "production_build": "passed",
+  "publication": "assets copied first, index replaced atomically; old bundles retained"
+}

@@ -1,0 +1,12 @@
+{
+  "case": "Soul",
+  "version": "historical_regenerated",
+  "repeat": 2,
+  "outputs": [
+    {
+      "version": "historical_regenerated",
+      "summary": "Summary: The viewer strongly prefers animated family friendly adventure and comedy stories with fantastical or metaphysical elements. They like uplifting, reflective themes about purpose and personal growth, with imaginative settings and gentle humor. No strong dislike is supported. No strong dislike of specific plot points or content is supported; other viewers who prefer darker, more realistic, or action driven narratives may enjoy different films."
+    }
+  ],
+  "raw_response": "{\"summary\":\"Summary: The viewer strongly prefers animated family friendly adventure and comedy stories with fantastical or metaphysical elements. They like uplifting, reflective themes about purpose and personal growth, with imaginative settings and gentle humor. No strong dislike is supported. No strong dislike of specific plot points or content is supported; other viewers who prefer darker, more realistic, or action driven narratives may enjoy different films.\"}"
+}

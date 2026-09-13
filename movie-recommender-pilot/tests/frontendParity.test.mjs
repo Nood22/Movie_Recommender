@@ -33,10 +33,14 @@ test("pilot keeps the original routes and shared Studio Auréa support code", as
     );
   }
 
-  const pilotApp = (await source(pilotRoot, "App.js")).replace(
-    '<Router basename={process.env.PUBLIC_URL || "/"}>',
-    "<Router>"
-  );
+  const pilotAppSource = await source(pilotRoot, "App.js");
+  assert.match(pilotAppSource, /window\.location\.pathname\.startsWith\("\/pilot\/"\)/);
+  const pilotApp = pilotAppSource
+    .replace(
+      /  \/\/ The same build[\s\S]*?  return \(/,
+      "  return ("
+    )
+    .replace('<Router basename={basename}>', "<Router>");
   assert.equal(pilotApp, await source(originalRoot, "App.js"));
 });
 
@@ -87,9 +91,13 @@ test("pilot screens include responsive layouts and accessible error feedback", a
   assert.match(styles, /focus-visible:ring-2/);
 });
 
-test("TEARS keeps participant edits in a compact fixed-height scrolling textarea", async () => {
+test("TEARS gives participant edits a spacious, vertically resizable textarea", async () => {
   const tears = await source(pilotRoot, "components/TearsApp.jsx");
-  assert.match(tears, /h-40 resize-none overflow-y-auto/);
+  assert.match(
+    tears,
+    /h-72 min-h-\[18rem\] sm:h-80 xl:h-\[22rem\] resize-y overflow-y-auto/
+  );
+  assert.match(tears, /aria-label="Editable movie taste summary"/);
   assert.match(tears, /Participant edits are signed and submitted verbatim\.\n\s*summary,/);
   assert.doesNotMatch(tears, /summary: summary\.trim\(\)/);
 });
@@ -122,7 +130,7 @@ test("participant selection keeps catalog semantics and invisible request proven
   assert.match(pilotTears, /canonicalMovieLensId\(movie\.movieId\)/);
   assert.match(pilotTears, /selected\.map\(\(movie\) => Number\(movie\.movieId\)\)/);
   assert.match(pilotTears, /responseMatchesCurrent/);
-  assert.match(pilotGers, /FIXED_MOVIELENS_CATALOG_IDS/);
+  assert.match(pilotGers, /FIXED_MOVIELENS_CATALOG/);
   assert.match(pilotGers, /genreNamesWithFrequencies/);
   assert.doesNotMatch(pilotGers, /new Set\(\[\.\.\.movieGenreIds/);
   assert.match(sessionLogging, /participant_id: participantId/);

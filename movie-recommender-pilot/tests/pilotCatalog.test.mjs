@@ -23,13 +23,48 @@ const manifest = JSON.parse(
   )
 );
 
-test("pilot onboarding IDs are unique and all 50 are excluded", () => {
-  assert.equal(records.length, 50);
-  assert.equal(deduplicateSelectableCatalog(records).length, 50);
+test("pilot onboarding has 100 unique selectable IDs and titles", () => {
+  assert.equal(records.length, 100);
+  assert.equal(deduplicateSelectableCatalog(records).length, 100);
+  assert.equal(new Set(records.map((movie) => movie.movieId)).size, 100);
+  assert.equal(new Set(records.map((movie) => movie.title)).size, 100);
   assert.deepEqual(
     selectableCatalogMovieIds(records),
     records.map((movie) => movie.movieId)
   );
+  assert.deepEqual(manifest.movie_ids, records.map((movie) => movie.movieId));
+  assert.equal(manifest.catalog_size, 100);
+});
+
+test("shared onboarding follows exact year quotas and separates same-year neighbors", () => {
+  const quotas = {
+    2023: 13, 2022: 13, 2021: 12, 2020: 12,
+    2019: 5, 2018: 5, 2017: 5, 2016: 5, 2015: 5,
+  };
+  assert.deepEqual(manifest.year_quotas, quotas);
+  assert.deepEqual(manifest.older_movies, { before_year: 2015, count: 25 });
+  assert.equal(records.filter(movie => movie.releaseYear < 2015).length, 25);
+  assert.ok(records.every(movie => movie.releaseYear <= 2023));
+  for (let index = 1; index < records.length; index += 1) {
+    assert.notEqual(records[index - 1].releaseYear, records[index].releaseYear);
+  }
+  for (const [year, count] of Object.entries(quotas)) {
+    const rows = records.filter(movie => movie.releaseYear === Number(year));
+    assert.equal(rows.length, count, year);
+    assert.deepEqual(rows, [...rows].sort((a, b) =>
+      b.frozenPopularity - a.frozenPopularity ||
+      b.pilotTrainRatingCount - a.pilotTrainRatingCount ||
+      a.movieId - b.movieId || a.title.localeCompare(b.title)
+    ));
+  }
+  for (let offset = 0; offset < records.length; offset += 20) {
+    const olderCount = records.slice(offset, offset + 20).filter(movie => movie.releaseYear < 2015).length;
+    assert.ok(olderCount >= 4 && olderCount <= 6, `Older titles are unevenly clustered near ${offset}`);
+  }
+  assert.equal(manifest.selection_policy, "popular-year-quotas-v1");
+  assert.match(manifest.display_order, /never place equal release years next to each other/);
+  assert.match(manifest.popularity_source, /Frozen pilot train_observed/);
+  assert.match(manifest.popularity_source, /no live TMDB popularity is used$/);
 });
 
 test("recommendation requests are fingerprint-bound to this catalog", async () => {
@@ -44,6 +79,27 @@ test("recommendation requests are fingerprint-bound to this catalog", async () =
   }
   assert.equal(manifest.matrix_fingerprint.length, 64);
   assert.equal(manifest.fingerprint.length, 64);
+});
+
+test("TEARS and GERS share onboarding without excluding unselected catalog entries", async () => {
+  const tears = await readFile(
+    new URL("../src/components/TearsApp.jsx", import.meta.url),
+    "utf8"
+  );
+  const gers = await readFile(
+    new URL("../src/components/GersApp.jsx", import.meta.url),
+    "utf8"
+  );
+  for (const component of [tears, gers]) {
+    assert.match(component, /import pilotMovies from "\.\.\/data\/pilot_support20_onboarding\.json"/);
+    assert.match(component, /excluded_movie_ids:/);
+  }
+  assert.match(tears, /excluded_movie_ids: \[\]/);
+  assert.match(gers, /excluded_movie_ids: \[\]/);
+  assert.deepEqual(
+    selectableCatalogMovieIds(records),
+    deduplicateSelectableCatalog(records).map((movie) => Number(movie.movieId))
+  );
 });
 
 test("landing wall is catalog-bound and has no original hard-coded poster list", async () => {
@@ -71,17 +127,25 @@ test("landing wall is catalog-bound and has no original hard-coded poster list",
   }
 });
 
+test("landing poster wall cannot move or displace neighbors on hover", async () => {
+  const landing = await readFile(
+    new URL("../src/components/LandingPage.jsx", import.meta.url),
+    "utf8"
+  );
+  const desktopWall = landing.slice(
+    landing.indexOf("POSTER WALL"),
+    landing.indexOf("md:hidden")
+  );
+  assert.match(desktopWall, /pointer-events-none/);
+  assert.match(desktopWall, /<img/);
+  assert.doesNotMatch(desktopWall, /whileHover|hover:|translate|scale|rotate[XY]|transform/);
+  assert.match(landing, /grid grid-cols-3 gap-3 px-4 opacity-35 md:hidden/);
+});
+
 test("all catalog-bound landing posters are bundled locally", async () => {
-  const releaseYear = (movie) =>
-    Number(movie.title.match(/\((\d{4})\)\s*$/)?.[1] || 0);
-  const landingMovies = [...records]
-    .sort(
-      (first, second) =>
-        releaseYear(second) - releaseYear(first) ||
-        second.pilotTrainPositiveCount - first.pilotTrainPositiveCount ||
-        first.movieId - second.movieId
-    )
-    .slice(0, 11);
+  const landing = await readFile(new URL("../src/components/LandingPage.jsx", import.meta.url), "utf8");
+  assert.match(landing, /const LANDING_MOVIES = pilotMovies\.slice\(0, 11\)/);
+  const landingMovies = records.slice(0, 11);
   for (const movie of landingMovies) {
     const poster = await stat(
       new URL(`../public/pilot-posters/${movie.movieId}.jpg`, import.meta.url)

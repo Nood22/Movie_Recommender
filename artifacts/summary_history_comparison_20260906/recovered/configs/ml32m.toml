@@ -1,0 +1,43 @@
+seeds = [2020, 2021, 2022, 2023, 2024]
+
+[data]
+split_seed = 2024
+train_users = 180948
+validation_users = 10000
+test_users = 10000
+observed_fraction = 0.70
+positive_rating = 4.0
+item_support_candidates = [20, 50, 200]
+smoke_users = 10000
+smoke_items = 4000
+pilot_train_users = 9000
+pilot_validation_users = 500
+pilot_test_users = 500
+activity_bands = [20, 50, 100, 200, 500]
+
+[summaries]
+model = "gpt-5-mini-2025-08-07"
+prompt_version = "tears-emiliano-strict-v2"
+max_history_items = 50
+min_words = 120
+max_words = 260
+max_output_tokens = 450
+retry_limit = 2
+spend_cap_usd = 250.0
+reserve_fraction = 0.15
+max_batch_requests = 50000
+max_batch_bytes = 200000000
+
+[model]
+backbone = "google-t5/t5-base"
+latent_dim = 400
+lora_rank = 64
+lora_alpha = 16
+train_alpha = 0.5
+kl_anneal_cap = 0.5
+max_text_tokens = 512
+
+[tracking]
+entity = "niita-mila"
+project = "tears-ml32m"
+mode = "online"

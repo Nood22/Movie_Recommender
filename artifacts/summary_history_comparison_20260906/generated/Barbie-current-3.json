@@ -1,0 +1,50 @@
+{
+  "case": "Barbie",
+  "version": "current",
+  "repeat": 3,
+  "outputs": [
+    {
+      "version": "current_backend",
+      "summary": "Summary: The viewer shows a preference for lighthearted comedic films characterized by humor and playful tone, with this observation narrowly supported by available viewing history and therefore best treated as a tentative, limited indication of enjoyment within the comedy category rather than a broad genre endorsement. No strong preference is supported for particular plot points, themes, or narrative devices because the private evidence does not include repeated examples or detailed content notes, so the absence of such specifics means only that no reliable, narrowly scoped content preferences can be asserted from the record. No strong preference is supported for disliked genres or styles, leaving this aspect of the viewer's taste unspecified without implying that they welcome every genre or share the same response to all approaches to storytelling. No strong preference is supported for disliked plot points or content, leaving the viewer's individual boundaries unspecified without identifying unwanted story elements or assuming that content enjoyed by other viewers would suit their own personal tastes."
+    },
+    {
+      "version": "current_display",
+      "summary": "Summary: The viewer may enjoy lighthearted, comedic films with playful, satirical, or whimsical tones; they seem receptive to bright, humor-driven storytelling that leans into genre-savvy self-awareness and comedic commentary on social conventions."
+    }
+  ],
+  "backend_attempts": [
+    {
+      "word_count": 154,
+      "errors": [
+        "format_parts:2",
+        "four_declarative_period_sentences"
+      ]
+    },
+    {
+      "word_count": 164,
+      "errors": []
+    }
+  ],
+  "display_attempts": [
+    {
+      "attempt": 1,
+      "kind": "initial",
+      "word_count": 42,
+      "validator_errors": [
+        "audit_process_language"
+      ],
+      "generation_errors": [],
+      "retry_errors": [
+        "audit_process_language"
+      ]
+    },
+    {
+      "attempt": 2,
+      "kind": "validator_repair",
+      "word_count": 32,
+      "validator_errors": [],
+      "generation_errors": [],
+      "retry_errors": []
+    }
+  ]
+}

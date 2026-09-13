@@ -1,5 +1,577 @@
 [
   {
+    "frozenPopularity": 3886,
+    "genres": [
+      "Crime",
+      "Drama"
+    ],
+    "imdbId": "0111161",
+    "modelItemId": 311,
+    "movieId": 318,
+    "pilotTrainPositiveCount": 3886,
+    "pilotTrainRatingCount": 4482,
+    "releaseBand": "before-2015",
+    "releaseYear": 1994,
+    "title": "Shawshank Redemption, The (1994)",
+    "tmdbId": 278
+  },
+  {
+    "frozenPopularity": 37,
+    "genres": [
+      "Action",
+      "Adventure",
+      "Animation",
+      "Sci-Fi"
+    ],
+    "imdbId": "9362722",
+    "modelItemId": 22292,
+    "movieId": 286897,
+    "pilotTrainPositiveCount": 37,
+    "pilotTrainRatingCount": 45,
+    "releaseBand": "2023",
+    "releaseYear": 2023,
+    "title": "Spider-Man: Across the Spider-Verse (2023)",
+    "tmdbId": 569094
+  },
+  {
+    "frozenPopularity": 125,
+    "genres": [
+      "Action",
+      "Comedy",
+      "Sci-Fi"
+    ],
+    "imdbId": "6710474",
+    "modelItemId": 21963,
+    "movieId": 270698,
+    "pilotTrainPositiveCount": 125,
+    "pilotTrainRatingCount": 164,
+    "releaseBand": "2022",
+    "releaseYear": 2022,
+    "title": "Everything Everywhere All at Once (2022)",
+    "tmdbId": 545611
+  },
+  {
+    "frozenPopularity": 144,
+    "genres": [
+      "Action",
+      "Adventure",
+      "Drama",
+      "Sci-Fi"
+    ],
+    "imdbId": "1160419",
+    "modelItemId": 21752,
+    "movieId": 254726,
+    "pilotTrainPositiveCount": 144,
+    "pilotTrainRatingCount": 223,
+    "releaseBand": "2021",
+    "releaseYear": 2021,
+    "title": "Dune (2021)",
+    "tmdbId": 438631
+  },
+  {
+    "frozenPopularity": 135,
+    "genres": [
+      "Adventure",
+      "Animation",
+      "Children",
+      "Comedy",
+      "Fantasy"
+    ],
+    "imdbId": "2948372",
+    "modelItemId": 21378,
+    "movieId": 225173,
+    "pilotTrainPositiveCount": 135,
+    "pilotTrainRatingCount": 195,
+    "releaseBand": "2020",
+    "releaseYear": 2020,
+    "title": "Soul (2020)",
+    "tmdbId": 508442
+  },
+  {
+    "frozenPopularity": 3354,
+    "genres": [
+      "Comedy",
+      "Crime",
+      "Drama",
+      "Thriller"
+    ],
+    "imdbId": "0110912",
+    "modelItemId": 289,
+    "movieId": 296,
+    "pilotTrainPositiveCount": 3354,
+    "pilotTrainRatingCount": 4274,
+    "releaseBand": "before-2015",
+    "releaseYear": 1994,
+    "title": "Pulp Fiction (1994)",
+    "tmdbId": 680
+  },
+  {
+    "frozenPopularity": 420,
+    "genres": [
+      "Comedy",
+      "Drama"
+    ],
+    "imdbId": "6751668",
+    "modelItemId": 20689,
+    "movieId": 202439,
+    "pilotTrainPositiveCount": 420,
+    "pilotTrainRatingCount": 500,
+    "releaseBand": "2019",
+    "releaseYear": 2019,
+    "title": "Parasite (2019)",
+    "tmdbId": 496243
+  },
+  {
+    "frozenPopularity": 412,
+    "genres": [
+      "Action",
+      "Adventure",
+      "Sci-Fi"
+    ],
+    "imdbId": "4154756",
+    "modelItemId": 15936,
+    "movieId": 122912,
+    "pilotTrainPositiveCount": 412,
+    "pilotTrainRatingCount": 614,
+    "releaseBand": "2018",
+    "releaseYear": 2018,
+    "title": "Avengers: Infinity War - Part I (2018)",
+    "tmdbId": 299536
+  },
+  {
+    "frozenPopularity": 359,
+    "genres": [
+      "Action",
+      "Sci-Fi"
+    ],
+    "imdbId": "3315342",
+    "modelItemId": 18628,
+    "movieId": 168252,
+    "pilotTrainPositiveCount": 359,
+    "pilotTrainRatingCount": 521,
+    "releaseBand": "2017",
+    "releaseYear": 2017,
+    "title": "Logan (2017)",
+    "tmdbId": 263115
+  },
+  {
+    "frozenPopularity": 633,
+    "genres": [
+      "Action",
+      "Adventure",
+      "Comedy",
+      "Sci-Fi"
+    ],
+    "imdbId": "1431045",
+    "modelItemId": 15932,
+    "movieId": 122904,
+    "pilotTrainPositiveCount": 633,
+    "pilotTrainRatingCount": 1008,
+    "releaseBand": "2016",
+    "releaseYear": 2016,
+    "title": "Deadpool (2016)",
+    "tmdbId": 293660
+  },
+  {
+    "frozenPopularity": 3151,
+    "genres": [
+      "Comedy",
+      "Drama",
+      "Romance",
+      "War"
+    ],
+    "imdbId": "0109830",
+    "modelItemId": 348,
+    "movieId": 356,
+    "pilotTrainPositiveCount": 3151,
+    "pilotTrainRatingCount": 4337,
+    "releaseBand": "before-2015",
+    "releaseYear": 1994,
+    "title": "Forrest Gump (1994)",
+    "tmdbId": 13
+  },
+  {
+    "frozenPopularity": 895,
+    "genres": [
+      "Adventure",
+      "Drama",
+      "Sci-Fi"
+    ],
+    "imdbId": "3659388",
+    "modelItemId": 16565,
+    "movieId": 134130,
+    "pilotTrainPositiveCount": 895,
+    "pilotTrainRatingCount": 1250,
+    "releaseBand": "2015",
+    "releaseYear": 2015,
+    "title": "The Martian (2015)",
+    "tmdbId": 286217
+  },
+  {
+    "frozenPopularity": 28,
+    "genres": [
+      "Drama"
+    ],
+    "imdbId": "15398776",
+    "modelItemId": 22308,
+    "movieId": 287699,
+    "pilotTrainPositiveCount": 28,
+    "pilotTrainRatingCount": 39,
+    "releaseBand": "2023",
+    "releaseYear": 2023,
+    "title": "Oppenheimer (2023)",
+    "tmdbId": 872585
+  },
+  {
+    "frozenPopularity": 75,
+    "genres": [
+      "Action",
+      "Drama"
+    ],
+    "imdbId": "1745960",
+    "modelItemId": 22014,
+    "movieId": 274053,
+    "pilotTrainPositiveCount": 75,
+    "pilotTrainRatingCount": 137,
+    "releaseBand": "2022",
+    "releaseYear": 2022,
+    "title": "Top Gun: Maverick (2022)",
+    "tmdbId": 361743
+  },
+  {
+    "frozenPopularity": 101,
+    "genres": [
+      "Action",
+      "Adventure",
+      "Fantasy",
+      "Sci-Fi"
+    ],
+    "imdbId": "10872600",
+    "modelItemId": 21866,
+    "movieId": 263007,
+    "pilotTrainPositiveCount": 101,
+    "pilotTrainRatingCount": 173,
+    "releaseBand": "2021",
+    "releaseYear": 2021,
+    "title": "Spider-Man: No Way Home (2021)",
+    "tmdbId": 634649
+  },
+  {
+    "frozenPopularity": 3147,
+    "genres": [
+      "Action",
+      "Sci-Fi",
+      "Thriller"
+    ],
+    "imdbId": "0133093",
+    "modelItemId": 2414,
+    "movieId": 2571,
+    "pilotTrainPositiveCount": 3147,
+    "pilotTrainRatingCount": 4090,
+    "releaseBand": "before-2015",
+    "releaseYear": 1999,
+    "title": "Matrix, The (1999)",
+    "tmdbId": 603
+  },
+  {
+    "frozenPopularity": 95,
+    "genres": [
+      "Action",
+      "Crime"
+    ],
+    "imdbId": "8367814",
+    "modelItemId": 21027,
+    "movieId": 210861,
+    "pilotTrainPositiveCount": 95,
+    "pilotTrainRatingCount": 155,
+    "releaseBand": "2020",
+    "releaseYear": 2020,
+    "title": "The Gentlemen (2020)",
+    "tmdbId": 522627
+  },
+  {
+    "frozenPopularity": 3075,
+    "genres": [
+      "Crime",
+      "Horror",
+      "Thriller"
+    ],
+    "imdbId": "0102926",
+    "modelItemId": 577,
+    "movieId": 593,
+    "pilotTrainPositiveCount": 3075,
+    "pilotTrainRatingCount": 3924,
+    "releaseBand": "before-2015",
+    "releaseYear": 1991,
+    "title": "Silence of the Lambs, The (1991)",
+    "tmdbId": 274
+  },
+  {
+    "frozenPopularity": 27,
+    "genres": [
+      "Action",
+      "Adventure",
+      "Sci-Fi"
+    ],
+    "imdbId": "6791350",
+    "modelItemId": 22267,
+    "movieId": 285593,
+    "pilotTrainPositiveCount": 27,
+    "pilotTrainRatingCount": 44,
+    "releaseBand": "2023",
+    "releaseYear": 2023,
+    "title": "Guardians of the Galaxy Volume 3 (2023)",
+    "tmdbId": 447365
+  },
+  {
+    "frozenPopularity": 59,
+    "genres": [
+      "Action",
+      "Crime",
+      "Drama"
+    ],
+    "imdbId": "1877830",
+    "modelItemId": 21927,
+    "movieId": 268642,
+    "pilotTrainPositiveCount": 59,
+    "pilotTrainRatingCount": 127,
+    "releaseBand": "2022",
+    "releaseYear": 2022,
+    "title": "The Batman (2022)",
+    "tmdbId": 414906
+  },
+  {
+    "frozenPopularity": 41,
+    "genres": [
+      "Comedy"
+    ],
+    "imdbId": "14544192",
+    "modelItemId": 21666,
+    "movieId": 250010,
+    "pilotTrainPositiveCount": 41,
+    "pilotTrainRatingCount": 64,
+    "releaseBand": "2021",
+    "releaseYear": 2021,
+    "title": "Bo Burnham: Inside (2021)",
+    "tmdbId": 823754
+  },
+  {
+    "frozenPopularity": 84,
+    "genres": [
+      "Action",
+      "Thriller"
+    ],
+    "imdbId": "6723592",
+    "modelItemId": 21205,
+    "movieId": 217465,
+    "pilotTrainPositiveCount": 84,
+    "pilotTrainRatingCount": 184,
+    "releaseBand": "2020",
+    "releaseYear": 2020,
+    "title": "Tenet (2020)",
+    "tmdbId": 577922
+  },
+  {
+    "frozenPopularity": 2781,
+    "genres": [
+      "Action",
+      "Adventure",
+      "Sci-Fi"
+    ],
+    "imdbId": "0076759",
+    "modelItemId": 254,
+    "movieId": 260,
+    "pilotTrainPositiveCount": 2781,
+    "pilotTrainRatingCount": 3666,
+    "releaseBand": "before-2015",
+    "releaseYear": 1977,
+    "title": "Star Wars: Episode IV - A New Hope (1977)",
+    "tmdbId": 11
+  },
+  {
+    "frozenPopularity": 337,
+    "genres": [
+      "Crime",
+      "Drama",
+      "Thriller"
+    ],
+    "imdbId": "7286456",
+    "modelItemId": 20784,
+    "movieId": 204698,
+    "pilotTrainPositiveCount": 337,
+    "pilotTrainRatingCount": 510,
+    "releaseBand": "2019",
+    "releaseYear": 2019,
+    "title": "Joker (2019)",
+    "tmdbId": 475557
+  },
+  {
+    "frozenPopularity": 23,
+    "genres": [
+      "Comedy"
+    ],
+    "imdbId": "1517268",
+    "modelItemId": 22317,
+    "movieId": 288513,
+    "pilotTrainPositiveCount": 23,
+    "pilotTrainRatingCount": 33,
+    "releaseBand": "2023",
+    "releaseYear": 2023,
+    "title": "Barbie (2023)",
+    "tmdbId": 346698
+  },
+  {
+    "frozenPopularity": 2695,
+    "genres": [
+      "Action",
+      "Crime",
+      "Drama",
+      "Thriller"
+    ],
+    "imdbId": "0137523",
+    "modelItemId": 2795,
+    "movieId": 2959,
+    "pilotTrainPositiveCount": 2695,
+    "pilotTrainRatingCount": 3390,
+    "releaseBand": "before-2015",
+    "releaseYear": 1999,
+    "title": "Fight Club (1999)",
+    "tmdbId": 550
+  },
+  {
+    "frozenPopularity": 43,
+    "genres": [
+      "Comedy",
+      "Drama"
+    ],
+    "imdbId": "11813216",
+    "modelItemId": 22120,
+    "movieId": 278446,
+    "pilotTrainPositiveCount": 43,
+    "pilotTrainRatingCount": 69,
+    "releaseBand": "2022",
+    "releaseYear": 2022,
+    "title": "The Banshees of Inisherin (2022)",
+    "tmdbId": 674324
+  },
+  {
+    "frozenPopularity": 361,
+    "genres": [
+      "Action",
+      "Adventure",
+      "Animation",
+      "Sci-Fi"
+    ],
+    "imdbId": "4633694",
+    "modelItemId": 20321,
+    "movieId": 195159,
+    "pilotTrainPositiveCount": 361,
+    "pilotTrainRatingCount": 449,
+    "releaseBand": "2018",
+    "releaseYear": 2018,
+    "title": "Spider-Man: Into the Spider-Verse (2018)",
+    "tmdbId": 324857
+  },
+  {
+    "frozenPopularity": 39,
+    "genres": [
+      "Action",
+      "Crime",
+      "Thriller"
+    ],
+    "imdbId": "7888964",
+    "modelItemId": 21588,
+    "movieId": 241272,
+    "pilotTrainPositiveCount": 39,
+    "pilotTrainRatingCount": 78,
+    "releaseBand": "2021",
+    "releaseYear": 2021,
+    "title": "Nobody (2021)",
+    "tmdbId": 615457
+  },
+  {
+    "frozenPopularity": 66,
+    "genres": [
+      "Comedy"
+    ],
+    "imdbId": "9484998",
+    "modelItemId": 21225,
+    "movieId": 218537,
+    "pilotTrainPositiveCount": 66,
+    "pilotTrainRatingCount": 118,
+    "releaseBand": "2020",
+    "releaseYear": 2020,
+    "title": "Palm Springs (2020)",
+    "tmdbId": 587792
+  },
+  {
+    "frozenPopularity": 2534,
+    "genres": [
+      "Drama",
+      "War"
+    ],
+    "imdbId": "0108052",
+    "modelItemId": 515,
+    "movieId": 527,
+    "pilotTrainPositiveCount": 2534,
+    "pilotTrainRatingCount": 3166,
+    "releaseBand": "before-2015",
+    "releaseYear": 1993,
+    "title": "Schindler's List (1993)",
+    "tmdbId": 424
+  },
+  {
+    "frozenPopularity": 351,
+    "genres": [
+      "Action",
+      "Adventure",
+      "Sci-Fi"
+    ],
+    "imdbId": "3501632",
+    "modelItemId": 15938,
+    "movieId": 122916,
+    "pilotTrainPositiveCount": 351,
+    "pilotTrainRatingCount": 559,
+    "releaseBand": "2017",
+    "releaseYear": 2017,
+    "title": "Thor: Ragnarok (2017)",
+    "tmdbId": 284053
+  },
+  {
+    "frozenPopularity": 614,
+    "genres": [
+      "Sci-Fi"
+    ],
+    "imdbId": "2543164",
+    "modelItemId": 18328,
+    "movieId": 164179,
+    "pilotTrainPositiveCount": 614,
+    "pilotTrainRatingCount": 871,
+    "releaseBand": "2016",
+    "releaseYear": 2016,
+    "title": "Arrival (2016)",
+    "tmdbId": 329865
+  },
+  {
+    "frozenPopularity": 615,
+    "genres": [
+      "Action",
+      "Adventure",
+      "Sci-Fi",
+      "Thriller"
+    ],
+    "imdbId": "1392190",
+    "modelItemId": 15922,
+    "movieId": 122882,
+    "pilotTrainPositiveCount": 615,
+    "pilotTrainRatingCount": 928,
+    "releaseBand": "2015",
+    "releaseYear": 2015,
+    "title": "Mad Max: Fury Road (2015)",
+    "tmdbId": 76341
+  },
+  {
+    "frozenPopularity": 2443,
     "genres": [
       "Adventure",
       "Fantasy"
@@ -9,11 +581,263 @@
     "movieId": 4993,
     "pilotTrainPositiveCount": 2443,
     "pilotTrainRatingCount": 3232,
-    "releaseBand": "2000-2004",
+    "releaseBand": "before-2015",
+    "releaseYear": 2001,
     "title": "Lord of the Rings: The Fellowship of the Ring, The (2001)",
     "tmdbId": 120
   },
   {
+    "frozenPopularity": 22,
+    "genres": [
+      "Action",
+      "Crime",
+      "Thriller"
+    ],
+    "imdbId": "10366206",
+    "modelItemId": 22252,
+    "movieId": 283873,
+    "pilotTrainPositiveCount": 22,
+    "pilotTrainRatingCount": 43,
+    "releaseBand": "2023",
+    "releaseYear": 2023,
+    "title": "John Wick: Chapter 4 (2023)",
+    "tmdbId": 603692
+  },
+  {
+    "frozenPopularity": 42,
+    "genres": [
+      "Comedy",
+      "Crime",
+      "Mystery"
+    ],
+    "imdbId": "11564570",
+    "modelItemId": 22126,
+    "movieId": 278702,
+    "pilotTrainPositiveCount": 42,
+    "pilotTrainRatingCount": 81,
+    "releaseBand": "2022",
+    "releaseYear": 2022,
+    "title": "Glass Onion: A Knives Out Mystery (2022)",
+    "tmdbId": 661374
+  },
+  {
+    "frozenPopularity": 36,
+    "genres": [
+      "Comedy",
+      "Drama",
+      "Sci-Fi"
+    ],
+    "imdbId": "11286314",
+    "modelItemId": 21872,
+    "movieId": 263407,
+    "pilotTrainPositiveCount": 36,
+    "pilotTrainRatingCount": 96,
+    "releaseBand": "2021",
+    "releaseYear": 2021,
+    "title": "Don't Look Up (2021)",
+    "tmdbId": 646380
+  },
+  {
+    "frozenPopularity": 2392,
+    "genres": [
+      "Action",
+      "Adventure",
+      "Sci-Fi"
+    ],
+    "imdbId": "0080684",
+    "modelItemId": 1137,
+    "movieId": 1196,
+    "pilotTrainPositiveCount": 2392,
+    "pilotTrainRatingCount": 3108,
+    "releaseBand": "before-2015",
+    "releaseYear": 1980,
+    "title": "Star Wars: Episode V - The Empire Strikes Back (1980)",
+    "tmdbId": 1891
+  },
+  {
+    "frozenPopularity": 63,
+    "genres": [
+      "Drama"
+    ],
+    "imdbId": "8503618",
+    "modelItemId": 21209,
+    "movieId": 217655,
+    "pilotTrainPositiveCount": 63,
+    "pilotTrainRatingCount": 94,
+    "releaseBand": "2020",
+    "releaseYear": 2020,
+    "title": "Hamilton (2020)",
+    "tmdbId": 556574
+  },
+  {
+    "frozenPopularity": 13,
+    "genres": [
+      "Action",
+      "Adventure",
+      "Fantasy"
+    ],
+    "imdbId": "2906216",
+    "modelItemId": 22265,
+    "movieId": 285301,
+    "pilotTrainPositiveCount": 13,
+    "pilotTrainRatingCount": 27,
+    "releaseBand": "2023",
+    "releaseYear": 2023,
+    "title": "Dungeons & Dragons: Honor Among Thieves (2023)",
+    "tmdbId": 493529
+  },
+  {
+    "frozenPopularity": 2373,
+    "genres": [
+      "Crime",
+      "Mystery",
+      "Thriller"
+    ],
+    "imdbId": "0114814",
+    "modelItemId": 49,
+    "movieId": 50,
+    "pilotTrainPositiveCount": 2373,
+    "pilotTrainRatingCount": 2908,
+    "releaseBand": "before-2015",
+    "releaseYear": 1995,
+    "title": "Usual Suspects, The (1995)",
+    "tmdbId": 629
+  },
+  {
+    "frozenPopularity": 39,
+    "genres": [
+      "Comedy",
+      "Horror"
+    ],
+    "imdbId": "9764362",
+    "modelItemId": 22167,
+    "movieId": 279812,
+    "pilotTrainPositiveCount": 39,
+    "pilotTrainRatingCount": 73,
+    "releaseBand": "2022",
+    "releaseYear": 2022,
+    "title": "The Menu (2022)",
+    "tmdbId": 593643
+  },
+  {
+    "frozenPopularity": 36,
+    "genres": [
+      "Action",
+      "Adventure",
+      "Fantasy"
+    ],
+    "imdbId": "9376612",
+    "modelItemId": 21755,
+    "movieId": 255335,
+    "pilotTrainPositiveCount": 36,
+    "pilotTrainRatingCount": 77,
+    "releaseBand": "2021",
+    "releaseYear": 2021,
+    "title": "Shang-Chi and the Legend of the Ten Rings (2021)",
+    "tmdbId": 566525
+  },
+  {
+    "frozenPopularity": 45,
+    "genres": [
+      "Drama",
+      "Thriller"
+    ],
+    "imdbId": "1070874",
+    "modelItemId": 21406,
+    "movieId": 226270,
+    "pilotTrainPositiveCount": 45,
+    "pilotTrainRatingCount": 84,
+    "releaseBand": "2020",
+    "releaseYear": 2020,
+    "title": "The Trial of the Chicago 7 (2020)",
+    "tmdbId": 556984
+  },
+  {
+    "frozenPopularity": 2359,
+    "genres": [
+      "Crime",
+      "Drama"
+    ],
+    "imdbId": "0068646",
+    "modelItemId": 821,
+    "movieId": 858,
+    "pilotTrainPositiveCount": 2359,
+    "pilotTrainRatingCount": 2902,
+    "releaseBand": "before-2015",
+    "releaseYear": 1972,
+    "title": "Godfather, The (1972)",
+    "tmdbId": 238
+  },
+  {
+    "frozenPopularity": 329,
+    "genres": [
+      "Action",
+      "Adventure",
+      "Sci-Fi"
+    ],
+    "imdbId": "4154796",
+    "modelItemId": 15937,
+    "movieId": 122914,
+    "pilotTrainPositiveCount": 329,
+    "pilotTrainRatingCount": 500,
+    "releaseBand": "2019",
+    "releaseYear": 2019,
+    "title": "Avengers: Infinity War - Part II (2019)",
+    "tmdbId": 299534
+  },
+  {
+    "frozenPopularity": 250,
+    "genres": [
+      "Action",
+      "Comedy",
+      "Sci-Fi"
+    ],
+    "imdbId": "5463162",
+    "modelItemId": 19897,
+    "movieId": 187593,
+    "pilotTrainPositiveCount": 250,
+    "pilotTrainRatingCount": 435,
+    "releaseBand": "2018",
+    "releaseYear": 2018,
+    "title": "Deadpool 2 (2018)",
+    "tmdbId": 383498
+  },
+  {
+    "frozenPopularity": 342,
+    "genres": [
+      "Action",
+      "Adventure",
+      "Sci-Fi"
+    ],
+    "imdbId": "3896198",
+    "modelItemId": 15939,
+    "movieId": 122918,
+    "pilotTrainPositiveCount": 342,
+    "pilotTrainRatingCount": 572,
+    "releaseBand": "2017",
+    "releaseYear": 2017,
+    "title": "Guardians of the Galaxy 2 (2017)",
+    "tmdbId": 283995
+  },
+  {
+    "frozenPopularity": 9,
+    "genres": [
+      "Action",
+      "Adventure",
+      "Thriller"
+    ],
+    "imdbId": "9603212",
+    "modelItemId": 22313,
+    "movieId": 288265,
+    "pilotTrainPositiveCount": 9,
+    "pilotTrainRatingCount": 14,
+    "releaseBand": "2023",
+    "releaseYear": 2023,
+    "title": "Mission: Impossible - Dead Reckoning Part One (2023)",
+    "tmdbId": 575264
+  },
+  {
+    "frozenPopularity": 2245,
     "genres": [
       "Action",
       "Adventure",
@@ -25,11 +849,140 @@
     "movieId": 7153,
     "pilotTrainPositiveCount": 2245,
     "pilotTrainRatingCount": 2945,
-    "releaseBand": "2000-2004",
+    "releaseBand": "before-2015",
+    "releaseYear": 2003,
     "title": "Lord of the Rings: The Return of the King, The (2003)",
     "tmdbId": 122
   },
   {
+    "frozenPopularity": 36,
+    "genres": [
+      "Action",
+      "Mystery",
+      "Thriller"
+    ],
+    "imdbId": "12593682",
+    "modelItemId": 22012,
+    "movieId": 273891,
+    "pilotTrainPositiveCount": 36,
+    "pilotTrainRatingCount": 65,
+    "releaseBand": "2022",
+    "releaseYear": 2022,
+    "title": "Bullet Train (2022)",
+    "tmdbId": 718930
+  },
+  {
+    "frozenPopularity": 382,
+    "genres": [
+      "Action",
+      "Adventure",
+      "Animation",
+      "Children",
+      "Comedy"
+    ],
+    "imdbId": "2948356",
+    "modelItemId": 17717,
+    "movieId": 152081,
+    "pilotTrainPositiveCount": 382,
+    "pilotTrainRatingCount": 609,
+    "releaseBand": "2016",
+    "releaseYear": 2016,
+    "title": "Zootopia (2016)",
+    "tmdbId": 269149
+  },
+  {
+    "frozenPopularity": 595,
+    "genres": [
+      "Adventure",
+      "Animation",
+      "Children",
+      "Comedy",
+      "Drama",
+      "Fantasy"
+    ],
+    "imdbId": "2096673",
+    "modelItemId": 16629,
+    "movieId": 134853,
+    "pilotTrainPositiveCount": 595,
+    "pilotTrainRatingCount": 926,
+    "releaseBand": "2015",
+    "releaseYear": 2015,
+    "title": "Inside Out (2015)",
+    "tmdbId": 150540
+  },
+  {
+    "frozenPopularity": 2242,
+    "genres": [
+      "Action",
+      "Adventure"
+    ],
+    "imdbId": "0082971",
+    "modelItemId": 1139,
+    "movieId": 1198,
+    "pilotTrainPositiveCount": 2242,
+    "pilotTrainRatingCount": 2981,
+    "releaseBand": "before-2015",
+    "releaseYear": 1981,
+    "title": "Raiders of the Lost Ark (Indiana Jones and the Raiders of the Lost Ark) (1981)",
+    "tmdbId": 85
+  },
+  {
+    "frozenPopularity": 32,
+    "genres": [
+      "Adventure",
+      "Animation",
+      "Children",
+      "Fantasy"
+    ],
+    "imdbId": "2953050",
+    "modelItemId": 21833,
+    "movieId": 260667,
+    "pilotTrainPositiveCount": 32,
+    "pilotTrainRatingCount": 64,
+    "releaseBand": "2021",
+    "releaseYear": 2021,
+    "title": "Encanto (2021)",
+    "tmdbId": 568124
+  },
+  {
+    "frozenPopularity": 40,
+    "genres": [
+      "Action",
+      "Adventure",
+      "Comedy",
+      "Sci-Fi"
+    ],
+    "imdbId": "6264654",
+    "modelItemId": 21402,
+    "movieId": 226202,
+    "pilotTrainPositiveCount": 40,
+    "pilotTrainRatingCount": 86,
+    "releaseBand": "2020",
+    "releaseYear": 2020,
+    "title": "Free Guy (2020)",
+    "tmdbId": 550988
+  },
+  {
+    "frozenPopularity": 8,
+    "genres": [
+      "Action",
+      "Adventure",
+      "Animation",
+      "Fantasy",
+      "Sci-Fi"
+    ],
+    "imdbId": "19500164",
+    "modelItemId": 22316,
+    "movieId": 288311,
+    "pilotTrainPositiveCount": 8,
+    "pilotTrainRatingCount": 11,
+    "releaseBand": "2023",
+    "releaseYear": 2023,
+    "title": "Nimona (2023)",
+    "tmdbId": 961323
+  },
+  {
+    "frozenPopularity": 2226,
     "genres": [
       "Adventure",
       "Fantasy"
@@ -39,119 +992,325 @@
     "movieId": 5952,
     "pilotTrainPositiveCount": 2226,
     "pilotTrainRatingCount": 2954,
-    "releaseBand": "2000-2004",
+    "releaseBand": "before-2015",
+    "releaseYear": 2002,
     "title": "Lord of the Rings: The Two Towers, The (2002)",
     "tmdbId": 121
   },
   {
-    "genres": [
-      "Mystery",
-      "Thriller"
-    ],
-    "imdbId": "0209144",
-    "modelItemId": 3994,
-    "movieId": 4226,
-    "pilotTrainPositiveCount": 1801,
-    "pilotTrainRatingCount": 2338,
-    "releaseBand": "2000-2004",
-    "title": "Memento (2000)",
-    "tmdbId": 77
-  },
-  {
-    "genres": [
-      "Action",
-      "Adventure",
-      "Drama"
-    ],
-    "imdbId": "0172495",
-    "modelItemId": 3369,
-    "movieId": 3578,
-    "pilotTrainPositiveCount": 1726,
-    "pilotTrainRatingCount": 2542,
-    "releaseBand": "2000-2004",
-    "title": "Gladiator (2000)",
-    "tmdbId": 98
-  },
-  {
+    "frozenPopularity": 35,
     "genres": [
       "Adventure",
       "Animation",
       "Children",
       "Comedy",
-      "Fantasy",
-      "Romance"
+      "Fantasy"
     ],
-    "imdbId": "0126029",
-    "modelItemId": 4069,
-    "movieId": 4306,
-    "pilotTrainPositiveCount": 1432,
-    "pilotTrainRatingCount": 2426,
-    "releaseBand": "2000-2004",
-    "title": "Shrek (2001)",
-    "tmdbId": 808
+    "imdbId": "3915174",
+    "modelItemId": 22208,
+    "movieId": 281096,
+    "pilotTrainPositiveCount": 35,
+    "pilotTrainRatingCount": 54,
+    "releaseBand": "2022",
+    "releaseYear": 2022,
+    "title": "Puss in Boots: The Last Wish (2022)",
+    "tmdbId": 315162
   },
   {
+    "frozenPopularity": 27,
+    "genres": [
+      "Action",
+      "Adventure",
+      "Crime",
+      "Fantasy"
+    ],
+    "imdbId": "6334354",
+    "modelItemId": 21675,
+    "movieId": 251086,
+    "pilotTrainPositiveCount": 27,
+    "pilotTrainRatingCount": 78,
+    "releaseBand": "2021",
+    "releaseYear": 2021,
+    "title": "The Suicide Squad (2021)",
+    "tmdbId": 436969
+  },
+  {
+    "frozenPopularity": 2112,
+    "genres": [
+      "Drama",
+      "Romance"
+    ],
+    "imdbId": "0169547",
+    "modelItemId": 2696,
+    "movieId": 2858,
+    "pilotTrainPositiveCount": 2112,
+    "pilotTrainRatingCount": 2864,
+    "releaseBand": "before-2015",
+    "releaseYear": 1999,
+    "title": "American Beauty (1999)",
+    "tmdbId": 14
+  },
+  {
+    "frozenPopularity": 39,
+    "genres": [
+      "Horror",
+      "Sci-Fi",
+      "Thriller"
+    ],
+    "imdbId": "1051906",
+    "modelItemId": 21078,
+    "movieId": 212461,
+    "pilotTrainPositiveCount": 39,
+    "pilotTrainRatingCount": 82,
+    "releaseBand": "2020",
+    "releaseYear": 2020,
+    "title": "The Invisible Man (2020)",
+    "tmdbId": 570670
+  },
+  {
+    "frozenPopularity": 6,
     "genres": [
       "Comedy",
-      "Romance"
-    ],
-    "imdbId": "0211915",
-    "modelItemId": 4713,
-    "movieId": 4973,
-    "pilotTrainPositiveCount": 1383,
-    "pilotTrainRatingCount": 1890,
-    "releaseBand": "2000-2004",
-    "title": "Amelie (Fabuleux destin d'Am\u00e9lie Poulain, Le) (2001)",
-    "tmdbId": 194
-  },
-  {
-    "genres": [
       "Drama",
       "Romance",
       "Sci-Fi"
     ],
-    "imdbId": "0338013",
-    "modelItemId": 6935,
-    "movieId": 7361,
-    "pilotTrainPositiveCount": 1377,
-    "pilotTrainRatingCount": 1905,
-    "releaseBand": "2000-2004",
-    "title": "Eternal Sunshine of the Spotless Mind (2004)",
-    "tmdbId": 38
+    "imdbId": "14230388",
+    "modelItemId": 22306,
+    "movieId": 287633,
+    "pilotTrainPositiveCount": 6,
+    "pilotTrainRatingCount": 15,
+    "releaseBand": "2023",
+    "releaseYear": 2023,
+    "title": "Asteroid City (2023)",
+    "tmdbId": 747188
   },
   {
+    "frozenPopularity": 34,
+    "genres": [
+      "Action",
+      "Drama",
+      "War"
+    ],
+    "imdbId": "1016150",
+    "modelItemId": 22121,
+    "movieId": 278578,
+    "pilotTrainPositiveCount": 34,
+    "pilotTrainRatingCount": 55,
+    "releaseBand": "2022",
+    "releaseYear": 2022,
+    "title": "All Quiet on the Western Front (2022)",
+    "tmdbId": 49046
+  },
+  {
+    "frozenPopularity": 2064,
+    "genres": [
+      "Mystery",
+      "Thriller"
+    ],
+    "imdbId": "0114369",
+    "modelItemId": 46,
+    "movieId": 47,
+    "pilotTrainPositiveCount": 2064,
+    "pilotTrainRatingCount": 2727,
+    "releaseBand": "before-2015",
+    "releaseYear": 1995,
+    "title": "Seven (a.k.a. Se7en) (1995)",
+    "tmdbId": 807
+  },
+  {
+    "frozenPopularity": 321,
+    "genres": [
+      "Comedy",
+      "Crime",
+      "Drama",
+      "Mystery",
+      "Thriller"
+    ],
+    "imdbId": "8946378",
+    "modelItemId": 20909,
+    "movieId": 207313,
+    "pilotTrainPositiveCount": 321,
+    "pilotTrainRatingCount": 443,
+    "releaseBand": "2019",
+    "releaseYear": 2019,
+    "title": "Knives Out (2019)",
+    "tmdbId": 546554
+  },
+  {
+    "frozenPopularity": 185,
+    "genres": [
+      "Comedy",
+      "Drama"
+    ],
+    "imdbId": "6966692",
+    "modelItemId": 20275,
+    "movieId": 194448,
+    "pilotTrainPositiveCount": 185,
+    "pilotTrainRatingCount": 261,
+    "releaseBand": "2018",
+    "releaseYear": 2018,
+    "title": "Green Book (2018)",
+    "tmdbId": 490132
+  },
+  {
+    "frozenPopularity": 342,
+    "genres": [
+      "Horror"
+    ],
+    "imdbId": "5052448",
+    "modelItemId": 18627,
+    "movieId": 168250,
+    "pilotTrainPositiveCount": 342,
+    "pilotTrainRatingCount": 493,
+    "releaseBand": "2017",
+    "releaseYear": 2017,
+    "title": "Get Out (2017)",
+    "tmdbId": 419430
+  },
+  {
+    "frozenPopularity": 322,
     "genres": [
       "Action",
       "Adventure",
-      "Comedy",
-      "Fantasy"
+      "Fantasy",
+      "Sci-Fi"
     ],
-    "imdbId": "0325980",
-    "modelItemId": 6181,
-    "movieId": 6539,
-    "pilotTrainPositiveCount": 1273,
-    "pilotTrainRatingCount": 2125,
-    "releaseBand": "2000-2004",
-    "title": "Pirates of the Caribbean: The Curse of the Black Pearl (2003)",
-    "tmdbId": 22
+    "imdbId": "3748528",
+    "modelItemId": 18495,
+    "movieId": 166528,
+    "pilotTrainPositiveCount": 322,
+    "pilotTrainRatingCount": 546,
+    "releaseBand": "2016",
+    "releaseYear": 2016,
+    "title": "Rogue One: A Star Wars Story (2016)",
+    "tmdbId": 330459
   },
   {
+    "frozenPopularity": 2055,
+    "genres": [
+      "Action",
+      "Adventure",
+      "Sci-Fi"
+    ],
+    "imdbId": "0086190",
+    "modelItemId": 1150,
+    "movieId": 1210,
+    "pilotTrainPositiveCount": 2055,
+    "pilotTrainRatingCount": 2926,
+    "releaseBand": "before-2015",
+    "releaseYear": 1983,
+    "title": "Star Wars: Episode VI - Return of the Jedi (1983)",
+    "tmdbId": 1892
+  },
+  {
+    "frozenPopularity": 26,
+    "genres": [
+      "Action",
+      "Adventure",
+      "Fantasy",
+      "Sci-Fi"
+    ],
+    "imdbId": "12361974",
+    "modelItemId": 21621,
+    "movieId": 243642,
+    "pilotTrainPositiveCount": 26,
+    "pilotTrainRatingCount": 54,
+    "releaseBand": "2021",
+    "releaseYear": 2021,
+    "title": "Zack Snyder's Justice League (2021)",
+    "tmdbId": 791373
+  },
+  {
+    "frozenPopularity": 36,
     "genres": [
       "Adventure",
       "Animation",
       "Children",
-      "Comedy"
+      "Comedy",
+      "Fantasy"
     ],
-    "imdbId": "0266543",
-    "modelItemId": 6034,
-    "movieId": 6377,
-    "pilotTrainPositiveCount": 1270,
-    "pilotTrainRatingCount": 2025,
-    "releaseBand": "2000-2004",
-    "title": "Finding Nemo (2003)",
-    "tmdbId": 12
+    "imdbId": "7146812",
+    "modelItemId": 21096,
+    "movieId": 213207,
+    "pilotTrainPositiveCount": 36,
+    "pilotTrainRatingCount": 78,
+    "releaseBand": "2020",
+    "releaseYear": 2020,
+    "title": "Onward (2020)",
+    "tmdbId": 508439
   },
   {
+    "frozenPopularity": 558,
+    "genres": [
+      "Drama",
+      "Sci-Fi",
+      "Thriller"
+    ],
+    "imdbId": "0470752",
+    "modelItemId": 15484,
+    "movieId": 115713,
+    "pilotTrainPositiveCount": 558,
+    "pilotTrainRatingCount": 821,
+    "releaseBand": "2015",
+    "releaseYear": 2015,
+    "title": "Ex Machina (2015)",
+    "tmdbId": 264660
+  },
+  {
+    "frozenPopularity": 6,
+    "genres": [
+      "Action",
+      "Drama",
+      "Thriller",
+      "War"
+    ],
+    "imdbId": "4873118",
+    "modelItemId": 22258,
+    "movieId": 284293,
+    "pilotTrainPositiveCount": 6,
+    "pilotTrainRatingCount": 14,
+    "releaseBand": "2023",
+    "releaseYear": 2023,
+    "title": "The Covenant (2023)",
+    "tmdbId": 882569
+  },
+  {
+    "frozenPopularity": 2037,
+    "genres": [
+      "Action",
+      "Drama",
+      "War"
+    ],
+    "imdbId": "0112573",
+    "modelItemId": 107,
+    "movieId": 110,
+    "pilotTrainPositiveCount": 2037,
+    "pilotTrainRatingCount": 2968,
+    "releaseBand": "before-2015",
+    "releaseYear": 1995,
+    "title": "Braveheart (1995)",
+    "tmdbId": 197
+  },
+  {
+    "frozenPopularity": 23,
+    "genres": [
+      "Action",
+      "Adventure",
+      "Fantasy"
+    ],
+    "imdbId": "9419884",
+    "modelItemId": 21999,
+    "movieId": 272525,
+    "pilotTrainPositiveCount": 23,
+    "pilotTrainRatingCount": 65,
+    "releaseBand": "2022",
+    "releaseYear": 2022,
+    "title": "Doctor Strange in the Multiverse of Madness (2022)",
+    "tmdbId": 453395
+  },
+  {
+    "frozenPopularity": 2037,
     "genres": [
       "Action",
       "Crime",
@@ -163,150 +1322,132 @@
     "movieId": 58559,
     "pilotTrainPositiveCount": 2037,
     "pilotTrainRatingCount": 2622,
-    "releaseBand": "2005-2009",
+    "releaseBand": "before-2015",
+    "releaseYear": 2008,
     "title": "Dark Knight, The (2008)",
     "tmdbId": 155
   },
   {
-    "genres": [
-      "Action",
-      "Crime",
-      "IMAX"
-    ],
-    "imdbId": "0372784",
-    "modelItemId": 9217,
-    "movieId": 33794,
-    "pilotTrainPositiveCount": 1256,
-    "pilotTrainRatingCount": 1839,
-    "releaseBand": "2005-2009",
-    "title": "Batman Begins (2005)",
-    "tmdbId": 272
-  },
-  {
+    "frozenPopularity": 24,
     "genres": [
       "Adventure",
       "Animation",
       "Children",
-      "Romance",
+      "Comedy",
+      "Fantasy"
+    ],
+    "imdbId": "12801262",
+    "modelItemId": 21654,
+    "movieId": 247988,
+    "pilotTrainPositiveCount": 24,
+    "pilotTrainRatingCount": 53,
+    "releaseBand": "2021",
+    "releaseYear": 2021,
+    "title": "Luca (2021)",
+    "tmdbId": 508943
+  },
+  {
+    "frozenPopularity": 36,
+    "genres": [
+      "Action",
+      "Adventure",
+      "Mystery",
+      "Thriller"
+    ],
+    "imdbId": "2382320",
+    "modelItemId": 21356,
+    "movieId": 224280,
+    "pilotTrainPositiveCount": 36,
+    "pilotTrainRatingCount": 71,
+    "releaseBand": "2020",
+    "releaseYear": 2020,
+    "title": "No Time to Die (2020)",
+    "tmdbId": 370172
+  },
+  {
+    "frozenPopularity": 6,
+    "genres": [
+      "Action",
+      "War"
+    ],
+    "imdbId": "14846026",
+    "modelItemId": 22242,
+    "movieId": 283139,
+    "pilotTrainPositiveCount": 6,
+    "pilotTrainRatingCount": 10,
+    "releaseBand": "2023",
+    "releaseYear": 2023,
+    "title": "Sisu (2023)",
+    "tmdbId": 840326
+  },
+  {
+    "frozenPopularity": 19,
+    "genres": [
+      "Action",
+      "Adventure",
       "Sci-Fi"
     ],
-    "imdbId": "0910970",
-    "modelItemId": 11090,
-    "movieId": 60069,
-    "pilotTrainPositiveCount": 1234,
-    "pilotTrainRatingCount": 1725,
-    "releaseBand": "2005-2009",
-    "title": "WALL\u00b7E (2008)",
-    "tmdbId": 10681
+    "imdbId": "1630029",
+    "modelItemId": 22181,
+    "movieId": 280218,
+    "pilotTrainPositiveCount": 19,
+    "pilotTrainRatingCount": 53,
+    "releaseBand": "2022",
+    "releaseYear": 2022,
+    "title": "Avatar: The Way of Water (2022)",
+    "tmdbId": 76600
   },
   {
-    "genres": [
-      "Crime",
-      "Drama",
-      "Thriller"
-    ],
-    "imdbId": "0407887",
-    "modelItemId": 10079,
-    "movieId": 48516,
-    "pilotTrainPositiveCount": 1144,
-    "pilotTrainRatingCount": 1517,
-    "releaseBand": "2005-2009",
-    "title": "Departed, The (2006)",
-    "tmdbId": 1422
-  },
-  {
-    "genres": [
-      "Adventure",
-      "Animation",
-      "Children",
-      "Drama"
-    ],
-    "imdbId": "1049413",
-    "modelItemId": 11694,
-    "movieId": 68954,
-    "pilotTrainPositiveCount": 1090,
-    "pilotTrainRatingCount": 1596,
-    "releaseBand": "2005-2009",
-    "title": "Up (2009)",
-    "tmdbId": 14160
-  },
-  {
-    "genres": [
-      "Drama",
-      "Mystery",
-      "Sci-Fi",
-      "Thriller"
-    ],
-    "imdbId": "0482571",
-    "modelItemId": 10108,
-    "movieId": 48780,
-    "pilotTrainPositiveCount": 1084,
-    "pilotTrainRatingCount": 1458,
-    "releaseBand": "2005-2009",
-    "title": "Prestige, The (2006)",
-    "tmdbId": 1124
-  },
-  {
+    "frozenPopularity": 2018,
     "genres": [
       "Action",
+      "Sci-Fi"
+    ],
+    "imdbId": "0103064",
+    "modelItemId": 573,
+    "movieId": 589,
+    "pilotTrainPositiveCount": 2018,
+    "pilotTrainRatingCount": 2922,
+    "releaseBand": "before-2015",
+    "releaseYear": 1991,
+    "title": "Terminator 2: Judgment Day (1991)",
+    "tmdbId": 280
+  },
+  {
+    "frozenPopularity": 223,
+    "genres": [
       "Drama",
       "War"
     ],
-    "imdbId": "0361748",
-    "modelItemId": 11636,
-    "movieId": 68157,
-    "pilotTrainPositiveCount": 1035,
-    "pilotTrainRatingCount": 1483,
-    "releaseBand": "2005-2009",
-    "title": "Inglourious Basterds (2009)",
-    "tmdbId": 16869
+    "imdbId": "8579674",
+    "modelItemId": 20959,
+    "movieId": 208703,
+    "pilotTrainPositiveCount": 223,
+    "pilotTrainRatingCount": 301,
+    "releaseBand": "2019",
+    "releaseYear": 2019,
+    "title": "1917 (2019)",
+    "tmdbId": 530915
   },
   {
+    "frozenPopularity": 131,
     "genres": [
-      "Action",
-      "Sci-Fi",
-      "Thriller",
-      "IMAX"
+      "Drama",
+      "Horror",
+      "Thriller"
     ],
-    "imdbId": "0434409",
-    "modelItemId": 9737,
-    "movieId": 44191,
-    "pilotTrainPositiveCount": 993,
-    "pilotTrainRatingCount": 1529,
-    "releaseBand": "2005-2009",
-    "title": "V for Vendetta (2006)",
-    "tmdbId": 752
+    "imdbId": "6644200",
+    "modelItemId": 19759,
+    "movieId": 185029,
+    "pilotTrainPositiveCount": 131,
+    "pilotTrainRatingCount": 254,
+    "releaseBand": "2018",
+    "releaseYear": 2018,
+    "title": "A Quiet Place (2018)",
+    "tmdbId": 447332
   },
   {
-    "genres": [
-      "Action",
-      "Adventure",
-      "Sci-Fi"
-    ],
-    "imdbId": "0371746",
-    "modelItemId": 11016,
-    "movieId": 59315,
-    "pilotTrainPositiveCount": 964,
-    "pilotTrainRatingCount": 1592,
-    "releaseBand": "2005-2009",
-    "title": "Iron Man (2008)",
-    "tmdbId": 1726
-  },
-  {
-    "genres": [
-      "Crime",
-      "Drama"
-    ],
-    "imdbId": "0477348",
-    "modelItemId": 10723,
-    "movieId": 55820,
-    "pilotTrainPositiveCount": 858,
-    "pilotTrainRatingCount": 1197,
-    "releaseBand": "2005-2009",
-    "title": "No Country for Old Men (2007)",
-    "tmdbId": 6977
-  },
-  {
+    "frozenPopularity": 1976,
     "genres": [
       "Action",
       "Crime",
@@ -321,236 +1462,132 @@
     "movieId": 79132,
     "pilotTrainPositiveCount": 1976,
     "pilotTrainRatingCount": 2545,
-    "releaseBand": "2010-2014",
+    "releaseBand": "before-2015",
+    "releaseYear": 2010,
     "title": "Inception (2010)",
     "tmdbId": 27205
   },
   {
-    "genres": [
-      "Sci-Fi",
-      "IMAX"
-    ],
-    "imdbId": "0816692",
-    "modelItemId": 15054,
-    "movieId": 109487,
-    "pilotTrainPositiveCount": 1233,
-    "pilotTrainRatingCount": 1637,
-    "releaseBand": "2010-2014",
-    "title": "Interstellar (2014)",
-    "tmdbId": 157336
-  },
-  {
-    "genres": [
-      "Action",
-      "Drama",
-      "Western"
-    ],
-    "imdbId": "1853728",
-    "modelItemId": 14276,
-    "movieId": 99114,
-    "pilotTrainPositiveCount": 972,
-    "pilotTrainRatingCount": 1372,
-    "releaseBand": "2010-2014",
-    "title": "Django Unchained (2012)",
-    "tmdbId": 68718
-  },
-  {
-    "genres": [
-      "Action",
-      "Adventure",
-      "Crime",
-      "IMAX"
-    ],
-    "imdbId": "1345836",
-    "modelItemId": 13623,
-    "movieId": 91529,
-    "pilotTrainPositiveCount": 945,
-    "pilotTrainRatingCount": 1355,
-    "releaseBand": "2010-2014",
-    "title": "Dark Knight Rises, The (2012)",
-    "tmdbId": 49026
-  },
-  {
-    "genres": [
-      "Drama",
-      "Mystery",
-      "Thriller"
-    ],
-    "imdbId": "1130884",
-    "modelItemId": 12260,
-    "movieId": 74458,
-    "pilotTrainPositiveCount": 884,
-    "pilotTrainRatingCount": 1256,
-    "releaseBand": "2010-2014",
-    "title": "Shutter Island (2010)",
-    "tmdbId": 11324
-  },
-  {
+    "frozenPopularity": 23,
     "genres": [
       "Comedy",
-      "Crime",
-      "Drama"
+      "Crime"
     ],
-    "imdbId": "0993846",
-    "modelItemId": 14862,
-    "movieId": 106782,
-    "pilotTrainPositiveCount": 804,
-    "pilotTrainRatingCount": 1167,
-    "releaseBand": "2010-2014",
-    "title": "Wolf of Wall Street, The (2013)",
-    "tmdbId": 106646
+    "imdbId": "3228774",
+    "modelItemId": 21664,
+    "movieId": 249540,
+    "pilotTrainPositiveCount": 23,
+    "pilotTrainRatingCount": 46,
+    "releaseBand": "2021",
+    "releaseYear": 2021,
+    "title": "Cruella (2021)",
+    "tmdbId": 337404
   },
   {
-    "genres": [
-      "Action",
-      "Adventure",
-      "Sci-Fi"
-    ],
-    "imdbId": "2015381",
-    "modelItemId": 15279,
-    "movieId": 112852,
-    "pilotTrainPositiveCount": 772,
-    "pilotTrainRatingCount": 1143,
-    "releaseBand": "2010-2014",
-    "title": "Guardians of the Galaxy (2014)",
-    "tmdbId": 118340
-  },
-  {
-    "genres": [
-      "Drama",
-      "Thriller",
-      "War"
-    ],
-    "imdbId": "2084970",
-    "modelItemId": 15575,
-    "movieId": 116797,
-    "pilotTrainPositiveCount": 728,
-    "pilotTrainRatingCount": 1060,
-    "releaseBand": "2010-2014",
-    "title": "The Imitation Game (2014)",
-    "tmdbId": 205596
-  },
-  {
-    "genres": [
-      "Comedy",
-      "Drama"
-    ],
-    "imdbId": "2278388",
-    "modelItemId": 15035,
-    "movieId": 109374,
-    "pilotTrainPositiveCount": 703,
-    "pilotTrainRatingCount": 952,
-    "releaseBand": "2010-2014",
-    "title": "Grand Budapest Hotel, The (2014)",
-    "tmdbId": 120467
-  },
-  {
+    "frozenPopularity": 35,
     "genres": [
       "Drama"
     ],
-    "imdbId": "2582802",
-    "modelItemId": 15258,
-    "movieId": 112552,
-    "pilotTrainPositiveCount": 675,
-    "pilotTrainRatingCount": 858,
-    "releaseBand": "2010-2014",
-    "title": "Whiplash (2014)",
-    "tmdbId": 244786
+    "imdbId": "10272386",
+    "modelItemId": 21252,
+    "movieId": 219994,
+    "pilotTrainPositiveCount": 35,
+    "pilotTrainRatingCount": 55,
+    "releaseBand": "2020",
+    "releaseYear": 2020,
+    "title": "The Father (2020)",
+    "tmdbId": 600354
   },
   {
-    "genres": [
-      "Adventure",
-      "Drama",
-      "Sci-Fi"
-    ],
-    "imdbId": "3659388",
-    "modelItemId": 16565,
-    "movieId": 134130,
-    "pilotTrainPositiveCount": 895,
-    "pilotTrainRatingCount": 1250,
-    "releaseBand": "2015-2019",
-    "title": "The Martian (2015)",
-    "tmdbId": 286217
-  },
-  {
-    "genres": [
-      "Action",
-      "Adventure",
-      "Comedy",
-      "Sci-Fi"
-    ],
-    "imdbId": "1431045",
-    "modelItemId": 15932,
-    "movieId": 122904,
-    "pilotTrainPositiveCount": 633,
-    "pilotTrainRatingCount": 1008,
-    "releaseBand": "2015-2019",
-    "title": "Deadpool (2016)",
-    "tmdbId": 293660
-  },
-  {
-    "genres": [
-      "Action",
-      "Adventure",
-      "Sci-Fi",
-      "Thriller"
-    ],
-    "imdbId": "1392190",
-    "modelItemId": 15922,
-    "movieId": 122882,
-    "pilotTrainPositiveCount": 615,
-    "pilotTrainRatingCount": 928,
-    "releaseBand": "2015-2019",
-    "title": "Mad Max: Fury Road (2015)",
-    "tmdbId": 76341
-  },
-  {
-    "genres": [
-      "Sci-Fi"
-    ],
-    "imdbId": "2543164",
-    "modelItemId": 18328,
-    "movieId": 164179,
-    "pilotTrainPositiveCount": 614,
-    "pilotTrainRatingCount": 871,
-    "releaseBand": "2015-2019",
-    "title": "Arrival (2016)",
-    "tmdbId": 329865
-  },
-  {
+    "frozenPopularity": 5,
     "genres": [
       "Adventure",
       "Animation",
       "Children",
       "Comedy",
-      "Drama",
       "Fantasy"
     ],
-    "imdbId": "2096673",
-    "modelItemId": 16629,
-    "movieId": 134853,
-    "pilotTrainPositiveCount": 595,
-    "pilotTrainRatingCount": 926,
-    "releaseBand": "2015-2019",
-    "title": "Inside Out (2015)",
-    "tmdbId": 150540
+    "imdbId": "6718170",
+    "modelItemId": 22278,
+    "movieId": 286131,
+    "pilotTrainPositiveCount": 5,
+    "pilotTrainRatingCount": 23,
+    "releaseBand": "2023",
+    "releaseYear": 2023,
+    "title": "The Super Mario Bros. Movie (2023)",
+    "tmdbId": 502356
   },
   {
+    "frozenPopularity": 18,
     "genres": [
-      "Drama",
+      "Horror",
+      "Mystery",
       "Sci-Fi",
       "Thriller"
     ],
-    "imdbId": "0470752",
-    "modelItemId": 15484,
-    "movieId": 115713,
-    "pilotTrainPositiveCount": 558,
-    "pilotTrainRatingCount": 821,
-    "releaseBand": "2015-2019",
-    "title": "Ex Machina (2015)",
-    "tmdbId": 264660
+    "imdbId": "10954984",
+    "modelItemId": 22042,
+    "movieId": 275245,
+    "pilotTrainPositiveCount": 18,
+    "pilotTrainRatingCount": 48,
+    "releaseBand": "2022",
+    "releaseYear": 2022,
+    "title": "Nope (2022)",
+    "tmdbId": 762504
   },
   {
+    "frozenPopularity": 1965,
+    "genres": [
+      "Adventure",
+      "Animation",
+      "Children",
+      "Comedy",
+      "Fantasy"
+    ],
+    "imdbId": "0114709",
+    "modelItemId": 0,
+    "movieId": 1,
+    "pilotTrainPositiveCount": 1965,
+    "pilotTrainRatingCount": 2983,
+    "releaseBand": "before-2015",
+    "releaseYear": 1995,
+    "title": "Toy Story (1995)",
+    "tmdbId": 862
+  },
+  {
+    "frozenPopularity": 327,
+    "genres": [
+      "Sci-Fi"
+    ],
+    "imdbId": "1856101",
+    "modelItemId": 19273,
+    "movieId": 176371,
+    "pilotTrainPositiveCount": 327,
+    "pilotTrainRatingCount": 466,
+    "releaseBand": "2017",
+    "releaseYear": 2017,
+    "title": "Blade Runner 2049 (2017)",
+    "tmdbId": 335984
+  },
+  {
+    "frozenPopularity": 291,
+    "genres": [
+      "Action",
+      "Adventure",
+      "Sci-Fi"
+    ],
+    "imdbId": "1211837",
+    "modelItemId": 15941,
+    "movieId": 122922,
+    "pilotTrainPositiveCount": 291,
+    "pilotTrainRatingCount": 520,
+    "releaseBand": "2016",
+    "releaseYear": 2016,
+    "title": "Doctor Strange (2016)",
+    "tmdbId": 284052
+  },
+  {
+    "frozenPopularity": 446,
     "genres": [
       "Drama"
     ],
@@ -559,200 +1596,108 @@
     "movieId": 148626,
     "pilotTrainPositiveCount": 446,
     "pilotTrainRatingCount": 609,
-    "releaseBand": "2015-2019",
+    "releaseBand": "2015",
+    "releaseYear": 2015,
     "title": "Big Short, The (2015)",
     "tmdbId": 318846
   },
   {
+    "frozenPopularity": 1927,
     "genres": [
       "Comedy",
+      "Crime",
+      "Drama",
+      "Thriller"
+    ],
+    "imdbId": "0116282",
+    "modelItemId": 590,
+    "movieId": 608,
+    "pilotTrainPositiveCount": 1927,
+    "pilotTrainRatingCount": 2484,
+    "releaseBand": "before-2015",
+    "releaseYear": 1996,
+    "title": "Fargo (1996)",
+    "tmdbId": 275
+  },
+  {
+    "frozenPopularity": 21,
+    "genres": [
       "Drama"
     ],
-    "imdbId": "6751668",
-    "modelItemId": 20689,
-    "movieId": 202439,
-    "pilotTrainPositiveCount": 420,
-    "pilotTrainRatingCount": 500,
-    "releaseBand": "2015-2019",
-    "title": "Parasite (2019)",
-    "tmdbId": 496243
+    "imdbId": "4244994",
+    "modelItemId": 21814,
+    "movieId": 259659,
+    "pilotTrainPositiveCount": 21,
+    "pilotTrainRatingCount": 40,
+    "releaseBand": "2021",
+    "releaseYear": 2021,
+    "title": "The Last Duel (2021)",
+    "tmdbId": 617653
   },
   {
+    "frozenPopularity": 30,
+    "genres": [
+      "Documentary",
+      "Drama"
+    ],
+    "imdbId": "11464826",
+    "modelItemId": 21339,
+    "movieId": 223944,
+    "pilotTrainPositiveCount": 30,
+    "pilotTrainRatingCount": 49,
+    "releaseBand": "2020",
+    "releaseYear": 2020,
+    "title": "The Social Dilemma (2020)",
+    "tmdbId": 656690
+  },
+  {
+    "frozenPopularity": 5,
     "genres": [
       "Action",
-      "Adventure",
-      "Sci-Fi"
-    ],
-    "imdbId": "4154756",
-    "modelItemId": 15936,
-    "movieId": 122912,
-    "pilotTrainPositiveCount": 412,
-    "pilotTrainRatingCount": 614,
-    "releaseBand": "2015-2019",
-    "title": "Avengers: Infinity War - Part I (2018)",
-    "tmdbId": 299536
-  },
-  {
-    "genres": [
-      "Action",
-      "Adventure",
-      "Comedy",
-      "Crime"
-    ],
-    "imdbId": "2802144",
-    "modelItemId": 15752,
-    "movieId": 119145,
-    "pilotTrainPositiveCount": 408,
-    "pilotTrainRatingCount": 669,
-    "releaseBand": "2015-2019",
-    "title": "Kingsman: The Secret Service (2015)",
-    "tmdbId": 207703
-  },
-  {
-    "genres": [
-      "Action",
-      "Adventure",
-      "Drama",
-      "Sci-Fi"
-    ],
-    "imdbId": "1160419",
-    "modelItemId": 21752,
-    "movieId": 254726,
-    "pilotTrainPositiveCount": 144,
-    "pilotTrainRatingCount": 223,
-    "releaseBand": "2020-2023",
-    "title": "Dune (2021)",
-    "tmdbId": 438631
-  },
-  {
-    "genres": [
-      "Adventure",
-      "Animation",
-      "Children",
       "Comedy",
       "Fantasy"
     ],
-    "imdbId": "2948372",
-    "modelItemId": 21378,
-    "movieId": 225173,
-    "pilotTrainPositiveCount": 135,
-    "pilotTrainRatingCount": 195,
-    "releaseBand": "2020-2023",
-    "title": "Soul (2020)",
-    "tmdbId": 508442
+    "imdbId": "10151854",
+    "modelItemId": 22245,
+    "movieId": 283223,
+    "pilotTrainPositiveCount": 5,
+    "pilotTrainRatingCount": 13,
+    "releaseBand": "2023",
+    "releaseYear": 2023,
+    "title": "Shazam! Fury of the Gods (2023)",
+    "tmdbId": 594767
   },
   {
-    "genres": [
-      "Action",
-      "Comedy",
-      "Sci-Fi"
-    ],
-    "imdbId": "6710474",
-    "modelItemId": 21963,
-    "movieId": 270698,
-    "pilotTrainPositiveCount": 125,
-    "pilotTrainRatingCount": 164,
-    "releaseBand": "2020-2023",
-    "title": "Everything Everywhere All at Once (2022)",
-    "tmdbId": 545611
-  },
-  {
-    "genres": [
-      "Action",
-      "Adventure",
-      "Fantasy",
-      "Sci-Fi"
-    ],
-    "imdbId": "10872600",
-    "modelItemId": 21866,
-    "movieId": 263007,
-    "pilotTrainPositiveCount": 101,
-    "pilotTrainRatingCount": 173,
-    "releaseBand": "2020-2023",
-    "title": "Spider-Man: No Way Home (2021)",
-    "tmdbId": 634649
-  },
-  {
-    "genres": [
-      "Action",
-      "Crime"
-    ],
-    "imdbId": "8367814",
-    "modelItemId": 21027,
-    "movieId": 210861,
-    "pilotTrainPositiveCount": 95,
-    "pilotTrainRatingCount": 155,
-    "releaseBand": "2020-2023",
-    "title": "The Gentlemen (2020)",
-    "tmdbId": 522627
-  },
-  {
+    "frozenPopularity": 17,
     "genres": [
       "Action",
       "Thriller"
     ],
-    "imdbId": "6723592",
-    "modelItemId": 21205,
-    "movieId": 217465,
-    "pilotTrainPositiveCount": 84,
-    "pilotTrainRatingCount": 184,
-    "releaseBand": "2020-2023",
-    "title": "Tenet (2020)",
-    "tmdbId": 577922
+    "imdbId": "11866324",
+    "modelItemId": 22084,
+    "movieId": 276929,
+    "pilotTrainPositiveCount": 17,
+    "pilotTrainRatingCount": 41,
+    "releaseBand": "2022",
+    "releaseYear": 2022,
+    "title": "Prey (2022)",
+    "tmdbId": 766507
   },
   {
+    "frozenPopularity": 1860,
     "genres": [
-      "Action",
-      "Drama"
+      "Adventure",
+      "Comedy",
+      "Sci-Fi"
     ],
-    "imdbId": "1745960",
-    "modelItemId": 22014,
-    "movieId": 274053,
-    "pilotTrainPositiveCount": 75,
-    "pilotTrainRatingCount": 137,
-    "releaseBand": "2020-2023",
-    "title": "Top Gun: Maverick (2022)",
-    "tmdbId": 361743
-  },
-  {
-    "genres": [
-      "Comedy"
-    ],
-    "imdbId": "9484998",
-    "modelItemId": 21225,
-    "movieId": 218537,
-    "pilotTrainPositiveCount": 66,
-    "pilotTrainRatingCount": 118,
-    "releaseBand": "2020-2023",
-    "title": "Palm Springs (2020)",
-    "tmdbId": 587792
-  },
-  {
-    "genres": [
-      "Drama"
-    ],
-    "imdbId": "8503618",
-    "modelItemId": 21209,
-    "movieId": 217655,
-    "pilotTrainPositiveCount": 63,
-    "pilotTrainRatingCount": 94,
-    "releaseBand": "2020-2023",
-    "title": "Hamilton (2020)",
-    "tmdbId": 556574
-  },
-  {
-    "genres": [
-      "Action",
-      "Crime",
-      "Drama"
-    ],
-    "imdbId": "1877830",
-    "modelItemId": 21927,
-    "movieId": 268642,
-    "pilotTrainPositiveCount": 59,
-    "pilotTrainRatingCount": 127,
-    "releaseBand": "2020-2023",
-    "title": "The Batman (2022)",
-    "tmdbId": 414906
+    "imdbId": "0088763",
+    "modelItemId": 1208,
+    "movieId": 1270,
+    "pilotTrainPositiveCount": 1860,
+    "pilotTrainRatingCount": 2718,
+    "releaseBand": "before-2015",
+    "releaseYear": 1985,
+    "title": "Back to the Future (1985)",
+    "tmdbId": 105
   }
 ]
